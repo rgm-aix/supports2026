@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Droit des Sociétés — Fiches de Révision</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+:root{
+  --r:#1a4a8a;--rv:#2563b0;--rp:#f0f4fd;--rb:#c8d8e8;
+  --n:#1a1a1a;--gf:#2d2d2d;--g:#555;--gc:#f6f8fb;--b:#fefefe;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--b);color:var(--n);font-size:17px;line-height:1.75}
+
+/* ── HEADER ── */
+header{background:var(--n);color:#fff;padding:1.8rem 2rem 1.4rem;border-bottom:4px solid var(--r);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+header h1{font-size:clamp(1.3rem,4vw,2rem);font-weight:600}
+header h1 span{color:#5b9bd5}
+header small{color:#aaa;font-size:.82rem;letter-spacing:.06em;display:block;margin-top:.2rem}
+
+/* ── NAV ── */
+nav{background:var(--r);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav ul{list-style:none;display:flex;flex-wrap:nowrap;min-width:max-content}
+.nav-radio{display:none}
+nav label{display:block;padding:.65rem .85rem;color:rgba(255,255,255,.82);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.2)}
+nav label:active{color:#fff;background:rgba(255,255,255,.15)}
+
+/* ── PAGES ── */
+.page-content{display:none}
+#home-content{display:block}
+
+#r-home:checked ~ .wrap #home-content,
+#r-f1:checked ~ .wrap #home-content,
+#r-f2:checked ~ .wrap #home-content,
+#r-f3:checked ~ .wrap #home-content,
+#r-f4:checked ~ .wrap #home-content,
+#r-f5:checked ~ .wrap #home-content,
+#r-f6:checked ~ .wrap #home-content,
+#r-f7:checked ~ .wrap #home-content,
+#r-f8:checked ~ .wrap #home-content,
+#r-f9:checked ~ .wrap #home-content,
+#r-f10:checked ~ .wrap #home-content,
+#r-f11:checked ~ .wrap #home-content,
+#r-f12:checked ~ .wrap #home-content,
+#r-f13:checked ~ .wrap #home-content,
+#r-f14:checked ~ .wrap #home-content,
+#r-f15:checked ~ .wrap #home-content,
+#r-f16:checked ~ .wrap #home-content,
+#r-fc:checked ~ .wrap #home-content { display:none; }
+#r-home:checked ~ .wrap #home-content{display:block}
+
+#r-f1:checked ~ .wrap #page-f1,
+#r-f2:checked ~ .wrap #page-f2,
+#r-f3:checked ~ .wrap #page-f3,
+#r-f4:checked ~ .wrap #page-f4,
+#r-f5:checked ~ .wrap #page-f5,
+#r-f6:checked ~ .wrap #page-f6,
+#r-f7:checked ~ .wrap #page-f7,
+#r-f8:checked ~ .wrap #page-f8,
+#r-f9:checked ~ .wrap #page-f9,
+#r-f10:checked ~ .wrap #page-f10,
+#r-f11:checked ~ .wrap #page-f11,
+#r-f12:checked ~ .wrap #page-f12,
+#r-f13:checked ~ .wrap #page-f13,
+#r-f14:checked ~ .wrap #page-f14,
+#r-f15:checked ~ .wrap #page-f15,
+#r-f16:checked ~ .wrap #page-f16,
+#r-fc:checked ~ .wrap #page-fc {display:block}
+
+/* Nav active */
+#r-home:checked ~ .wrap .nav-home,
+#r-f1:checked ~ .wrap .nav-f1,
+#r-f2:checked ~ .wrap .nav-f2,
+#r-f3:checked ~ .wrap .nav-f3,
+#r-f4:checked ~ .wrap .nav-f4,
+#r-f5:checked ~ .wrap .nav-f5,
+#r-f6:checked ~ .wrap .nav-f6,
+#r-f7:checked ~ .wrap .nav-f7,
+#r-f8:checked ~ .wrap .nav-f8,
+#r-f9:checked ~ .wrap .nav-f9,
+#r-f10:checked ~ .wrap .nav-f10,
+#r-f11:checked ~ .wrap .nav-f11,
+#r-f12:checked ~ .wrap .nav-f12,
+#r-f13:checked ~ .wrap .nav-f13,
+#r-f14:checked ~ .wrap .nav-f14,
+#r-f15:checked ~ .wrap .nav-f15,
+#r-f16:checked ~ .wrap .nav-f16,
+#r-fc:checked ~ .wrap .nav-fc {color:#fff !important;background:rgba(255,255,255,.15) !important;border-bottom-color:#fff !important}
+
+/* ── LAYOUT ── */
+#home{padding:2.5rem 2.5rem 4rem;max-width:100%;margin:0 auto;border-bottom:3px solid var(--rb)}
+.intro{text-align:center;margin-bottom:2.5rem}
+.intro h2{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:600;margin-bottom:.4rem}
+.intro p{color:var(--g);font-size:.95rem;max-width:520px;margin:0 auto}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.2rem}
+label.card{display:block;background:var(--b);border:1.5px solid var(--rb);border-top:4px solid var(--r);padding:1.4rem 1.3rem 1.2rem;cursor:pointer;-webkit-tap-highlight-color:rgba(26,74,138,.15);text-decoration:none;color:inherit}
+label.card:active{box-shadow:0 6px 22px rgba(26,74,138,.13)}
+label.card .emoji{font-size:1.9rem;margin-bottom:.6rem;display:block}
+label.card h3{font-size:1rem;font-weight:600;color:var(--r);margin-bottom:.3rem}
+label.card p{font-size:.85rem;color:var(--g);line-height:1.45}
+
+main{max-width:100%;margin:0 auto;padding:2.2rem 2.5rem 5rem}
+
+/* ── PARTIE ── */
+.partie{margin-bottom:2.8rem}
+.partie-titre{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;padding-bottom:.45rem;border-bottom:2px solid var(--r);flex-wrap:wrap}
+.pnum{background:var(--r);color:#fff;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.18rem .55rem;font-weight:600;flex-shrink:0}
+.partie-titre h2{font-size:clamp(1.05rem,2.8vw,1.4rem);font-weight:600;color:var(--n)}
+
+.grid{display:grid;gap:1.4rem}
+.g2{grid-template-columns:repeat(auto-fill,minmax(min(100%,480px),1fr))}
+
+/* ── FICHE ── */
+.fiche{background:var(--b);border:1px solid var(--rb);border-top:3px solid var(--r);padding:1.3rem 1.4rem;margin-bottom:1rem}
+.fiche h3{font-size:1rem;font-weight:600;color:var(--r);margin-bottom:.6rem}
+.fiche .def{color:var(--g);font-size:.91rem;margin-bottom:.8rem;padding-bottom:.7rem;border-bottom:1px dotted var(--rb);line-height:1.5}
+
+/* ── ARTICLES BLOCK ── */
+.arts{background:#1a1a1a;color:#e8e8e8;padding:.7rem 1rem;margin:.7rem 0;font-size:.88rem;line-height:1.9}
+.arts .art-title{color:#80b3ff;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:.3rem}
+.arts span{color:#70a0ff;font-weight:700}
+.arts .art-item{margin-bottom:.2rem}
+.arts .art-item strong{color:#70a0ff}
+
+/* ── BLOC ── */
+.bloc{margin-top:.8rem}
+.bloc h4{font-size:.95rem;font-weight:600;color:var(--gf);margin-bottom:.25rem;padding-left:.65rem;border-left:3px solid var(--rv)}
+.bloc p,.bloc ul{font-size:.92rem;color:var(--gf);line-height:1.65}
+.bloc ul{list-style:none;padding:0;margin-top:.2rem}
+.bloc ul li{padding:.18rem 0 .18rem 1.2rem;position:relative}
+.bloc ul li::before{content:'—';position:absolute;left:0;color:var(--r);font-weight:700}
+
+/* ── JP BLOCK ── */
+.jp-block{background:var(--gc);border-left:3px solid #888;padding:.7rem 1rem;margin-top:.65rem;font-size:.87rem;line-height:1.55;color:var(--g)}
+.jp-block .jp-title{color:var(--gf);font-weight:700;font-size:.76rem;letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.jp-block .jp-rule{color:var(--n);font-weight:600;font-size:.9rem;margin-bottom:.15rem;display:block}
+.jp-block.jp-main{border-left-color:var(--r)}
+.jp-block.jp-main .jp-title{color:var(--r)}
+
+/* ── RETENIR ── */
+.retenir{background:var(--rp);border-left:4px solid var(--r);padding:.75rem 1rem;margin-top:.8rem;font-size:.9rem;line-height:1.6;color:var(--gf)}
+.retenir strong{color:var(--r);font-weight:700;font-size:.73rem;letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+
+/* ── FLASHCARDS ── */
+.flash-pack{margin-top:1rem;border:1px solid var(--rb);background:#fff}
+.flash-pack>summary{list-style:none;cursor:pointer;padding:.9rem 1rem;font-size:.95rem;font-weight:700;color:var(--r);background:var(--rp);border-left:4px solid var(--r)}
+.flash-pack>summary::-webkit-details-marker{display:none}
+.flash-pack>summary::after{content:'Cliquer pour ouvrir / fermer';float:right;font-size:.72rem;font-weight:600;letter-spacing:.04em;color:var(--g);text-transform:uppercase}
+.flash-pack[open]>summary::after{content:'Section ouverte'}
+.flash-pack-body{padding:1rem}
+.flash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:.9rem}
+.flashcard{border:1px solid var(--rb);background:#fff}
+.flashcard>summary{list-style:none;cursor:pointer;padding:.85rem .95rem;font-size:.9rem;font-weight:700;color:var(--gf);line-height:1.45}
+.flashcard>summary::-webkit-details-marker{display:none}
+.flashcard>summary::before{content:'Q';display:inline-flex;align-items:center;justify-content:center;width:1.3rem;height:1.3rem;border-radius:999px;background:var(--r);color:#fff;font-size:.72rem;font-weight:700;margin-right:.55rem;vertical-align:middle}
+.flashcard[open]>summary{border-bottom:1px solid var(--rb);background:var(--gc)}
+.flash-answer{padding:.85rem .95rem;font-size:.9rem;line-height:1.6;color:var(--gf)}
+.flash-answer strong{color:var(--r)}
+.flash-intro{font-size:.92rem;color:var(--gf);line-height:1.65}
+.flash-intro p+p{margin-top:.5rem}
+.flash-player{max-width:880px;margin:1rem auto 0}
+.flash-start{border:1px solid var(--rb);border-radius:22px;background:linear-gradient(180deg,#fff 0%,#f0f4fd 100%);padding:1.2rem 1.2rem 1rem;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.flash-start h4{font-size:1.02rem;color:var(--r);margin-bottom:.35rem}
+.flash-start p{font-size:.92rem;color:var(--gf);line-height:1.6}
+.flash-toolbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}
+.flash-toolbar label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--r);margin-bottom:.3rem}
+.flash-toolbar select{width:100%;padding:.7rem .75rem;border:1px solid var(--rb);background:#fff;font:inherit;color:var(--gf);border-radius:10px}
+.flash-start-actions{display:flex;justify-content:flex-end;margin-top:1rem}
+.flash-start-btn{border:1px solid var(--r);background:var(--r);color:#fff;padding:.75rem 1.1rem;border-radius:999px;font:inherit;cursor:pointer}
+.flash-stage{margin-top:1rem}
+.flash-stage[hidden]{display:none !important}
+.flash-quizlet{border:1px solid var(--rb);border-radius:22px;background:linear-gradient(180deg,#fff 0%,#f0f4fd 100%);padding:1rem;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.flash-progress{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-size:.88rem;color:var(--g);margin-bottom:.8rem}
+.flash-progress strong{color:var(--r)}
+.flash-stats{display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center}
+.flash-stat{display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .65rem;border:1px solid var(--rb);border-radius:999px;background:#fff;font-size:.82rem;color:var(--gf)}
+.flash-stat strong{color:var(--r)}
+.flash-card-shell{position:relative}
+.flash-card-btn{width:100%;min-height:380px;border:1px solid #c8d8e8;border-radius:26px;background:#fff;padding:1.5rem;cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 14px 40px rgba(26,74,138,.08)}
+.flash-card-btn:focus{outline:2px solid rgba(26,74,138,.35);outline-offset:3px}
+.flash-face-label{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--r)}
+.flash-card-text{display:block;flex:1;font-size:1.45rem;line-height:1.45;color:var(--n);padding:1rem 0;max-width:820px;width:100%;margin:0 auto;text-align:center;word-break:normal;overflow-wrap:break-word}
+.flash-card-foot{font-size:.86rem;color:var(--g);text-align:center}
+.flash-feedback{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:1rem}
+.flash-feedback[hidden]{display:none !important}
+.flash-feedback-btn{border:1px solid var(--rb);background:#fff;padding:.75rem 1rem;border-radius:999px;font:inherit;color:var(--gf);cursor:pointer;min-width:160px}
+.flash-feedback-btn.bad{border-color:#d97706;color:#9a6700;background:#fffaf0}
+.flash-feedback-btn.good{border-color:#15803d;color:#166534;background:#f0fdf4}
+.flash-nav{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin-top:1rem}
+.flash-nav-btn{border:1px solid var(--rb);background:#fff;padding:.7rem 1rem;border-radius:999px;font:inherit;color:var(--gf);cursor:pointer;min-width:120px}
+.flash-nav-btn.primary{background:var(--r);border-color:var(--r);color:#fff}
+.flash-nav-btn.toggle{border-color:#b4c8d5}
+.flash-nav-btn.toggle.active{background:#eef4fb;border-color:var(--r);color:var(--r)}
+.flash-count{font-size:.88rem;color:var(--g);text-align:center;flex:1}
+.flash-library{margin-top:1.2rem;border:1px solid var(--rb);background:#fff}
+.flash-library h3{padding:1rem 1rem 0;margin-bottom:.2rem}
+.flash-library .def{padding:0 1rem}
+.flash-library-body{padding:0 1rem 1rem}
+.flash-source{display:none}
+.flash-empty{border:1px dashed var(--rb);background:#fff;padding:1rem;color:var(--g);font-size:.92rem}
+
+/* ── TABLE ── */
+.tw{overflow-x:auto;margin-top:.7rem}
+table{width:100%;border-collapse:collapse;font-size:.86rem}
+thead tr{background:var(--n);color:#fff}
+thead th{padding:.55rem .85rem;text-align:left;font-weight:500;letter-spacing:.04em;font-size:.78rem;text-transform:uppercase}
+tbody tr:nth-child(even){background:var(--gc)}
+tbody td{padding:.5rem .85rem;border-bottom:1px solid var(--rb);vertical-align:top}
+tbody td:first-child{font-weight:600;color:var(--r)}
+
+/* ── SOUS-TITRE ── */
+.sous-titre{font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--r);margin:.9rem 0 .4rem;padding-bottom:.2rem;border-bottom:1px solid var(--rb)}
+
+/* ── BTN HOME ── */
+label.btn-home{display:inline-block;background:transparent;border:1.5px solid rgba(26,74,138,.3);color:var(--rv);padding:.4rem 1rem;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+label.btn-home:active{border-color:var(--r);color:var(--r);background:var(--rp)}
+
+footer{background:var(--n);color:#777;text-align:center;padding:1.2rem;font-size:.78rem;letter-spacing:.05em;border-top:3px solid var(--r);margin-top:2rem}
+footer span{color:#5b9bd5}
+
+@media(max-width:640px){
+  header{padding:1.2rem 1rem 1rem}
+  nav label{padding:.55rem .5rem;font-size:.68rem}
+  #home{padding:1.8rem 1rem 3rem}
+  main{padding:1.4rem .9rem 4rem}
+  .cards-grid{grid-template-columns:1fr 1fr;gap:.8rem}
+  .g2{grid-template-columns:1fr}
+  .flash-toolbar{grid-template-columns:1fr}
+  .flash-card-btn{min-height:320px;padding:1rem}
+  .flash-card-text{font-size:1.18rem}
+  .flash-nav{flex-wrap:wrap}
+  .flash-nav-btn{flex:1}
+  .flash-start-actions{justify-content:stretch}
+  .flash-start-btn{width:100%}
+}
+@media(max-width:380px){.cards-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- Radio buttons navigation -->
+<input type="radio" name="page" class="nav-radio" id="r-home" checked>
+<input type="radio" name="page" class="nav-radio" id="r-f1">
+<input type="radio" name="page" class="nav-radio" id="r-f2">
+<input type="radio" name="page" class="nav-radio" id="r-f3">
+<input type="radio" name="page" class="nav-radio" id="r-f4">
+<input type="radio" name="page" class="nav-radio" id="r-f5">
+<input type="radio" name="page" class="nav-radio" id="r-f6">
+<input type="radio" name="page" class="nav-radio" id="r-f7">
+<input type="radio" name="page" class="nav-radio" id="r-f8">
+<input type="radio" name="page" class="nav-radio" id="r-f9">
+<input type="radio" name="page" class="nav-radio" id="r-f10">
+<input type="radio" name="page" class="nav-radio" id="r-f11">
+<input type="radio" name="page" class="nav-radio" id="r-f12">
+<input type="radio" name="page" class="nav-radio" id="r-f13">
+<input type="radio" name="page" class="nav-radio" id="r-f14">
+<input type="radio" name="page" class="nav-radio" id="r-f15">
+<input type="radio" name="page" class="nav-radio" id="r-f16">
+<input type="radio" name="page" class="nav-radio" id="r-fc">
+
+<div class="wrap">
+
+<header>
+  <label for="r-home" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+    <h1>Droit des <span>Sociétés</span></h1>
+    <small>Fiches de révision — 2025-2026</small>
+  </label>
+</header>
+
+<nav>
+  <ul>
+    <li><label class="nav-home" for="r-home">Accueil</label></li>
+    <li><label class="nav-f1" for="r-f1">#1 Existence</label></li>
+    <li><label class="nav-f2" for="r-f2">#2 Nullité / Objet</label></li>
+    <li><label class="nav-f3" for="r-f3">#3 Apports</label></li>
+    <li><label class="nav-f4" for="r-f4">#4 Résultat</label></li>
+    <li><label class="nav-f5" for="r-f5">#5 Affectio / Sté de fait</label></li>
+    <li><label class="nav-f6" for="r-f6">#6 Contrat de travail</label></li>
+    <li><label class="nav-f7" for="r-f7">#7 Immatriculation</label></li>
+    <li><label class="nav-f8" for="r-f8">#8 Reprise d'actes</label></li>
+    <li><label class="nav-f9" for="r-f9">#9 Associés / Décisions</label></li>
+    <li><label class="nav-f10" for="r-f10">#10 Loyauté</label></li>
+    <li><label class="nav-f11" for="r-f11">#11 Sanction gestion</label></li>
+    <li><label class="nav-f12" for="r-f12">#12 Exclusion</label></li>
+    <li><label class="nav-f13" for="r-f13">#13 Révocation</label></li>
+    <li><label class="nav-f14" for="r-f14">#14 Responsabilité</label></li>
+    <li><label class="nav-f15" for="r-f15">#15 Abus</label></li>
+    <li><label class="nav-f16" for="r-f16">#16 Transformations</label></li>
+    <li><label class="nav-fc" for="r-fc">Flashcards</label></li>
+  </ul>
+</nav>
+
+<!-- ════════════════════════════════════════════ ACCUEIL ═══ -->
+<div id="home-content">
+  <div id="home">
+    <div class="intro">
+      <h2>Fiches de révision</h2>
+      <p>Choisissez une fiche pour accéder aux fondements légaux, jurisprudences et explications.</p>
+    </div>
+    <div class="cards-grid">
+      <label class="card" for="r-f1"><span class="emoji">🏗️</span><h3>#1 — Conditions d'existence</h3><p>Art. 1832 C. civ., loi de 1985, les trois conditions cumulatives.</p></label>
+      <label class="card" for="r-f2"><span class="emoji">⚠️</span><h3>#2 — Nullité / Objet social</h3><p>Licéité, ordonnance 2025, jurisprudences CJUE et Cass.</p></label>
+      <label class="card" for="r-f3"><span class="emoji">💰</span><h3>#3 — Apports des associés</h3><p>Numéraire, nature, industrie — Art. 1843-2 et 1843-3 C. civ.</p></label>
+      <label class="card" for="r-f4"><span class="emoji">📊</span><h3>#4 — Participation au résultat</h3><p>Clause léonine, Art. 1844-1 C. civ., promesses de rachat.</p></label>
+      <label class="card" for="r-f5"><span class="emoji">🤝</span><h3>#5 — Affectio societatis</h3><p>Élément psychologique, société créée de fait, Cass. 2004.</p></label>
+      <label class="card" for="r-f6"><span class="emoji">👷</span><h3>#6 — Contrat de travail</h3><p>Distinction société / travail, subordination, Cass. 2005 et 2003.</p></label>
+      <label class="card" for="r-f7"><span class="emoji">📋</span><h3>#7 — Immatriculation</h3><p>Art. 1842 C. civ., personnalité morale, société en formation.</p></label>
+      <label class="card" for="r-f8"><span class="emoji">🔄</span><h3>#8 — Reprise d'actes</h3><p>Trois modes de reprise, conditions, nullité — jurisprudence abondante.</p></label>
+      <label class="card" for="r-f9"><span class="emoji">🗳️</span><h3>#9 — Associés / Décisions</h3><p>Art. 1844 C. civ., démembrement, nu-propriétaire, usufruitier.</p></label>
+      <label class="card" for="r-f10"><span class="emoji">⚖️</span><h3>#10 — Loyauté d'un associé</h3><p>Silence de la loi, concurrence, clause de non-concurrence.</p></label>
+      <label class="card" for="r-f11"><span class="emoji">🏛️</span><h3>#11 — Sanction de la gestion</h3><p>Actions ut universi / ut singuli — Art. 1843-5 C. civ.</p></label>
+      <label class="card" for="r-f12"><span class="emoji">🚪</span><h3>#12 — Exclusion d'un associé</h3><p>Clauses statutaires, conditions, SAS — Art. L. 227-16 C. com.</p></label>
+      <label class="card" for="r-f13"><span class="emoji">🔑</span><h3>#13 — Révocation du dirigeant</h3><p>Pour juste motif, ad nutum, SARL / SA / SAS.</p></label>
+      <label class="card" for="r-f14"><span class="emoji">⚡</span><h3>#14 — Responsabilité du dirigeant</h3><p>Faute détachable, actions sociales, infraction pénale.</p></label>
+      <label class="card" for="r-f15"><span class="emoji">🔥</span><h3>#15 — Abus majorité / minorité</h3><p>Conditions cumulatives, sanctions, Schuman Picard, Flandin.</p></label>
+      <label class="card" for="r-f16"><span class="emoji">🔀</span><h3>#16 — Transformations</h3><p>Conservation de la personnalité morale, conditions, effets.</p></label>
+      <label class="card" for="r-fc"><span class="emoji">🧠</span><h3>Flashcards</h3><p>Révision active par fiche — fondements légaux et jurisprudences avec suivi de progression.</p></label>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ FICHE #1 ═══ -->
+<div id="page-f1" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #1</span><h2>Les conditions d'existence d'une société</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Fondements principaux</span>
+      <div class="art-item"><strong>Art. 1832 C. civ.</strong> — Une société doit être instituée par deux ou plusieurs personnes qui affectent des biens ou leur industrie à une entreprise commune, en vue de partager le bénéfice ou de profiter de l'économie qui pourra en résulter. Les associés s'engagent à contribuer aux pertes.</div>
+      <div class="art-item"><strong>Loi du 11 juillet 1985</strong> — Une société peut être instituée par l'acte de volonté d'une seule personne (EURL ou SASU).</div>
+      <div class="art-item"><strong>Art. 1844-10 C. civ.</strong> — Le défaut d'une des conditions entraîne la nullité de la société.</div>
+    </div>
+    <div class="retenir">
+      <strong>Les trois conditions cumulatives</strong>
+      Une société doit réunir : <strong>(1)</strong> la réalisation d'apports (numéraires, en nature, ou en industrie) constituant le capital social ; <strong>(2)</strong> la participation aux résultats de l'exploitation (bénéfices ET pertes) ; <strong>(3)</strong> l'<em>affectio societatis</em> — la volonté de chaque associé de collaborer effectivement à l'exploitation dans un intérêt commun et sur un pied d'égalité.
+    </div>
+    <div class="bloc">
+      <h4>Précision sur l'affectio societatis</h4>
+      <p>L'affectio societatis est différent des motivations des intéressés : c'est une condition psychologique, un élément intentionnel. Des personnes peuvent avoir une volonté commune de s'associer tout en ayant des raisons différentes.</p>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #2 ═══ -->
+<div id="page-f2" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #2</span><h2>La nullité d'une société selon son objet social</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Droit commun des contrats</span>
+      <div class="art-item"><strong>Art. 1128 C. civ.</strong> — La validité d'un contrat suppose : le consentement des parties, leur capacité, et un contenu licite et certain.</div>
+      <div class="art-item"><strong>Art. 1835 C. civ.</strong> — Les statuts doivent inclure l'objet social (= l'activité choisie par les associés).</div>
+      <div class="art-item"><strong>Art. 1833 C. civ.</strong> — L'objet social doit être licite.</div>
+      <div class="art-item"><strong>Art. 1844-7 3° C. civ.</strong> — L'objet social ne doit être ni trop large ni trop restreint.</div>
+      <div class="art-item"><strong>Art. 1844-10 C. civ.</strong> — À défaut d'objet social dans les statuts, nullité de la société.</div>
+    </div>
+    <div class="arts" style="margin-top:.5rem">
+      <span class="art-title">Réforme — Ordonnance du 12 mars 2025</span>
+      <div class="art-item">Modifie l'art. 1844-10 : la nullité n'est désormais prononcée qu'en cas d'incapacité d'un fondateur ou de défaut du nombre minimum d'associés. Si l'objet social est illicite (statutaire ou réel, sans distinction), la sanction devient la <strong>dissolution sans rétroactivité</strong> (la clause illicite est réputée non écrite, ce qui prive la société d'objet et impose sa dissolution).</div>
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">CJCE, 13 novembre 1990, Marleasing</span>
+      <span class="jp-rule">La CJUE ne statue sur l'illicéité d'une SARL/EURL qu'en lisant son objet social <em>statutaire</em>.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 10 novembre 2015</span>
+      <span class="jp-rule">25 ans après, la Cour de cassation s'aligne avec la jurisprudence européenne en retenant l'objet social statutaire (et non l'objet réel).</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 27 mai 2015 — Cass., 10 novembre 2015</span>
+      <span class="jp-rule">Une société ne peut valablement se constituer avec un objet social impliquant une activité réglementée sans autorisation préalable.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #3 ═══ -->
+<div id="page-f3" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #3</span><h2>Les apports des associés</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Textes applicables</span>
+      <div class="art-item"><strong>Art. 1832 C. civ.</strong> — Une société existe par la réalisation d'apports des associés.</div>
+      <div class="art-item"><strong>Art. 1843-2 C. civ.</strong> — Les droits des associés sont proportionnels aux apports, sauf pour les apports en industrie qui donnent seulement droit au partage des bénéfices et des pertes.</div>
+      <div class="art-item"><strong>Art. 1844-1 C. civ.</strong> — Les associés partagent les bénéfices et pertes selon leur capital. L'associé en industrie reçoit la part minimale. Les clauses extrêmes (donnant tout ou rien) sont nulles.</div>
+      <div class="art-item"><strong>Art. 1843-3 C. civ.</strong> — Chaque associé doit apporter ce qu'il a promis (numéraire, nature, industrie), garantir la qualité des biens apportés, payer les intérêts en cas de défaut de versement d'une somme, et rendre compte des gains s'il apporte son industrie.</div>
+    </div>
+    <div class="retenir">
+      <strong>Trois types d'apports</strong>
+      <strong>Numéraires</strong> (sommes d'argent) · <strong>En nature</strong> (biens meubles ou immeubles) · <strong>En industrie</strong> (savoir-faire, expérience, travail) — ces derniers ne contribuent pas au capital social mais ouvrent droit aux bénéfices et pertes.
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 16 juillet 1997</span>
+      <span class="jp-rule">L'influence ne peut pas être qualifiée d'apport en industrie car elle ne constitue pas un savoir-faire ou une expérience.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #4 ═══ -->
+<div id="page-f4" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #4</span><h2>La participation des associés au résultat</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Texte principal</span>
+      <div class="art-item"><strong>Art. 1844-1 C. civ.</strong> — Les clauses donnant la totalité des profits ou la totalité des pertes à un associé sont nulles (<em>clause léonine</em>). La participation aux résultats doit être proportionnelle au montant des apports.</div>
+    </div>
+    <div class="retenir">
+      <strong>Clause léonine</strong>
+      Est léonine la clause qui donne ou retire <em>tous</em> les bénéfices ou <em>toutes</em> les pertes à un associé, excluant les autres. Elle est nulle mais n'entraîne pas la nullité de la société entière.
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 16 novembre 2004, Belkhelfa c/ Rossier</span>
+      <span class="jp-rule">Une promesse unilatérale d'achat à prix fixé conclue par un tiers ne constitue pas une clause léonine : elle ne concerne que les rapports entre cédant et cessionnaire, sans affecter le pacte social.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 25 février 2005</span>
+      <span class="jp-rule">La clause de rachat n'est pas léonine dès lors que le bénéficiaire reste exposé au risque social en dehors de la période d'exercice de l'option.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 21 juin 2023</span>
+      <span class="jp-rule">La promesse de vente à prix déterminé en cas de départ du promettant n'est pas léonine car elle ne porte pas sur la répartition des bénéfices et des pertes.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #5 ═══ -->
+<div id="page-f5" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #5</span><h2>L'affectio societatis et la société créée de fait</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Textes applicables</span>
+      <div class="art-item"><strong>Art. 1832 C. civ.</strong> — Le contrat de société doit réunir trois conditions : réalisation d'apports, participation au résultat, <em>affectio societatis</em>.</div>
+      <div class="art-item"><strong>Art. 1844-10 C. civ.</strong> — Le non-respect d'une des conditions entraîne la nullité de la société.</div>
+    </div>
+    <div class="retenir">
+      <strong>Définition</strong>
+      L'affectio societatis est la volonté de collaborer sur un pied d'égalité — condition de nature psychologique, élément moral intentionnel du contrat de société. La société créée de fait est reconnue lorsque trois personnes se comportent comme des associés sans avoir formalisé de contrat.
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 23 juin 2004</span>
+      <span class="jp-rule">L'intention de s'associer ne peut se déduire de la seule participation financière à la réalisation d'un projet immobilier.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #6 ═══ -->
+<div id="page-f6" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #6</span><h2>La distinction du contrat de travail des autres contrats</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Contrat de société — Art. 1832 et 1844-10 C. civ.</span>
+      <div class="art-item">Trois conditions : réalisation d'apports · participation au résultat · affectio societatis. Le non-respect entraîne la nullité.</div>
+    </div>
+    <div class="retenir">
+      <strong>Contrat de travail — trois conditions</strong>
+      Un lien de <strong>subordination</strong> · une <strong>prestation de travail</strong> · une <strong>rémunération</strong>. Le lien de subordination est incompatible avec l'affectio societatis.
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 25 octobre 2005</span>
+      <span class="jp-rule">La requalification en contrat de société est impossible car la société disposait de tous les pouvoirs, révélant un lien de subordination incompatible avec l'affectio societatis.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 24 septembre 2003</span>
+      <span class="jp-rule">Le banquier, en s'immisçant dans la gestion de la société au-delà de son rôle de simple prêteur, doit être considéré comme un associé de fait.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #7 ═══ -->
+<div id="page-f7" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #7</span><h2>L'immatriculation et la personnalité juridique</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Textes applicables</span>
+      <div class="art-item"><strong>Art. 1842 C. civ. + Art. L. 210-6 C. com.</strong> (sociétés commerciales) — Les sociétés jouissent de la personnalité morale à compter de leur immatriculation. À défaut, elles ne peuvent avoir de droits et obligations.</div>
+      <div class="art-item"><strong>Art. 1843 C. civ. + Art. L. 210-6 C. com.</strong> — Dans l'attente de l'immatriculation, des engagements peuvent être pris au nom et pour le compte de la société en formation. Ceux qui agissent sont alors personnellement responsables des actes jusqu'à leur reprise par la société.</div>
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 23 mai 1977</span>
+      <span class="jp-rule">Une société peut être qualifiée de société en formation sans que ses statuts ne soient encore signés, et alors que le projet ne comporte que des accords informels.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 21 février 2012</span>
+      <span class="jp-rule">Les engagements juridiques d'une société qui n'a pas encore la personnalité morale sont sanctionnés de nullité.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #8 ═══ -->
+<div id="page-f8" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #8</span><h2>La reprise d'actes d'une société en formation</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Textes principaux</span>
+      <div class="art-item"><strong>Art. 1843 C. civ. + Art. L. 210-6 C. com.</strong> — Les actes passés pour le compte d'une société en formation sont repris par elle après immatriculation. Conditions : l'acte doit être juridique, conclu dans l'intérêt de la société, et conclu au nom et pour le compte de la société en formation.</div>
+    </div>
+    <div class="arts" style="margin-top:.5rem">
+      <span class="art-title">Modalités selon la forme sociale</span>
+      <div class="art-item"><strong>Art. R. 210-5 C. com.</strong> — SARL &emsp; <strong>Art. R. 210-6 C. com.</strong> — SAS &emsp; <strong>Art. R. 210-7 C. com.</strong> — SA</div>
+    </div>
+    <div class="retenir">
+      <strong>Les trois modes de reprise</strong>
+      <strong>(1) Reprise annexe</strong> — avant la signature des statuts (automatique si l'acte est annexé aux statuts) ·
+      <strong>(2) Reprise mandat</strong> — entre la signature des statuts et l'immatriculation, via mandat spécial, exprès et spécifique ·
+      <strong>(3) Reprise-balai</strong> — après l'immatriculation, par décision spéciale expresse à la majorité des associés.
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 2 février 2010 — Cass., 10 juin 2020</span>
+      <span class="jp-rule">Condition de prendre l'engagement juridique « au nom et pour le compte de la société en formation ».</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 29 novembre 2023</span>
+      <span class="jp-rule">Si un engagement n'est pas explicitement pris « au nom et pour le compte de la société en formation », les juges peuvent rechercher l'intention des parties pour éviter de prononcer la nullité (assouplissement).</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 14 novembre 2006 — Cass., 30 mars 2023</span>
+      <span class="jp-rule">La Cour confirme la prohibition du mandat général, implicite et tacite : le mandat doit préciser la nature des actes à passer.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 1er juillet 2008 — Cass., 14 janvier 2003</span>
+      <span class="jp-rule">L'engagement d'un associé peut être ratifié par un mandat donné après la conclusion de l'acte, mais avant l'immatriculation de la société.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 12 juillet 2004</span>
+      <span class="jp-rule">La reprise d'un acte après l'immatriculation n'est valable qu'après décision spéciale prise à la majorité des associés.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 28 septembre 2017</span>
+      <span class="jp-rule">Un acte passé par une personne en son nom, et non pour celui de la société en formation, n'est pas susceptible de reprise.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 15 octobre 2015 — Cass., 20 février 2019</span>
+      <span class="jp-rule">La reprise n'est valable qu'à l'un des trois modes légaux. Aucune forme tacite de reprise après immatriculation n'est valable.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 21 février 2012</span>
+      <span class="jp-rule">Les actes qui ne sont pas accomplis pour le compte de la société en formation sont nuls.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #9 ═══ -->
+<div id="page-f9" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #9</span><h2>Les associés et leur participation aux décisions</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Textes applicables</span>
+      <div class="art-item"><strong>Art. 1844 C. civ.</strong> — Tout associé a le droit de participer aux décisions collectives. En cas de démembrement, nu-propriétaire et usufruitier participent ensemble. Le droit de vote appartient au nu-propriétaire, sauf pour les décisions sur l'affectation des bénéfices.</div>
+      <div class="art-item"><strong>Loi SOILIHI du 19 juillet 2019</strong> — Si une part est grevée d'un usufruit, le nu-propriétaire et l'usufruitier détiennent le droit de participer aux décisions collectives.</div>
+      <div class="art-item"><strong>Art. L. 225-110 C. com.</strong> — Dans les SA : l'usufruitier vote dans les assemblées ordinaires ; le nu-propriétaire dans les assemblées extraordinaires.</div>
+    </div>
+    <div class="retenir">
+      <strong>À retenir — ordre public</strong>
+      Le droit de vote d'un actionnaire est d'ordre public : on ne peut y déroger. Le droit du nu-propriétaire de participer aux décisions collectives est aussi d'ordre public.
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 4 janvier 1994, « De Gaste »</span>
+      <span class="jp-rule">Consacre pour la première fois la qualité d'associé au nu-propriétaire.</span>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., avis, 1er décembre 2021 — confirmé Cass., 16 février 2022</span>
+      <span class="jp-rule">L'usufruitier est dépourvu de la qualité d'associé, mais peut provoquer une délibération sur une question ayant une incidence sur son droit de jouissance.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 23 octobre 2007, « Arts et Entreprises »</span>
+      <span class="jp-rule">Les statuts d'une SAS ne peuvent pas priver un associé en cours d'exclusion de son droit de participer et voter sur cette décision.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 13 juillet 2005</span>
+      <span class="jp-rule">Interdit toute clause dans les statuts qui vise à ce que l'usufruitier représente le propriétaire de sorte à lui interdire l'accès à l'assemblée.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 15 septembre 2016</span>
+      <span class="jp-rule">L'usufruitier s'est légitimement vu refuser son droit de vote et de participation aux décisions collectives quand elles ne concernent pas l'affectation des bénéfices.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 31 mars 2004</span>
+      <span class="jp-rule">Nullité d'une clause empêchant l'usufruitier de voter les décisions relatives à l'affectation des bénéfices.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #10 ═══ -->
+<div id="page-f10" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #10</span><h2>La loyauté d'un associé</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="retenir">
+      <strong>Silence de la loi</strong>
+      Il n'existe aucun texte imposant expressément un devoir de loyauté à un associé. C'est la jurisprudence qui a construit ce régime.
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 15 novembre 2011</span>
+      <span class="jp-rule">Un associé n'est tenu à aucune obligation de loyauté ; mais ne doit pas commettre des actes de concurrence déloyaux.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 19 mars 2013</span>
+      <span class="jp-rule">Les associés d'une SARL peuvent exercer une activité concurrente, sauf cas de déloyauté et stipulations contraires.</span>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 27 février 1996, « Vilgrain »</span>
+      <span class="jp-rule">Le dirigeant est tenu à un devoir de loyauté envers les associés, lui interdisant de tirer un avantage personnel d'une opération de cession dont il est l'intermédiaire.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 10 juillet 2002 — Clause de non-concurrence</span>
+      <span class="jp-rule">La clause de non-concurrence doit être : indispensable et proportionnée aux intérêts de la société · limitée dans le temps · limitée dans l'espace · tenir compte des spécificités de l'emploi du salarié · comporter une contrepartie financière. Ces cinq conditions sont cumulatives.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #11 ═══ -->
+<div id="page-f11" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #11</span><h2>La sanction de la gestion</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Textes applicables</span>
+      <div class="art-item"><strong>Art. 1843-5 C. civ.</strong> — Un ou plusieurs associés peuvent intenter l'action sociale en responsabilité contre les gérants.</div>
+      <div class="art-item"><strong>Art. 1240 C. civ.</strong> — Les associés peuvent aussi engager la responsabilité civile pour obtenir réparation de leur préjudice personnel.</div>
+    </div>
+    <div class="retenir">
+      <strong>Deux formes d'action sociale</strong>
+      <strong>Ut universi</strong> — l'action en responsabilité engagée par les dirigeants eux-mêmes (un dirigeant agit pour le compte de la société contre un dirigeant fautif). <strong>Ut singuli</strong> — l'action en responsabilité dirigée par l'un des associés pour le compte de la société contre un dirigeant fautif.
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 11 octobre 2023</span>
+      <span class="jp-rule">Des associés sans qualité de dirigeant ont pu intenter une action ut singuli sans qu'une action ut universi n'ait été préalablement intentée.</span>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 7 mai 2025</span>
+      <span class="jp-rule">Les associés sont investis d'un droit propre d'agir en réparation du préjudice subi par la société. L'action ut singuli n'est plus subsidiaire à l'action ut universi.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #12 ═══ -->
+<div id="page-f12" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #12</span><h2>L'exclusion d'un associé</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Textes applicables</span>
+      <div class="art-item"><strong>Art. L. 227-16 C. com.</strong> — Seul fondement légal pour les SAS et les clauses d'exclusion.</div>
+      <div class="art-item"><strong>Art. L. 227-19 C. com.</strong> — Modalités de l'exclusion d'un associé dans une SAS.</div>
+      <div class="art-item"><strong>Art. L. 228-27 C. com.</strong> — L'exclusion est autorisée par le législateur quand l'associé ne libère pas la totalité des sommes à verser sur le montant des actions souscrites.</div>
+    </div>
+    <div class="retenir">
+      <strong>Sources d'exclusion</strong>
+      L'exclusion peut être autorisée par le législateur, prévue par les statuts, ou décidée par le juge.
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence — Conditions des clauses d'exclusion</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 13 juillet 2010 — Condition 1</span>
+      <span class="jp-rule">Les clauses doivent respecter le principe du contradictoire / présenter des moyens de défense, et prévoir l'organe qui prononce l'exclusion.</span>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 27 octobre 2007, « Arts et Entreprises » — Condition 2</span>
+      <span class="jp-rule">Les clauses ne doivent pas supprimer le droit de vote de l'associé concerné sur la décision d'exclusion.</span>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 9 novembre 2022 — Condition 3</span>
+      <span class="jp-rule">L'exclusion doit être pour juste motif, mentionné dans les statuts.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 13 décembre 1994</span>
+      <span class="jp-rule">La jurisprudence admet la validité des clauses statutaires d'exclusion sous conditions.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 12 mars 1996, « Nollet »</span>
+      <span class="jp-rule">La Cour de cassation refuse d'ordonner l'exclusion si elle n'est pas prévue par un texte ou les statuts.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 24 octobre 2018</span>
+      <span class="jp-rule">La Cour de cassation admet l'exclusion d'un associé à l'unanimité moins sa voix.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 29 septembre 2015 — Cass., 9 mars 2017</span>
+      <span class="jp-rule">Les conditions de la clause d'exclusion ne s'appliquent pas à la clause d'éviction (perte automatique de qualité d'associé en raison d'un événement objectif).</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #13 ═══ -->
+<div id="page-f13" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #13</span><h2>La révocation du dirigeant</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Principe général</span>
+      <div class="art-item"><strong>Art. 1851 C. civ.</strong> — La révocation du dirigeant par les associés est permise dans toutes les sociétés. Deux types : pour juste motif, ou ad nutum (sans raison).</div>
+    </div>
+    <div class="arts" style="margin-top:.5rem">
+      <span class="art-title">SARL</span>
+      <div class="art-item"><strong>Art. L. 223-28 C. com.</strong> — Révocation possible pour juste motif, sauf stipulations contraires.</div>
+      <div class="art-item"><strong>Art. L. 223-29 C. com.</strong> — Révocation à la majorité absolue.</div>
+      <div class="art-item"><strong>Art. L. 223-25 C. com.</strong> — Dommages et intérêts possibles, sans réintégration.</div>
+    </div>
+    <div class="arts" style="margin-top:.5rem">
+      <span class="art-title">SA</span>
+      <div class="art-item"><strong>Art. L. 225-18 C. com.</strong> — Les administrateurs peuvent être révoqués ad nutum.</div>
+      <div class="art-item"><strong>Art. L. 225-55 C. com.</strong> — Le Directeur Général doit être révoqué pour juste motif.</div>
+      <div class="art-item"><strong>Art. L. 225-51-1 C. com.</strong> — Le PDG peut être révoqué ad nutum.</div>
+    </div>
+    <div class="arts" style="margin-top:.5rem">
+      <span class="art-title">SAS</span>
+      <div class="art-item"><strong>Art. L. 227-5 C. com.</strong> — Les modalités de direction sont définies dans les statuts (nomination, révocation).</div>
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 22 octobre 2013 (SARL)</span>
+      <span class="jp-rule">La révocation ad nutum du gérant d'une SARL ne doit pas être abusive : elle doit respecter le contradictoire et ne pas se faire de manière vexatoire.</span>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 14 mai 2013 (SA)</span>
+      <span class="jp-rule">Même règle pour la révocation ad nutum du dirigeant d'une SA.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 26 novembre 2013 (SA — DG)</span>
+      <span class="jp-rule">La révocation du directeur général peut être libre, mais en l'absence de juste motif, elle engage la responsabilité de la société et ouvre droit à indemnisation.</span>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 10 juillet 2012 — Cass., 9 mars 2022 (SAS)</span>
+      <span class="jp-rule">La révocation du dirigeant d'une SAS ne doit pas être abusive. Les modalités sont libres dans les statuts, mais doivent respecter le contradictoire et ne pas être vexatoires. Un acte extrastatutaire ne peut pas modifier les statuts hors de leur procédure de révision.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 27 octobre 2009</span>
+      <span class="jp-rule">Les litiges impliquant la responsabilité du dirigeant à l'occasion d'une société commerciale relèvent de la compétence du tribunal de commerce, même sans avoir la qualité de commerçant ou de dirigeant de droit.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #14 ═══ -->
+<div id="page-f14" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #14</span><h2>La responsabilité du dirigeant</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Droit commun</span>
+      <div class="art-item"><strong>Art. 1843-5 C. civ.</strong> — Consacre les modalités pour invoquer les actions ut universi et ut singuli (responsabilité de droit commun du dirigeant).</div>
+    </div>
+    <div class="arts" style="margin-top:.5rem">
+      <span class="art-title">SARL — Art. L. 223-22 C. com. &emsp; SA — Art. L. 225-251 et L. 225-252 C. com. &emsp; SAS — Art. L. 227-8 C. com. (renvoi à L. 225-251 et L. 225-252)</span>
+      <div class="art-item">Consacrent l'action sociale et la responsabilité personnelle du dirigeant vis-à-vis de la société et des tiers.</div>
+    </div>
+    <div class="retenir">
+      <strong>Quand un dirigeant cause un préjudice à un tiers, c'est la société qui est responsable</strong> — sauf si le dirigeant a commis une <em>faute détachable</em> de ses fonctions.
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 20 mai 2003, « Seusse »</span>
+      <span class="jp-rule">Le dirigeant est personnellement responsable s'il commet une faute détachable de ses fonctions : faute d'une particulière gravité (Cass. 18 mai 2010), commise intentionnellement, incompatible avec les fonctions de dirigeant (Cass. 27 mai 2014). Ces trois critères sont cumulatifs.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 28 septembre 2010 — Cass., 10 mars 2016</span>
+      <span class="jp-rule">Le dirigeant qui n'a pas souscrit à une assurance obligatoire commet une infraction pénale → faute détachable automatique.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass. crim., 5 avril 2018</span>
+      <span class="jp-rule">Peu importe que l'infraction pénale soit intentionnelle ou non : toute infraction pénale constitue une faute personnelle.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass. com., 3 mai 2018</span>
+      <span class="jp-rule">Une petite infraction pénale n'est pas automatiquement une faute détachable (nuance).</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 18 septembre 2019</span>
+      <span class="jp-rule">Nul n'est responsable de son propre fait : un dirigeant ne peut se retourner contre la société alors qu'il a commis lui-même une faute détachable dans son infraction pénale.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 27 février 1996, « Vilgrain »</span>
+      <span class="jp-rule">Le dirigeant est tenu à un devoir de loyauté envers les associés, lui interdisant de tirer un avantage personnel d'une cession dont il est l'intermédiaire.</span>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 7 mai 2025</span>
+      <span class="jp-rule">Les associés sont investis d'un droit propre d'agir en réparation du préjudice subi par la société. L'action ut singuli n'est plus subsidiaire.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #15 ═══ -->
+<div id="page-f15" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #15</span><h2>Les abus de majorité, de minorité et d'égalité</h2></div>
+
+  <div class="sous-titre">Abus de majorité</div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Sanctions</span>
+      <div class="art-item"><strong>Art. 1844-10 C. civ.</strong> — Nullité de la délibération (dirigée contre la société par les minoritaires).</div>
+      <div class="art-item"><strong>Art. 1240 C. civ.</strong> — Dommages et intérêts (dirigés contre les majoritaires par les minoritaires).</div>
+      <div class="art-item"><strong>Art. 1844-10-1 C. civ.</strong> — Protection de la société contre une annulation disproportionnée.</div>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 18 avril 1961, « Schuman Picard » — trois conditions cumulatives</span>
+      <span class="jp-rule">(1) Décision contraire à l'intérêt social · (2) Qui favorise uniquement les majoritaires · (3) Au détriment des minoritaires.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 9 juillet 2025</span>
+      <span class="jp-rule">La nullité de la délibération et les dommages et intérêts sont des sanctions distinctes pouvant être actionnées simultanément.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 30 novembre 2004</span>
+      <span class="jp-rule">Il n'y a abus de majorité que si la décision est contraire à l'intérêt de la société ET prise uniquement pour avantager les majoritaires contre les minoritaires.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 8 novembre 2023</span>
+      <span class="jp-rule">Une décision adoptée à l'unanimité n'est pas un abus de majorité : l'unanimité chasse l'abus (pas de majorité contre une minorité).</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 6 juin 1990 — Cass., 10 juin 2010</span>
+      <span class="jp-rule">La mise en réserve systématique peut constituer un abus de majorité (1990) ou non (2010, en l'absence de changement de politique d'investissement). Appréciation au cas par cas.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 30 août 2023</span>
+      <span class="jp-rule">Des rémunérations injustifiées au regard des fonctions exercées constituent un abus de majorité.</span>
+    </div>
+  </div>
+
+  <div class="sous-titre">Abus de minorité</div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Sanctions</span>
+      <div class="art-item"><strong>Art. 1240 C. civ.</strong> — Dommages et intérêts. Pas d'annulation (il n'y a pas de délibération prise).</div>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 9 mars 1993, « Flandin » — quatre conditions cumulatives</span>
+      <span class="jp-rule">(1) Décision contre l'intérêt social · (2) Qui favorise les minoritaires · (3) Au détriment des majoritaires · (4) En bloquant une opération essentielle.</span>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 9 mars 1993, « Flandin » — sanction</span>
+      <span class="jp-rule">Le juge peut nommer un mandataire ad hoc pour se substituer aux minoritaires et voter en leur lieu et place. Il ne peut pas fixer lui-même le sens du vote (Cass. 16 décembre 2009).</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 21 décembre 2017</span>
+      <span class="jp-rule">La reconnaissance de l'abus de minorité ne vaut pas validité d'une résolution adoptée à majorité insuffisante.</span>
+    </div>
+  </div>
+
+  <div class="sous-titre">Abus d'égalité</div>
+  <div class="fiche">
+    <div class="retenir">
+      <strong>Quatre conditions</strong>
+      (1) Contraire à l'intérêt social · (2) Bloque une opération essentielle · (3) Contraire à l'intérêt de la société égalitaire · (4) Dans l'intérêt de l'autre associé.
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 21 juin 2023</span>
+      <span class="jp-rule">Une décision devant nécessairement être prise à l'unanimité dans une société de deux associés n'empêche pas la caractérisation d'un abus d'égalité.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+<!-- ══════════════════════════════════════════ FICHE #16 ═══ -->
+<div id="page-f16" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Fiche #16</span><h2>Les transformations de sociétés</h2></div>
+  <div class="fiche">
+    <h3>Fondements légaux</h3>
+    <div class="arts">
+      <span class="art-title">Principe général</span>
+      <div class="art-item"><strong>Art. 1844-3 C. civ. + Art. L. 210-6 C. com.</strong> — La transformation est l'opération par laquelle une société change de forme juridique tout en conservant sa personnalité morale. Elle prend la forme d'une modification des statuts.</div>
+      <div class="art-item"><strong>Attention</strong> — Il n'est pas possible de transformer un GIE ou une association en société (la personnalité morale ne survit pas à l'opération ; il faudra passer par une dissolution puis une création).</div>
+    </div>
+    <div class="arts" style="margin-top:.5rem">
+      <span class="art-title">Conditions spéciales</span>
+      <div class="art-item"><strong>Art. L. 225-243 C. com.</strong> — Pour se transformer, une SA doit avoir au moins deux ans d'existence.</div>
+      <div class="art-item"><strong>Art. L. 223-43 C. com.</strong> — La transformation d'une SARL en SNC suppose un vote unanime des associés (augmentation de leurs engagements).</div>
+      <div class="art-item"><strong>Art. L. 225-245 C. com.</strong> — Même condition pour les SA.</div>
+      <div class="art-item"><strong>Art. 1836 al. 1 C. civ.</strong> — Les statuts ne peuvent être modifiés qu'à l'unanimité, sauf clause contraire.</div>
+      <div class="art-item"><strong>Art. 1836 al. 2 C. civ.</strong> — Les engagements d'un associé ne peuvent être augmentés sans son consentement.</div>
+      <div class="art-item"><strong>Art. L. 227-3 C. com.</strong> — La transformation en SAS doit se faire à l'unanimité.</div>
+    </div>
+    <div class="bloc" style="margin-top:1rem">
+      <h4>Jurisprudence</h4>
+    </div>
+    <div class="jp-block jp-main">
+      <span class="jp-title">Cass., 23 octobre 1974</span>
+      <span class="jp-rule">Une société nulle ne peut évoluer vers une forme qui lui conférerait la validité qu'elle n'a pas.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 12 novembre 1992</span>
+      <span class="jp-rule">Une société dissoute ne peut se transformer car l'opération n'est pas rattachable aux besoins de la liquidation.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 30 octobre 2000</span>
+      <span class="jp-rule">La transformation d'une SNC en SARL n'entraîne pas la création d'une personne morale nouvelle.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 22 mai 1973</span>
+      <span class="jp-rule">Les organes de l'ancienne forme disparaissent. Les dirigeants dont le poste est supprimé ne peuvent contester la transformation, sauf si elle avait pour objet exclusif de porter atteinte à leurs droits.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 10 janvier 1973</span>
+      <span class="jp-rule">Si la société devient à responsabilité illimitée, les anciens créanciers gardent une responsabilité limitée pour les dettes d'avant la transformation.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 13 mars 1990</span>
+      <span class="jp-rule">Les créanciers anciens gardent les règles de responsabilité illimitée même si la société passe ensuite en responsabilité limitée.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 20 février 2001</span>
+      <span class="jp-rule">Le cautionnement consenti avant la transformation est maintenu après celle-ci, sauf stipulation contraire.</span>
+    </div>
+    <div class="jp-block">
+      <span class="jp-title">Cass., 31 octobre 2012</span>
+      <span class="jp-rule">La transformation de la société partie à un contrat n'entraîne pas cessation de ce contrat.</span>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+
+
+<!-- ════════════════════════════════════════ FLASHCARDS ═══ -->
+<div id="page-fc" class="page-content">
+<div style="padding:1rem 1.5rem 0"><label class="btn-home" for="r-home">← Accueil</label></div>
+<main>
+<div class="partie">
+  <div class="partie-titre"><span class="pnum">Flashcards</span><h2>Révision active — Droit des Sociétés</h2></div>
+  <div class="flash-intro">
+    <p>Choisissez une fiche et un thème (fondements légaux ou jurisprudences), puis lancez la session. Les cartes défaillantes sont suivies automatiquement.</p>
+  </div>
+
+  <div class="flash-player">
+    <div class="flash-start" id="flash-start">
+      <h4>Configurer la session</h4>
+      <p>Filtrez par fiche et par thème pour concentrer votre révision.</p>
+      <div class="flash-toolbar">
+        <div>
+          <label for="flash-fiche">Fiche</label>
+          <select id="flash-fiche">
+            <option value="all">Toutes les fiches</option>
+          </select>
+        </div>
+        <div>
+          <label for="flash-theme">Thème</label>
+          <select id="flash-theme">
+            <option value="all">Fondements légaux + Jurisprudences</option>
+            <option value="legal">Fondements légaux uniquement</option>
+            <option value="jp">Jurisprudences uniquement</option>
+          </select>
+        </div>
+      </div>
+      <div class="flash-start-actions">
+        <button type="button" class="flash-start-btn" id="flash-start-btn">Commencer la session</button>
+      </div>
+    </div>
+
+    <div class="flash-stage" id="flash-stage" hidden>
+      <div class="flash-quizlet">
+        <div class="flash-progress">
+          <div id="flash-eyebrow"></div>
+          <div id="flash-count">Chargement…</div>
+        </div>
+        <div class="flash-stats">
+          <div class="flash-stat">Vues <strong id="flash-seen">0</strong></div>
+          <div class="flash-stat">À revoir <strong id="flash-bad">0</strong></div>
+          <div class="flash-stat">Maîtrisées <strong id="flash-good">0</strong></div>
+        </div>
+        <div class="flash-card-shell" style="margin-top:.8rem">
+          <button type="button" class="flash-card-btn" id="flash-card">
+            <div class="flash-face-label" id="flash-face-label">Question</div>
+            <div class="flash-card-text" id="flash-card-text"></div>
+            <div class="flash-card-foot">Cliquez sur la carte pour la retourner</div>
+          </button>
+        </div>
+        <div class="flash-feedback" id="flash-feedback" hidden>
+          <button type="button" class="flash-feedback-btn bad" id="flash-mark-bad">À revoir</button>
+          <button type="button" class="flash-feedback-btn good" id="flash-mark-good">Je connais</button>
+        </div>
+        <div class="flash-nav">
+          <button type="button" class="flash-nav-btn" id="flash-prev">Précédent</button>
+          <div class="flash-count" id="flash-progress-text"></div>
+          <button type="button" class="flash-nav-btn primary" id="flash-next">Suivant</button>
+          <button type="button" class="flash-nav-btn toggle" id="flash-review-only">Cartes faibles</button>
+          <button type="button" class="flash-nav-btn" id="flash-shuffle">Mélanger</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-empty" id="flash-empty" hidden>Aucune carte ne correspond au filtre choisi.</div>
+  </div>
+
+  <!-- Source cachée des flashcards -->
+  <div class="flash-source">
+
+    <div class="fiche" data-fiche="Fiche #1 — Conditions d'existence">
+      <!-- LÉGAUX -->
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Que prévoit l'art. 1832 C. civ. pour la constitution d'une société ?</summary><div class="flash-answer">Apports de biens ou d'industrie par <strong>deux associés au moins</strong>, en vue de partager le bénéfice ou de profiter de l'économie, avec contribution aux pertes.</div></details>
+            <details class="flashcard"><summary>Quelle loi permet la société unipersonnelle et pour quelles formes ?</summary><div class="flash-answer"><strong>Loi du 11 juillet 1985</strong> — société à volonté unique possible : <strong>EURL</strong> (SARL unipersonnelle) et <strong>SASU</strong> (SAS unipersonnelle).</div></details>
+            <details class="flashcard"><summary>Quelles sont les trois conditions cumulatives d'existence d'une société ?</summary><div class="flash-answer"><strong>(1)</strong> Réalisation d'apports · <strong>(2)</strong> Participation aux résultats (bénéfices et pertes) · <strong>(3)</strong> Affectio societatis (volonté de collaborer sur un pied d'égalité).</div></details>
+            <details class="flashcard"><summary>Art. 1844-10 C. civ. — quelle sanction en cas de défaut d'une condition ?</summary><div class="flash-answer"><strong>Nullité de la société.</strong></div></details>
+          </div>
+        </div>
+      </div>
+      <!-- JP -->
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 16 juillet 1997 — l'influence est-elle un apport en industrie ?</summary><div class="flash-answer"><strong>Non.</strong> L'influence ne constitue pas un savoir-faire ou une expérience, elle ne peut donc pas être qualifiée d'apport en industrie.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #2 — Nullité / Objet social">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Art. 1833 C. civ. — quelle exigence sur l'objet social ?</summary><div class="flash-answer">L'objet social doit être <strong>licite</strong>.</div></details>
+            <details class="flashcard"><summary>Qu'a changé l'ordonnance du 12 mars 2025 sur la nullité pour objet illicite ?</summary><div class="flash-answer">La <strong>nullité</strong> est supprimée pour objet illicite : la sanction devient la <strong>dissolution sans rétroactivité</strong>. La nullité ne subsiste qu'en cas d'incapacité d'un fondateur ou de défaut du nombre minimum d'associés.</div></details>
+            <details class="flashcard"><summary>Art. 1835 C. civ. — que doivent contenir les statuts ?</summary><div class="flash-answer">Les statuts doivent inclure <strong>l'objet social</strong> (l'activité choisie par les associés).</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>CJCE, 13 novembre 1990, Marleasing — objet statutaire ou réel ?</summary><div class="flash-answer">La CJUE retient l'<strong>objet social statutaire</strong> pour apprécier l'illicéité d'une SARL/EURL.</div></details>
+            <details class="flashcard"><summary>Cass., 10 novembre 2015 — quel alignement jurisprudentiel ?</summary><div class="flash-answer">La Cour de cassation s'aligne sur la CJCE et retient désormais l'<strong>objet statutaire</strong> (et non l'objet réel) pour apprécier l'illicéité.</div></details>
+            <details class="flashcard"><summary>Cass., 27 mai 2015 — activité réglementée sans autorisation ?</summary><div class="flash-answer">Une société ne peut valablement se constituer avec un objet impliquant une <strong>activité réglementée sans autorisation préalable</strong>.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #3 — Apports">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Art. 1843-2 C. civ. — droits des associés selon l'apport ?</summary><div class="flash-answer">Droits <strong>proportionnels aux apports</strong>. Exception : les apports en industrie donnent seulement droit au partage des bénéfices et des pertes (sans contribuer au capital).</div></details>
+            <details class="flashcard"><summary>Art. 1843-3 C. civ. — obligations de l'associé apporteur ?</summary><div class="flash-answer">Apporter ce qu'il a promis · garantir la qualité des biens · payer les intérêts si défaut de versement · rendre compte des gains en cas d'apport en industrie.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 16 juillet 1997 — l'influence peut-elle être un apport en industrie ?</summary><div class="flash-answer"><strong>Non.</strong> L'influence n'est pas un savoir-faire ou une expérience.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #4 — Participation au résultat">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Art. 1844-1 C. civ. — qu'est-ce qu'une clause léonine ?</summary><div class="flash-answer">Clause donnant la totalité des profits ou la totalité des pertes à un associé, excluant les autres. Elle est <strong>nulle</strong>.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 16 novembre 2004, Belkhelfa c/ Rossier — promesse d'achat à prix fixe = clause léonine ?</summary><div class="flash-answer"><strong>Non.</strong> La promesse conclue par un tiers ne concerne que les rapports entre cédant et cessionnaire, sans affecter le pacte social.</div></details>
+            <details class="flashcard"><summary>Cass., 25 février 2005 — clause de rachat léonine ?</summary><div class="flash-answer"><strong>Non</strong>, si le bénéficiaire reste exposé au risque social en dehors de la période d'exercice de l'option.</div></details>
+            <details class="flashcard"><summary>Cass., 21 juin 2023 — promesse de vente à prix déterminé = clause léonine ?</summary><div class="flash-answer"><strong>Non.</strong> Elle ne porte pas sur la répartition des bénéfices et des pertes.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #5 — Affectio societatis">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Comment définir l'affectio societatis ?</summary><div class="flash-answer">Volonté de collaborer sur un <strong>pied d'égalité</strong> — condition psychologique, élément intentionnel du contrat de société (Art. 1832 C. civ.).</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 23 juin 2004 — participation financière suffit-elle à prouver l'affectio ?</summary><div class="flash-answer"><strong>Non.</strong> L'intention de s'associer ne peut se déduire de la seule participation financière à un projet immobilier.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #6 — Contrat de travail">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Quelles sont les trois conditions du contrat de travail ?</summary><div class="flash-answer"><strong>Lien de subordination</strong> · prestation de travail · rémunération. Le lien de subordination est incompatible avec l'affectio societatis.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 25 octobre 2005 — lien de subordination et affectio ?</summary><div class="flash-answer">La requalification en contrat de société est impossible lorsque la société dispose de tous les pouvoirs : lien de subordination incompatible avec l'affectio societatis.</div></details>
+            <details class="flashcard"><summary>Cass., 24 septembre 2003 — le banquier immiscé dans la gestion ?</summary><div class="flash-answer">Le banquier qui s'immisce dans la gestion au-delà de son rôle de prêteur doit être considéré comme un <strong>associé de fait</strong>.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #7 — Immatriculation">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Art. 1842 C. civ. — quand la personnalité morale naît-elle ?</summary><div class="flash-answer">À compter de <strong>l'immatriculation</strong>. À défaut, la société ne peut avoir ni droits ni obligations.</div></details>
+            <details class="flashcard"><summary>Art. 1843 C. civ. — sort des engagements pris avant l'immatriculation ?</summary><div class="flash-answer">Ceux qui agissent pour la société en formation sont <strong>personnellement responsables</strong> jusqu'à la reprise par la société immatriculée.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 23 mai 1977 — statuts non signés = société en formation possible ?</summary><div class="flash-answer"><strong>Oui.</strong> La société en formation peut être reconnue même sans statuts signés, dès lors qu'il existe des accords informels.</div></details>
+            <details class="flashcard"><summary>Cass., 21 février 2012 — actes sans personnalité morale ?</summary><div class="flash-answer">Les engagements juridiques d'une société sans personnalité morale sont <strong>nuls</strong>.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #8 — Reprise d'actes">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Quels sont les trois modes de reprise d'actes d'une société en formation ?</summary><div class="flash-answer"><strong>(1) Reprise annexe</strong> (avant statuts, acte annexé) · <strong>(2) Reprise mandat</strong> (entre statuts et immatriculation, mandat spécial et spécifique) · <strong>(3) Reprise-balai</strong> (après immatriculation, décision spéciale à la majorité).</div></details>
+            <details class="flashcard"><summary>Art. R. 210-5 / -6 / -7 C. com. — à quoi servent-ils ?</summary><div class="flash-answer">Ils précisent les modalités de reprise selon la forme : <strong>R. 210-5</strong> (SARL) · <strong>R. 210-6</strong> (SAS) · <strong>R. 210-7</strong> (SA).</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 2 févr. 2010 — condition fondamentale pour la reprise ?</summary><div class="flash-answer">L'engagement doit être pris <strong>« au nom et pour le compte de la société en formation »</strong>.</div></details>
+            <details class="flashcard"><summary>Cass., 29 novembre 2023 — assouplissement de la condition ?</summary><div class="flash-answer">Si la mention n'est pas explicite, les juges peuvent rechercher <strong>l'intention des parties</strong> pour éviter la nullité.</div></details>
+            <details class="flashcard"><summary>Cass., 14 novembre 2006 — mandat général admis ?</summary><div class="flash-answer"><strong>Non.</strong> Le mandat doit être spécial, exprès et spécifique (préciser la nature des actes à passer). Prohibé : mandat général, implicite ou tacite.</div></details>
+            <details class="flashcard"><summary>Cass., 12 juillet 2004 — reprise-balai : quelles conditions ?</summary><div class="flash-answer">Décision <strong>spéciale</strong>, <strong>expresse</strong>, prise à la <strong>majorité des associés</strong> après l'immatriculation.</div></details>
+            <details class="flashcard"><summary>Cass., 28 septembre 2017 — acte passé en son nom propre ?</summary><div class="flash-answer">Un acte passé en son nom personnel (et non pour le compte de la société en formation) n'est <strong>pas susceptible de reprise</strong>.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #9 — Associés / Décisions">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Art. 1844 C. civ. — droit de vote en cas de démembrement ?</summary><div class="flash-answer">Le droit de vote appartient au <strong>nu-propriétaire</strong>, sauf pour les décisions sur l'affectation des bénéfices (attribuées à l'usufruitier).</div></details>
+            <details class="flashcard"><summary>Loi SOILIHI 2019 — droits en cas d'usufruit sur parts ?</summary><div class="flash-answer">Le nu-propriétaire et l'usufruitier ont tous deux le <strong>droit de participer</strong> aux décisions collectives.</div></details>
+            <details class="flashcard"><summary>Art. L. 225-110 C. com. — répartition du vote dans les SA ?</summary><div class="flash-answer"><strong>Usufruitier</strong> : vote dans les AG ordinaires · <strong>Nu-propriétaire</strong> : vote dans les AG extraordinaires.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 4 janvier 1994, « De Gaste » — qualité d'associé ?</summary><div class="flash-answer">Consacre pour la première fois la <strong>qualité d'associé du nu-propriétaire</strong>.</div></details>
+            <details class="flashcard"><summary>Cass. avis 1er déc. 2021 — qualité d'associé de l'usufruitier ?</summary><div class="flash-answer"><strong>Non</strong> — l'usufruitier n'a pas la qualité d'associé, mais peut provoquer une délibération sur une question touchant son droit de jouissance.</div></details>
+            <details class="flashcard"><summary>Cass., 23 octobre 2007, « Arts et Entreprises » — vote d'exclusion ?</summary><div class="flash-answer">Les statuts d'une SAS ne peuvent pas priver l'associé en cours d'exclusion de son droit de <strong>participer et voter</strong> sur cette décision.</div></details>
+            <details class="flashcard"><summary>Cass., 31 mars 2004 — clause excluant le vote sur bénéfices ?</summary><div class="flash-answer"><strong>Nulle</strong> : la clause empêchant l'usufruitier de voter sur l'affectation des bénéfices est sanctionnée de nullité.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #10 — Loyauté">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Existe-t-il un texte imposant un devoir de loyauté à un associé ?</summary><div class="flash-answer"><strong>Non.</strong> La loi est silencieuse. C'est la jurisprudence qui a construit ce régime.</div></details>
+            <details class="flashcard"><summary>Cinq conditions de validité d'une clause de non-concurrence (Cass. 2002) ?</summary><div class="flash-answer">Indispensable et proportionnée · limitée dans le temps · limitée dans l'espace · adaptée aux spécificités de l'emploi · contrepartie financière. <strong>Conditions cumulatives.</strong></div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 15 novembre 2011 — un associé est-il tenu à la loyauté ?</summary><div class="flash-answer"><strong>Non</strong>, mais il ne doit pas commettre des actes de <strong>concurrence déloyaux</strong>.</div></details>
+            <details class="flashcard"><summary>Cass., 27 février 1996, « Vilgrain » — loyauté du dirigeant ?</summary><div class="flash-answer">Le dirigeant est tenu à un devoir de loyauté envers les associés : il ne peut tirer un avantage personnel d'une opération de cession dont il est l'intermédiaire.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #11 — Sanction de la gestion">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Art. 1843-5 C. civ. — qui peut intenter l'action sociale ?</summary><div class="flash-answer">Un ou plusieurs associés peuvent intenter l'<strong>action sociale en responsabilité</strong> contre les gérants (ut universi ou ut singuli).</div></details>
+            <details class="flashcard"><summary>Différence entre ut universi et ut singuli ?</summary><div class="flash-answer"><strong>Ut universi</strong> : un dirigeant agit pour la société contre un dirigeant fautif. <strong>Ut singuli</strong> : un associé agit pour le compte de la société contre un dirigeant fautif.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 7 mai 2025 — ut singuli encore subsidiaire ?</summary><div class="flash-answer"><strong>Non.</strong> Les associés ont un droit propre d'agir. L'action ut singuli <strong>n'est plus subsidiaire</strong> à l'action ut universi.</div></details>
+            <details class="flashcard"><summary>Cass., 11 octobre 2023 — ut singuli sans ut universi préalable ?</summary><div class="flash-answer"><strong>Admis.</strong> Des associés non-dirigeants ont pu intenter une action ut singuli sans qu'une action ut universi n'ait été préalablement intentée.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #12 — Exclusion d'un associé">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Art. L. 227-16 C. com. — à quoi sert-il ?</summary><div class="flash-answer">Seul fondement légal pour les <strong>clauses d'exclusion dans les SAS</strong>.</div></details>
+            <details class="flashcard"><summary>Art. L. 228-27 C. com. — exclusion légale prévue ?</summary><div class="flash-answer">Exclusion autorisée quand l'associé ne libère pas la totalité des sommes dues sur les actions souscrites.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Trois conditions des clauses d'exclusion (Cass. 2010, 2007, 2022) ?</summary><div class="flash-answer"><strong>(1)</strong> Respecter le contradictoire et prévoir l'organe compétent · <strong>(2)</strong> Ne pas supprimer le droit de vote de l'exclu · <strong>(3)</strong> Être fondée sur un juste motif mentionné dans les statuts.</div></details>
+            <details class="flashcard"><summary>Cass., 12 mars 1996, « Nollet » — exclusion judiciaire sans texte ?</summary><div class="flash-answer"><strong>Refusée.</strong> Le juge ne peut pas ordonner l'exclusion si elle n'est pas prévue par un texte ou les statuts.</div></details>
+            <details class="flashcard"><summary>Clause d'exclusion vs clause d'éviction ?</summary><div class="flash-answer">La <strong>clause d'éviction</strong> entraîne la perte automatique de la qualité d'associé en raison d'un événement objectif. Les conditions de la clause d'exclusion ne lui sont pas applicables (Cass. 2015 et 2017).</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #13 — Révocation du dirigeant">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Art. 1851 C. civ. — révocation dans toutes les sociétés ?</summary><div class="flash-answer"><strong>Oui.</strong> Deux types : pour <strong>juste motif</strong> ou <strong>ad nutum</strong> (sans raison).</div></details>
+            <details class="flashcard"><summary>Régime SARL — art. L. 223-28 et L. 223-29 C. com. ?</summary><div class="flash-answer">Révocation du gérant pour <strong>juste motif</strong> (sauf clause contraire), à la <strong>majorité absolue</strong>. Dommages et intérêts possibles sans réintégration (L. 223-25).</div></details>
+            <details class="flashcard"><summary>Régime SA — qui est révocable ad nutum, qui nécessite juste motif ?</summary><div class="flash-answer"><strong>Ad nutum</strong> : administrateurs (L. 225-18) et PDG (L. 225-51-1). <strong>Juste motif</strong> : Directeur Général (L. 225-55).</div></details>
+            <details class="flashcard"><summary>Art. L. 227-5 C. com. — révocation en SAS ?</summary><div class="flash-answer">Les modalités de révocation sont <strong>librement définies dans les statuts</strong>.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass. 2013 — la révocation ad nutum peut-elle être abusive ?</summary><div class="flash-answer"><strong>Oui</strong> (SARL et SA). Elle ne doit pas se faire de manière vexatoire et doit respecter le contradictoire.</div></details>
+            <details class="flashcard"><summary>Cass., 26 novembre 2013 — révocation du DG de SA sans juste motif ?</summary><div class="flash-answer">Révocation libre, mais <strong>engage la responsabilité de la société</strong> et ouvre droit à indemnisation.</div></details>
+            <details class="flashcard"><summary>Cass., 9 mars 2022 — acte extrastatutaire peut-il modifier les statuts SAS ?</summary><div class="flash-answer"><strong>Non.</strong> Un acte extrastatutaire ne peut pas modifier les statuts en dehors de leur procédure de révision.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #14 — Responsabilité du dirigeant">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Principe : quand la société est-elle responsable d'un dommage causé à un tiers par un dirigeant ?</summary><div class="flash-answer">En principe, c'est la <strong>société</strong> qui est responsable. Sauf si le dirigeant a commis une <strong>faute détachable</strong> de ses fonctions.</div></details>
+            <details class="flashcard"><summary>Art. L. 223-22 C. com. (SARL) — que consacre-t-il ?</summary><div class="flash-answer">L'<strong>action sociale</strong> et la responsabilité personnelle du dirigeant vis-à-vis de la société et des tiers.</div></details>
+            <details class="flashcard"><summary>Art. L. 225-252 C. com. (SA) — à quoi sert-il ?</summary><div class="flash-answer">Consacre les modalités pour invoquer les actions ut universi et ut singuli.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 20 mai 2003, « Seusse » — trois critères cumulatifs de la faute détachable ?</summary><div class="flash-answer">Faute d'une <strong>particulière gravité</strong> · commise <strong>intentionnellement</strong> · <strong>incompatible avec les fonctions de dirigeant</strong>. Ces trois critères sont cumulatifs.</div></details>
+            <details class="flashcard"><summary>Cass. crim., 5 avril 2018 — infraction pénale = faute détachable automatique ?</summary><div class="flash-answer"><strong>Oui</strong>, peu importe que l'infraction soit intentionnelle ou non.</div></details>
+            <details class="flashcard"><summary>Cass. com., 3 mai 2018 — nuance sur l'infraction pénale ?</summary><div class="flash-answer">Une <strong>petite infraction pénale</strong> n'est pas automatiquement une faute détachable (appréciation in concreto).</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #15 — Abus de majorité / minorité / égalité">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Art. 1844-10 C. civ. — sanction possible en cas d'abus de majorité ?</summary><div class="flash-answer"><strong>Nullité de la délibération</strong>, dirigée contre la société par les minoritaires.</div></details>
+            <details class="flashcard"><summary>Art. 1240 C. civ. — autre sanction de l'abus de majorité ?</summary><div class="flash-answer"><strong>Dommages et intérêts</strong>, dirigés contre les majoritaires par les minoritaires. Ces deux sanctions sont distinctes et cumulables (Cass. 9 juill. 2025).</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 18 avril 1961, « Schuman Picard » — trois conditions de l'abus de majorité ?</summary><div class="flash-answer">(1) Décision contraire à l'intérêt social · (2) qui favorise uniquement les majoritaires · (3) au détriment des minoritaires. <strong>Cumulatifs.</strong></div></details>
+            <details class="flashcard"><summary>Cass., 8 novembre 2023 — unanimité et abus de majorité ?</summary><div class="flash-answer">L'<strong>unanimité chasse l'abus de majorité</strong> : sans majorité contre minorité, pas d'abus.</div></details>
+            <details class="flashcard"><summary>Cass., 9 mars 1993, « Flandin » — quatre conditions de l'abus de minorité ?</summary><div class="flash-answer">(1) Contraire à l'intérêt social · (2) favorise les minoritaires · (3) au détriment des majoritaires · (4) <strong>bloque une opération essentielle</strong>. Cumulatifs.</div></details>
+            <details class="flashcard"><summary>Cass., 9 mars 1993, « Flandin » — que peut ordonner le juge en cas d'abus de minorité ?</summary><div class="flash-answer">Nomination d'un <strong>mandataire ad hoc</strong> pour voter en lieu et place des minoritaires. Le juge ne peut pas fixer lui-même le sens du vote (Cass. 16 déc. 2009).</div></details>
+            <details class="flashcard"><summary>Cass., 21 juin 2023 — abus d'égalité dans une société à deux associés ?</summary><div class="flash-answer"><strong>Possible</strong>, même si la décision doit nécessairement être prise à l'unanimité.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche" data-fiche="Fiche #16 — Transformations">
+      <div class="flash-pack" data-theme="legal">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Art. 1844-3 C. civ. — définition de la transformation ?</summary><div class="flash-answer">Opération par laquelle une société <strong>change de forme juridique</strong> tout en <strong>conservant sa personnalité morale</strong>. Elle prend la forme d'une modification des statuts.</div></details>
+            <details class="flashcard"><summary>Art. L. 225-243 C. com. — condition pour la transformation d'une SA ?</summary><div class="flash-answer">La SA doit avoir <strong>au moins deux ans d'existence</strong>.</div></details>
+            <details class="flashcard"><summary>Art. L. 227-3 C. com. — transformation en SAS ?</summary><div class="flash-answer">Doit se faire à <strong>l'unanimité</strong>.</div></details>
+            <details class="flashcard"><summary>Art. 1836 al. 2 C. civ. — augmentation des engagements d'un associé ?</summary><div class="flash-answer">Elle ne peut jamais se faire <strong>sans le consentement de l'associé</strong> concerné.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="flash-pack" data-theme="jp">
+        <div class="flash-pack-body">
+          <div class="flash-grid">
+            <details class="flashcard"><summary>Cass., 23 octobre 1974 — société nulle et transformation ?</summary><div class="flash-answer">Une société nulle <strong>ne peut pas</strong> se transformer pour acquérir la validité qu'elle n'a pas.</div></details>
+            <details class="flashcard"><summary>Cass., 12 novembre 1992 — société dissoute et transformation ?</summary><div class="flash-answer">Une société dissoute <strong>ne peut pas se transformer</strong> : l'opération ne relève pas des besoins de la liquidation.</div></details>
+            <details class="flashcard"><summary>Cass., 30 octobre 2000 — transformation SNC → SARL crée-t-elle une nouvelle personne morale ?</summary><div class="flash-answer"><strong>Non.</strong> La personnalité morale est conservée.</div></details>
+            <details class="flashcard"><summary>Cass., 10 janvier 1973 — sort des anciens créanciers si la société devient à RL illimitée ?</summary><div class="flash-answer">Les anciens créanciers conservent une <strong>responsabilité limitée</strong> pour les dettes antérieures à la transformation.</div></details>
+            <details class="flashcard"><summary>Cass., 31 octobre 2012 — transformation et contrats en cours ?</summary><div class="flash-answer">La transformation <strong>ne met pas fin</strong> aux contrats auxquels la société était partie.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.flash-source -->
+
+</div>
+</main>
+</div>
+
+<footer><p>Droit des Sociétés — Fiches de révision &nbsp;·&nbsp; <span>2025-2026</span></p></footer>
+
+</div><!-- /.wrap -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const page = document.getElementById('page-fc');
+  if (!page) return;
+
+  const ficheSelect = document.getElementById('flash-fiche');
+  const themeSelect = document.getElementById('flash-theme');
+  const startBtn = document.getElementById('flash-start-btn');
+  const countEl = document.getElementById('flash-count');
+  const progressTextEl = document.getElementById('flash-progress-text');
+  const stageEl = document.getElementById('flash-stage');
+  const emptyEl = document.getElementById('flash-empty');
+  const eyebrowEl = document.getElementById('flash-eyebrow');
+  const seenEl = document.getElementById('flash-seen');
+  const badEl = document.getElementById('flash-bad');
+  const goodEl = document.getElementById('flash-good');
+  const cardBtn = document.getElementById('flash-card');
+  const faceLabelEl = document.getElementById('flash-face-label');
+  const cardTextEl = document.getElementById('flash-card-text');
+  const feedbackEl = document.getElementById('flash-feedback');
+  const markBadBtn = document.getElementById('flash-mark-bad');
+  const markGoodBtn = document.getElementById('flash-mark-good');
+  const prevBtn = document.getElementById('flash-prev');
+  const nextBtn = document.getElementById('flash-next');
+  const reviewOnlyBtn = document.getElementById('flash-review-only');
+  const shuffleBtn = document.getElementById('flash-shuffle');
+
+  const source = page.querySelector('.flash-source');
+  const ficheDivs = Array.from(source.querySelectorAll('.fiche'));
+  const cards = [];
+
+  ficheDivs.forEach(function (ficheDiv) {
+    const fiche = ficheDiv.getAttribute('data-fiche');
+    ficheDiv.querySelectorAll('.flash-pack').forEach(function (pack) {
+      const theme = pack.getAttribute('data-theme');
+      pack.querySelectorAll('.flashcard').forEach(function (card) {
+        const q = card.querySelector('summary');
+        const a = card.querySelector('.flash-answer');
+        if (!q || !a) return;
+        cards.push({
+          fiche: fiche,
+          theme: theme,
+          question: q.textContent.trim(),
+          answer: a.innerHTML.trim(),
+          answerText: a.textContent.trim()
+        });
+      });
+    });
+  });
+
+  // Populate fiche select
+  const uniqueFiches = [];
+  cards.forEach(function (c) {
+    if (!uniqueFiches.includes(c.fiche)) uniqueFiches.push(c.fiche);
+  });
+  uniqueFiches.forEach(function (f) {
+    const opt = document.createElement('option');
+    opt.value = f;
+    opt.textContent = f;
+    ficheSelect.appendChild(opt);
+  });
+
+  cards.forEach(function (c, i) { c.id = 'card-' + i; });
+
+  let filtered = cards.slice();
+  let index = 0;
+  let answerVisible = false;
+  let started = false;
+  let reviewOnly = false;
+  const progress = new Map();
+
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+    }
+  }
+
+  function stats() {
+    let seen = 0, bad = 0, good = 0;
+    progress.forEach(function (v) {
+      if (!v) return;
+      seen++;
+      if (v === 'bad') bad++;
+      if (v === 'good') good++;
+    });
+    return { seen, bad, good };
+  }
+
+  function updateStats() {
+    const s = stats();
+    seenEl.textContent = String(s.seen);
+    badEl.textContent = String(s.bad);
+    goodEl.textContent = String(s.good);
+    reviewOnlyBtn.classList.toggle('active', reviewOnly);
+  }
+
+  function applyFilters() {
+    const ficheVal = ficheSelect.value;
+    const themeVal = themeSelect.value;
+    filtered = cards.filter(function (c) {
+      const ficheOk = ficheVal === 'all' || c.fiche === ficheVal;
+      const themeOk = themeVal === 'all' || c.theme === themeVal;
+      const reviewOk = !reviewOnly || progress.get(c.id) === 'bad';
+      return ficheOk && themeOk && reviewOk;
+    });
+    index = 0;
+    answerVisible = false;
+    updateStats();
+    if (started) render();
+  }
+
+  function render() {
+    if (!filtered.length) {
+      stageEl.hidden = true;
+      emptyEl.hidden = false;
+      countEl.textContent = '0 carte';
+      progressTextEl.textContent = '';
+      feedbackEl.hidden = true;
+      return;
+    }
+    const card = filtered[index];
+    emptyEl.hidden = true;
+    stageEl.hidden = false;
+    eyebrowEl.textContent = card.fiche + ' · ' + (card.theme === 'legal' ? 'Fondements légaux' : 'Jurisprudence') + ' · Carte ' + (index + 1) + ' / ' + filtered.length;
+    faceLabelEl.textContent = answerVisible ? 'Réponse' : 'Question';
+    if (answerVisible) {
+      cardTextEl.innerHTML = card.answer;
+    } else {
+      cardTextEl.textContent = card.question;
+    }
+    feedbackEl.hidden = !answerVisible;
+    countEl.textContent = filtered.length + (filtered.length > 1 ? ' cartes disponibles' : ' carte disponible');
+    progressTextEl.textContent = 'Carte ' + (index + 1) + ' sur ' + filtered.length;
+  }
+
+  prevBtn.addEventListener('click', function () {
+    if (!filtered.length) return;
+    index = (index - 1 + filtered.length) % filtered.length;
+    answerVisible = false;
+    render();
+  });
+
+  nextBtn.addEventListener('click', function () {
+    if (!filtered.length) return;
+    index = (index + 1) % filtered.length;
+    answerVisible = false;
+    render();
+  });
+
+  cardBtn.addEventListener('click', function () {
+    if (!filtered.length) return;
+    answerVisible = !answerVisible;
+    render();
+  });
+
+  function markCard(status) {
+    if (!filtered.length) return;
+    const card = filtered[index];
+    progress.set(card.id, status);
+    updateStats();
+    if (reviewOnly && status === 'good') {
+      filtered.splice(index, 1);
+      if (index >= filtered.length) index = 0;
+      answerVisible = false;
+      render();
+      return;
+    }
+    index = (index + 1) % filtered.length;
+    answerVisible = false;
+    render();
+  }
+
+  markBadBtn.addEventListener('click', function () { markCard('bad'); });
+  markGoodBtn.addEventListener('click', function () { markCard('good'); });
+
+  shuffleBtn.addEventListener('click', function () {
+    if (!filtered.length) return;
+    shuffleArray(filtered);
+    index = 0;
+    answerVisible = false;
+    render();
+  });
+
+  reviewOnlyBtn.addEventListener('click', function () {
+    reviewOnly = !reviewOnly;
+    applyFilters();
+  });
+
+  startBtn.addEventListener('click', function () {
+    started = true;
+    applyFilters();
+    emptyEl.hidden = !!filtered.length;
+    if (filtered.length) stageEl.hidden = false;
+    document.getElementById('flash-start').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  ficheSelect.addEventListener('change', function () { applyFilters(); });
+  themeSelect.addEventListener('change', function () { applyFilters(); });
+
+  updateStats();
+  stageEl.hidden = true;
+  emptyEl.hidden = true;
+});
+</script>
+</body>
+</html>
