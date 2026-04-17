@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Droit des Sûretés — Fiches de Révision</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+:root{
+  --r:#8B0000;--rv:#B22222;--rp:#fdf0f0;--rb:#e8c8c8;
+  --n:#1a1a1a;--gf:#2d2d2d;--g:#555;--gc:#f6f8fb;--b:#fefefe;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--b);color:var(--n);font-size:17px;line-height:1.75}
+
+/* ── HEADER ── */
+header{background:var(--n);color:#fff;padding:1.8rem 2rem 1.4rem;border-bottom:4px solid var(--r);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+header h1{font-size:clamp(1.3rem,4vw,2rem);font-weight:600}
+header h1 span{color:#B22222}
+header small{color:#aaa;font-size:.82rem;letter-spacing:.06em;display:block;margin-top:.2rem}
+
+/* ── NAV ── */
+nav{background:var(--r);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav ul{list-style:none;display:flex;flex-wrap:nowrap;min-width:max-content}
+.nav-radio{display:none}
+nav label{display:block;padding:.65rem .85rem;color:rgba(255,255,255,.82);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.2)}
+nav label:active{color:#fff;background:rgba(255,255,255,.15)}
+
+/* ── PAGES ── */
+.page-content{display:none}
+#home-content{display:block}
+
+#r-home:checked ~ .wrap #home-content,
+#r-plan:checked ~ .wrap #home-content { display:none; }
+#r-home:checked ~ .wrap #home-content{display:block}
+#r-plan:checked ~ .wrap #page-plan{display:block}
+
+/* Nav active */
+#r-home:checked ~ .wrap .nav-home,
+#r-plan:checked ~ .wrap .nav-plan {color:#fff !important;background:rgba(255,255,255,.15) !important;border-bottom-color:#fff !important}
+
+/* ── LAYOUT ── */
+#home{padding:2.5rem 2.5rem 4rem;max-width:100%;margin:0 auto;border-bottom:3px solid var(--rb)}
+.intro{text-align:center;margin-bottom:2.5rem}
+.intro h2{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:600;margin-bottom:.4rem}
+.intro p{color:var(--g);font-size:.95rem;max-width:520px;margin:0 auto}
+
+main{max-width:100%;margin:0 auto;padding:2.2rem 2.5rem 5rem}
+
+/* ── BTN HOME ── */
+label.btn-home{display:inline-block;background:transparent;border:1.5px solid rgba(139,0,0,.3);color:var(--rv);padding:.4rem 1rem;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+label.btn-home:active{border-color:var(--r);color:var(--r);background:var(--rp)}
+
+footer{background:var(--n);color:#777;text-align:center;padding:1.2rem;font-size:.78rem;letter-spacing:.05em;border-top:3px solid var(--r);margin-top:2rem}
+footer span{color:#B22222}
+
+/* ── MIND MAP ── */
+.mindmap-container{
+  width:100%;
+  overflow-x:auto;
+  overflow-y:auto;
+  padding:1.5rem 0;
+}
+.mindmap-scroll{
+  min-width:900px;
+}
+
+/* Tree layout */
+.tree{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+/* Root node */
+.root-node{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:2rem;
+}
+.root-node .node-box{
+  background:var(--n);
+  color:#fff;
+  padding:.9rem 2rem;
+  font-size:1.1rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-align:center;
+  border-bottom:3px solid var(--r);
+}
+.root-node .node-box small{
+  display:block;
+  color:#aaa;
+  font-size:.72rem;
+  font-weight:400;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-top:.2rem;
+}
+
+/* Two columns: P1 left, P2 right */
+.two-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;
+  align-items:start;
+}
+
+/* Partie block */
+.partie-block{
+  border:2px solid var(--r);
+  background:#fff;
+}
+.partie-header{
+  background:var(--r);
+  color:#fff;
+  padding:.6rem 1rem;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.partie-body{
+  padding:.8rem;
+  display:flex;
+  flex-direction:column;
+  gap:.7rem;
+}
+
+/* Titre block */
+.titre-block{
+  border:1.5px solid var(--rb);
+  background:var(--rp);
+}
+.titre-header{
+  background:var(--rv);
+  color:#fff;
+  padding:.45rem .8rem;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.titre-body{
+  padding:.65rem .75rem;
+  display:flex;
+  flex-direction:column;
+  gap:.55rem;
+}
+
+/* Chapitre block */
+.chap-block{
+  border:1px solid var(--rb);
+  background:#fff;
+}
+.chap-header{
+  background:var(--gc);
+  border-bottom:1px solid var(--rb);
+  padding:.35rem .7rem;
+  font-size:.73rem;
+  font-weight:700;
+  color:var(--r);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  user-select:none;
+}
+.chap-header::-webkit-details-marker{display:none}
+.chap-toggle::after{content:'▸';color:var(--r);font-size:.8rem;transition:transform .2s}
+details[open] .chap-toggle::after{content:'▾'}
+.chap-body{
+  padding:.55rem .7rem;
+  display:flex;
+  flex-direction:column;
+  gap:.3rem;
+}
+
+/* Section */
+.section-item{
+  padding:.28rem .5rem .28rem .85rem;
+  border-left:2px solid var(--rb);
+  font-size:.82rem;
+  color:var(--gf);
+  display:flex;
+  flex-direction:column;
+  gap:.18rem;
+}
+.section-label{
+  font-weight:700;
+  color:var(--rv);
+  font-size:.72rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.section-name{
+  font-size:.84rem;
+  color:var(--gf);
+  font-weight:600;
+}
+
+/* Paragraphe */
+.para-list{
+  margin-top:.22rem;
+  padding-left:.7rem;
+  display:flex;
+  flex-direction:column;
+  gap:.12rem;
+}
+.para-item{
+  font-size:.78rem;
+  color:var(--g);
+  position:relative;
+  padding-left:.9rem;
+  line-height:1.4;
+}
+.para-item::before{content:'§';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.7rem}
+.para-item .sub-list{
+  margin-top:.1rem;
+  padding-left:.8rem;
+}
+.para-item .sub-item{
+  font-size:.74rem;
+  color:#777;
+  position:relative;
+  padding-left:.7rem;
+  line-height:1.4;
+}
+.para-item .sub-item::before{content:'–';position:absolute;left:0;color:var(--r)}
+
+/* Intro block */
+.intro-block{
+  border:1.5px solid var(--rb);
+  background:var(--rp);
+  margin-bottom:1rem;
+}
+.intro-block-header{
+  background:#555;
+  color:#fff;
+  padding:.45rem .8rem;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.intro-block-body{
+  padding:.6rem .75rem;
+  display:flex;
+  flex-direction:column;
+  gap:.28rem;
+}
+.intro-topic{
+  font-size:.82rem;
+  color:var(--gf);
+  padding-left:.85rem;
+  border-left:2px solid #aaa;
+  font-weight:600;
+}
+
+/* Legend */
+.legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+  margin-bottom:1.5rem;
+  padding:.75rem 1rem;
+  background:var(--gc);
+  border:1px solid var(--rb);
+  font-size:.78rem;
+  color:var(--g);
+}
+.legend-item{
+  display:flex;
+  align-items:center;
+  gap:.35rem;
+}
+.legend-dot{
+  width:12px;height:12px;flex-shrink:0;
+}
+
+@media(max-width:900px){
+  .two-cols{grid-template-columns:1fr}
+  main{padding:1.4rem .9rem 4rem}
+  header{padding:1.2rem 1rem 1rem}
+  nav label{padding:.55rem .5rem;font-size:.68rem}
+  #home{padding:1.8rem 1rem 3rem}
+}
+</style>
+</head>
+<body>
+
+<input type="radio" name="page" class="nav-radio" id="r-home" checked>
+<input type="radio" name="page" class="nav-radio" id="r-plan">
+
+<div class="wrap">
+
+<header>
+  <label for="r-home" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+    <h1>Droit des <span>Sûretés</span></h1>
+    <small>Fiches de révision — 2025-2026</small>
+  </label>
+</header>
+
+<nav>
+  <ul>
+    <li><label class="nav-home" for="r-home">Accueil</label></li>
+    <li><label class="nav-plan" for="r-plan">Plan du cours</label></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════ ACCUEIL ═══ -->
+<div id="home-content">
+  <div id="home">
+    <div class="intro">
+      <h2>Droit des Sûretés</h2>
+      <p>Support de révision interactif. Cliquez sur l'onglet <strong>Plan du cours</strong> pour visualiser la carte mentale du cours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ PLAN ═══ -->
+<div id="page-plan" class="page-content">
+<main>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.6rem">
+    <div>
+      <h2 style="font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700;color:var(--n)">Plan détaillé du cours</h2>
+      <p style="font-size:.85rem;color:var(--g);margin-top:.2rem">Ord. 15 septembre 2021 — Réforme du droit des sûretés</p>
+    </div>
+    <label class="btn-home" for="r-home">← Accueil</label>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#1a1a1a"/></svg> Titre racine</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000"/></svg> Partie</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#B22222"/></svg> Titre</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#f6f8fb" stroke="#e8c8c8"/></svg> Chapitre (cliquable)</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#fdf0f0" stroke="#e8c8c8"/></svg> Section / §</div>
+  </div>
+
+  <div class="mindmap-container">
+    <div class="mindmap-scroll">
+
+      <!-- ROOT -->
+      <div class="root-node">
+        <div class="node-box">
+          DROIT DES SÛRETÉS
+          <small>Ord. 15 sept. 2021</small>
+        </div>
+      </div>
+
+      <!-- INTRODUCTION -->
+      <div class="intro-block" style="margin-bottom:1.5rem">
+        <div class="intro-block-header">Introduction</div>
+        <div class="intro-block-body">
+          <div class="intro-topic">Notion et fonction de la sûreté</div>
+          <div class="intro-topic">Distinction entre les sûretés et les garanties</div>
+          <div class="intro-topic">Évolution historique et économique des sûretés</div>
+          <div class="intro-topic">Réforme du droit des sûretés (Ord. du 15 septembre 2021)</div>
+        </div>
+      </div>
+
+      <!-- TWO PARTIES -->
+      <div class="two-cols">
+
+        <!-- ═══════════ PARTIE 1 ═══════════ -->
+        <div class="partie-block">
+          <div class="partie-header">Partie 1 — Les sûretés personnelles</div>
+          <div class="partie-body">
+
+            <!-- TITRE 1 -->
+            <div class="titre-block">
+              <div class="titre-header">Titre 1 — Le cautionnement</div>
+              <div class="titre-body">
+
+                <!-- CHAP 1 -->
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 1 — La notion de cautionnement <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item">
+                      <span class="section-label">Section 1</span>
+                      <span class="section-name">Le cautionnement en général</span>
+                      <div class="para-list">
+                        <div class="para-item">Un contrat</div>
+                        <div class="para-item">Un contrat unilatéral</div>
+                        <div class="para-item">Un contrat accessoire</div>
+                      </div>
+                    </div>
+                    <div class="section-item">
+                      <span class="section-label">Section 2</span>
+                      <span class="section-name">Les variétés de cautionnement</span>
+                      <div class="para-list">
+                        <div class="para-item">Cautionnement gratuit / onéreux</div>
+                        <div class="para-item">Cautionnement civil / commercial</div>
+                        <div class="para-item">Cautionnement simple / solidaire</div>
+                        <div class="para-item">L'aval</div>
+                        <div class="para-item">Les cautionnements complexes
+                          <div class="sub-list">
+                            <div class="sub-item">Certification de caution</div>
+                            <div class="sub-item">Sous-cautionnement</div>
+                            <div class="sub-item">Cautionnement réel</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <!-- CHAP 2 -->
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 2 — La formation du cautionnement <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item">
+                      <span class="section-label">Section 1</span>
+                      <span class="section-name">Le consentement</span>
+                      <div class="para-list">
+                        <div class="para-item">Protection a priori : devoirs d'information et de mise en garde</div>
+                        <div class="para-item">Protection a posteriori : vices du consentement
+                          <div class="sub-list">
+                            <div class="sub-item">L'erreur</div>
+                            <div class="sub-item">Le dol</div>
+                            <div class="sub-item">La violence</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="section-item">
+                      <span class="section-label">Section 2</span>
+                      <span class="section-name">La capacité et le pouvoir</span>
+                      <div class="para-list">
+                        <div class="para-item">Le droit des régimes matrimoniaux</div>
+                        <div class="para-item">Le droit des sociétés</div>
+                      </div>
+                    </div>
+                    <div class="section-item">
+                      <span class="section-label">Section 3</span>
+                      <span class="section-name">Le contenu du cautionnement</span>
+                      <div class="para-list">
+                        <div class="para-item">La prestation de la caution
+                          <div class="sub-list">
+                            <div class="sub-item">L'objet du cautionnement</div>
+                            <div class="sub-item">L'étendue du cautionnement</div>
+                          </div>
+                        </div>
+                        <div class="para-item">La cause (contrepartie) de l'obligation de la caution</div>
+                        <div class="para-item">L'exigence d'équilibre et de proportionnalité
+                          <div class="sub-list">
+                            <div class="sub-item">En jurisprudence</div>
+                            <div class="sub-item">Dans la loi</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="section-item">
+                      <span class="section-label">Section 4</span>
+                      <span class="section-name">La forme du cautionnement</span>
+                      <div class="para-list">
+                        <div class="para-item">Le champ du formalisme</div>
+                        <div class="para-item">Le contenu du formalisme</div>
+                        <div class="para-item">Les sanctions du formalisme</div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <!-- CHAP 3 -->
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 3 — Les effets du cautionnement <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item">
+                      <span class="section-label">Section 1</span>
+                      <span class="section-name">Effets entre le créancier et la caution</span>
+                      <div class="para-list">
+                        <div class="para-item">Principe d'opposabilité des exceptions</div>
+                        <div class="para-item">Obligations du créancier
+                          <div class="sub-list">
+                            <div class="sub-item">Information annuelle de la caution</div>
+                            <div class="sub-item">Information ponctuelle sur la défaillance du débiteur</div>
+                          </div>
+                        </div>
+                        <div class="para-item">Droit de poursuite du créancier
+                          <div class="sub-list">
+                            <div class="sub-item">Condition constante : exigibilité</div>
+                            <div class="sub-item">Les données variables</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="section-item">
+                      <span class="section-label">Section 2</span>
+                      <span class="section-name">Effets entre la caution et le débiteur</span>
+                      <div class="para-list">
+                        <div class="para-item">Le recours de la caution après paiement</div>
+                        <div class="para-item">La situation de la caution avant paiement</div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <!-- CHAP 4 -->
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 4 — L'extinction du cautionnement <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item">
+                      <span class="section-label">Section 1</span>
+                      <span class="section-name">Extinction par voie principale</span>
+                      <div class="para-list">
+                        <div class="para-item">Le bénéfice de subrogation</div>
+                        <div class="para-item">Extinction du cautionnement de dettes futures</div>
+                        <div class="para-item">La question des termes tacites</div>
+                      </div>
+                    </div>
+                    <div class="section-item">
+                      <span class="section-label">Section 2</span>
+                      <span class="section-name">Extinction par voie accessoire</span>
+                      <div class="para-list">
+                        <div class="para-item">Le paiement</div>
+                        <div class="para-item">L'annulation, la résolution</div>
+                        <div class="para-item">La prescription</div>
+                        <div class="para-item">La remise de dette</div>
+                        <div class="para-item">La compensation</div>
+                        <div class="para-item">La dation en paiement</div>
+                        <div class="para-item">La novation</div>
+                        <div class="para-item">Le décès</div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+              </div><!-- /titre-body -->
+            </div><!-- /titre-block T1 -->
+
+            <!-- TITRE 2 -->
+            <div class="titre-block">
+              <div class="titre-header">Titre 2 — Les autres sûretés personnelles</div>
+              <div class="titre-body">
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 1 — La garantie autonome <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item"><span class="section-name" style="font-style:italic;color:var(--g);font-weight:400">Contenu à développer</span></div>
+                  </div>
+                </details>
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 2 — La lettre d'intention <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item"><span class="section-name" style="font-style:italic;color:var(--g);font-weight:400">Contenu à développer</span></div>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+          </div><!-- /partie-body -->
+        </div><!-- /partie-block P1 -->
+
+        <!-- ═══════════ PARTIE 2 ═══════════ -->
+        <div class="partie-block">
+          <div class="partie-header">Partie 2 — Les sûretés réelles</div>
+          <div class="partie-body">
+
+            <!-- TITRE 1 -->
+            <div class="titre-block">
+              <div class="titre-header">Titre 1 — Sûretés conférant un droit exclusif</div>
+              <div class="titre-body">
+
+                <!-- CHAP 1 -->
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 1 — La propriété comme garantie <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item">
+                      <span class="section-label">Section 1</span>
+                      <span class="section-name">La propriété retenue à titre de garantie</span>
+                      <div class="para-list">
+                        <div class="para-item">La vente sous réserve de propriété</div>
+                        <div class="para-item">Le crédit-bail</div>
+                      </div>
+                    </div>
+                    <div class="section-item">
+                      <span class="section-label">Section 2</span>
+                      <span class="section-name">La propriété cédée à titre de garantie</span>
+                      <div class="para-list">
+                        <div class="para-item">La cession de créance à titre de garantie
+                          <div class="sub-list">
+                            <div class="sub-item">Le régime de droit commun</div>
+                            <div class="sub-item">La cession Dailly</div>
+                          </div>
+                        </div>
+                        <div class="para-item">La fiducie-sûreté
+                          <div class="sub-list">
+                            <div class="sub-item">Les acteurs et le mécanisme</div>
+                            <div class="sub-item">La constitution</div>
+                            <div class="sub-item">Le dénouement</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <!-- CHAP 2 -->
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 2 — Le droit de rétention <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item">
+                      <span class="section-label">Section 1</span>
+                      <span class="section-name">Les conditions du droit de rétention</span>
+                      <div class="para-list">
+                        <div class="para-item">La créance garantie</div>
+                        <div class="para-item">La détention</div>
+                        <div class="para-item">Le lien de connexité entre la créance et la détention</div>
+                      </div>
+                    </div>
+                    <div class="section-item">
+                      <span class="section-label">Section 2</span>
+                      <span class="section-name">Les effets du droit de rétention</span>
+                    </div>
+                  </div>
+                </details>
+
+              </div>
+            </div><!-- /titre 1 P2 -->
+
+            <!-- TITRE 2 -->
+            <div class="titre-block">
+              <div class="titre-header">Titre 2 — Sûretés conférant un droit de préférence</div>
+              <div class="titre-body">
+
+                <!-- CHAP 1 GAGE -->
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 1 — Le gage <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item">
+                      <span class="section-label">Section 1</span>
+                      <span class="section-name">Le gage avec dépossession</span>
+                      <div class="para-list">
+                        <div class="para-item">La formation</div>
+                        <div class="para-item">Les effets</div>
+                      </div>
+                    </div>
+                    <div class="section-item">
+                      <span class="section-label">Section 2</span>
+                      <span class="section-name">Le gage sans dépossession</span>
+                      <div class="para-list">
+                        <div class="para-item">La constitution</div>
+                        <div class="para-item">Les effets</div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <!-- CHAP 2 NANTISSEMENT -->
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 2 — Le nantissement <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item">
+                      <span class="section-label">Section 1</span>
+                      <span class="section-name">Le nantissement de créances de droit commun</span>
+                      <div class="para-list">
+                        <div class="para-item">La constitution</div>
+                        <div class="para-item">Les effets</div>
+                      </div>
+                    </div>
+                    <div class="section-item">
+                      <span class="section-label">Section 2</span>
+                      <span class="section-name">Les nantissements spéciaux</span>
+                      <div class="para-list">
+                        <div class="para-item">Le nantissement de compte</div>
+                        <div class="para-item">Le nantissement des fonds d'exploitation</div>
+                        <div class="para-item">Le nantissement de droits sociaux</div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <!-- CHAP 3 HYPOTHÈQUE -->
+                <details class="chap-block">
+                  <summary class="chap-header">Chap. 3 — L'hypothèque <span class="chap-toggle"></span></summary>
+                  <div class="chap-body">
+                    <div class="section-item">
+                      <span class="section-label">Section 1</span>
+                      <span class="section-name">L'hypothèque conventionnelle</span>
+                      <div class="para-list">
+                        <div class="para-item">La constitution de l'hypothèque</div>
+                        <div class="para-item">Les règles de capacité et de pouvoir</div>
+                        <div class="para-item">Les règles matrimoniales et sociétaires</div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+              </div>
+            </div><!-- /titre 2 P2 -->
+
+          </div>
+        </div><!-- /partie-block P2 -->
+
+      </div><!-- /two-cols -->
+
+    </div><!-- /mindmap-scroll -->
+  </div><!-- /mindmap-container -->
+
+</main>
+</div><!-- /page-plan -->
+
+</div><!-- /wrap -->
+
+<footer>Droit des <span>Sûretés</span> — Fiches de révision 2025-2026</footer>
+
+</body>
+</html>
