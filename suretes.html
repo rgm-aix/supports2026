@@ -12,320 +12,131 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'EB Garamond',Georgia,serif;background:var(--b);color:var(--n);font-size:17px;line-height:1.75}
-
-/* ── HEADER ── */
 header{background:var(--n);color:#fff;padding:1.8rem 2rem 1.4rem;border-bottom:4px solid var(--r);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
 header h1{font-size:clamp(1.3rem,4vw,2rem);font-weight:600}
 header h1 span{color:#B22222}
 header small{color:#aaa;font-size:.82rem;letter-spacing:.06em;display:block;margin-top:.2rem}
-
-/* ── NAV ── */
 nav{background:var(--r);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);overflow-x:auto;-webkit-overflow-scrolling:touch}
 nav ul{list-style:none;display:flex;flex-wrap:nowrap;min-width:max-content}
 .nav-radio{display:none}
-nav label{display:block;padding:.65rem .85rem;color:rgba(255,255,255,.82);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.2)}
-nav label:active{color:#fff;background:rgba(255,255,255,.15)}
-
-/* ── PAGES ── */
+nav label{display:block;padding:.65rem .85rem;color:rgba(255,255,255,.82);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer}
 .page-content{display:none}
 #home-content{display:block}
+#r-home:checked~.wrap #home-content,#r-plan:checked~.wrap #home-content,#r-f1:checked~.wrap #home-content,#r-f2:checked~.wrap #home-content,#r-f3:checked~.wrap #home-content,#r-f4:checked~.wrap #home-content,#r-f5:checked~.wrap #home-content,#r-f6:checked~.wrap #home-content,#r-f7:checked~.wrap #home-content,#r-f8:checked~.wrap #home-content,#r-f9:checked~.wrap #home-content,#r-f10:checked~.wrap #home-content,#r-f11:checked~.wrap #home-content{display:none}
+#r-home:checked~.wrap #home-content{display:block}
+#r-plan:checked~.wrap #page-plan{display:block}
+#r-f1:checked~.wrap #page-f1{display:block}
+#r-f2:checked~.wrap #page-f2{display:block}
+#r-f3:checked~.wrap #page-f3{display:block}
+#r-f4:checked~.wrap #page-f4{display:block}
+#r-f5:checked~.wrap #page-f5{display:block}
+#r-f6:checked~.wrap #page-f6{display:block}
+#r-f7:checked~.wrap #page-f7{display:block}
+#r-f8:checked~.wrap #page-f8{display:block}
+#r-f9:checked~.wrap #page-f9{display:block}
+#r-f10:checked~.wrap #page-f10{display:block}
+#r-f11:checked~.wrap #page-f11{display:block}
+#r-home:checked~.wrap .nav-home,#r-plan:checked~.wrap .nav-plan,#r-f1:checked~.wrap .nav-f1,#r-f2:checked~.wrap .nav-f2,#r-f3:checked~.wrap .nav-f3,#r-f4:checked~.wrap .nav-f4,#r-f5:checked~.wrap .nav-f5,#r-f6:checked~.wrap .nav-f6,#r-f7:checked~.wrap .nav-f7,#r-f8:checked~.wrap .nav-f8,#r-f9:checked~.wrap .nav-f9,#r-f10:checked~.wrap .nav-f10,#r-f11:checked~.wrap .nav-f11{color:#fff!important;background:rgba(255,255,255,.15)!important;border-bottom-color:#fff!important}
 
-#r-home:checked ~ .wrap #home-content,
-#r-plan:checked ~ .wrap #home-content,
-#r-f1:checked ~ .wrap #home-content { display:none; }
-#r-home:checked ~ .wrap #home-content{display:block}
-#r-plan:checked ~ .wrap #page-plan{display:block}
-#r-f1:checked ~ .wrap #page-f1{display:block}
-
-/* Nav active */
-#r-home:checked ~ .wrap .nav-home,
-#r-plan:checked ~ .wrap .nav-plan,
-#r-f1:checked ~ .wrap .nav-f1 {color:#fff !important;background:rgba(255,255,255,.15) !important;border-bottom-color:#fff !important}
-
-/* ── LAYOUT ── */
-#home{padding:2.5rem 2.5rem 4rem;max-width:100%;margin:0 auto;border-bottom:3px solid var(--rb)}
-.intro{text-align:center;margin-bottom:2.5rem}
-.intro h2{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:600;margin-bottom:.4rem}
-.intro p{color:var(--g);font-size:.95rem;max-width:520px;margin:0 auto}
+/* ACCUEIL */
+#home{padding:2.5rem 2.5rem 4rem}
+.home-intro{text-align:center;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--rb)}
+.home-intro h2{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;margin-bottom:.4rem}
+.home-intro p{color:var(--g);font-size:.95rem;max-width:520px;margin:0 auto}
+.home-section-title{font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin:2rem 0 .9rem;padding-bottom:.3rem;border-bottom:1px solid var(--rb)}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+label.card{display:block;background:var(--b);border:1.5px solid var(--rb);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:inherit}
+label.card:active{box-shadow:0 4px 18px rgba(139,0,0,.13)}
+label.card .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:.3rem}
+label.card h3{font-size:.95rem;font-weight:700;color:var(--r);margin-bottom:.2rem;line-height:1.35}
+label.card p{font-size:.8rem;color:var(--g);line-height:1.4}
+label.card-plan{display:block;background:var(--n);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:#fff}
+label.card-plan .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.3rem}
+label.card-plan h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+label.card-plan p{font-size:.8rem;color:#aaa;line-height:1.4}
 
 main{max-width:100%;margin:0 auto;padding:2.2rem 2.5rem 5rem}
+label.btn-home{display:inline-block;background:transparent;border:1.5px solid rgba(139,0,0,.3);color:var(--rv);padding:.4rem 1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:inherit}
 
-/* ── BTN HOME ── */
-label.btn-home{display:inline-block;background:transparent;border:1.5px solid rgba(139,0,0,.3);color:var(--rv);padding:.4rem 1rem;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:inherit}
-label.btn-home:active{border-color:var(--r);color:var(--r);background:var(--rp)}
+/* MIND MAP */
+.mindmap-container{width:100%;overflow-x:auto;padding:1.5rem 0}
+.mindmap-scroll{min-width:900px}
+.root-node{display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
+.root-node .node-box{background:var(--n);color:#fff;padding:.9rem 2rem;font-size:1.1rem;font-weight:700;letter-spacing:.04em;text-align:center;border-bottom:3px solid var(--r)}
+.root-node .node-box small{display:block;color:#aaa;font-size:.72rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
+.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.partie-block{border:2px solid var(--r);background:#fff}
+.partie-header{background:var(--r);color:#fff;padding:.6rem 1rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.partie-body{padding:.8rem;display:flex;flex-direction:column;gap:.7rem}
+.titre-block{border:1.5px solid var(--rb);background:var(--rp)}
+.titre-header{background:var(--rv);color:#fff;padding:.45rem .8rem;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.titre-body{padding:.65rem .75rem;display:flex;flex-direction:column;gap:.55rem}
+.chap-block{border:1px solid var(--rb);background:#fff}
+.chap-header{background:var(--gc);border-bottom:1px solid var(--rb);padding:.35rem .7rem;font-size:.73rem;font-weight:700;color:var(--r);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;list-style:none}
+.chap-header::-webkit-details-marker{display:none}
+.chap-toggle::after{content:'▸';color:var(--r);font-size:.8rem}
+details[open] .chap-toggle::after{content:'▾'}
+.chap-body{padding:.55rem .7rem;display:flex;flex-direction:column;gap:.3rem}
+.section-item{padding:.28rem .5rem .28rem .85rem;border-left:2px solid var(--rb);font-size:.82rem;color:var(--gf);display:flex;flex-direction:column;gap:.18rem}
+.section-label{font-weight:700;color:var(--rv);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.section-name{font-size:.84rem;color:var(--gf);font-weight:600}
+.para-list{margin-top:.22rem;padding-left:.7rem;display:flex;flex-direction:column;gap:.12rem}
+.para-item{font-size:.78rem;color:var(--g);position:relative;padding-left:.9rem;line-height:1.4}
+.para-item::before{content:'§';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.7rem}
+.sub-list{margin-top:.1rem;padding-left:.8rem}
+.sub-item{font-size:.74rem;color:#777;position:relative;padding-left:.7rem;line-height:1.4}
+.sub-item::before{content:'–';position:absolute;left:0;color:var(--r)}
+.plan-fiche-link{display:inline-block;margin-top:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--r);padding:.18rem .55rem;cursor:pointer;border:none;font-family:inherit}
+.intro-block{border:1.5px solid var(--rb);background:var(--rp);margin-bottom:1rem}
+.intro-block-header{background:#555;color:#fff;padding:.45rem .8rem;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.intro-block-body{padding:.6rem .75rem;display:flex;flex-direction:column;gap:.28rem}
+.intro-topic{font-size:.82rem;color:var(--gf);padding-left:.85rem;border-left:2px solid #aaa;font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem;padding:.75rem 1rem;background:var(--gc);border:1px solid var(--rb);font-size:.78rem;color:var(--g)}
+.legend-item{display:flex;align-items:center;gap:.35rem}
+.legend-dot{width:12px;height:12px;flex-shrink:0}
+
+/* FICHES */
+.fiche-page{max-width:840px;margin:0 auto}
+.fiche-header{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--r)}
+.fiche-meta{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:.35rem}
+.fiche-header h2{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;color:var(--n)}
+.fiche-intro{margin-top:.9rem;font-size:.93rem;color:var(--g);line-height:1.65;font-style:italic;padding:.7rem 1rem;background:var(--gc);border-left:3px solid var(--rb)}
+.f-bloc{margin-bottom:2.2rem}
+.f-bloc-title{font-size:1.05rem;font-weight:700;color:#fff;background:var(--n);padding:.5rem .9rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.7rem}
+.f-bloc-title .f-num{background:var(--r);padding:.1rem .5rem;font-size:.75rem;letter-spacing:.07em}
+.f-sous{margin-bottom:1.4rem;padding-left:1.1rem;border-left:3px solid var(--r)}
+.f-sous-title{font-size:.98rem;font-weight:700;color:var(--r);margin-bottom:.6rem;padding-bottom:.25rem;border-bottom:1px dotted var(--rb)}
+.f-item{margin-bottom:1rem}
+.f-item-title{font-size:.93rem;font-weight:700;color:var(--gf);margin-bottom:.4rem;display:flex;align-items:baseline;gap:.45rem}
+.f-item-title .f-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--rv);flex-shrink:0;margin-bottom:2px}
+.f-sub{margin-bottom:.8rem;padding-left:.9rem;border-left:2px solid var(--rb)}
+.f-sub-title{font-size:.88rem;font-weight:700;color:var(--gf);margin-bottom:.25rem}
+.f-text{font-size:.92rem;color:var(--gf);line-height:1.72;margin-bottom:.5rem}
+.f-list{list-style:none;padding:0;margin:.3rem 0 .55rem .1rem}
+.f-list li{font-size:.91rem;color:var(--gf);line-height:1.65;padding:.1rem 0 .1rem 1.1rem;position:relative}
+.f-list li::before{content:'—';position:absolute;left:0;color:var(--r);font-weight:700}
+.f-list li strong{color:var(--r)}
+.f-alerte{background:#fffbf0;border-left:4px solid #c47900;padding:.7rem 1rem;margin:.5rem 0 .8rem;font-size:.88rem;line-height:1.6;color:var(--gf)}
+.f-alerte strong{color:#9a5e00;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.f-exemple{background:var(--gc);border-left:3px solid #888;padding:.65rem 1rem;margin:.5rem 0 .8rem;font-size:.88rem;line-height:1.6;color:var(--g)}
+.f-exemple strong{color:var(--gf);font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.15rem}
+.f-table-wrap{overflow-x:auto;margin:.6rem 0 .9rem}
+.f-table{width:100%;border-collapse:collapse;font-size:.86rem}
+.f-table thead tr{background:var(--n);color:#fff}
+.f-table thead th{padding:.5rem .8rem;text-align:left;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+.f-table tbody tr:nth-child(even){background:var(--gc)}
+.f-table tbody td{padding:.45rem .8rem;border-bottom:1px solid var(--rb);vertical-align:top}
+.f-table tbody td:first-child{font-weight:700;color:var(--r)}
+.f-retenir{background:var(--rp);border-left:4px solid var(--r);padding:.85rem 1.1rem;margin-top:1.8rem;font-size:.91rem;line-height:1.68;color:var(--gf)}
+.f-retenir strong{color:var(--r);font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:.4rem}
+.f-retenir ul{list-style:none;padding:0;margin:.3rem 0}
+.f-retenir ul li{padding:.1rem 0 .1rem 1rem;position:relative;font-size:.9rem}
+.f-retenir ul li::before{content:'✓';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.78rem}
+.fiche-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rb)}
+.fiche-nav label{color:var(--rv);cursor:pointer;font-size:.85rem}
 
 footer{background:var(--n);color:#777;text-align:center;padding:1.2rem;font-size:.78rem;letter-spacing:.05em;border-top:3px solid var(--r);margin-top:2rem}
 footer span{color:#B22222}
-
-/* ── MIND MAP ── */
-.mindmap-container{
-  width:100%;
-  overflow-x:auto;
-  overflow-y:auto;
-  padding:1.5rem 0;
-}
-.mindmap-scroll{
-  min-width:900px;
-}
-
-/* Tree layout */
-.tree{
-  display:flex;
-  flex-direction:column;
-  gap:0;
-}
-
-/* Root node */
-.root-node{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:2rem;
-}
-.root-node .node-box{
-  background:var(--n);
-  color:#fff;
-  padding:.9rem 2rem;
-  font-size:1.1rem;
-  font-weight:700;
-  letter-spacing:.04em;
-  text-align:center;
-  border-bottom:3px solid var(--r);
-}
-.root-node .node-box small{
-  display:block;
-  color:#aaa;
-  font-size:.72rem;
-  font-weight:400;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  margin-top:.2rem;
-}
-
-/* Two columns: P1 left, P2 right */
-.two-cols{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1.5rem;
-  align-items:start;
-}
-
-/* Partie block */
-.partie-block{
-  border:2px solid var(--r);
-  background:#fff;
-}
-.partie-header{
-  background:var(--r);
-  color:#fff;
-  padding:.6rem 1rem;
-  font-size:.78rem;
-  font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-}
-.partie-body{
-  padding:.8rem;
-  display:flex;
-  flex-direction:column;
-  gap:.7rem;
-}
-
-/* Titre block */
-.titre-block{
-  border:1.5px solid var(--rb);
-  background:var(--rp);
-}
-.titre-header{
-  background:var(--rv);
-  color:#fff;
-  padding:.45rem .8rem;
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.09em;
-  text-transform:uppercase;
-}
-.titre-body{
-  padding:.65rem .75rem;
-  display:flex;
-  flex-direction:column;
-  gap:.55rem;
-}
-
-/* Chapitre block */
-.chap-block{
-  border:1px solid var(--rb);
-  background:#fff;
-}
-.chap-header{
-  background:var(--gc);
-  border-bottom:1px solid var(--rb);
-  padding:.35rem .7rem;
-  font-size:.73rem;
-  font-weight:700;
-  color:var(--r);
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  user-select:none;
-}
-.chap-header::-webkit-details-marker{display:none}
-.chap-toggle::after{content:'▸';color:var(--r);font-size:.8rem;transition:transform .2s}
-details[open] .chap-toggle::after{content:'▾'}
-.chap-body{
-  padding:.55rem .7rem;
-  display:flex;
-  flex-direction:column;
-  gap:.3rem;
-}
-
-/* Section */
-.section-item{
-  padding:.28rem .5rem .28rem .85rem;
-  border-left:2px solid var(--rb);
-  font-size:.82rem;
-  color:var(--gf);
-  display:flex;
-  flex-direction:column;
-  gap:.18rem;
-}
-.section-label{
-  font-weight:700;
-  color:var(--rv);
-  font-size:.72rem;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-}
-.section-name{
-  font-size:.84rem;
-  color:var(--gf);
-  font-weight:600;
-}
-
-/* Paragraphe */
-.para-list{
-  margin-top:.22rem;
-  padding-left:.7rem;
-  display:flex;
-  flex-direction:column;
-  gap:.12rem;
-}
-.para-item{
-  font-size:.78rem;
-  color:var(--g);
-  position:relative;
-  padding-left:.9rem;
-  line-height:1.4;
-}
-.para-item::before{content:'§';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.7rem}
-.para-item .sub-list{
-  margin-top:.1rem;
-  padding-left:.8rem;
-}
-.para-item .sub-item{
-  font-size:.74rem;
-  color:#777;
-  position:relative;
-  padding-left:.7rem;
-  line-height:1.4;
-}
-.para-item .sub-item::before{content:'–';position:absolute;left:0;color:var(--r)}
-
-/* Intro block */
-.intro-block{
-  border:1.5px solid var(--rb);
-  background:var(--rp);
-  margin-bottom:1rem;
-}
-.intro-block-header{
-  background:#555;
-  color:#fff;
-  padding:.45rem .8rem;
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.09em;
-  text-transform:uppercase;
-}
-.intro-block-body{
-  padding:.6rem .75rem;
-  display:flex;
-  flex-direction:column;
-  gap:.28rem;
-}
-.intro-topic{
-  font-size:.82rem;
-  color:var(--gf);
-  padding-left:.85rem;
-  border-left:2px solid #aaa;
-  font-weight:600;
-}
-
-/* Legend */
-.legend{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.6rem;
-  margin-bottom:1.5rem;
-  padding:.75rem 1rem;
-  background:var(--gc);
-  border:1px solid var(--rb);
-  font-size:.78rem;
-  color:var(--g);
-}
-.legend-item{
-  display:flex;
-  align-items:center;
-  gap:.35rem;
-}
-.legend-dot{
-  width:12px;height:12px;flex-shrink:0;
-}
-
-/* ── FICHE CONTENT ── */
-.fiche-page{max-width:860px;margin:0 auto}
-.fiche-header{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--r)}
-.fiche-header .fiche-meta{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:.35rem}
-.fiche-header h2{font-size:clamp(1.2rem,3vw,1.65rem);font-weight:700;color:var(--n)}
-
-/* Niveaux hiérarchiques */
-.f-section{margin-bottom:2rem}
-.f-section-title{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;background:var(--n);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
-.f-section-title .sec-num{background:var(--r);padding:.1rem .45rem;font-size:.7rem;letter-spacing:.08em}
-
-.f-para{margin-bottom:1.4rem;padding-left:1.1rem;border-left:3px solid var(--r)}
-.f-para-title{font-size:1rem;font-weight:700;color:var(--r);margin-bottom:.6rem}
-
-.f-I{margin-bottom:1.1rem}
-.f-I-title{font-size:.93rem;font-weight:700;color:var(--gf);margin-bottom:.45rem;display:flex;align-items:baseline;gap:.5rem}
-.f-I-title::before{content:'';display:inline-block;width:18px;height:2px;background:var(--rv);flex-shrink:0;margin-bottom:2px}
-
-.f-A{margin-bottom:.8rem;padding-left:1rem}
-.f-A-title{font-size:.88rem;font-weight:700;color:var(--gf);margin-bottom:.3rem}
-.f-A-title::before{content:'';display:inline-block;width:10px;height:1.5px;background:#aaa;margin-right:.4rem;vertical-align:middle}
-
-.f-1{padding-left:1rem;margin-bottom:.5rem}
-.f-1-title{font-size:.85rem;font-weight:600;color:var(--g);margin-bottom:.2rem}
-
-/* Paragraphe de texte courant */
-.f-text{font-size:.91rem;color:var(--gf);line-height:1.7;margin-bottom:.55rem}
-.f-text+.f-text{margin-top:-.2rem}
-
-/* Liste simple */
-.f-list{list-style:none;padding:0;margin:.35rem 0 .55rem .2rem}
-.f-list li{font-size:.9rem;color:var(--gf);line-height:1.6;padding:.12rem 0 .12rem 1.1rem;position:relative}
-.f-list li::before{content:'—';position:absolute;left:0;color:var(--r);font-weight:700}
-
-/* Bloc à retenir */
-.f-retenir{background:var(--rp);border-left:4px solid var(--r);padding:.8rem 1.1rem;margin-top:1.5rem;font-size:.9rem;line-height:1.65;color:var(--gf)}
-.f-retenir strong{color:var(--r);font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:.4rem}
-
-/* Navigation inter-fiches */
-.fiche-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rb);font-size:.82rem}
-.fiche-nav label{color:var(--rv);cursor:pointer;letter-spacing:.04em}
-.fiche-nav label:hover{text-decoration:underline}
 
 @media(max-width:900px){
   .two-cols{grid-template-columns:1fr}
@@ -333,568 +144,1151 @@ details[open] .chap-toggle::after{content:'▾'}
   header{padding:1.2rem 1rem 1rem}
   nav label{padding:.55rem .5rem;font-size:.68rem}
   #home{padding:1.8rem 1rem 3rem}
+  .cards-grid{grid-template-columns:1fr 1fr}
 }
+@media(max-width:480px){.cards-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <input type="radio" name="page" class="nav-radio" id="r-home" checked>
 <input type="radio" name="page" class="nav-radio" id="r-plan">
 <input type="radio" name="page" class="nav-radio" id="r-f1">
+<input type="radio" name="page" class="nav-radio" id="r-f2">
+<input type="radio" name="page" class="nav-radio" id="r-f3">
+<input type="radio" name="page" class="nav-radio" id="r-f4">
+<input type="radio" name="page" class="nav-radio" id="r-f5">
+<input type="radio" name="page" class="nav-radio" id="r-f6">
+<input type="radio" name="page" class="nav-radio" id="r-f7">
+<input type="radio" name="page" class="nav-radio" id="r-f8">
+<input type="radio" name="page" class="nav-radio" id="r-f9">
+<input type="radio" name="page" class="nav-radio" id="r-f10">
+<input type="radio" name="page" class="nav-radio" id="r-f11">
 
 <div class="wrap">
-
 <header>
   <label for="r-home" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
     <h1>Droit des <span>Sûretés</span></h1>
     <small>Fiches de révision — 2025-2026</small>
   </label>
 </header>
-
 <nav>
   <ul>
     <li><label class="nav-home" for="r-home">Accueil</label></li>
     <li><label class="nav-plan" for="r-plan">Plan du cours</label></li>
-    <li><label class="nav-f1" for="r-f1">F1 — Cautionnement en général</label></li>
+    <li><label class="nav-f1" for="r-f1">#1 Cautionnement en général</label></li>
+    <li><label class="nav-f2" for="r-f2">#2 Variétés</label></li>
+    <li><label class="nav-f3" for="r-f3">#3 Formation</label></li>
+    <li><label class="nav-f4" for="r-f4">#4 Effets</label></li>
+    <li><label class="nav-f5" for="r-f5">#5 Extinction</label></li>
+    <li><label class="nav-f6" for="r-f6">#6 Autres sûretés personnelles</label></li>
+    <li><label class="nav-f7" for="r-f7">#7 Propriété comme garantie</label></li>
+    <li><label class="nav-f8" for="r-f8">#8 Droit de rétention</label></li>
+    <li><label class="nav-f9" for="r-f9">#9 Gage</label></li>
+    <li><label class="nav-f10" for="r-f10">#10 Nantissement</label></li>
+    <li><label class="nav-f11" for="r-f11">#11 Hypothèque</label></li>
   </ul>
 </nav>
 
-<!-- ═══════════════════════════════════════ ACCUEIL ═══ -->
+<!-- ACCUEIL -->
 <div id="home-content">
-  <div id="home">
-    <div class="intro">
-      <h2>Droit des Sûretés</h2>
-      <p>Support de révision interactif. Cliquez sur l'onglet <strong>Plan du cours</strong> pour visualiser la carte mentale du cours.</p>
-    </div>
+<div id="home">
+  <div class="home-intro">
+    <h2>Droit des Sûretés</h2>
+    <p>Support de révision interactif — 11 fiches complètes + plan du cours. Choisissez un onglet ou cliquez sur une carte.</p>
+  </div>
+  <div class="home-section-title">Navigation générale</div>
+  <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));max-width:520px">
+    <label class="card-plan" for="r-plan">
+      <div class="card-num">Vue d'ensemble</div>
+      <h3>Plan du cours</h3>
+      <p>Carte mentale interactive — accès direct aux fiches depuis chaque chapitre</p>
+    </label>
+  </div>
+  <div class="home-section-title">Partie 1 — Sûretés personnelles</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f1"><div class="card-num">Fiche #1</div><h3>Le cautionnement en général</h3><p>Nature contractuelle, acteurs, caractères fondamentaux</p></label>
+    <label class="card" for="r-f2"><div class="card-num">Fiche #2</div><h3>Les variétés de cautionnement</h3><p>Gratuit/onéreux, civil/commercial, simple/solidaire, aval</p></label>
+    <label class="card" for="r-f3"><div class="card-num">Fiche #3</div><h3>La formation du cautionnement</h3><p>Consentement, capacité, contenu, forme</p></label>
+    <label class="card" for="r-f4"><div class="card-num">Fiche #4</div><h3>Les effets du cautionnement</h3><p>Relations créancier/caution et caution/débiteur</p></label>
+    <label class="card" for="r-f5"><div class="card-num">Fiche #5</div><h3>L'extinction du cautionnement</h3><p>Voie principale et voie accessoire</p></label>
+    <label class="card" for="r-f6"><div class="card-num">Fiche #6</div><h3>Les autres sûretés personnelles</h3><p>Garantie autonome et lettre d'intention</p></label>
+  </div>
+  <div class="home-section-title">Partie 2 — Sûretés réelles</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f7"><div class="card-num">Fiche #7</div><h3>La propriété comme garantie</h3><p>Réserve de propriété, crédit-bail, fiducie-sûreté</p></label>
+    <label class="card" for="r-f8"><div class="card-num">Fiche #8</div><h3>Le droit de rétention</h3><p>Conditions cumulatives, effets, limites</p></label>
+    <label class="card" for="r-f9"><div class="card-num">Fiche #9</div><h3>Le gage</h3><p>Avec et sans dépossession, réalisation</p></label>
+    <label class="card" for="r-f10"><div class="card-num">Fiche #10</div><h3>Le nantissement</h3><p>Créance, parts sociales, fonds de commerce</p></label>
+    <label class="card" for="r-f11"><div class="card-num">Fiche #11</div><h3>L'hypothèque</h3><p>Conventionnelle, légale, judiciaire — droit de suite</p></label>
   </div>
 </div>
+</div>
 
-<!-- ═══════════════════════════════════════ PLAN ═══ -->
+<!-- PLAN -->
 <div id="page-plan" class="page-content">
 <main>
-
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.6rem">
-    <div>
-      <h2 style="font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700;color:var(--n)">Plan détaillé du cours</h2>
-      <p style="font-size:.85rem;color:var(--g);margin-top:.2rem">Ord. 15 septembre 2021 — Réforme du droit des sûretés</p>
-    </div>
+    <div><h2 style="font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700">Plan détaillé du cours</h2><p style="font-size:.85rem;color:var(--g);margin-top:.2rem">Ord. 15 septembre 2021 — cliquez sur un chapitre, puis sur le bouton de fiche pour l'ouvrir</p></div>
     <label class="btn-home" for="r-home">← Accueil</label>
   </div>
-
   <div class="legend">
-    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#1a1a1a"/></svg> Titre racine</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#1a1a1a"/></svg> Racine</div>
     <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000"/></svg> Partie</div>
     <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#B22222"/></svg> Titre</div>
     <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#f6f8fb" stroke="#e8c8c8"/></svg> Chapitre (cliquable)</div>
-    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#fdf0f0" stroke="#e8c8c8"/></svg> Section / §</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000" opacity=".8"/></svg> Lien fiche</div>
   </div>
-
-  <div class="mindmap-container">
-    <div class="mindmap-scroll">
-
-      <!-- ROOT -->
-      <div class="root-node">
-        <div class="node-box">
-          DROIT DES SÛRETÉS
-          <small>Ord. 15 sept. 2021</small>
-        </div>
+  <div class="mindmap-container"><div class="mindmap-scroll">
+    <div class="root-node"><div class="node-box">DROIT DES SÛRETÉS<small>Ord. 15 sept. 2021</small></div></div>
+    <div class="intro-block" style="margin-bottom:1.5rem">
+      <div class="intro-block-header">Introduction</div>
+      <div class="intro-block-body">
+        <div class="intro-topic">Notion et fonction de la sûreté</div>
+        <div class="intro-topic">Distinction sûretés / garanties</div>
+        <div class="intro-topic">Évolution historique et économique</div>
+        <div class="intro-topic">Réforme du 15 septembre 2021</div>
       </div>
-
-      <!-- INTRODUCTION -->
-      <div class="intro-block" style="margin-bottom:1.5rem">
-        <div class="intro-block-header">Introduction</div>
-        <div class="intro-block-body">
-          <div class="intro-topic">Notion et fonction de la sûreté</div>
-          <div class="intro-topic">Distinction entre les sûretés et les garanties</div>
-          <div class="intro-topic">Évolution historique et économique des sûretés</div>
-          <div class="intro-topic">Réforme du droit des sûretés (Ord. du 15 septembre 2021)</div>
-        </div>
-      </div>
-
-      <!-- TWO PARTIES -->
-      <div class="two-cols">
-
-        <!-- ═══════════ PARTIE 1 ═══════════ -->
-        <div class="partie-block">
-          <div class="partie-header">Partie 1 — Les sûretés personnelles</div>
-          <div class="partie-body">
-
-            <!-- TITRE 1 -->
-            <div class="titre-block">
-              <div class="titre-header">Titre 1 — Le cautionnement</div>
-              <div class="titre-body">
-
-                <!-- CHAP 1 -->
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 1 — La notion de cautionnement <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item">
-                      <span class="section-label">Section 1</span>
-                      <span class="section-name">Le cautionnement en général</span>
-                      <div class="para-list">
-                        <div class="para-item">Un contrat</div>
-                        <div class="para-item">Un contrat unilatéral</div>
-                        <div class="para-item">Un contrat accessoire</div>
-                      </div>
-                    </div>
-                    <div class="section-item">
-                      <span class="section-label">Section 2</span>
-                      <span class="section-name">Les variétés de cautionnement</span>
-                      <div class="para-list">
-                        <div class="para-item">Cautionnement gratuit / onéreux</div>
-                        <div class="para-item">Cautionnement civil / commercial</div>
-                        <div class="para-item">Cautionnement simple / solidaire</div>
-                        <div class="para-item">L'aval</div>
-                        <div class="para-item">Les cautionnements complexes
-                          <div class="sub-list">
-                            <div class="sub-item">Certification de caution</div>
-                            <div class="sub-item">Sous-cautionnement</div>
-                            <div class="sub-item">Cautionnement réel</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </details>
-
-                <!-- CHAP 2 -->
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 2 — La formation du cautionnement <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item">
-                      <span class="section-label">Section 1</span>
-                      <span class="section-name">Le consentement</span>
-                      <div class="para-list">
-                        <div class="para-item">Protection a priori : devoirs d'information et de mise en garde</div>
-                        <div class="para-item">Protection a posteriori : vices du consentement
-                          <div class="sub-list">
-                            <div class="sub-item">L'erreur</div>
-                            <div class="sub-item">Le dol</div>
-                            <div class="sub-item">La violence</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="section-item">
-                      <span class="section-label">Section 2</span>
-                      <span class="section-name">La capacité et le pouvoir</span>
-                      <div class="para-list">
-                        <div class="para-item">Le droit des régimes matrimoniaux</div>
-                        <div class="para-item">Le droit des sociétés</div>
-                      </div>
-                    </div>
-                    <div class="section-item">
-                      <span class="section-label">Section 3</span>
-                      <span class="section-name">Le contenu du cautionnement</span>
-                      <div class="para-list">
-                        <div class="para-item">La prestation de la caution
-                          <div class="sub-list">
-                            <div class="sub-item">L'objet du cautionnement</div>
-                            <div class="sub-item">L'étendue du cautionnement</div>
-                          </div>
-                        </div>
-                        <div class="para-item">La cause (contrepartie) de l'obligation de la caution</div>
-                        <div class="para-item">L'exigence d'équilibre et de proportionnalité
-                          <div class="sub-list">
-                            <div class="sub-item">En jurisprudence</div>
-                            <div class="sub-item">Dans la loi</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="section-item">
-                      <span class="section-label">Section 4</span>
-                      <span class="section-name">La forme du cautionnement</span>
-                      <div class="para-list">
-                        <div class="para-item">Le champ du formalisme</div>
-                        <div class="para-item">Le contenu du formalisme</div>
-                        <div class="para-item">Les sanctions du formalisme</div>
-                      </div>
-                    </div>
-                  </div>
-                </details>
-
-                <!-- CHAP 3 -->
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 3 — Les effets du cautionnement <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item">
-                      <span class="section-label">Section 1</span>
-                      <span class="section-name">Effets entre le créancier et la caution</span>
-                      <div class="para-list">
-                        <div class="para-item">Principe d'opposabilité des exceptions</div>
-                        <div class="para-item">Obligations du créancier
-                          <div class="sub-list">
-                            <div class="sub-item">Information annuelle de la caution</div>
-                            <div class="sub-item">Information ponctuelle sur la défaillance du débiteur</div>
-                          </div>
-                        </div>
-                        <div class="para-item">Droit de poursuite du créancier
-                          <div class="sub-list">
-                            <div class="sub-item">Condition constante : exigibilité</div>
-                            <div class="sub-item">Les données variables</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="section-item">
-                      <span class="section-label">Section 2</span>
-                      <span class="section-name">Effets entre la caution et le débiteur</span>
-                      <div class="para-list">
-                        <div class="para-item">Le recours de la caution après paiement</div>
-                        <div class="para-item">La situation de la caution avant paiement</div>
-                      </div>
-                    </div>
-                  </div>
-                </details>
-
-                <!-- CHAP 4 -->
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 4 — L'extinction du cautionnement <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item">
-                      <span class="section-label">Section 1</span>
-                      <span class="section-name">Extinction par voie principale</span>
-                      <div class="para-list">
-                        <div class="para-item">Le bénéfice de subrogation</div>
-                        <div class="para-item">Extinction du cautionnement de dettes futures</div>
-                        <div class="para-item">La question des termes tacites</div>
-                      </div>
-                    </div>
-                    <div class="section-item">
-                      <span class="section-label">Section 2</span>
-                      <span class="section-name">Extinction par voie accessoire</span>
-                      <div class="para-list">
-                        <div class="para-item">Le paiement</div>
-                        <div class="para-item">L'annulation, la résolution</div>
-                        <div class="para-item">La prescription</div>
-                        <div class="para-item">La remise de dette</div>
-                        <div class="para-item">La compensation</div>
-                        <div class="para-item">La dation en paiement</div>
-                        <div class="para-item">La novation</div>
-                        <div class="para-item">Le décès</div>
-                      </div>
-                    </div>
-                  </div>
-                </details>
-
-              </div><!-- /titre-body -->
-            </div><!-- /titre-block T1 -->
-
-            <!-- TITRE 2 -->
-            <div class="titre-block">
-              <div class="titre-header">Titre 2 — Les autres sûretés personnelles</div>
-              <div class="titre-body">
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 1 — La garantie autonome <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item"><span class="section-name" style="font-style:italic;color:var(--g);font-weight:400">Contenu à développer</span></div>
-                  </div>
-                </details>
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 2 — La lettre d'intention <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item"><span class="section-name" style="font-style:italic;color:var(--g);font-weight:400">Contenu à développer</span></div>
-                  </div>
-                </details>
-              </div>
-            </div>
-
-          </div><!-- /partie-body -->
-        </div><!-- /partie-block P1 -->
-
-        <!-- ═══════════ PARTIE 2 ═══════════ -->
-        <div class="partie-block">
-          <div class="partie-header">Partie 2 — Les sûretés réelles</div>
-          <div class="partie-body">
-
-            <!-- TITRE 1 -->
-            <div class="titre-block">
-              <div class="titre-header">Titre 1 — Sûretés conférant un droit exclusif</div>
-              <div class="titre-body">
-
-                <!-- CHAP 1 -->
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 1 — La propriété comme garantie <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item">
-                      <span class="section-label">Section 1</span>
-                      <span class="section-name">La propriété retenue à titre de garantie</span>
-                      <div class="para-list">
-                        <div class="para-item">La vente sous réserve de propriété</div>
-                        <div class="para-item">Le crédit-bail</div>
-                      </div>
-                    </div>
-                    <div class="section-item">
-                      <span class="section-label">Section 2</span>
-                      <span class="section-name">La propriété cédée à titre de garantie</span>
-                      <div class="para-list">
-                        <div class="para-item">La cession de créance à titre de garantie
-                          <div class="sub-list">
-                            <div class="sub-item">Le régime de droit commun</div>
-                            <div class="sub-item">La cession Dailly</div>
-                          </div>
-                        </div>
-                        <div class="para-item">La fiducie-sûreté
-                          <div class="sub-list">
-                            <div class="sub-item">Les acteurs et le mécanisme</div>
-                            <div class="sub-item">La constitution</div>
-                            <div class="sub-item">Le dénouement</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </details>
-
-                <!-- CHAP 2 -->
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 2 — Le droit de rétention <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item">
-                      <span class="section-label">Section 1</span>
-                      <span class="section-name">Les conditions du droit de rétention</span>
-                      <div class="para-list">
-                        <div class="para-item">La créance garantie</div>
-                        <div class="para-item">La détention</div>
-                        <div class="para-item">Le lien de connexité entre la créance et la détention</div>
-                      </div>
-                    </div>
-                    <div class="section-item">
-                      <span class="section-label">Section 2</span>
-                      <span class="section-name">Les effets du droit de rétention</span>
-                    </div>
-                  </div>
-                </details>
-
-              </div>
-            </div><!-- /titre 1 P2 -->
-
-            <!-- TITRE 2 -->
-            <div class="titre-block">
-              <div class="titre-header">Titre 2 — Sûretés conférant un droit de préférence</div>
-              <div class="titre-body">
-
-                <!-- CHAP 1 GAGE -->
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 1 — Le gage <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item">
-                      <span class="section-label">Section 1</span>
-                      <span class="section-name">Le gage avec dépossession</span>
-                      <div class="para-list">
-                        <div class="para-item">La formation</div>
-                        <div class="para-item">Les effets</div>
-                      </div>
-                    </div>
-                    <div class="section-item">
-                      <span class="section-label">Section 2</span>
-                      <span class="section-name">Le gage sans dépossession</span>
-                      <div class="para-list">
-                        <div class="para-item">La constitution</div>
-                        <div class="para-item">Les effets</div>
-                      </div>
-                    </div>
-                  </div>
-                </details>
-
-                <!-- CHAP 2 NANTISSEMENT -->
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 2 — Le nantissement <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item">
-                      <span class="section-label">Section 1</span>
-                      <span class="section-name">Le nantissement de créances de droit commun</span>
-                      <div class="para-list">
-                        <div class="para-item">La constitution</div>
-                        <div class="para-item">Les effets</div>
-                      </div>
-                    </div>
-                    <div class="section-item">
-                      <span class="section-label">Section 2</span>
-                      <span class="section-name">Les nantissements spéciaux</span>
-                      <div class="para-list">
-                        <div class="para-item">Le nantissement de compte</div>
-                        <div class="para-item">Le nantissement des fonds d'exploitation</div>
-                        <div class="para-item">Le nantissement de droits sociaux</div>
-                      </div>
-                    </div>
-                  </div>
-                </details>
-
-                <!-- CHAP 3 HYPOTHÈQUE -->
-                <details class="chap-block">
-                  <summary class="chap-header">Chap. 3 — L'hypothèque <span class="chap-toggle"></span></summary>
-                  <div class="chap-body">
-                    <div class="section-item">
-                      <span class="section-label">Section 1</span>
-                      <span class="section-name">L'hypothèque conventionnelle</span>
-                      <div class="para-list">
-                        <div class="para-item">La constitution de l'hypothèque</div>
-                        <div class="para-item">Les règles de capacité et de pouvoir</div>
-                        <div class="para-item">Les règles matrimoniales et sociétaires</div>
-                      </div>
-                    </div>
-                  </div>
-                </details>
-
-              </div>
-            </div><!-- /titre 2 P2 -->
-
-          </div>
-        </div><!-- /partie-block P2 -->
-
-      </div><!-- /two-cols -->
-
-    </div><!-- /mindmap-scroll -->
-  </div><!-- /mindmap-container -->
-
-</main>
-</div><!-- /page-plan -->
-
-<!-- ═══════════════════════════════════════ FICHE 1 ═══ -->
-<div id="page-f1" class="page-content">
-<main>
-<div class="fiche-page">
-
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.6rem">
-    <label class="btn-home" for="r-home">← Accueil</label>
-    <label class="btn-home" for="r-plan">Plan du cours</label>
-  </div>
-
-  <div class="fiche-header">
-    <div class="fiche-meta">Fiche n°1 — P1 Sûretés personnelles · T1 Cautionnement · C1 Notion</div>
-    <h2>Le cautionnement en général</h2>
-  </div>
-
-  <!-- ══ I. UN CONTRAT ══ -->
-  <div class="f-para">
-    <div class="f-para-title">I. Un contrat</div>
-
-    <div class="f-I">
-      <div class="f-I-title">1. Nature contractuelle</div>
-      <p class="f-text">Le cautionnement est un contrat, conclu entre la caution et le créancier. Il ne doit pas être confondu avec l'<em>opération de cautionnement</em>, qui implique trois personnes :</p>
-      <ul class="f-list">
-        <li>le créancier (acteur principal),</li>
-        <li>la caution (celle qui s'engage),</li>
-        <li>le débiteur principal (tiers au contrat, mais intéressé).</li>
-      </ul>
-      <p class="f-text">Le contrat peut être conclu à l'initiative du débiteur, mais la loi prévoit qu'il est également valable que la caution s'engage à l'insu du débiteur principal.</p>
     </div>
-
-    <div class="f-I">
-      <div class="f-I-title">2. Les protagonistes</div>
-
-      <div class="f-A">
-        <div class="f-A-title">a) Le créancier</div>
-        <p class="f-text">Il peut être n'importe quelle personne. Lorsqu'il est créancier professionnel, des règles particulières s'appliquent, notamment en matière d'information, de mise en garde et de protection du consentement de la caution. Certains créanciers sont des professionnels du crédit (banques), auxquels le droit impose historiquement des obligations renforcées.</p>
+    <div class="two-cols">
+      <div class="partie-block">
+        <div class="partie-header">Partie 1 — Les sûretés personnelles</div>
+        <div class="partie-body">
+          <div class="titre-block">
+            <div class="titre-header">Titre 1 — Le cautionnement</div>
+            <div class="titre-body">
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 1 — Notion de cautionnement <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-label">Section 1</span><span class="section-name">Le cautionnement en général</span><div class="para-list"><div class="para-item">Un contrat</div><div class="para-item">Un contrat unilatéral</div><div class="para-item">Un contrat accessoire</div></div></div>
+                  <div class="section-item"><span class="section-label">Section 2</span><span class="section-name">Les variétés de cautionnement</span><div class="para-list"><div class="para-item">Gratuit / onéreux</div><div class="para-item">Civil / commercial</div><div class="para-item">Simple / solidaire</div><div class="para-item">L'aval</div><div class="para-item">Cautionnements complexes<div class="sub-list"><div class="sub-item">Certification de caution</div><div class="sub-item">Sous-cautionnement</div><div class="sub-item">Cautionnement réel</div></div></div></div></div>
+                  <label class="plan-fiche-link" for="r-f1">→ Fiche #1</label>
+                  <label class="plan-fiche-link" for="r-f2">→ Fiche #2</label>
+                </div>
+              </details>
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 2 — Formation du cautionnement <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-label">Section 1</span><span class="section-name">Le consentement</span><div class="para-list"><div class="para-item">Protection a priori : devoirs d'information et de mise en garde</div><div class="para-item">Protection a posteriori : vices du consentement<div class="sub-list"><div class="sub-item">L'erreur</div><div class="sub-item">Le dol</div><div class="sub-item">La violence</div></div></div></div></div>
+                  <div class="section-item"><span class="section-label">Section 2</span><span class="section-name">La capacité et le pouvoir</span><div class="para-list"><div class="para-item">Droit des régimes matrimoniaux</div><div class="para-item">Droit des sociétés</div></div></div>
+                  <div class="section-item"><span class="section-label">Section 3</span><span class="section-name">Le contenu du cautionnement</span><div class="para-list"><div class="para-item">Prestation de la caution (objet / étendue)</div><div class="para-item">La cause (contrepartie)</div><div class="para-item">L'exigence de proportionnalité</div></div></div>
+                  <div class="section-item"><span class="section-label">Section 4</span><span class="section-name">La forme du cautionnement</span><div class="para-list"><div class="para-item">Champ, contenu, sanctions du formalisme</div></div></div>
+                  <label class="plan-fiche-link" for="r-f3">→ Fiche #3</label>
+                </div>
+              </details>
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 3 — Effets du cautionnement <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-label">Section 1</span><span class="section-name">Effets entre le créancier et la caution</span><div class="para-list"><div class="para-item">Opposabilité des exceptions</div><div class="para-item">Obligations du créancier (info annuelle / info défaillance)</div><div class="para-item">Droit de poursuite</div></div></div>
+                  <div class="section-item"><span class="section-label">Section 2</span><span class="section-name">Effets entre la caution et le débiteur</span><div class="para-list"><div class="para-item">Recours après paiement</div><div class="para-item">Situation avant paiement</div></div></div>
+                  <label class="plan-fiche-link" for="r-f4">→ Fiche #4</label>
+                </div>
+              </details>
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 4 — Extinction du cautionnement <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-label">Section 1</span><span class="section-name">Par voie principale</span><div class="para-list"><div class="para-item">Bénéfice de subrogation</div><div class="para-item">Dettes futures — résiliation</div><div class="para-item">Termes tacites</div></div></div>
+                  <div class="section-item"><span class="section-label">Section 2</span><span class="section-name">Par voie accessoire</span><div class="para-list"><div class="para-item">Paiement, nullité, prescription, remise, compensation, novation, dation, décès</div></div></div>
+                  <label class="plan-fiche-link" for="r-f5">→ Fiche #5</label>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="titre-block">
+            <div class="titre-header">Titre 2 — Autres sûretés personnelles</div>
+            <div class="titre-body">
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 1 — La garantie autonome <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-name">Engagement indépendant — fraude et abus comme seules limites</span></div>
+                  <label class="plan-fiche-link" for="r-f6">→ Fiche #6</label>
+                </div>
+              </details>
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 2 — La lettre d'intention <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-name">Engagement de comportement — intensité variable — responsabilité contractuelle</span></div>
+                  <label class="plan-fiche-link" for="r-f6">→ Fiche #6</label>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="partie-block">
+        <div class="partie-header">Partie 2 — Les sûretés réelles</div>
+        <div class="partie-body">
+          <div class="titre-block">
+            <div class="titre-header">Titre 1 — Sûretés à droit exclusif</div>
+            <div class="titre-body">
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 1 — La propriété comme garantie <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-label">Section 1</span><span class="section-name">Propriété retenue</span><div class="para-list"><div class="para-item">Vente sous réserve de propriété</div><div class="para-item">Crédit-bail</div></div></div>
+                  <div class="section-item"><span class="section-label">Section 2</span><span class="section-name">Propriété cédée</span><div class="para-list"><div class="para-item">Cession de créance à titre de garantie<div class="sub-list"><div class="sub-item">Droit commun</div><div class="sub-item">Cession Dailly</div></div></div><div class="para-item">Fiducie-sûreté<div class="sub-list"><div class="sub-item">Acteurs et mécanisme</div><div class="sub-item">Constitution</div><div class="sub-item">Dénouement</div></div></div></div></div>
+                  <label class="plan-fiche-link" for="r-f7">→ Fiche #7</label>
+                </div>
+              </details>
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 2 — Le droit de rétention <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-label">Section 1</span><span class="section-name">Conditions</span><div class="para-list"><div class="para-item">La créance garantie</div><div class="para-item">La détention</div><div class="para-item">Le lien de connexité</div></div></div>
+                  <div class="section-item"><span class="section-label">Section 2</span><span class="section-name">Effets</span></div>
+                  <label class="plan-fiche-link" for="r-f8">→ Fiche #8</label>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="titre-block">
+            <div class="titre-header">Titre 2 — Sûretés à droit de préférence</div>
+            <div class="titre-body">
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 1 — Le gage <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-label">Section 1</span><span class="section-name">Gage avec dépossession</span><div class="para-list"><div class="para-item">Formation</div><div class="para-item">Effets</div></div></div>
+                  <div class="section-item"><span class="section-label">Section 2</span><span class="section-name">Gage sans dépossession</span><div class="para-list"><div class="para-item">Constitution</div><div class="para-item">Effets</div></div></div>
+                  <label class="plan-fiche-link" for="r-f9">→ Fiche #9</label>
+                </div>
+              </details>
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 2 — Le nantissement <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-label">Section 1</span><span class="section-name">Nantissement de créances</span><div class="para-list"><div class="para-item">Constitution</div><div class="para-item">Effets</div></div></div>
+                  <div class="section-item"><span class="section-label">Section 2</span><span class="section-name">Nantissements spéciaux</span><div class="para-list"><div class="para-item">Nantissement de compte</div><div class="para-item">Nantissement des fonds d'exploitation</div><div class="para-item">Nantissement de droits sociaux</div></div></div>
+                  <label class="plan-fiche-link" for="r-f10">→ Fiche #10</label>
+                </div>
+              </details>
+              <details class="chap-block">
+                <summary class="chap-header">Chap. 3 — L'hypothèque <span class="chap-toggle"></span></summary>
+                <div class="chap-body">
+                  <div class="section-item"><span class="section-label">Section 1</span><span class="section-name">Hypothèque conventionnelle</span><div class="para-list"><div class="para-item">Constitution</div><div class="para-item">Capacité et pouvoir</div><div class="para-item">Règles matrimoniales et sociétaires</div></div></div>
+                  <div class="section-item"><span class="section-name">+ Hypothèque légale / judiciaire</span></div>
+                  <label class="plan-fiche-link" for="r-f11">→ Fiche #11</label>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</main>
+</div>
 
-      <div class="f-A">
-        <div class="f-A-title">b) La caution</div>
-        <p class="f-text">La caution peut être toute personne, physique ou morale. L'évolution du droit montre un déplacement des distinctions :</p>
+<!-- FICHE 1 -->
+<div id="page-f1" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #1 · P1 Sûretés personnelles · T1 Cautionnement · C1 Notion</div>
+    <h2>Le cautionnement en général</h2>
+    <div class="fiche-intro">Avant d'entrer dans les règles techniques, cette fiche répond à la question la plus simple : qu'est-ce qu'un cautionnement, qui sont les acteurs, et quelles sont ses trois caractéristiques fondamentales qui structurent tout le reste du cours ?</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">0</span> Pourquoi le cautionnement existe</div>
+    <p class="f-text">Un créancier prête de l'argent ou accorde un délai de paiement à un débiteur. Tout semble aller bien sur le papier. Mais une question obsède le créancier : <em>« Et s'il ne paie pas ? »</em></p>
+    <p class="f-text">Le droit civil donne déjà une réponse générale : le débiteur répond de ses dettes sur l'ensemble de son patrimoine. Mais cette réponse est imparfaite :</p>
+    <ul class="f-list"><li>Le débiteur peut être insolvable ou le devenir</li><li>Plusieurs créanciers peuvent se présenter simultanément</li><li>Certains patrimoines sont protégés ou réduits</li><li>Être payé en justice est long et incertain</li></ul>
+    <div class="f-exemple"><strong>L'idée du cautionnement</strong>On ajoute une autre personne qui promet de payer si le débiteur ne le fait pas. Mécanisme ancien, intuitif, humain — et juridiquement dangereux pour celui qui s'engage.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> Le cautionnement est un contrat</div>
+    <div class="f-sous">
+      <div class="f-sous-title">1. Définition</div>
+      <p class="f-text">Le cautionnement est un contrat par lequel une personne appelée <strong>la caution</strong> s'engage envers un <strong>créancier</strong> à payer la dette d'un <strong>débiteur principal</strong> en cas de défaillance de ce dernier. Trois éléments essentiels : la caution ne paie pas immédiatement, elle paie à titre subsidiaire, elle paie à la place d'un autre.</p>
+      <div class="f-alerte"><strong>Point crucial</strong>Le cautionnement n'est ni un paiement, ni une simple promesse floue : c'est un engagement juridique lourd, souvent sous-estimé par celui qui le signe.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">2. Une opération à trois personnes… mais un contrat à deux</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>a) L'opération de cautionnement</div>
+        <ul class="f-list"><li><strong>Le créancier</strong> : celui à qui la dette est due</li><li><strong>Le débiteur principal</strong> : celui qui doit normalement payer</li><li><strong>La caution</strong> : celle qui promet de payer si le débiteur fait défaut</li></ul>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>b) Le contrat est conclu entre deux seulement</div>
+        <p class="f-text">Le contrat est conclu entre <strong>le créancier et la caution</strong> uniquement. Le débiteur principal n'est pas partie au contrat, n'est pas nécessairement signataire, et peut même ignorer que quelqu'un s'est porté caution pour lui.</p>
+        <div class="f-exemple"><strong>Exemple concret</strong>Une mère signe un cautionnement auprès d'une banque pour un prêt accordé à son fils. Le fils n'est pas partie au contrat de cautionnement. Le contrat existe uniquement entre la banque et la mère.</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">3. Les protagonistes</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>a) Le créancier</div>
+        <p class="f-text">Il peut être un particulier, une entreprise ou un organisme financier. Lorsqu'il est <strong>créancier professionnel</strong> (ex : banque), le droit lui impose des obligations renforcées (information, mise en garde, proportionnalité).</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>b) La caution</div>
+        <p class="f-text">Peut être une personne physique (parent, conjoint, dirigeant) ou morale (société). L'évolution du droit : cautions profanes/averties (jurisprudence ancienne) → personne physique/morale (loi 2003) → réforme 2021 : protections maintenues pour les cautions personnes physiques.</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>c) Le débiteur principal</div>
+        <p class="f-text">Tiers au contrat, mais acteur central. Souvent à l'origine de la démarche. Mais juridiquement, le contrat qui compte est celui entre la caution et le créancier.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">4. Cautionnements légaux et judiciaires</div>
+      <ul class="f-list"><li><strong>Cautionnement légal</strong> : la loi exige une caution pour exercer un droit</li><li><strong>Cautionnement judiciaire</strong> : le juge conditionne une décision à la fourniture d'une caution</li></ul>
+      <div class="f-alerte"><strong>À ne jamais oublier</strong>Même dans ces cas, un contrat est nécessaire. Il n'existe aucun cautionnement automatique. Seule l'origine de l'obligation diffère, pas sa nature contractuelle.</div>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> Le cautionnement est un contrat unilatéral</div>
+    <div class="f-sous">
+      <div class="f-sous-title">1. Signification réelle</div>
+      <p class="f-text">Un contrat unilatéral : <strong>une seule partie supporte l'obligation principale</strong>. Dans le cautionnement, seule la caution s'engage à payer. Le créancier reçoit un engagement sans promettre une prestation en retour. Les deux parties veulent le contrat — mais une seule s'oblige.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">2. Pourquoi cette qualification est capitale</div>
+      <div class="f-alerte"><strong>Le droit répond : non au synallagmatisme</strong>Les obligations d'information du créancier sont imposées par la loi — elles ne sont pas la contrepartie de l'engagement de la caution. Le cautionnement reste unilatéral, avec toutes les conséquences sur la preuve, la nullité et la durée.</div>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">III</span> Le cautionnement est un contrat accessoire</div>
+    <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:1rem">→ Point le plus important de toute la fiche</p>
+    <div class="f-sous">
+      <div class="f-sous-title">1. L'idée clé : pas de dette, pas de cautionnement</div>
+      <p class="f-text">Le cautionnement n'existe jamais seul. Il est <strong>accessoire</strong> à une dette principale : il repose entièrement sur l'existence d'une obligation garantie et suit le sort de cette obligation. Tout le droit du cautionnement est irrigué par cette idée.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">2. Conséquences concrètes</div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>a) Identité de dette</div><p class="f-text">La caution s'engage sur la même dette que le débiteur, ni plus, ni autrement. Si le débiteur doit 50 000 €, la caution ne peut jamais être tenue à 60 000 €.</p></div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>b) Dépendance du sort de la dette</div><p class="f-text">Si la dette principale est nulle, éteinte ou n'a jamais existé → le cautionnement tombe ou devient sans effet (sauf exceptions très précises).</p></div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>c) Moyens de défense</div><p class="f-text">La caution peut opposer les défauts de la dette. Son engagement n'est pas une nouvelle dette autonome.</p></div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">3. L'accessoriété comme critère de qualification</div>
+      <p class="f-text">Si l'engagement subsiste même si la dette est illégitime → ce n'est plus un cautionnement mais une garantie autonome (fiche #6). La réforme de 2021 a voulu revenir à une conception forte et stricte de cette accessoriété.</p>
+    </div>
+  </div>
+  <div class="f-retenir">
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul>
+      <li>Expliquer pourquoi le cautionnement existe (problème économique de départ)</li>
+      <li>Définir le cautionnement en le comprenant, pas en le récitant</li>
+      <li>Identifier les trois acteurs et leurs rôles respectifs</li>
+      <li>Expliquer ce que signifie : contrat, unilatéral, accessoire</li>
+      <li>Comprendre pourquoi tout le reste du cours découle logiquement de cette base</li>
+    </ul>
+  </div>
+  <div class="fiche-nav"><span></span><label for="r-f2">Fiche #2 : Les variétés →</label></div>
+</div></main>
+</div>
+
+<!-- FICHE 2 -->
+<div id="page-f2" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #2 · P1 Sûretés personnelles · T1 Cautionnement · C1 Notion</div>
+    <h2>Les variétés de cautionnement</h2>
+    <div class="fiche-intro">Tous les cautionnements ne se valent pas. Selon la forme retenue, le niveau de risque pour la caution change radicalement, les droits du créancier sont plus ou moins forts, et les règles applicables varient. Cette fiche explique comment le cautionnement peut devenir plus ou moins sévère.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> Cautionnement gratuit / cautionnement onéreux</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Le cautionnement gratuit</div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>1. Définition</div><p class="f-text">Un cautionnement est <strong>gratuit</strong> lorsque la caution ne reçoit aucune rémunération et ne tire aucun avantage direct de son engagement. Forme la plus ancienne, la plus courante dans les rapports familiaux ou amicaux.</p><div class="f-exemple"><strong>Exemple typique</strong>Un parent se porte caution pour le prêt étudiant de son enfant.</div></div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>2. Idée fausse importante</div><p class="f-text">Le cautionnement gratuit n'est pas nécessairement une libéralité. Le cautionnement est normalement neutre pour la caution : si elle paie, elle dispose d'un recours contre le débiteur principal. Tant que ce recours existe, pas d'appauvrissement définitif.</p><p class="f-text">Il devient une <strong>véritable libéralité</strong> uniquement lorsque la caution renonce volontairement à son recours contre le débiteur.</p><div class="f-exemple"><strong>Exemple</strong>Un père se porte caution pour son fils en sachant qu'il ne lui demandera jamais remboursement → libéralité, avec toutes les conséquences juridiques.</div></div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Le cautionnement onéreux</div>
+      <p class="f-text">Un cautionnement est <strong>onéreux</strong> lorsque la caution attend une contrepartie économique, financière ou stratégique. On le rencontre dans les relations entre sociétés, lorsque la caution est un professionnel, ou lorsqu'une rémunération est prévue. Peut influencer l'interprétation du contrat et la sévérité du contrôle judiciaire.</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> Cautionnement civil / cautionnement commercial</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Pourquoi cette distinction est cruciale</div>
+      <p class="f-text">Conséquences concrètes : juridiction compétente, règles de preuve, certaines règles de solidarité, validité de clauses compromissoires. <strong>Principe</strong> : tout cautionnement est en principe civil, sauf dans des cas précis.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les cinq cas de cautionnement commercial</div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>1. L'acte de commerce par nature</div><p class="f-text">Cautionnements s'inscrivant dans une opération bancaire ou financière (ex : une banque qui consent une garantie dans le cadre de son activité).</p></div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>2. La commercialité par accessoire</div><p class="f-text">Lorsqu'un commerçant accomplit un cautionnement pour les besoins de son activité professionnelle → commercial, même civil par nature.</p></div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>3. La commercialité par la forme : l'aval</div><p class="f-text">L'aval (cautionnement d'un effet de commerce) est toujours commercial, quelle que soit la qualité des parties. Qualification automatique.</p></div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>4. Le cautionnement justifié par un intérêt personnel</div><p class="f-text">La caution a un intérêt personnel direct dans l'opération garantie.</p><div class="f-exemple"><strong>Exemple central</strong>Un dirigeant se porte caution des dettes de sa société → agit dans son intérêt économique → commercial.</div></div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>5. Le cas créé par la réforme de 2021</div><p class="f-text">Les cautionnements garantissant une dette commerciale sont eux-mêmes commerciaux, même si la caution n'est pas commerçante. Objectif : éviter les distinctions artificielles.</p></div>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">III</span> Cautionnement simple / cautionnement solidaire</div>
+    <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:1rem">→ La distinction la plus importante pour la caution</p>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Le cautionnement simple : la version protectrice</div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>1. Le bénéfice de discussion</div><p class="f-text">La caution peut imposer au créancier de poursuivre d'abord le débiteur principal avant de se tourner vers elle.</p></div>
+      <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>2. Le bénéfice de division</div><p class="f-text">Lorsqu'il existe plusieurs cautions, chacune ne doit payer que sa part. Le créancier est obligé de diviser ses poursuites.</p><div class="f-exemple"><strong>Exemple</strong>Trois cautions pour une dette de 90 000 €. Chaque caution peut exiger de ne payer que 30 000 €.</div></div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Le cautionnement solidaire : la version dure</div>
+      <p class="f-text">Plus de bénéfice de discussion. Plus de bénéfice de division. Le créancier peut agir directement contre la caution, choisir la plus solvable, et lui réclamer la totalité de la dette.</p>
+      <div class="f-alerte"><strong>En pratique</strong>Quasiment tous les cautionnements bancaires sont solidaires. Le solidaire est la règle réelle — le simple est l'exception.</div>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">IV</span> L'aval</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Définition et nature double</div>
+      <p class="f-text">L'aval est le cautionnement d'un engagement cambiaire (lettre de change, billet à ordre). Il est à la fois cautionnement solidaire et engagement cambiaire autonome. En cas de conflit entre droit du cautionnement et droit cambiaire : <strong>le droit cambiaire l'emporte.</strong></p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Conséquences pour l'avaliste</div>
+      <p class="f-text">L'avaliste reste engagé même si la dette garantie est nulle. Il ne bénéficie pas du devoir de mise en garde, du devoir d'information, de la protection contre la disproportion, ni de certains moyens de défense de la caution classique.</p>
+      <div class="f-exemple"><strong>Image à retenir</strong>L'aval = un cautionnement sans airbag.</div>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">V</span> Les cautionnements complexes</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. La certification de caution</div>
+      <p class="f-text">Une personne se porte caution d'une caution. Objectif : renforcer la sécurité du créancier.</p>
+      <div class="f-exemple"><strong>Schéma</strong>Débiteur → Caution → Caution de la caution.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Le sous-cautionnement</div>
+      <p class="f-text">Une personne s'engage envers la caution (et non envers le créancier). La sous-caution garantit la caution principale, pas la dette directement.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. Le cautionnement réel</div>
+      <p class="f-text">Un tiers affecte un bien déterminé en garantie sans s'engager sur tout son patrimoine. Figure hybride, désormais reconnue par le droit positif. Le tiers n'est tenu que par la valeur du bien.</p>
+    </div>
+  </div>
+  <div class="f-retenir">
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul><li>Distinguer les différentes formes de cautionnement</li><li>Expliquer pourquoi certaines sont beaucoup plus risquées (solidaire, aval)</li><li>Identifier les enjeux pratiques de chaque distinction</li><li>Comprendre pourquoi le droit du cautionnement est très inégal selon la forme choisie</li></ul>
+  </div>
+  <div class="fiche-nav"><label for="r-f1">← Fiche #1</label><label for="r-f3">Fiche #3 : La formation →</label></div>
+</div></main>
+</div>
+<!-- FICHE 3 (suite) — déjà amorcée dans le document original, on reprend depuis le début complet -->
+<div id="page-f3" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #3 · P1 Sûretés personnelles · T1 Cautionnement · C2 Formation</div>
+    <h2>La formation du cautionnement</h2>
+    <div class="fiche-intro">Le cautionnement est un engagement particulièrement dangereux. Le droit ne se contente pas de vérifier qu'il y a un accord : il contrôle rigoureusement sa validité. On se place ici dans la peau du juge ou de l'avocat de la caution — ce cautionnement est-il valablement formé, ou peut-on l'anéantir ?</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> Le consentement de la caution</div>
+    <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:1rem">→ Bloc le plus important de toute la matière</p>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Principe fondamental : un consentement exprès et éclairé</div>
+      <p class="f-text">Première règle cardinale : <strong>le cautionnement ne se présume jamais</strong>. On ne peut pas déduire un cautionnement du comportement, un silence n'engage jamais, et un doute profite toujours à la caution. Le consentement doit être <strong>exprès</strong> (clairement manifesté), <strong>libre</strong> (sans contrainte) et <strong>éclairé</strong> (la caution doit comprendre ce qu'elle fait).</p>
+      <div class="f-exemple"><strong>Idée clé</strong>Le droit part du principe que se porter caution est anormalement risqué. Il exige donc une volonté claire et réfléchie.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. La protection a priori (avant la conclusion)</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>1. Le devoir de mise en garde</div>
+        <p class="f-text">La jurisprudence a imposé un devoir de mise en garde aux banques. La réforme de 2021 a clarifié et généralisé ce mécanisme. Le <strong>débiteur du devoir</strong> : tout créancier professionnel. Le <strong>bénéficiaire</strong> : la caution personne physique.</p>
+        <div class="f-alerte"><strong>Point déterminant</strong>La mise en garde ne porte plus sur la situation de la caution, mais sur la <strong>situation financière du débiteur principal</strong>. Si la société est structurellement incapable de rembourser, le créancier doit mettre en garde la caution même si elle a des revenus élevés.</div>
+        <p class="f-text"><strong>Sanction</strong> : le créancier est déchu de son droit contre la caution à hauteur du préjudice subi. Le cautionnement peut devenir partiellement ou totalement inefficace sans être nécessairement annulé.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. La protection a posteriori : les vices du consentement</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>1. L'erreur</div>
+        <p class="f-text">La caution peut invoquer une erreur sur la <strong>nature</strong> de l'acte, l'<strong>étendue</strong> de son engagement (montant, durée, solidarité), ou l'existence d'autres cautions. L'erreur sur la solvabilité future du débiteur est en principe inopérante (simple motif), sauf si cette solvabilité a été tacitement érigée en condition déterminante.</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>2. Le dol</div>
+        <p class="f-text">Le dol suppose une manœuvre, un mensonge ou un silence trompeur, intentionnel, imputable en principe au créancier. Si le créancier dissimule sciemment un risque majeur ou induit la caution en erreur, le cautionnement peut être annulé. Le dol émanant du débiteur principal pose difficulté car il est tiers au contrat.</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>3. La violence (y compris économique)</div>
+        <p class="f-text">Depuis le droit moderne, la violence peut être économique par abus d'un état de dépendance. En pratique, ce vice est rarement admis car la preuve est très lourde. Les mécanismes de mise en garde et de proportionnalité sont plus efficaces.</p>
+      </div>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> La capacité et le pouvoir de la caution</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Les personnes physiques — régimes matrimoniaux</div>
+      <p class="f-text">La caution ne peut engager que ses biens propres et ses revenus. En cas de mariage, l'engagement des <strong>biens communs exige le consentement exprès du conjoint</strong>. Cette règle protège la famille et le conjoint non signataire contre des engagements pris unilatéralement.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les sociétés — droit des sociétés</div>
+      <p class="f-text">Les sociétés ont une capacité limitée par leur objet social et leur intérêt social. Le cautionnement peut être nul, inopposable, ou soumis à des procédures lourdes selon la forme sociale. SA/SARL : conventions réglementées, autorisations requises. Le juge contrôle strictement les cautionnements « anormaux ».</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">III</span> Le contenu du cautionnement</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. La prestation de la caution</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>1. L'objet de l'engagement</div>
+        <p class="f-text">La caution s'engage à payer <strong>la même dette</strong> que le débiteur principal, ni plus, ni autrement. Le cautionnement peut porter sur une dette présente ou sur des <strong>dettes futures</strong> (cautionnement omnibus — ex : le dirigeant qui signe pour toutes les dettes présentes et à venir de sa société).</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>2. L'étendue de l'engagement</div>
+        <p class="f-text">Interprétation stricte. Accessoires (intérêts, pénalités) inclus sauf clause contraire. Interdiction d'un engagement plus sévère que la dette principale. Sanction : réduction judiciaire de l'engagement, pas nécessairement nullité.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. La contrepartie de l'engagement (ancienne « cause »)</div>
+      <p class="f-text">Traditionnellement, la cause du cautionnement réside dans l'octroi du crédit au débiteur principal. Même après la réforme des contrats, cette logique continue à irriguer le contrôle judiciaire.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. L'exigence de proportionnalité</div>
+      <p class="f-text">Lorsque la caution est une personne physique et que le créancier est professionnel, l'engagement ne doit pas être <strong>manifestement disproportionné</strong> aux biens et revenus de la caution, appréciés au jour de la conclusion. Sanction : réduction de l'engagement à un niveau supportable.</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">IV</span> La forme du cautionnement</div>
+    <p class="f-text">Le cautionnement est soumis à un <strong>formalisme rigoureux</strong> à finalité protectrice. Il exige un écrit, des mentions obligatoires, et une expression claire de l'engagement. Le non-respect peut entraîner une nullité relative ou la perte de certains effets. La réforme a admis la forme électronique sous réserve du respect des exigences protectrices.</p>
+  </div>
+  <div class="f-retenir">
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul>
+      <li>Expliquer pourquoi le droit contrôle autant la formation du cautionnement</li>
+      <li>Exposer tous les moyens de remise en cause possibles</li>
+      <li>Raisonner comme un juge face à un cautionnement contesté</li>
+      <li>Répondre à une question sur la validité sans réciter, en raisonnant</li>
+    </ul>
+  </div>
+  <div class="fiche-nav"><label for="r-f2">← Fiche #2</label><label for="r-f4">Fiche #4 : Les effets →</label></div>
+</div></main>
+</div>
+<!-- FICHE 4 -->
+<div id="page-f4" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #4 · P1 Sûretés personnelles · T1 Cautionnement · C3 Effets</div>
+    <h2>Les effets du cautionnement</h2>
+    <div class="fiche-intro">Le cautionnement est valablement formé. Que peut exiger le créancier ? Que peut opposer la caution ? Quels sont les rapports juridiques concrets entre les parties ? Cette fiche correspond au moment du conflit réel : le débiteur ne paie pas, le créancier s'impatiente, la caution est appelée en paiement.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> Les effets entre le créancier et la caution</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Le principe d'opposabilité des exceptions</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>1. L'évolution du droit</div>
+        <p class="f-text">Avant la réforme, le droit distinguait les exceptions inhérentes à la dette (opposables) et les exceptions personnelles au débiteur (inopposables). Conséquence absurde : le débiteur pouvait faire annuler sa dette pendant que la caution restait engagée. Cette solution vidait de sens l'accessoriété.</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>2. Le droit actuel (réforme 2021)</div>
+        <p class="f-text">Depuis la réforme : <strong>la caution peut opposer au créancier toutes les exceptions que le débiteur principal pourrait opposer</strong>. Cela inclut la nullité de la dette, son inexistence, son extinction, le défaut de cause, la prescription. Principe désormais clair : la caution n'est jamais dans une position plus mauvaise que le débiteur.</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>3. Limite : les procédures collectives</div>
+        <div class="f-alerte"><strong>Restriction majeure</strong>La caution ne peut pas opposer les mesures de faveur accordées au débiteur en difficulté, notamment issues des procédures collectives (sauvegarde, redressement, plans). Si le débiteur bénéficie d'un délai dans un plan de sauvegarde, la caution ne peut pas réclamer ce délai pour elle-même.</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les obligations du créancier à l'égard de la caution</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>1. L'obligation d'information annuelle</div>
+        <p class="f-text">Le créancier doit, chaque année, informer la caution du montant de la dette garantie, des intérêts échus, de l'état global de l'engagement. Objectif : permettre à la caution de suivre l'évolution du risque et d'éviter qu'elle découvre brutalement une dette écrasante.</p>
+        <p class="f-text"><strong>Sanction</strong> : déchéance du droit aux intérêts ou accessoires, sans remise en cause automatique du principal.</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>2. L'obligation d'information en cas de défaillance</div>
+        <p class="f-text">Dès que le débiteur principal cesse de payer, le créancier doit en <strong>avertir la caution sans délai</strong>. Une information tardive empêche la caution d'agir utilement et aggrave artificiellement sa situation.</p>
+        <p class="f-text"><strong>Sanction</strong> : déchéance totale ou partielle du droit du créancier contre la caution.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. Le droit de poursuite du créancier contre la caution</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>1. Condition fondamentale : l'exigibilité de la dette</div>
+        <p class="f-text">La caution ne peut être poursuivie que si la dette principale est <strong>exigible</strong>. Si le débiteur bénéficie d'un terme, d'un délai ou d'une suspension, la caution en bénéficie aussi.</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>2. L'influence du type de cautionnement</div>
         <ul class="f-list">
-          <li>anciennement : cautions profanes / averties (distinction jurisprudentielle),</li>
-          <li>depuis la loi de 2003 : personne physique / personne morale,</li>
-          <li>la réforme de 2021 généralise le régime tout en maintenant certaines protections spécifiques aux cautions personnes physiques.</li>
+          <li><strong>Cautionnement simple</strong> : bénéfice de discussion (poursuite préalable du débiteur) et bénéfice de division (pluralité de cautions). Le créancier ne peut pas agir librement.</li>
+          <li><strong>Cautionnement solidaire</strong> : poursuite directe possible, paiement immédiat exigible, aucune protection procédurale. Raison pour laquelle la pratique impose quasi systématiquement la solidarité.</li>
         </ul>
       </div>
-
-      <div class="f-A">
-        <div class="f-A-title">c) Le débiteur principal</div>
-        <p class="f-text">C'est un tiers au contrat, mais un tiers intéressé. Dans la pratique, il est souvent à l'origine de la mise en place du cautionnement. Il existe fréquemment un rapport contractuel préalable entre le débiteur et la caution.</p>
-      </div>
-    </div>
-
-    <div class="f-I">
-      <div class="f-I-title">3. Cautionnements d'origine légale ou judiciaire</div>
-      <p class="f-text">La loi distingue :</p>
-      <ul class="f-list">
-        <li>le <strong>cautionnement légal</strong> : la loi subordonne l'exercice d'un droit à la fourniture d'une caution,</li>
-        <li>le <strong>cautionnement judiciaire</strong> : le juge impose une caution comme condition de satisfaction d'une demande.</li>
-      </ul>
-      <p class="f-text">Ces cautionnements demeurent contractuels : ils supposent toujours la conclusion d'un contrat entre créancier et caution ; seule l'origine de l'obligation diffère.</p>
     </div>
   </div>
-
-  <!-- ══ II. UN CONTRAT UNILATÉRAL ══ -->
-  <div class="f-para">
-    <div class="f-para-title">II. Un contrat unilatéral</div>
-
-    <div class="f-I">
-      <div class="f-I-title">1. Principe</div>
-      <p class="f-text">Le cautionnement est un contrat unilatéral : une seule partie (la caution) s'oblige juridiquement, bien que les deux parties aient consenti au contrat. L'obligation essentielle pèse exclusivement sur la caution : payer la dette d'autrui en cas de défaillance.</p>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> Les effets entre la caution et le débiteur principal</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Les droits de la caution après paiement</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>1. Le recours personnel</div>
+        <p class="f-text">Après avoir payé, la caution peut se retourner contre le débiteur pour le remboursement du principal, des intérêts et des frais exposés. Fondement simple : <em>« J'ai payé à ta place. Rembourse-moi. »</em></p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>2. Le recours subrogatoire</div>
+        <p class="f-text">En payant, la caution est <strong>subrogée</strong> dans les droits du créancier. Elle récupère la créance, les sûretés, les garanties et les privilèges attachés. Ce recours est le plus efficace, surtout en cas de pluralité de garanties.</p>
+        <div class="f-alerte"><strong>Attention capitale</strong>Si la caution paie sans avertir le débiteur, alors que celui-ci disposait d'un moyen de défense, la caution peut perdre tout ou partie de son recours.</div>
+      </div>
     </div>
-
-    <div class="f-I">
-      <div class="f-I-title">2. Conséquences juridiques</div>
-      <p class="f-text">Le contrat ne devient pas synallagmatique du fait des obligations légales pesant sur le créancier (information annuelle, information ponctuelle). Ces obligations sont légales, sanctionnées par des déchéances, mais ne constituent pas la contrepartie de l'engagement de la caution.</p>
-      <p class="f-text">La Cour de cassation a confirmé que ces obligations ne transforment pas le cautionnement en contrat synallagmatique : l'exception de nullité reste donc opposable tant que le contrat n'a pas été exécuté.</p>
-    </div>
-
-    <div class="f-I">
-      <div class="f-I-title">3. Régime de preuve</div>
-      <p class="f-text">Le cautionnement, en tant que contrat unilatéral, obéit à des règles spécifiques de preuve :</p>
-      <ul class="f-list">
-        <li>exigence d'un écrit,</li>
-        <li>mention de l'engagement en lettres et en chiffres,</li>
-        <li>régime renforcé par les règles de formalisme protecteur.</li>
-      </ul>
+    <div class="f-sous">
+      <div class="f-sous-title">B. La situation de la caution avant paiement</div>
+      <p class="f-text">Avant d'avoir payé, la caution ne peut pas exiger le remboursement — elle n'a pas encore de créance contre le débiteur. Mais elle peut prendre des <strong>mesures conservatoires</strong>, demander la constitution de garanties et se protéger contre une aggravation du risque. La réforme a supprimé certains recours anciens jugés excessifs, renvoyant au droit commun des mesures conservatoires.</p>
     </div>
   </div>
-
-  <!-- ══ III. UN CONTRAT ACCESSOIRE ══ -->
-  <div class="f-para">
-    <div class="f-para-title">III. Un contrat accessoire</div>
-
-    <div class="f-I">
-      <div class="f-I-title">1. Principe d'accessoriété</div>
-      <p class="f-text">Le cautionnement est nécessairement accessoire d'une dette principale. Il n'existe qu'en raison de l'existence d'une obligation garantie. Conséquence centrale : la dette de la caution a le même objet que la dette du débiteur principal.</p>
-    </div>
-
-    <div class="f-I">
-      <div class="f-I-title">2. Conséquences majeures</div>
-
-      <div class="f-A">
-        <div class="f-A-title">a) Limitation de l'engagement</div>
-        <p class="f-text">La caution ne peut être tenue à plus que ce que doit le débiteur principal. Si la dette principale est nulle, le cautionnement est en principe privé d'effet.</p>
-      </div>
-
-      <div class="f-A">
-        <div class="f-A-title">b) Opposabilité des exceptions</div>
-        <p class="f-text">En raison de l'accessoriété, la caution peut opposer au créancier les exceptions que le débiteur principal pourrait lui opposer.</p>
-      </div>
-
-      <div class="f-A">
-        <div class="f-A-title">c) Qualification juridique</div>
-        <p class="f-text">Le caractère accessoire est un critère déterminant pour qualifier une garantie de cautionnement. Si l'engagement est indépendant de la dette principale, on bascule vers un autre mécanisme (ex. garantie autonome).</p>
-      </div>
-    </div>
-
-    <div class="f-I">
-      <div class="f-I-title">3. Renforcement par la réforme de 2021</div>
-      <p class="f-text">La réforme du 15 septembre 2021 a réaffirmé une conception plus stricte et rigoureuse de l'accessoriété, après une période d'affaiblissement jurisprudentiel.</p>
-    </div>
-  </div>
-
-  <!-- ══ À RETENIR ══ -->
   <div class="f-retenir">
-    <strong>À retenir</strong>
-    Le cautionnement est un contrat unilatéral accessoire d'une dette principale. Trois acteurs dans l'opération, deux parties au contrat. L'accessoriété structure l'objet, l'étendue et les moyens de défense de la caution.
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul>
+      <li>Expliquer comment le créancier peut agir contre la caution</li>
+      <li>Exposer les moyens de défense de la caution (opposabilité des exceptions)</li>
+      <li>Comprendre le rôle clé de l'accessoriété dans les effets</li>
+      <li>Distinguer recours personnel et recours subrogatoire après paiement</li>
+    </ul>
   </div>
-
-  <div class="fiche-nav">
-    <span></span>
-    <label for="r-plan">Plan du cours →</label>
-  </div>
-
+  <div class="fiche-nav"><label for="r-f3">← Fiche #3</label><label for="r-f5">Fiche #5 : L'extinction →</label></div>
+</div></main>
 </div>
-</main>
-</div><!-- /page-f1 -->
+<!-- FICHE 5 -->
+<div id="page-f5" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #5 · P1 Sûretés personnelles · T1 Cautionnement · C4 Extinction</div>
+    <h2>L'extinction du cautionnement</h2>
+    <div class="fiche-intro">Le cautionnement est un engagement grave, mais ce n'est pas un engagement éternel. Le droit distingue deux grandes voies d'extinction : par voie principale (mécanismes propres au cautionnement) et par voie accessoire (disparition de la dette garantie).</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> L'extinction par voie principale</div>
+    <p class="f-text">Ici, le cautionnement disparaît indépendamment de la disparition de la dette, à cause du comportement du créancier ou de la volonté de la caution.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">A. La perte du bénéfice de subrogation</div>
+      <p class="f-text">Lorsqu'une caution paie, elle compte récupérer ce qu'elle a payé grâce aux droits du créancier (subrogation). Si le créancier, par son fait, laisse disparaître une sûreté, abandonne un droit ou commet une négligence grave qui empêche la caution de se retourner efficacement contre le débiteur :</p>
+      <p class="f-text"><strong>La caution est libérée à hauteur du préjudice subi.</strong></p>
+      <div class="f-exemple"><strong>Exemple</strong>Le créancier laisse prescrire une hypothèque grevant un immeuble du débiteur. La caution paie ensuite la dette. Elle ne peut plus se retourner efficacement contre le débiteur. Elle peut demander à être déchargée.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. L'extinction du cautionnement de dettes futures</div>
+      <p class="f-text">Certains cautionnements portent sur des dettes futures (cas classique : le dirigeant qui se porte caution de toutes les dettes présentes et à venir de sa société). Dans ce type de cautionnement, la caution peut <strong>mettre fin à son engagement pour l'avenir</strong>.</p>
+      <ul class="f-list">
+        <li>Elle reste tenue des dettes <strong>nées avant la résiliation</strong></li>
+        <li>Elle n'est plus tenue des dettes <strong>nées après</strong></li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. La question des termes</div>
+      <ul class="f-list">
+        <li><strong>Terme exprès</strong> : le cautionnement conclu pour une durée déterminée s'éteint automatiquement à l'arrivée du terme</li>
+        <li><strong>Terme tacite</strong> : le juge peut déduire un terme tacite du contexte, de la finalité ou de la nature de la dette. Ce mécanisme est strictement interprété.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> L'extinction par voie accessoire</div>
+    <p class="f-text">Application directe de la règle vue dès la fiche 1 : <strong>le cautionnement suit le sort de la dette principale.</strong></p>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Le paiement de la dette principale</div>
+      <p class="f-text">Cause la plus simple et la plus fréquente. Lorsque la dette est payée — par le débiteur, par un tiers ou par la caution elle-même — il n'y a plus de dette, donc plus de cautionnement.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. La nullité ou la résolution du contrat principal</div>
+      <p class="f-text">Si le contrat à l'origine de la dette est annulé ou résolu, la dette disparaît et le cautionnement aussi. Exception : en cas de restitutions, le cautionnement peut se reporter sur l'obligation de restitution.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. La prescription de la dette</div>
+      <p class="f-text">Lorsque la créance est prescrite, le créancier ne peut plus agir ni contre le débiteur, ni contre la caution. La caution bénéficie de la prescription acquise par le débiteur principal.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">D. La remise de dette</div>
+      <p class="f-text">Remise totale → extinction totale du cautionnement. Remise partielle → réduction corrélative de l'engagement de la caution.</p>
+      <div class="f-alerte"><strong>Distinction subtile</strong>La remise accordée au débiteur profite à la caution. La remise accordée à la caution seule n'éteint pas nécessairement la dette du débiteur.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">E. La compensation, la novation, la dation en paiement</div>
+      <ul class="f-list">
+        <li><strong>Compensation</strong> : si les conditions sont réunies entre débiteur et créancier, la dette s'éteint et le cautionnement aussi, à concurrence des montants compensés</li>
+        <li><strong>Novation</strong> : substitution d'une nouvelle obligation à l'ancienne → la dette initiale disparaît et le cautionnement également. Exception : la caution peut accepter expressément de maintenir son engagement</li>
+        <li><strong>Dation en paiement</strong> : si le créancier accepte une prestation différente et que celle-ci éteint la dette → le cautionnement est éteint</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">F. Le décès de la caution (apport majeur de la réforme 2021)</div>
+      <p class="f-text">Désormais, les héritiers de la caution ne sont tenus que des dettes <strong>nées avant le décès</strong>. Toute clause imposant leur engagement pour l'avenir est réputée <strong>non écrite</strong>. Cette règle vise à protéger la succession et à empêcher la transmission abusive d'un risque.</p>
+    </div>
+  </div>
+  <div class="f-retenir">
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul>
+      <li>Expliquer toutes les causes d'extinction du cautionnement</li>
+      <li>Articuler la distinction voie principale / voie accessoire</li>
+      <li>Comprendre le rôle central de l'accessoriété dans l'extinction</li>
+      <li>Répondre à la question : « Dans quels cas la caution est-elle libérée ? »</li>
+    </ul>
+  </div>
+  <div class="fiche-nav"><label for="r-f4">← Fiche #4</label><label for="r-f6">Fiche #6 : Autres sûretés →</label></div>
+</div></main>
+</div>
 
-</div><!-- /wrap -->
+<!-- FICHE 6 -->
+<div id="page-f6" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #6 · P1 Sûretés personnelles · T2 Autres sûretés personnelles</div>
+    <h2>Les autres sûretés personnelles</h2>
+    <div class="fiche-intro">Le Code civil distingue deux mécanismes qui impliquent une personne différente du débiteur pour sécuriser le créancier, sans fonctionner comme un cautionnement : la garantie autonome et la lettre d'intention. L'erreur classique et grave est d'appliquer à ces sûretés les règles du cautionnement.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> La garantie autonome</div>
+    <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:1rem">→ La sûreté personnelle la plus puissante et la plus dangereuse</p>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Logique et définition</div>
+      <p class="f-text">Née dans la pratique bancaire et internationale, la garantie autonome répond au besoin d'une garantie rapide, sans débat sur le contrat principal, sans risque de contestation. Solution : créer un engagement <strong>indépendant</strong> de la dette principale.</p>
+      <p class="f-text">La garantie autonome est un engagement par lequel une personne (le garant) promet de payer une somme déterminée <strong>indépendamment de l'existence, de la validité ou de l'exécution</strong> de l'obligation garantie.</p>
+      <div class="f-alerte"><strong>Point clé absolu</strong>L'engagement n'est pas accessoire. Même si la dette principale est nulle, même si le débiteur n'a jamais réellement dû payer, le garant reste tenu. Le créancier agit sur la garantie comme sur un bouton « payer ».</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Domaine et limites</div>
+      <p class="f-text">Principalement utilisée dans les grands contrats commerciaux, le commerce international et les marchés complexes. La loi et la jurisprudence admettent <strong>deux limites très étroites</strong> : fraude manifeste et abus évident. Ces notions sont interprétées strictement et la preuve est très lourde.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. Tableau comparatif</div>
+      <div class="f-table-wrap">
+        <table class="f-table">
+          <thead><tr><th>Cautionnement</th><th>Garantie autonome</th></tr></thead>
+          <tbody>
+            <tr><td>Accessoire</td><td>Indépendante</td></tr>
+            <tr><td>Exceptions du débiteur opposables</td><td>Exceptions exclues</td></tr>
+            <tr><td>Protection forte de la caution</td><td>Protection minimale</td></tr>
+            <tr><td>Logique civile</td><td>Logique financière</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="f-exemple"><strong>Phrase-clé</strong>La garantie autonome est une sûreté de paiement, pas une sûreté de dette.</div>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> La lettre d'intention</div>
+    <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:1rem">→ La sûreté personnelle la plus floue et la plus délicate</p>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Définition et logique</div>
+      <p class="f-text">La lettre d'intention naît en réaction au cautionnement : rassurer le créancier sans s'engager à payer directement la dette, éviter le formalisme et la rigueur du cautionnement. C'est un engagement par lequel une personne promet d'apporter un soutien ou d'adopter un comportement pour permettre au débiteur d'exécuter son obligation. <strong>Elle ne promet pas directement de payer la dette.</strong></p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Variable essentielle : l'intensité de l'engagement</div>
+      <p class="f-text">Sûreté à géométrie variable, tout dépend des termes employés, du contexte et de la volonté réelle des parties.</p>
+      <div class="f-exemple"><strong>Exemples contrastés</strong>« Je ferai mon possible pour soutenir la société » → obligation de moyens faible. « Je m'engage à doter la société des fonds nécessaires » → obligation lourde, proche d'une garantie.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. Sanction et risque de requalification</div>
+      <p class="f-text">En cas de violation : pas de paiement automatique de la dette, mais <strong>responsabilité contractuelle</strong> et dommages-intérêts. Le créancier doit prouver la faute, le préjudice et le lien de causalité.</p>
+      <div class="f-alerte"><strong>Risque majeur</strong>Si la lettre d'intention devient trop précise, trop contraignante, trop proche d'un engagement de paiement, le juge peut la requalifier en cautionnement ou en garantie autonome — avec application de règles beaucoup plus sévères.</div>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">III</span> Synthèse des sûretés personnelles</div>
+    <p class="f-text">Le <strong>cautionnement</strong> est protecteur mais contraignant. La <strong>garantie autonome</strong> est radicale et dangereuse. La <strong>lettre d'intention</strong> est souple mais floue.</p>
+    <div class="f-exemple"><strong>Idée centrale</strong>Plus une sûreté est efficace pour le créancier, moins elle est protectrice pour celui qui s'engage.</div>
+  </div>
+  <div class="f-retenir">
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul>
+      <li>Distinguer clairement cautionnement / garantie autonome / lettre d'intention</li>
+      <li>Expliquer pourquoi la garantie autonome échappe à l'accessoriété</li>
+      <li>Analyser une lettre d'intention à partir de sa rédaction</li>
+      <li>Éviter toute confusion à l'examen</li>
+    </ul>
+  </div>
+  <div class="fiche-nav"><label for="r-f5">← Fiche #5</label><label for="r-f7">Fiche #7 : Propriété comme garantie →</label></div>
+</div></main>
+</div>
+<!-- FICHE 7 -->
+<div id="page-f7" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #7 · P2 Sûretés réelles · T1 Sûretés à droit exclusif · C1 Propriété comme garantie</div>
+    <h2>La propriété comme garantie</h2>
+    <div class="fiche-intro">Avec les sûretés réelles, la logique change complètement. Le créancier ne cherche plus une personne supplémentaire — il cherche à s'assurer sur un bien. Cette catégorie est particulière : elle confère au créancier un droit exclusif, pas simplement une préférence.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">0</span> Logique générale des sûretés par propriété</div>
+    <p class="f-text">Dans ces sûretés, le créancier n'est pas seulement préféré aux autres : il est <strong>hors concours</strong>. Le bien n'entre jamais réellement dans le patrimoine saisissable du débiteur. Le créancier n'a pas un droit de préférence — il a <strong>le bien</strong>.</p>
+    <div class="f-exemple"><strong>Image mentale</strong>Les autres créanciers se partagent ce qu'il reste. Le titulaire de la propriété, lui, reprend son bien et sort du jeu.</div>
+    <div class="f-table-wrap">
+      <table class="f-table">
+        <thead><tr><th>Type de sûreté</th><th>Mécanisme</th></tr></thead>
+        <tbody>
+          <tr><td>Sûretés personnelles</td><td>Droit de poursuite contre une personne</td></tr>
+          <tr><td>Sûretés réelles à droit de préférence</td><td>Priorité dans le paiement</td></tr>
+          <tr><td>Sûretés réelles à droit exclusif</td><td>Appropriation juridique du bien</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> La propriété retenue à titre de garantie</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. La vente sous réserve de propriété</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>1. Mécanisme</div>
+        <p class="f-text">Dans une vente classique, le transfert de propriété est immédiat même si le prix n'est pas encore payé. Dans la vente sous réserve de propriété, le vendeur <strong>conserve la propriété du bien jusqu'au paiement intégral du prix</strong>. Le débiteur détient matériellement le bien mais n'en est pas juridiquement propriétaire.</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>2. Intérêt et conditions</div>
+        <p class="f-text">Si le débiteur ne paie pas, le vendeur <strong>reprend la chose</strong> sans entrer en concurrence avec les autres créanciers. Pour être efficace : stipulée par écrit, existant au plus tard au moment de la livraison. En procédure collective, le créancier doit exercer une action en revendication dans des délais stricts.</p>
+        <div class="f-exemple"><strong>Exemple</strong>Un fournisseur livre une machine avec réserve de propriété. L'entreprise cliente fait faillite. Le fournisseur récupère la machine.</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Le crédit-bail</div>
+      <p class="f-text">Montage juridique et économique : un établissement de crédit achète un bien, le met à disposition du débiteur contre des loyers, avec une option d'achat finale. Pendant toute la durée, <strong>le créancier reste propriétaire</strong>. Le débiteur ne peut ni vendre le bien, ni le donner en garantie à d'autres créanciers.</p>
+      <p class="f-text">Si le débiteur ne paie plus, le créancier reprend le bien sans subir la procédure classique des créanciers. Le crédit-bail est donc une <strong>sûreté réelle déguisée en contrat de location</strong>.</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> La propriété cédée à titre de garantie</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. La cession de créance à titre de garantie</div>
+      <p class="f-text">Le débiteur cède une créance qu'il détient sur un tiers, non pas pour être payé immédiatement, mais comme <strong>garantie d'une autre dette</strong>. Le créancier devient propriétaire de la créance à titre de garantie. Si le débiteur paie sa dette → la créance est restituée. S'il ne paie pas → le créancier se fait payer sur la créance cédée.</p>
+      <div class="f-exemple"><strong>Exemple</strong>Une entreprise cède une créance client à sa banque pour garantir un prêt.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. La fiducie-sûreté</div>
+      <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:.6rem">→ La plus puissante des sûretés par propriété</p>
+      <p class="f-text">Logique : isoler un ou plusieurs biens dans un patrimoine distinct exclusivement affecté au paiement d'une dette. Trois acteurs : le <strong>constituant</strong> (souvent le débiteur), le <strong>fiduciaire</strong>, le <strong>bénéficiaire</strong> (créancier). Les biens fiduciaires sortent du patrimoine du débiteur et sont protégés contre les autres créanciers.</p>
+      <ul class="f-list">
+        <li>Si la dette est payée → restitution des biens au constituant</li>
+        <li>Si elle n'est pas payée → attribution ou vente au profit du créancier</li>
+      </ul>
+      <p class="f-text">La fiducie est extrêmement efficace mais techniquement lourde, réservée à des opérations importantes.</p>
+    </div>
+  </div>
+  <div class="f-retenir">
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul>
+      <li>Expliquer la logique des sûretés par propriété (hors concours)</li>
+      <li>Distinguer propriété retenue / propriété cédée</li>
+      <li>Comprendre pourquoi ces sûretés mettent le créancier hors concours</li>
+      <li>Connaître les quatre mécanismes : réserve de propriété, crédit-bail, cession de créance, fiducie-sûreté</li>
+    </ul>
+  </div>
+  <div class="fiche-nav"><label for="r-f6">← Fiche #6</label><label for="r-f8">Fiche #8 : Droit de rétention →</label></div>
+</div></main>
+</div>
 
-<footer>Droit des <span>Sûretés</span> — Fiches de révision 2025-2026</footer>
+<!-- FICHE 8 -->
+<div id="page-f8" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #8 · P2 Sûretés réelles · T1 Sûretés à droit exclusif · C2 Droit de rétention</div>
+    <h2>Le droit de rétention</h2>
+    <div class="fiche-intro">Le droit de rétention est trompeur : il semble simple, presque naturel, parfois même rudimentaire. Et pourtant, il n'est pas contractuel, ne repose pas sur un titre écrit, ne confère ni droit de préférence ni droit de suite — mais en pratique, il peut être plus efficace que beaucoup de sûretés classiques.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> La nature juridique du droit de rétention</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Définition fonctionnelle</div>
+      <p class="f-text"><strong>Le droit, pour un créancier, de refuser de restituer un bien qu'il détient tant qu'il n'a pas été payé.</strong></p>
+      <p class="f-text">Trois idées essentielles : il faut <strong>détenir</strong> le bien, il faut être <strong>créancier</strong>, et il s'agit d'un <strong>droit de blocage</strong>, pas d'un droit d'appropriation. Le droit repose sur une idée d'équité simple : il serait injuste d'obliger quelqu'un à rendre un bien alors qu'on lui doit de l'argent à raison de ce bien.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Nature atypique</div>
+      <p class="f-text">Sûreté réelle car elle porte sur une chose, mais atypique : pas fondée sur un contrat spécifique, pas soumise à publicité, pas organisée comme un gage ou une hypothèque. Elle naît <strong>directement d'une situation de fait</strong> que le droit reconnaît et protège.</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> Les conditions du droit de rétention</div>
+    <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:.8rem">→ Conditions cumulatives : si une seule manque, le droit disparaît</p>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Une créance certaine et exigible</div>
+      <p class="f-text">Le titulaire doit être créancier du propriétaire du bien. La créance doit être <strong>certaine</strong> (elle existe réellement) et <strong>exigible</strong> (arrivée à échéance). Une créance contestable, future ou éventuelle ne suffit pas. La nature de la créance est indifférente : contractuelle, délictuelle ou légale.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. La détention du bien</div>
+      <p class="f-text">Le créancier doit avoir la chose entre ses mains ou en avoir la maîtrise effective. La détention doit être <strong>licite</strong> : légitime, non violente, non frauduleuse. Un voleur ne peut jamais invoquer le droit de rétention.</p>
+      <div class="f-alerte"><strong>Conséquence capitale</strong>Si le rétenteur restitue volontairement le bien ou en perd la possession, le droit de rétention disparaît immédiatement et ne renaît pas automatiquement.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. Le lien de connexité</div>
+      <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:.6rem">→ Condition absolument centrale</p>
+      <p class="f-text">La créance doit être <strong>en lien direct avec le bien retenu</strong>.</p>
+      <ul class="f-list">
+        <li>✔ Connexité reconnue : réparation d'un bien → rétention du bien réparé ; conservation d'un objet → rétention de l'objet</li>
+        <li>✖ Connexité exclue : dette étrangère au bien ; dette née d'une relation distincte</li>
+      </ul>
+      <p class="f-text">Sans connexité, la rétention est abusive et illicite.</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">III</span> Les effets du droit de rétention</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Le droit de blocage</div>
+      <p class="f-text">Le rétenteur peut dire : <em>« Je garde le bien tant que je ne suis pas payé. »</em> Ce droit est extrêmement simple mais <strong>terriblement efficace</strong>. Il est opposable au débiteur, aux autres créanciers, et dans une certaine mesure en cas de procédure collective.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les limites strictes</div>
+      <ul class="f-list">
+        <li>Ne peut pas vendre le bien</li>
+        <li>Ne peut pas se l'approprier</li>
+        <li>Ne peut pas en tirer profit</li>
+        <li>Dispose seulement d'un droit négatif : refuser de restituer</li>
+      </ul>
+      <p class="f-text"><strong>Le droit de rétention n'est pas un droit de propriété déguisé.</strong></p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. La disparition du droit de rétention</div>
+      <p class="f-text">Le droit s'éteint si la créance est payée, si la créance disparaît, si la détention cesse, ou si la connexité est rompue.</p>
+    </div>
+  </div>
+  <div class="f-retenir">
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul>
+      <li>Définir précisément le droit de rétention</li>
+      <li>Poser les trois conditions cumulatives (créance + détention + connexité)</li>
+      <li>Expliquer la logique de la connexité</li>
+      <li>Montrer pourquoi c'est une sûreté sans préférence mais très efficace</li>
+    </ul>
+    <div class="f-exemple" style="margin-top:.8rem"><strong>Formule à retenir</strong>Le droit de rétention est juridiquement faible, mais psychologiquement et économiquement redoutable.</div>
+  </div>
+  <div class="fiche-nav"><label for="r-f7">← Fiche #7</label><label for="r-f9">Fiche #9 : Le gage →</label></div>
+</div></main>
+</div>
+<!-- FICHE 9 -->
+<div id="page-f9" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #9 · P2 Sûretés réelles · T2 Sûretés à droit de préférence · C1 Le gage</div>
+    <h2>Le gage</h2>
+    <div class="fiche-intro">Avec le gage, on entre dans le cœur classique des sûretés réelles. Le créancier ne veut plus seulement bloquer un bien — il veut une garantie organisée, juridique, lui permettant d'être payé en priorité sur un bien déterminé. Le gage est une sûreté réelle portant sur un bien meuble, conférant un droit de préférence.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> Définition et logique du gage</div>
+    <p class="f-text">Le gage est un contrat par lequel un débiteur (ou un tiers) affecte un <strong>bien meuble</strong> en garantie d'une dette, au profit d'un créancier. En cas de défaillance, le créancier pourra se faire payer <strong>par priorité</strong> sur ce bien.</p>
+    <div class="f-alerte"><strong>Trois confusions à éviter absolument</strong>Le gage n'est pas un cautionnement (pas de personne engagée). Le gage n'est pas un droit de rétention (pas seulement un blocage). Le gage n'est pas une propriété (le créancier ne devient pas propriétaire). Le gage confère : un droit réel, un droit de préférence — mais pas un droit d'appropriation automatique.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> Le gage avec dépossession</div>
+    <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:.8rem">→ La forme traditionnelle et historiquement centrale</p>
+    <div class="f-sous">
+      <div class="f-sous-title">A. La constitution</div>
+      <p class="f-text">Dans le gage classique, le constituant remet matériellement le bien au créancier (ou à un tiers convenu). La <strong>dépossession est essentielle</strong> : elle rend le gage opposable aux tiers et sécurise la position du créancier.</p>
+      <p class="f-text">Conditions de validité : une créance garantie (présente ou future), un bien meuble, une remise effective du bien, un contrat (souvent écrit).</p>
+      <div class="f-exemple"><strong>Image simple</strong>Tant que le créancier a l'objet entre les mains, personne ne peut l'ignorer ni le saisir sans tenir compte de lui.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les effets</div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>Droits du créancier gagiste</div>
+        <ul class="f-list">
+          <li><strong>Droit de rétention</strong> : il conserve le bien tant qu'il n'est pas payé</li>
+          <li><strong>Droit de préférence</strong> : en cas de vente du bien, il est payé avant les autres créanciers</li>
+        </ul>
+        <p class="f-text">Ces deux droits sont cumulables.</p>
+      </div>
+      <div class="f-item">
+        <div class="f-item-title"><span class="f-dot"></span>Obligations du créancier</div>
+        <p class="f-text">Le créancier doit conserver le bien avec soin, ne peut pas l'utiliser ni le dégrader, et engage sa responsabilité en cas de faute. Le gage est un droit de garantie, <strong>pas un droit d'usage</strong>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">III</span> Le gage sans dépossession</div>
+    <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:.8rem">→ Forme moderne, essentielle à la vie économique</p>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Pourquoi cette forme existe</div>
+      <p class="f-text">Le gage avec dépossession pose un problème évident : le débiteur est privé de l'usage du bien. Mais une entreprise ne peut pas se séparer de ses outils, un commerçant ne peut pas remettre son stock. Le droit a donc créé le <strong>gage sans dépossession</strong>.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Constitution et opposabilité</div>
+      <p class="f-text">Le débiteur conserve le bien, mais le gage est rendu opposable par la <strong>publicité</strong>. La dépossession physique est remplacée par une inscription dans un registre spécial. Conditions : un écrit, la description précise du bien, une publicité.</p>
+      <div class="f-alerte"><strong>Sans publicité</strong>Le gage existe entre les parties, mais il est inopposable aux tiers.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. Effets</div>
+      <p class="f-text">Le créancier dispose d'un <strong>droit de préférence</strong> mais pas de détention. Le débiteur conserve l'usage du bien et peut l'exploiter, mais il ne doit pas en diminuer la valeur — il est <strong>gardien du bien au profit du créancier</strong>.</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">IV</span> La réalisation du gage</div>
+    <p class="f-text">En cas de non-paiement, le créancier peut provoquer la <strong>vente du bien</strong> et se payer sur le prix par priorité. La réalisation se fait judiciairement ou conventionnellement si la loi l'autorise. L'appropriation automatique par le créancier est en principe interdite, sauf exceptions strictement encadrées.</p>
+    <div class="f-exemple"><strong>Schéma de synthèse</strong>Rétention → bloquer · Gage → préférer · Propriété → exclure</div>
+  </div>
+  <div class="f-retenir">
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul>
+      <li>Définir précisément le gage</li>
+      <li>Distinguer gage avec et sans dépossession</li>
+      <li>Expliquer le rôle fondamental de la publicité dans le gage sans dépossession</li>
+      <li>Comprendre le droit de préférence et ses limites</li>
+    </ul>
+  </div>
+  <div class="fiche-nav"><label for="r-f8">← Fiche #8</label><label for="r-f10">Fiche #10 : Le nantissement →</label></div>
+</div></main>
+</div>
 
+<!-- FICHE 10 -->
+<div id="page-f10" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #10 · P2 Sûretés réelles · T2 Sûretés à droit de préférence · C2 Le nantissement</div>
+    <h2>Le nantissement</h2>
+    <div class="fiche-intro">Le gage permet de garantir une dette sur des biens meubles corporels. Mais dans l'économie moderne, une grande partie de la valeur d'un patrimoine n'est pas matérielle. Le nantissement répond à cette réalité : il permet d'affecter des biens incorporels en garantie d'une dette.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> Définition et logique juridique</div>
+    <p class="f-text">Le nantissement est un contrat par lequel un débiteur (ou un tiers) affecte un <strong>bien incorporel</strong> en garantie de l'exécution d'une obligation, au profit d'un créancier. En cas de défaillance, le créancier nanti dispose d'un <strong>droit de préférence</strong>, lui permettant d'être payé avant les créanciers chirographaires.</p>
+    <div class="f-alerte"><strong>Distinctions essentielles</strong>Le nantissement n'est pas un cautionnement (pas de personne supplémentaire). Il n'est pas une propriété-garantie (le créancier ne devient jamais propriétaire). Il n'est pas un droit de rétention (le créancier ne détient pas nécessairement le bien). Il confère : un droit réel, une priorité de paiement — mais pas une exclusion des autres créanciers.</div>
+    <div class="f-exemple"><strong>Idée clé</strong>Le nantissement valorise juridiquement ce qui, autrement, resterait une simple espérance de paiement.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> Le nantissement de créance</div>
+    <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:.8rem">→ Forme centrale et très fréquente</p>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Logique du mécanisme</div>
+      <p class="f-text">Le débiteur détient une créance contre un tiers et affecte cette créance en garantie d'une autre dette. Le créancier nanti ne devient pas propriétaire de la créance, mais obtient un droit de préférence et, dans certains cas, un <strong>droit de paiement direct</strong>.</p>
+      <div class="f-exemple"><strong>Exemple</strong>Une entreprise a une créance client de 50 000 €. Elle la donne en nantissement à sa banque pour garantir un prêt.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Conditions de validité</div>
+      <ul class="f-list">
+        <li>Une créance nantie : existante ou future, déterminée ou déterminable</li>
+        <li>Un contrat de nantissement souvent écrit, précisant la créance garantie et la créance nantie</li>
+        <li>L'opposabilité au débiteur de la créance nantie : par notification ou par acceptation</li>
+      </ul>
+      <div class="f-alerte"><strong>Point fondamental</strong>Tant que le débiteur de la créance n'a pas été informé, le nantissement peut être inopposable à son égard.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. Effets</div>
+      <p class="f-text">Avant la défaillance : la créance reste dans le patrimoine du débiteur, le créancier nanti est simplement sécurisé. En cas de défaillance : le créancier nanti peut se faire payer directement par le débiteur de la créance nantie ou par réalisation judiciaire.</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">III</span> Le nantissement de parts sociales et de valeurs mobilières</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Nantissement de parts sociales</div>
+      <p class="f-text">Les parts sociales (SARL, sociétés civiles…) sont des biens incorporels représentant une valeur patrimoniale, donc nantiables. Le créancier nanti ne devient pas associé, ne participe pas aux décisions sociales, n'exerce aucun droit de vote. Il dispose d'une garantie sur la valeur des parts, réalisable en cas de non-paiement.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Nantissement d'actions et de valeurs mobilières</div>
+      <p class="f-text">Les actions et valeurs mobilières sont facilement cessibles, facilement évaluables, très utilisées en garantie bancaire. Le nantissement n'emporte pas transfert de propriété, bloque la libre disposition des titres et confère un droit de préférence. En cas de défaillance, les titres peuvent être vendus et le créancier est payé en priorité sur le prix.</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">IV</span> Le nantissement du fonds de commerce</div>
+    <p class="f-text">Le fonds de commerce est un ensemble de biens incorporels comprenant notamment la clientèle, le nom commercial, le droit au bail et parfois certains droits de propriété intellectuelle. Il constitue souvent le cœur de la valeur économique du commerçant.</p>
+    <p class="f-text">Le nantissement du fonds : n'empêche pas l'exploitation, n'entraîne pas dépossession, permet au créancier de se garantir sur un actif central. En cas de défaillance, le fonds peut être réalisé et le créancier nanti est payé par priorité.</p>
+    <div class="f-alerte"><strong>Formalisme rigoureux</strong>Écrit, inscription sur un registre spécial, respect de délais légaux stricts. C'est une sûreté complexe mais économiquement majeure.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">V</span> Effets généraux et place dans le système</div>
+    <p class="f-text">Contrairement au gage classique, le nantissement n'entraîne pas de détention matérielle du bien. La protection repose sur la publicité, la notification ou l'inscription. Le créancier nanti est payé avant les chirographaires mais après certains créanciers privilégiés.</p>
+    <div class="f-exemple"><strong>Formule synthétique</strong>Le nantissement permet de sécuriser juridiquement une valeur incorporelle sans la retirer au débiteur.</div>
+  </div>
+  <div class="f-retenir">
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul>
+      <li>Définir précisément le nantissement</li>
+      <li>Distinguer gage et nantissement sans hésiter (corporel / incorporel)</li>
+      <li>Expliquer le fonctionnement du nantissement de créance</li>
+      <li>Comprendre les enjeux du nantissement de parts et de fonds de commerce</li>
+    </ul>
+  </div>
+  <div class="fiche-nav"><label for="r-f9">← Fiche #9</label><label for="r-f11">Fiche #11 : L'hypothèque →</label></div>
+</div></main>
+</div>
+<!-- FICHE 11 -->
+<div id="page-f11" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #11 · P2 Sûretés réelles · T2 Sûretés à droit de préférence · C3 L'hypothèque</div>
+    <h2>L'hypothèque</h2>
+    <div class="fiche-intro">L'hypothèque est la sûreté réelle la plus célèbre, mais aussi l'une des plus mal comprises : immatérielle (pas de remise du bien), très formaliste, inscrite dans un cadre foncier complexe. Pourtant, elle joue un rôle fondamental dans le crédit immobilier, le financement à long terme et la sécurisation des créances importantes.</div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">I</span> Définition et caractères essentiels</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Définition</div>
+      <p class="f-text">L'hypothèque est une sûreté réelle immobilière par laquelle un débiteur (ou un tiers) affecte un ou plusieurs <strong>immeubles</strong> en garantie d'une dette, <strong>sans se déposséder</strong> de ces immeubles. En cas de non-paiement, le créancier hypothécaire dispose d'un <strong>droit de préférence</strong> et d'un <strong>droit de suite</strong>. L'hypothèque ne donne pas la propriété : elle confère un droit réel accessoire destiné à assurer le paiement.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Quatre caractères fondamentaux</div>
+      <div class="f-table-wrap">
+        <table class="f-table">
+          <thead><tr><th>Caractère</th><th>Signification</th></tr></thead>
+          <tbody>
+            <tr><td>Immatérielle</td><td>Le débiteur conserve la possession et l'usage du bien</td></tr>
+            <tr><td>Accessoire</td><td>Elle suit le sort de la créance garantie</td></tr>
+            <tr><td>Indivisible</td><td>Elle grève tout l'immeuble jusqu'au paiement total</td></tr>
+            <tr><td>Publique</td><td>Elle n'existe réellement que par l'inscription foncière</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">II</span> Les biens susceptibles d'hypothèque</div>
+    <p class="f-text">L'hypothèque porte principalement sur les terrains, bâtiments et constructions fixées au sol. Peuvent aussi être hypothéqués certains droits réels immobiliers (usufruit, nue-propriété, emphytéose). En revanche, une simple créance immobilière ne peut pas être hypothéquée.</p>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">III</span> Les trois catégories d'hypothèques</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. L'hypothèque conventionnelle</div>
+      <p class="f-text" style="font-style:italic;color:var(--r);margin-bottom:.6rem">→ La plus importante en pratique</p>
+      <p class="f-text">Résulte d'un accord de volonté entre le débiteur et le créancier. Soumise à un <strong>formalisme très strict</strong> :</p>
+      <ul class="f-list">
+        <li><strong>Acte notarié obligatoire</strong> : exigence de sécurité et de solennité</li>
+        <li><strong>Désignation précise</strong> de l'immeuble et de la créance garantie</li>
+        <li><strong>Inscription au service de la publicité foncière</strong></li>
+      </ul>
+      <div class="f-alerte"><strong>Sans inscription</strong>L'hypothèque n'est pas opposable aux tiers et perd l'essentiel de son intérêt.</div>
+      <div class="f-exemple"><strong>Exemple typique</strong>Un emprunteur consent une hypothèque à la banque pour garantir un prêt immobilier.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. L'hypothèque légale</div>
+      <p class="f-text">Certaines hypothèques existent <strong>de plein droit</strong>, sans convention préalable. La loi confère une hypothèque légale à certaines personnes en raison de leur situation particulière : les époux (pour certains droits), les mineurs ou majeurs protégés, l'État (dans certaines hypothèses fiscales). Même légale, l'hypothèque nécessite souvent une inscription pour être opposable aux tiers.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. L'hypothèque judiciaire</div>
+      <p class="f-text">Résulte d'une <strong>décision de justice</strong> ordonnée pour garantir une créance reconnue judiciairement. Elle permet de sécuriser une créance contentieuse dans l'attente de son paiement effectif. Elle transforme une créance « fragile » en créance fortement garantie.</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">IV</span> Les effets de l'hypothèque</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Le droit de préférence</div>
+      <p class="f-text">Le créancier hypothécaire est payé avant les créanciers chirographaires et selon son <strong>rang d'inscription</strong> entre créanciers hypothécaires.</p>
+      <div class="f-exemple"><strong>Principe fondamental</strong>Premier inscrit, premier payé.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Le droit de suite</div>
+      <p class="f-text">Le droit de suite permet au créancier de poursuivre l'immeuble hypothéqué <strong>en quelque main qu'il se trouve</strong>. Si le débiteur vend l'immeuble, l'acquéreur devient propriétaire, mais l'hypothèque reste attachée à l'immeuble. C'est un droit redoutable qui fait de l'hypothèque une sûreté très forte.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C. La position du débiteur</div>
+      <p class="f-text">Le débiteur conserve l'usage du bien, peut le louer, peut même le vendre — mais le bien reste grevé et le créancier conserve ses droits.</p>
+    </div>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">V</span> Le classement des créanciers hypothécaires</div>
+    <p class="f-text">Le rang dépend de la <strong>date d'inscription</strong>, non de la date du contrat. En cas de vente de l'immeuble, le prix est réparti d'abord aux créanciers privilégiés, puis aux créanciers hypothécaires, puis aux chirographaires.</p>
+  </div>
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">VI</span> L'extinction de l'hypothèque</div>
+    <ul class="f-list">
+      <li><strong>Par extinction de la créance</strong> : le paiement, la prescription ou la remise de la dette entraîne l'extinction de l'hypothèque (car elle est accessoire)</li>
+      <li><strong>Par radiation</strong> : même une créance éteinte laisse l'inscription visible — il faut une radiation au service de la publicité foncière pour effacer formellement l'hypothèque</li>
+      <li><strong>Par péremption</strong> : l'inscription hypothécaire n'est pas éternelle, elle est soumise à une durée limitée après laquelle elle doit être renouvelée</li>
+    </ul>
+  </div>
+  <div class="f-retenir">
+    <strong>Ce que tu dois maîtriser</strong>
+    <ul>
+      <li>Définir précisément l'hypothèque et ses quatre caractères</li>
+      <li>Distinguer les trois formes : conventionnelle, légale, judiciaire</li>
+      <li>Expliquer droit de préférence et droit de suite</li>
+      <li>Comprendre l'importance de la publicité foncière et du rang d'inscription</li>
+      <li>Situer l'hypothèque dans le système général des sûretés réelles</li>
+    </ul>
+    <div class="f-exemple" style="margin-top:.8rem"><strong>Formule à retenir absolument</strong>L'hypothèque est la garantie reine des créances immobilières.</div>
+  </div>
+  <div class="fiche-nav"><label for="r-f10">← Fiche #10</label><span></span></div>
+</div></main>
+</div>
+
+<footer>
+  <p>Droit des <span>Sûretés</span> — Fiches de révision 2025-2026 · Ord. 15 septembre 2021</p>
+</footer>
+
+</div><!-- end .wrap -->
 </body>
 </html>
