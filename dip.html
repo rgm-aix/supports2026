@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Droit International Public — Révision</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+:root{
+  --r:#8B0000;--rv:#B22222;--rp:#fdf0f0;--rb:#e8c8c8;
+  --n:#1a1a1a;--gf:#2d2d2d;--g:#555;--gc:#f6f8fb;--b:#fefefe;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--b);color:var(--n);font-size:17px;line-height:1.75}
+header{background:var(--n);color:#fff;padding:1.8rem 2rem 1.4rem;border-bottom:4px solid var(--r);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+header h1{font-size:clamp(1.3rem,4vw,2rem);font-weight:600}
+header h1 span{color:#B22222}
+header small{color:#aaa;font-size:.82rem;letter-spacing:.06em;display:block;margin-top:.2rem}
+nav{background:var(--r);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav ul{list-style:none;display:flex;flex-wrap:nowrap;min-width:max-content}
+.nav-radio{display:none}
+nav label{display:block;padding:.65rem .85rem;color:rgba(255,255,255,.82);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer}
+.page-content{display:none}
+#home-content{display:block}
+#r-home:checked~.wrap #home-content,#r-plan:checked~.wrap #home-content{display:none}
+#r-home:checked~.wrap #home-content{display:block}
+#r-plan:checked~.wrap #page-plan{display:block}
+#r-home:checked~.wrap .nav-home,#r-plan:checked~.wrap .nav-plan{color:#fff!important;background:rgba(255,255,255,.15)!important;border-bottom-color:#fff!important}
+
+/* ACCUEIL */
+#home{padding:2.5rem 2.5rem 4rem}
+.home-intro{text-align:center;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--rb)}
+.home-intro h2{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;margin-bottom:.4rem}
+.home-intro p{color:var(--g);font-size:.95rem;max-width:520px;margin:0 auto}
+.home-section-title{font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin:2rem 0 .9rem;padding-bottom:.3rem;border-bottom:1px solid var(--rb)}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+label.card{display:block;background:var(--b);border:1.5px solid var(--rb);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:inherit}
+label.card:active{box-shadow:0 4px 18px rgba(139,0,0,.13)}
+label.card .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:.3rem}
+label.card h3{font-size:.95rem;font-weight:700;color:var(--r);margin-bottom:.2rem;line-height:1.35}
+label.card p{font-size:.8rem;color:var(--g);line-height:1.4}
+label.card-plan{display:block;background:var(--n);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:#fff}
+label.card-plan .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.3rem}
+label.card-plan h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+label.card-plan p{font-size:.8rem;color:#aaa;line-height:1.4}
+
+main{max-width:100%;margin:0 auto;padding:2.2rem 2.5rem 5rem}
+label.btn-home{display:inline-block;background:transparent;border:1.5px solid rgba(139,0,0,.3);color:var(--rv);padding:.4rem 1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+
+/* MIND MAP */
+.mindmap-container{width:100%;overflow-x:auto;padding:1.5rem 0}
+.mindmap-scroll{min-width:900px}
+.root-node{display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
+.root-node .node-box{background:var(--n);color:#fff;padding:.9rem 2rem;font-size:1.1rem;font-weight:700;letter-spacing:.04em;text-align:center;border-bottom:3px solid var(--r)}
+.root-node .node-box small{display:block;color:#aaa;font-size:.72rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
+
+/* Plan à une colonne car une seule partie */
+.single-col{display:flex;flex-direction:column;gap:1.5rem;align-items:stretch}
+.partie-block{border:2px solid var(--r);background:#fff}
+.partie-header{background:var(--r);color:#fff;padding:.6rem 1rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.partie-body{padding:.8rem;display:flex;flex-direction:column;gap:.7rem}
+
+/* Chapitres */
+.chap-block{border:1px solid var(--rb);background:#fff}
+.chap-header{background:var(--gc);border-bottom:1px solid var(--rb);padding:.35rem .7rem;font-size:.73rem;font-weight:700;color:var(--r);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;list-style:none}
+.chap-header::-webkit-details-marker{display:none}
+.chap-toggle::after{content:'▸';color:var(--r);font-size:.8rem}
+details[open] .chap-toggle::after{content:'▾'}
+.chap-body{padding:.55rem .7rem;display:flex;flex-direction:column;gap:.3rem}
+
+/* Sections */
+.section-item{padding:.28rem .5rem .28rem .85rem;border-left:2px solid var(--rb);font-size:.82rem;color:var(--gf);display:flex;flex-direction:column;gap:.18rem}
+.section-label{font-weight:700;color:var(--rv);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.section-name{font-size:.84rem;color:var(--gf);font-weight:600}
+.para-list{margin-top:.22rem;padding-left:.7rem;display:flex;flex-direction:column;gap:.12rem}
+.para-item{font-size:.78rem;color:var(--g);position:relative;padding-left:.9rem;line-height:1.4}
+.para-item::before{content:'§';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.7rem}
+.sub-list{margin-top:.1rem;padding-left:.8rem}
+.sub-item{font-size:.74rem;color:#777;position:relative;padding-left:.7rem;line-height:1.4}
+.sub-item::before{content:'–';position:absolute;left:0;color:var(--r)}
+.sub-sub-list{margin-top:.08rem;padding-left:.7rem}
+.sub-sub-item{font-size:.71rem;color:#999;position:relative;padding-left:.65rem;line-height:1.4}
+.sub-sub-item::before{content:'·';position:absolute;left:0;color:#aaa}
+
+.intro-block{border:1.5px solid var(--rb);background:var(--rp);margin-bottom:1rem}
+.intro-block-header{background:#555;color:#fff;padding:.45rem .8rem;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.intro-block-body{padding:.6rem .75rem;display:flex;flex-direction:column;gap:.28rem}
+.intro-topic{font-size:.82rem;color:var(--gf);padding-left:.85rem;border-left:2px solid #aaa;font-weight:600}
+
+.legend{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem;padding:.75rem 1rem;background:var(--gc);border:1px solid var(--rb);font-size:.78rem;color:var(--g)}
+.legend-item{display:flex;align-items:center;gap:.35rem}
+.legend-dot{width:12px;height:12px;flex-shrink:0}
+
+footer{background:var(--n);color:#777;text-align:center;padding:1.2rem;font-size:.78rem;letter-spacing:.05em;border-top:3px solid var(--r);margin-top:2rem}
+footer span{color:#B22222}
+
+@media(max-width:900px){
+  main{padding:1.4rem .9rem 4rem}
+  header{padding:1.2rem 1rem 1rem}
+  nav label{padding:.55rem .5rem;font-size:.68rem}
+  #home{padding:1.8rem 1rem 3rem}
+  .cards-grid{grid-template-columns:1fr 1fr}
+  .mindmap-scroll{min-width:unset}
+}
+@media(max-width:480px){.cards-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<input type="radio" name="page" class="nav-radio" id="r-home" checked>
+<input type="radio" name="page" class="nav-radio" id="r-plan">
+
+<div class="wrap">
+<header>
+  <label for="r-home" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+    <h1>Droit <span>International Public</span></h1>
+    <small>Fiches de révision — Partie 2 : Les sujets de droit international</small>
+  </label>
+</header>
+<nav>
+  <ul>
+    <li><label class="nav-home" for="r-home">Accueil</label></li>
+    <li><label class="nav-plan" for="r-plan">Plan du cours</label></li>
+  </ul>
+</nav>
+
+<!-- ACCUEIL -->
+<div id="home-content">
+<div id="home">
+  <div class="home-intro">
+    <h2>Droit International Public</h2>
+    <p>Partie 2 — Les sujets de droit international · Fiches de révision</p>
+  </div>
+  <div class="home-section-title">Navigation</div>
+  <div class="cards-grid">
+    <label class="card-plan" for="r-plan">
+      <div class="card-num">Vue d'ensemble</div>
+      <h3>Plan du cours</h3>
+      <p>Chapitres, sections, paragraphes — structure complète du cours</p>
+    </label>
+  </div>
+  <div class="home-section-title">Chapitres</div>
+  <div class="cards-grid">
+    <label class="card" for="r-plan">
+      <div class="card-num">Chapitre 1</div>
+      <h3>L'État</h3>
+      <p>Définition, naissance, compétences, immunités, responsabilité internationale</p>
+    </label>
+    <label class="card" for="r-plan">
+      <div class="card-num">Chapitre 2</div>
+      <h3>Les organisations internationales</h3>
+      <p>Statut, structure, compétences d'attribution</p>
+    </label>
+    <label class="card" for="r-plan">
+      <div class="card-num">Chapitre 3</div>
+      <h3>Les personnes privées</h3>
+      <p>Protection des droits humains, cadres universel et régional</p>
+    </label>
+  </div>
+</div>
+</div>
+
+<!-- PLAN -->
+<div id="page-plan" class="page-content">
+<main>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.6rem">
+    <div>
+      <h2 style="font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700">Plan détaillé du cours</h2>
+      <p style="font-size:.85rem;color:var(--g);margin-top:.2rem">Partie 2 — Les sujets de droit international · cliquez sur un chapitre pour le déplier</p>
+    </div>
+    <label class="btn-home" for="r-home">← Accueil</label>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#1a1a1a"/></svg> Racine</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000"/></svg> Partie</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#f6f8fb" stroke="#e8c8c8"/></svg> Chapitre (cliquable)</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#B22222" opacity=".6"/></svg> Section</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="none" stroke="#8B0000" stroke-width="1.5"/></svg> §</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><circle cx="6" cy="6" r="4" fill="none" stroke="#aaa" stroke-width="1.5"/></svg> A / B / C</div>
+  </div>
+
+  <div class="mindmap-container"><div class="mindmap-scroll">
+
+    <!-- RACINE -->
+    <div class="root-node">
+      <div class="node-box">
+        DROIT INTERNATIONAL PUBLIC
+        <small>Partie 2 — Les sujets de droit international</small>
+      </div>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="intro-block" style="margin-bottom:1.5rem">
+      <div class="intro-block-header">Introduction générale à la Partie 2</div>
+      <div class="intro-block-body">
+        <div class="intro-topic">La notion de sujet de droit international</div>
+        <div class="intro-topic">Distinction sujets originaires / dérivés</div>
+        <div class="intro-topic">L'État comme sujet principal</div>
+      </div>
+    </div>
+
+    <!-- UNE SEULE COLONNE (une seule partie) -->
+    <div class="single-col">
+
+      <!-- ===== CHAPITRE 1 ===== -->
+      <div class="partie-block">
+        <div class="partie-header">Chapitre 1 — L'État</div>
+        <div class="partie-body">
+
+          <!-- Section 1 -->
+          <details class="chap-block">
+            <summary class="chap-header">Section 1 — La définition de l'État <span class="chap-toggle"></span></summary>
+            <div class="chap-body">
+              <div class="section-item">
+                <span class="section-label">§ 1</span>
+                <span class="section-name">Les éléments constitutifs de l'État</span>
+                <div class="para-list">
+                  <div class="para-item">A. Le territoire</div>
+                  <div class="para-item">B. La population</div>
+                  <div class="para-item">C. Un gouvernement</div>
+                </div>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 2</span>
+                <span class="section-name">La qualité d'État : la souveraineté</span>
+              </div>
+            </div>
+          </details>
+
+          <!-- Section 2 -->
+          <details class="chap-block">
+            <summary class="chap-header">Section 2 — La naissance de l'État <span class="chap-toggle"></span></summary>
+            <div class="chap-body">
+              <div class="section-item">
+                <span class="section-label">§ 1</span>
+                <span class="section-name">Les modalités de la naissance de l'État</span>
+                <div class="para-list">
+                  <div class="para-item">A. La sécession dans le cadre de la décolonisation</div>
+                  <div class="para-item">B. La sécession en dehors des situations de décolonisation</div>
+                </div>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 2</span>
+                <span class="section-name">La reconnaissance d'un État</span>
+                <div class="para-list">
+                  <div class="para-item">A. Définition de la reconnaissance d'État</div>
+                  <div class="para-item">B. La théorie de la reconnaissance constitutive</div>
+                  <div class="para-item">C. La théorie de la reconnaissance déclarative</div>
+                </div>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 3</span>
+                <span class="section-name">La succession d'États</span>
+              </div>
+            </div>
+          </details>
+
+          <!-- Section 3 -->
+          <details class="chap-block">
+            <summary class="chap-header">Section 3 — Les compétences de l'État <span class="chap-toggle"></span></summary>
+            <div class="chap-body">
+              <div class="section-item">
+                <span class="section-label">§ 1</span>
+                <span class="section-name">La compétence territoriale</span>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 2</span>
+                <span class="section-name">La compétence personnelle</span>
+                <div class="para-list">
+                  <div class="para-item">A. Les personnes physiques</div>
+                  <div class="para-item">B. Les personnes morales</div>
+                </div>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 3</span>
+                <span class="section-name">La compétence extraterritoriale</span>
+                <div class="para-list">
+                  <div class="para-item">A. Les sanctions extraterritoriales</div>
+                  <div class="para-item">B. La compétence universelle</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Section 4 -->
+          <details class="chap-block">
+            <summary class="chap-header">Section 4 — Les immunités de l'État <span class="chap-toggle"></span></summary>
+            <div class="chap-body">
+              <div class="section-item">
+                <span class="section-label">§ 1</span>
+                <span class="section-name">Les immunités de l'État lui-même</span>
+                <div class="para-list">
+                  <div class="para-item">A. La théorie des immunités restreintes</div>
+                  <div class="para-item">B. La remise en cause des immunités de l'État</div>
+                </div>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 2</span>
+                <span class="section-name">Les immunités des représentants de l'État</span>
+                <div class="para-list">
+                  <div class="para-item">A. Les immunités personnelles</div>
+                  <div class="para-item">B. Les immunités matérielles (fonctionnelles)</div>
+                  <div class="para-item">C. La contestation des immunités des représentants</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Section 5 -->
+          <details class="chap-block">
+            <summary class="chap-header">Section 5 — La responsabilité internationale de l'État <span class="chap-toggle"></span></summary>
+            <div class="chap-body">
+              <div class="section-item">
+                <span class="section-label">§ 1</span>
+                <span class="section-name">Les conditions de la responsabilité</span>
+                <div class="para-list">
+                  <div class="para-item">A. L'attribution du comportement à l'État</div>
+                  <div class="para-item">B. La violation d'une obligation internationale</div>
+                </div>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 2</span>
+                <span class="section-name">Le contenu de la responsabilité internationale</span>
+                <div class="para-list">
+                  <div class="para-item">A. La réparation du préjudice</div>
+                  <div class="para-item">B. Les autres conséquences de la responsabilité</div>
+                </div>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 3</span>
+                <span class="section-name">L'invocation et la mise en œuvre de la responsabilité internationale</span>
+                <div class="para-list">
+                  <div class="para-item">A. Invocation de la responsabilité internationale</div>
+                  <div class="para-item">B. Les contre-mesures</div>
+                  <div class="para-item">C. La protection diplomatique</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+      <!-- ===== CHAPITRE 2 ===== -->
+      <div class="partie-block">
+        <div class="partie-header">Chapitre 2 — Les organisations internationales</div>
+        <div class="partie-body">
+
+          <!-- Section 1 -->
+          <details class="chap-block">
+            <summary class="chap-header">Section 1 — Le statut des organisations internationales <span class="chap-toggle"></span></summary>
+            <div class="chap-body">
+              <div class="section-item">
+                <span class="section-label">§ 1</span>
+                <span class="section-name">La condition juridique des organisations internationales</span>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 2</span>
+                <span class="section-name">La structure des organisations internationales</span>
+                <div class="para-list">
+                  <div class="para-item">A. Les États membres des organisations internationales</div>
+                  <div class="para-item">B. Les organes des organisations internationales</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Section 2 -->
+          <details class="chap-block">
+            <summary class="chap-header">Section 2 — Les compétences des organisations internationales <span class="chap-toggle"></span></summary>
+            <div class="chap-body">
+              <div class="section-item">
+                <span class="section-label">§ 1</span>
+                <span class="section-name">La compétence d'attribution</span>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 2</span>
+                <span class="section-name">Les compétences attribuées</span>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+      <!-- ===== CHAPITRE 3 ===== -->
+      <div class="partie-block">
+        <div class="partie-header">Chapitre 3 — Les personnes privées</div>
+        <div class="partie-body">
+
+          <!-- Section 1 -->
+          <details class="chap-block">
+            <summary class="chap-header">Section 1 — Les droits des personnes privées <span class="chap-toggle"></span></summary>
+            <div class="chap-body">
+              <div class="section-item">
+                <span class="section-label">§ 1</span>
+                <span class="section-name">La protection des droits humains</span>
+                <div class="para-list">
+                  <div class="para-item">A. La protection des droits humains dans le cadre universel</div>
+                  <div class="para-item">B. La protection des droits humains dans le cadre régional</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+    </div><!-- end single-col -->
+  </div></div><!-- end mindmap -->
+</main>
+</div>
+
+<footer>
+  <p>Droit <span>International Public</span> — Fiches de révision 2025-2026 · Partie 2 : Les sujets de droit international</p>
+</footer>
+
+</div><!-- end .wrap -->
+</body>
+</html>
