@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Droit du Travail — Fiches de Révision</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+:root{
+  --r:#8B0000;--rv:#B22222;--rp:#fdf0f0;--rb:#e8c8c8;
+  --n:#1a1a1a;--gf:#2d2d2d;--g:#555;--gc:#f6f8fb;--b:#fefefe;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--b);color:var(--n);font-size:17px;line-height:1.75}
+header{background:var(--n);color:#fff;padding:1.8rem 2rem 1.4rem;border-bottom:4px solid var(--r);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+header h1{font-size:clamp(1.3rem,4vw,2rem);font-weight:600}
+header h1 span{color:#B22222}
+header small{color:#aaa;font-size:.82rem;letter-spacing:.06em;display:block;margin-top:.2rem}
+nav{background:var(--r);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav ul{list-style:none;display:flex;flex-wrap:nowrap;min-width:max-content}
+.nav-radio{display:none}
+nav label{display:block;padding:.65rem .85rem;color:rgba(255,255,255,.82);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer}
+.page-content{display:none}
+#home-content{display:block}
+#r-home:checked~.wrap #home-content,#r-plan:checked~.wrap #home-content,
+#r-f1:checked~.wrap #home-content,#r-f2:checked~.wrap #home-content,
+#r-f3:checked~.wrap #home-content,#r-f4:checked~.wrap #home-content,
+#r-f5:checked~.wrap #home-content,#r-f6:checked~.wrap #home-content,
+#r-f7:checked~.wrap #home-content,#r-f8:checked~.wrap #home-content,
+#r-f9:checked~.wrap #home-content,#r-f10:checked~.wrap #home-content,
+#r-f11:checked~.wrap #home-content,#r-f12:checked~.wrap #home-content,
+#r-f13:checked~.wrap #home-content,#r-f14:checked~.wrap #home-content,
+#r-f15:checked~.wrap #home-content{display:none}
+#r-home:checked~.wrap #home-content{display:block}
+#r-plan:checked~.wrap #page-plan{display:block}
+#r-f1:checked~.wrap #page-f1{display:block}
+#r-f2:checked~.wrap #page-f2{display:block}
+#r-f3:checked~.wrap #page-f3{display:block}
+#r-f4:checked~.wrap #page-f4{display:block}
+#r-f5:checked~.wrap #page-f5{display:block}
+#r-f6:checked~.wrap #page-f6{display:block}
+#r-f7:checked~.wrap #page-f7{display:block}
+#r-f8:checked~.wrap #page-f8{display:block}
+#r-f9:checked~.wrap #page-f9{display:block}
+#r-f10:checked~.wrap #page-f10{display:block}
+#r-f11:checked~.wrap #page-f11{display:block}
+#r-f12:checked~.wrap #page-f12{display:block}
+#r-f13:checked~.wrap #page-f13{display:block}
+#r-f14:checked~.wrap #page-f14{display:block}
+#r-f15:checked~.wrap #page-f15{display:block}
+#r-home:checked~.wrap .nav-home,#r-plan:checked~.wrap .nav-plan,
+#r-f1:checked~.wrap .nav-f1,#r-f2:checked~.wrap .nav-f2,
+#r-f3:checked~.wrap .nav-f3,#r-f4:checked~.wrap .nav-f4,
+#r-f5:checked~.wrap .nav-f5,#r-f6:checked~.wrap .nav-f6,
+#r-f7:checked~.wrap .nav-f7,#r-f8:checked~.wrap .nav-f8,
+#r-f9:checked~.wrap .nav-f9,#r-f10:checked~.wrap .nav-f10,
+#r-f11:checked~.wrap .nav-f11,#r-f12:checked~.wrap .nav-f12,
+#r-f13:checked~.wrap .nav-f13,#r-f14:checked~.wrap .nav-f14,
+#r-f15:checked~.wrap .nav-f15{color:#fff!important;background:rgba(255,255,255,.15)!important;border-bottom-color:#fff!important}
+
+#home{padding:2.5rem 2.5rem 4rem}
+.home-intro{text-align:center;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--rb)}
+.home-intro h2{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;margin-bottom:.4rem}
+.home-intro p{color:var(--g);font-size:.95rem;max-width:560px;margin:0 auto}
+.home-section-title{font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin:2rem 0 .9rem;padding-bottom:.3rem;border-bottom:1px solid var(--rb)}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+label.card{display:block;background:var(--b);border:1.5px solid var(--rb);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:inherit;transition:box-shadow .15s}
+label.card:hover{box-shadow:0 4px 18px rgba(139,0,0,.13)}
+label.card .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:.3rem}
+label.card h3{font-size:.95rem;font-weight:700;color:var(--r);margin-bottom:.2rem;line-height:1.35}
+label.card p{font-size:.8rem;color:var(--g);line-height:1.4}
+label.card-plan{display:block;background:var(--n);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:#fff;transition:opacity .15s}
+label.card-plan:hover{opacity:.9}
+label.card-plan .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.3rem}
+label.card-plan h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+label.card-plan p{font-size:.8rem;color:#aaa;line-height:1.4}
+
+main{max-width:100%;margin:0 auto;padding:2.2rem 2.5rem 5rem}
+label.btn-home{display:inline-block;background:transparent;border:1.5px solid rgba(139,0,0,.3);color:var(--rv);padding:.4rem 1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+
+.mindmap-container{width:100%;overflow-x:auto;padding:1.5rem 0}
+.mindmap-scroll{min-width:820px}
+.root-node{display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
+.root-node .node-box{background:var(--n);color:#fff;padding:.9rem 2rem;font-size:1.1rem;font-weight:700;letter-spacing:.04em;text-align:center;border-bottom:3px solid var(--r)}
+.root-node .node-box small{display:block;color:#aaa;font-size:.72rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
+.plan-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.partie-block{border:2px solid var(--r);background:#fff;margin-bottom:1rem}
+.partie-header{background:var(--r);color:#fff;padding:.6rem 1rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.partie-body{padding:.8rem;display:flex;flex-direction:column;gap:.6rem}
+.chap-block{border:1px solid var(--rb);background:#fff}
+.chap-header{background:var(--gc);border-bottom:1px solid var(--rb);padding:.35rem .7rem;font-size:.73rem;font-weight:700;color:var(--r);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;list-style:none}
+.chap-header::-webkit-details-marker{display:none}
+.chap-toggle::after{content:'▸';color:var(--r);font-size:.8rem}
+details[open] .chap-toggle::after{content:'▾'}
+.chap-body{padding:.55rem .7rem;display:flex;flex-direction:column;gap:.3rem}
+.section-item{padding:.28rem .5rem .28rem .85rem;border-left:2px solid var(--rb);font-size:.82rem;color:var(--gf);display:flex;flex-direction:column;gap:.18rem}
+.section-label{font-weight:700;color:var(--rv);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.section-name{font-size:.84rem;color:var(--gf);font-weight:600}
+.para-list{margin-top:.22rem;padding-left:.7rem;display:flex;flex-direction:column;gap:.1rem}
+.para-item{font-size:.78rem;color:var(--g);position:relative;padding-left:.9rem;line-height:1.4}
+.para-item::before{content:'§';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.7rem}
+.sub-list{margin-top:.08rem;padding-left:.7rem}
+.sub-item{font-size:.74rem;color:#777;position:relative;padding-left:.7rem;line-height:1.4}
+.sub-item::before{content:'–';position:absolute;left:0;color:var(--r)}
+.plan-fiche-link{display:inline-block;margin-top:.45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--r);padding:.18rem .55rem;cursor:pointer;border:none;font-family:inherit}
+.legend{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem;padding:.75rem 1rem;background:var(--gc);border:1px solid var(--rb);font-size:.78rem;color:var(--g)}
+.legend-item{display:flex;align-items:center;gap:.35rem}
+.legend-dot{width:12px;height:12px;flex-shrink:0}
+
+/* FICHES */
+.fiche-page{max-width:840px;margin:0 auto}
+.fiche-header{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--r)}
+.fiche-meta{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:.35rem}
+.fiche-header h2{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;color:var(--n)}
+.fiche-obj{margin-top:.75rem;background:var(--n);color:#bbb;padding:.55rem .9rem;font-size:.82rem;line-height:1.65;border-left:3px solid var(--r)}
+.fiche-obj strong{color:#fff;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.fiche-intro{margin-top:.8rem;font-size:.93rem;color:var(--g);line-height:1.68;font-style:italic;padding:.7rem 1rem;background:var(--gc);border-left:3px solid var(--rb)}
+
+.f-bloc{margin-bottom:2.4rem}
+.f-bloc-title{font-size:1.05rem;font-weight:700;color:#fff;background:var(--n);padding:.5rem .9rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.7rem}
+.f-bloc-title .f-num{background:var(--r);padding:.1rem .5rem;font-size:.75rem;letter-spacing:.07em;white-space:nowrap}
+.f-sous{margin-bottom:1.4rem;padding-left:1.1rem;border-left:3px solid var(--r)}
+.f-sous-title{font-size:.98rem;font-weight:700;color:var(--r);margin-bottom:.6rem;padding-bottom:.25rem;border-bottom:1px dotted var(--rb)}
+.f-sous2{margin-bottom:1rem;padding-left:.9rem;border-left:2px solid var(--rb)}
+.f-sous2-title{font-size:.9rem;font-weight:700;color:var(--gf);margin-bottom:.35rem}
+.f-item{margin-bottom:.9rem}
+.f-item-title{font-size:.93rem;font-weight:700;color:var(--gf);margin-bottom:.35rem;display:flex;align-items:baseline;gap:.45rem}
+.f-item-title .f-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--rv);flex-shrink:0;margin-bottom:2px}
+.f-text{font-size:.92rem;color:var(--gf);line-height:1.75;margin-bottom:.5rem}
+.f-list{list-style:none;padding:0;margin:.3rem 0 .6rem .1rem}
+.f-list li{font-size:.91rem;color:var(--gf);line-height:1.65;padding:.12rem 0 .12rem 1.1rem;position:relative}
+.f-list li::before{content:'—';position:absolute;left:0;color:var(--r);font-weight:700}
+.f-list li strong{color:var(--r)}
+.f-list-sub{list-style:none;padding:0;margin:.15rem 0 .15rem .9rem}
+.f-list-sub li{font-size:.87rem;color:#555;line-height:1.6;padding:.08rem 0 .08rem .9rem;position:relative}
+.f-list-sub li::before{content:'·';position:absolute;left:0;color:var(--r);font-weight:700}
+.f-alerte{background:#fffbf0;border-left:4px solid #c47900;padding:.75rem 1rem;margin:.5rem 0 .9rem;font-size:.88rem;line-height:1.65;color:var(--gf)}
+.f-alerte strong{color:#9a5e00;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.25rem}
+.f-exemple{background:var(--gc);border-left:3px solid #888;padding:.7rem 1rem;margin:.5rem 0 .9rem;font-size:.88rem;line-height:1.65;color:var(--g)}
+.f-exemple strong{color:var(--gf);font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.f-key{background:var(--rp);border:1.5px solid var(--rb);padding:.65rem 1rem;margin:.5rem 0 .9rem;font-size:.91rem;line-height:1.65;color:var(--gf);display:flex;align-items:baseline;gap:.6rem}
+.f-key::before{content:'→';color:var(--r);font-weight:700;flex-shrink:0;font-size:1rem}
+.f-table-wrap{overflow-x:auto;margin:.6rem 0 .9rem}
+.f-table{width:100%;border-collapse:collapse;font-size:.86rem}
+.f-table thead tr{background:var(--n);color:#fff}
+.f-table thead th{padding:.5rem .8rem;text-align:left;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+.f-table tbody tr:nth-child(even){background:var(--gc)}
+.f-table tbody td{padding:.45rem .8rem;border-bottom:1px solid var(--rb);vertical-align:top}
+.f-table tbody td:first-child{font-weight:700;color:var(--r)}
+.f-retenir{background:var(--rp);border-left:4px solid var(--r);padding:.9rem 1.1rem;margin-top:1.8rem;font-size:.91rem;line-height:1.7;color:var(--gf)}
+.f-retenir strong{color:var(--r);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:.5rem}
+.f-retenir ul{list-style:none;padding:0;margin:.3rem 0}
+.f-retenir ul li{padding:.1rem 0 .1rem 1rem;position:relative;font-size:.9rem}
+.f-retenir ul li::before{content:'✓';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.78rem}
+.fiche-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rb)}
+.fiche-nav label{color:var(--rv);cursor:pointer;font-size:.85rem}
+
+footer{background:var(--n);color:#777;text-align:center;padding:1.2rem;font-size:.78rem;letter-spacing:.05em;border-top:3px solid var(--r);margin-top:2rem}
+footer span{color:#B22222}
+
+@media(max-width:900px){
+  .plan-cols{grid-template-columns:1fr}
+  .mindmap-scroll{min-width:unset}
+  main{padding:1.4rem .9rem 4rem}
+  header{padding:1.2rem 1rem 1rem}
+  nav label{padding:.55rem .5rem;font-size:.68rem}
+  #home{padding:1.8rem 1rem 3rem}
+  .cards-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){.cards-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<input type="radio" name="page" class="nav-radio" id="r-home" checked>
+<input type="radio" name="page" class="nav-radio" id="r-plan">
+<input type="radio" name="page" class="nav-radio" id="r-f1">
+<input type="radio" name="page" class="nav-radio" id="r-f2">
+<input type="radio" name="page" class="nav-radio" id="r-f3">
+<input type="radio" name="page" class="nav-radio" id="r-f4">
+<input type="radio" name="page" class="nav-radio" id="r-f5">
+<input type="radio" name="page" class="nav-radio" id="r-f6">
+<input type="radio" name="page" class="nav-radio" id="r-f7">
+<input type="radio" name="page" class="nav-radio" id="r-f8">
+<input type="radio" name="page" class="nav-radio" id="r-f9">
+<input type="radio" name="page" class="nav-radio" id="r-f10">
+<input type="radio" name="page" class="nav-radio" id="r-f11">
+<input type="radio" name="page" class="nav-radio" id="r-f12">
+<input type="radio" name="page" class="nav-radio" id="r-f13">
+<input type="radio" name="page" class="nav-radio" id="r-f14">
+<input type="radio" name="page" class="nav-radio" id="r-f15">
+
+<div class="wrap">
+<header>
+  <label for="r-home" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+    <h1>Droit <span>du Travail</span></h1>
+    <small>Fiches de révision — 15 leçons · 7 parties</small>
+  </label>
+</header>
+<nav><ul>
+  <li><label class="nav-home" for="r-home">Accueil</label></li>
+  <li><label class="nav-plan" for="r-plan">Plan du cours</label></li>
+  <li><label class="nav-f1"  for="r-f1">#1 Pouvoirs employeur</label></li>
+  <li><label class="nav-f2"  for="r-f2">#2 Discriminations</label></li>
+  <li><label class="nav-f3"  for="r-f3">#3 Droits et libertés</label></li>
+  <li><label class="nav-f4"  for="r-f4">#4 Obligations employeur</label></li>
+  <li><label class="nav-f5"  for="r-f5">#5 Obligations salarié</label></li>
+  <li><label class="nav-f6"  for="r-f6">#6 Temps de travail</label></li>
+  <li><label class="nav-f7"  for="r-f7">#7 Suspension du contrat</label></li>
+  <li><label class="nav-f8"  for="r-f8">#8 Transmission du contrat</label></li>
+  <li><label class="nav-f9"  for="r-f9">#9 Modes de rupture CDD</label></li>
+  <li><label class="nav-f10" for="r-f10">#10 Exigences licenciements</label></li>
+  <li><label class="nav-f11" for="r-f11">#11 Licenciement personnel</label></li>
+  <li><label class="nav-f12" for="r-f12">#12 Licenciement économique</label></li>
+  <li><label class="nav-f13" for="r-f13">#13 La grève</label></li>
+  <li><label class="nav-f14" for="r-f14">#14 Les syndicats</label></li>
+  <li><label class="nav-f15" for="r-f15">#15 Le CSE</label></li>
+</ul></nav>
+
+<!-- ACCUEIL -->
+<div id="home-content">
+<div id="home">
+  <div class="home-intro">
+    <h2>Droit du Travail</h2>
+    <p>15 fiches de révision complètes · 7 parties · Plan du cours interactif</p>
+  </div>
+
+  <div class="home-section-title">Navigation générale</div>
+  <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));max-width:520px">
+    <label class="card-plan" for="r-plan">
+      <div class="card-num">Vue d'ensemble</div>
+      <h3>Plan du cours</h3>
+      <p>Structure complète — accès direct aux 15 fiches depuis chaque leçon</p>
+    </label>
+  </div>
+
+  <div class="home-section-title">Partie 1 — Les pouvoirs de l'employeur</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f1"><div class="card-num">Fiche #1</div><h3>Les manifestations des pouvoirs de l'employeur</h3><p>Pouvoir de direction · règlement intérieur · pouvoir disciplinaire · contrôle judiciaire</p></label>
+  </div>
+
+  <div class="home-section-title">Partie 2 — Le respect des droits de la personne du salarié</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f2"><div class="card-num">Fiche #2</div><h3>La lutte contre les inégalités</h3><p>Discriminations directes/indirectes · preuve aménagée · sanctions · égalité de traitement</p></label>
+    <label class="card" for="r-f3"><div class="card-num">Fiche #3</div><h3>La protection des droits et libertés</h3><p>Liberté vestimentaire · liberté d'expression · surveillance des salariés · alcool/drogues</p></label>
+  </div>
+
+  <div class="home-section-title">Partie 3 — Les obligations des parties au contrat</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f4"><div class="card-num">Fiche #4</div><h3>Les obligations principales de l'employeur</h3><p>Rémunération · SMIC · fourniture du travail · qualification · bonne foi · responsabilités</p></label>
+    <label class="card" for="r-f5"><div class="card-num">Fiche #5</div><h3>Les obligations principales du salarié</h3><p>Exécution ponctuelle · loyauté · discrétion · réserve · droit de retrait · responsabilité</p></label>
+  </div>
+
+  <div class="home-section-title">Partie 4 — Les conditions de travail</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f6"><div class="card-num">Fiche #6</div><h3>Le temps de travail</h3><p>Travail effectif · astreinte · durées légales et maximales · repos · congés payés</p></label>
+  </div>
+
+  <div class="home-section-title">Partie 5 — L'évolution de la relation de travail</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f7"><div class="card-num">Fiche #7</div><h3>La suspension du contrat de travail</h3><p>Effets · obligations maintenues · maternité · congés liés · protection contre le licenciement</p></label>
+    <label class="card" for="r-f8"><div class="card-num">Fiche #8</div><h3>La transmission du contrat de travail</h3><p>Entité économique autonome · maintien de l'identité · contrats transférés automatiquement</p></label>
+  </div>
+
+  <div class="home-section-title">Partie 6 — Rupture du contrat de travail</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f9"><div class="card-num">Fiche #9</div><h3>Modes de rupture du CDD</h3><p>Accord commun · force majeure · résiliation judiciaire · ruptures unilatérales · prise d'acte</p></label>
+    <label class="card" for="r-f10"><div class="card-num">Fiche #10</div><h3>Les exigences communes aux licenciements</h3><p>Cause réelle et sérieuse · niveaux de faute · procédure · sanctions (injustifié, nul, irrégulier)</p></label>
+    <label class="card" for="r-f11"><div class="card-num">Fiche #11</div><h3>Licenciement pour motif personnel</h3><p>Insuffisance professionnelle · état de santé · inaptitude · vie personnelle · sanctions</p></label>
+    <label class="card" for="r-f12"><div class="card-num">Fiche #12</div><h3>Licenciement pour motif économique</h3><p>Causes économiques · effets sur l'emploi · reclassement · PSE · droits des salariés</p></label>
+  </div>
+
+  <div class="home-section-title">Partie 7 — Les relations collectives</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f13"><div class="card-num">Fiche #13</div><h3>La grève</h3><p>Définition juridique · cessation de travail · revendications professionnelles · effets sur le contrat</p></label>
+    <label class="card" for="r-f14"><div class="card-num">Fiche #14</div><h3>Les syndicats</h3><p>Objet syndical · liberté syndicale · représentativité · prérogatives DS/RSS · accords collectifs</p></label>
+    <label class="card" for="r-f15"><div class="card-num">Fiche #15</div><h3>Le Comité Social et Économique</h3><p>Petit CSE / grand CSE · attributions · élections · statut protecteur des représentants</p></label>
+  </div>
+</div>
+</div>
+
+<!-- PLAN DU COURS -->
+<div id="page-plan" class="page-content">
+<main>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.6rem">
+    <div><h2 style="font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700">Plan détaillé du cours</h2>
+    <p style="font-size:.85rem;color:var(--g);margin-top:.2rem">7 parties · 15 leçons · cliquez pour déplier, puis accédez à la fiche</p></div>
+    <label class="btn-home" for="r-home">← Accueil</label>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#1a1a1a"/></svg>Partie</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000"/></svg>Leçon/Section</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#f6f8fb" stroke="#e8c8c8"/></svg>Chapitre (cliquable)</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000" opacity=".8"/></svg>Lien fiche</div>
+  </div>
+  <div class="mindmap-container"><div class="mindmap-scroll">
+    <div class="root-node"><div class="node-box">DROIT DU TRAVAIL<small>7 Parties · 15 Leçons</small></div></div>
+    <div class="plan-cols">
+      <!-- COLONNE GAUCHE -->
+      <div>
+        <div class="partie-block">
+          <div class="partie-header">P1 — Les pouvoirs de l'employeur</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 1 — Manifestations des pouvoirs <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Les pouvoirs de direction</span><div class="para-list"><div class="para-item">§1 Gestion et organisation de l'entreprise</div><div class="para-item">§2 Gestion de la relation avec les salariés</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Le pouvoir normatif</span><div class="para-list"><div class="para-item">§1 Le règlement intérieur — élaboration + contenu</div><div class="para-item">§2 Notes de service · chartes éthiques</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 3</span><span class="section-name">Le pouvoir disciplinaire</span><div class="para-list"><div class="para-item">§1 La faute disciplinaire</div><div class="para-item">§2 La sanction (formes licites/interdites · choix)</div><div class="para-item">§3 La procédure (prescriptions · cumul)</div><div class="para-item">§4 Le contrôle judiciaire</div></div></div>
+                <label class="plan-fiche-link" for="r-f1">→ Fiche #1</label>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="partie-block">
+          <div class="partie-header">P2 — Droits de la personne du salarié</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 2 — La lutte contre les inégalités <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">L'interdiction des discriminations</span><div class="para-list"><div class="para-item">§1 Motifs · actes · formes (directe/indirecte)</div><div class="para-item">§2 Preuve aménagée · protection · sanctions</div><div class="para-item">§3 Dérogations générale et particulières</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">L'égalité de traitement</span></div>
+                <label class="plan-fiche-link" for="r-f2">→ Fiche #2</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 3 — Protection des droits et libertés <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Présentation générale</span><div class="para-list"><div class="para-item">Champ d'application · test justifié/proportionné</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Applications</span><div class="para-list"><div class="para-item">§1 Liberté vestimentaire (tenue · conviction)</div><div class="para-item">§2 Liberté d'expression</div><div class="para-item">§3 Surveillance (procédés clandestins · preuves · contrôles)</div></div></div>
+                <label class="plan-fiche-link" for="r-f3">→ Fiche #3</label>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="partie-block">
+          <div class="partie-header">P3 — Obligations des parties</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 4 — Obligations de l'employeur <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Obligation de rémunération</span><div class="para-list"><div class="para-item">Salaire de base · primes · indemnités · SMIC · minima conventionnels</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Obligation de fournir le travail</span><div class="para-list"><div class="para-item">Travail aux conditions prévues · moyens · qualification</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 3</span><span class="section-name">Bonne foi</span></div>
+                <div class="section-item"><span class="section-label">Sect. 4</span><span class="section-name">Responsabilités</span></div>
+                <label class="plan-fiche-link" for="r-f4">→ Fiche #4</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 5 — Obligations du salarié <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Obligation d'exécuter le travail</span><div class="para-list"><div class="para-item">§1 Exécution ponctuelle · droit de retrait</div><div class="para-item">§2 Exécution loyale (fidélité, discrétion, réserve)</div><div class="para-item">§3 Exécution consciencieuse</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Responsabilité civile et pénale</span></div>
+                <label class="plan-fiche-link" for="r-f5">→ Fiche #5</label>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="partie-block">
+          <div class="partie-header">P4 — Les conditions de travail</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 6 — Le temps de travail <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">La durée du travail</span><div class="para-list"><div class="para-item">§1 Travail effectif (pause, habillage, trajet) · astreinte</div><div class="para-item">§2 Durée légale 35h · durées maximales · travail de nuit</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Repos et congés</span><div class="para-list"><div class="para-item">Repos quotidien · repos hebdomadaire · jours fériés</div><div class="para-item">Congés payés (acquisition · prise · rémunération)</div></div></div>
+                <label class="plan-fiche-link" for="r-f6">→ Fiche #6</label>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <!-- COLONNE DROITE -->
+      <div>
+        <div class="partie-block">
+          <div class="partie-header">P5 — Évolution de la relation de travail</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 7 — La suspension du contrat <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Régime général</span><div class="para-list"><div class="para-item">Effets : dispense travail + dispense salaire (sauf garantie)</div><div class="para-item">Maintien obligations secondaires · lien contractuel</div><div class="para-item">Concours de causes de suspension</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">La maternité</span><div class="para-list"><div class="para-item">Aménagement de l'emploi · congé maternité</div><div class="para-item">Congés liés (adoption, naissance, paternité)</div><div class="para-item">Protection relative, absolue, sanctions</div></div></div>
+                <label class="plan-fiche-link" for="r-f7">→ Fiche #7</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 8 — La transmission du contrat <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">Notion de transfert d'entreprise</span><div class="para-list"><div class="para-item">Entité économique autonome (avant/après)</div><div class="para-item">Opérations visées · succession de prestataires</div></div></div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">Effets du transfert</span><div class="para-list"><div class="para-item">Maintien automatique et impératif des contrats</div><div class="para-item">Droits et obligations transmis · licenciement interdit</div></div></div>
+                <label class="plan-fiche-link" for="r-f8">→ Fiche #8</label>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="partie-block">
+          <div class="partie-header">P6 — Rupture du contrat de travail</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 9 — Modes de rupture du CDD <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Modes du droit commun</span><div class="para-list"><div class="para-item">Accord commun · force majeure · résiliation judiciaire</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Modes spécifiques au droit du travail</span><div class="para-list"><div class="para-item">Ruptures unilatérales employeur (faute grave, inaptitude…)</div><div class="para-item">Ruptures unilatérales salarié (CDD→CDI, prise d'acte)</div><div class="para-item">Rupture conventionnelle (≈ accord CDD)</div></div></div>
+                <label class="plan-fiche-link" for="r-f9">→ Fiche #9</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 10 — Exigences communes aux licenciements <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">La cause réelle et sérieuse</span><div class="para-list"><div class="para-item">Existante · objective · exacte</div><div class="para-item">Faute légère / sérieuse / grave / lourde</div><div class="para-item">Sanctions : sans CRS · nul</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">La procédure</span><div class="para-list"><div class="para-item">Entretien préalable · notification · lettre motivée</div><div class="para-item">Sanction du licenciement irrégulier</div></div></div>
+                <label class="plan-fiche-link" for="r-f10">→ Fiche #10</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 11 — Licenciement pour motif personnel <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">L'insuffisance professionnelle</span><div class="para-list"><div class="para-item">Stricto sensu (incapacité non fautive)</div><div class="para-item">Insuffisance de résultats (objectifs)</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">L'état de santé</span><div class="para-list"><div class="para-item">Maladie non pro : perturbation + remplacement définitif</div><div class="para-item">AT/MP : protection renforcée</div><div class="para-item">Inaptitude : médecin du travail + obligation de reclassement</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 3</span><span class="section-name">La vie personnelle du salarié</span><div class="para-list"><div class="para-item">Disciplinaire (lien contractuel · rattachement pro)</div><div class="para-item">Non disciplinaire (trouble objectif)</div></div></div>
+                <label class="plan-fiche-link" for="r-f11">→ Fiche #11</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 12 — Licenciement pour motif économique <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Définition</span><div class="para-list"><div class="para-item">Cause qualificative (nature économique)</div><div class="para-item">Cause justificative : difficultés / mutations / compétitivité / cessation</div><div class="para-item">Effets sur l'emploi · obligation de reclassement</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Procédures</span><div class="para-list"><div class="para-item">Règles communes : ordre, entretien, lettre motivée</div><div class="para-item">PSE pour grands licenciements collectifs</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 3</span><span class="section-name">Droits spécifiques</span><div class="para-list"><div class="para-item">Mesures de reclassement · priorité de réembauche</div></div></div>
+                <label class="plan-fiche-link" for="r-f12">→ Fiche #12</label>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="partie-block">
+          <div class="partie-header">P7 — Les relations collectives</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 13 — La grève <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Définition</span><div class="para-list"><div class="para-item">Cessation de travail collective et caractérisée</div><div class="para-item">Revendications professionnelles (exclusions : politique, solidarité externe…)</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Conséquences sur le contrat</span><div class="para-list"><div class="para-item">Suspension · pas de salaire · pas de sanction disciplinaire</div><div class="para-item">Licenciement : seulement si faute lourde</div></div></div>
+                <label class="plan-fiche-link" for="r-f13">→ Fiche #13</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 14 — Les syndicats <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Objet syndical</span><div class="para-list"><div class="para-item">Nature des activités · qualité des adhérents</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Liberté syndicale</span><div class="para-list"><div class="para-item">Aspect individuel (adhérer, ne pas subir de discrimination)</div><div class="para-item">Aspect collectif (exister, agir)</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 3</span><span class="section-name">Représentativité</span><div class="para-list"><div class="para-item">Conditions d'acquisition</div><div class="para-item">Prérogatives représentatifs : négociation, DS, candidats, substitution</div><div class="para-item">Prérogatives résiduelles non représentatifs : section syndicale, RSS</div></div></div>
+                <label class="plan-fiche-link" for="r-f14">→ Fiche #14</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">Leçon 15 — Le CSE <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Attributions</span><div class="para-list"><div class="para-item">Petit CSE (11–49) : réclamations, relais, alerte</div><div class="para-item">Grand CSE (≥50) : social, économique, santé/sécurité</div></div></div>
+                <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Élections</span></div>
+                <div class="section-item"><span class="section-label">Sect. 3</span><span class="section-name">Statut protecteur</span><div class="para-list"><div class="para-item">Bénéficiaires · contenu · sanctions si violation</div></div></div>
+                <label class="plan-fiche-link" for="r-f15">→ Fiche #15</label>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</main>
+</div>
+
+<!-- ===== FICHE 1 ===== -->
+<div id="page-f1" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #1 · Partie 1 — Les pouvoirs de l'employeur · Leçon 1</div>
+    <h2>Les manifestations des pouvoirs de l'employeur</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre quels pouvoirs l'employeur possède dans l'entreprise, comment ils se manifestent, et quelles limites empêchent les abus.</div>
+    <div class="fiche-intro">Le contrat de travail repose sur la subordination juridique : pendant le travail, le salarié accepte d'être sous l'autorité de l'employeur. De là naissent trois pouvoirs — diriger, fixer des règles internes, sanctionner — qui existent mais sont encadrés (loi, administration, juge, droits du salarié).</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Les pouvoirs de direction</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — La gestion et l'organisation de l'entreprise</div>
+      <p class="f-text">L'employeur peut organiser l'entreprise (services, méthodes, stratégie) car il bénéficie de la liberté d'entreprendre. Il peut décider comment l'entreprise fonctionne : répartition des tâches, choix d'organisation, investissements, fermeture d'un service. Mais dès que ces choix impactent l'emploi, le droit impose un cadre.</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Ce que le juge contrôle</th><th>Ce que le juge ne fait pas</th></tr></thead><tbody>
+        <tr><td>La légalité du motif (ex : motif économique réel)</td><td>Choisir à la place de l'employeur « la meilleure stratégie »</td></tr>
+      </tbody></table></div>
+      <div class="f-exemple"><strong>Exemple</strong>Une entreprise perd des clients. Elle hésite entre réduire un service, fermer un site ou délocaliser. Le juge peut vérifier s'il existe vraiment une cause économique, mais ne dira pas : « vous deviez fermer le site plutôt que délocaliser ».</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — La gestion de la relation avec les salariés</div>
+      <p class="f-text">Le pouvoir de direction, c'est le pouvoir de donner des ordres, fixer des directives et contrôler leur exécution. Concrètement, l'employeur fixe l'organisation quotidienne (horaires, planning, méthodes, objectifs, procédures), évalue le travail, peut récompenser, peut contrôler l'activité pendant le travail (mais jamais « n'importe comment »).</p>
+      <div class="f-alerte"><strong>Limite générale</strong>Pas d'abus, pas de discrimination, respect des droits et libertés du salarié.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Le pouvoir normatif</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Le règlement intérieur</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Élaboration</div>
+        <ul class="f-list">
+          <li><strong>Obligatoire à partir de 50 salariés</strong></li>
+          <li>Rédigé unilatéralement par l'employeur (pas un contrat négocié)</li>
+          <li>Le projet est soumis pour avis au CSE — si absence de consultation : règlement potentiellement inopposable aux salariés</li>
+          <li>Porté à la connaissance des salariés (affichage, intranet…) + formalités de dépôt</li>
+          <li>Entrée en vigueur après un délai (1 mois après formalités)</li>
+          <li>Contrôle de l'inspection du travail : peut exiger le retrait de clauses illégales</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Contenu — ce qui est autorisé</div>
+        <p class="f-text">Le règlement intérieur est à <strong>contenu fermé</strong> : il ne peut traiter que deux domaines.</p>
+        <ul class="f-list">
+          <li><strong>Hygiène et sécurité</strong> : équipements obligatoires, consignes, interdictions en zone dangereuse (ex : casque obligatoire sur chantier)</li>
+          <li><strong>Discipline</strong> au sens large (règles de vie collective) et au sens strict : nature et échelle des sanctions + règles de procédure disciplinaire</li>
+        </ul>
+        <div class="f-alerte"><strong>Point capital</strong>Certaines sanctions — notamment la mise à pied disciplinaire — ne sont possibles que si elles sont prévues par le règlement intérieur.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Contenu interdit</div>
+        <p class="f-text">Une clause est interdite si elle est contraire aux lois/règlements, porte une atteinte injustifiée ou disproportionnée aux libertés, ou est discriminatoire.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Les autres manifestations du pouvoir normatif</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Les notes de service</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Type</th><th>Régime</th><th>Exemple</th></tr></thead><tbody>
+          <tr><td>Règle générale et permanente (hygiène, sécurité, discipline)</td><td>Assimilée au règlement intérieur → même cadre strict</td><td>« Chaque salarié doit nettoyer son poste tous les soirs »</td></tr>
+          <tr><td>Ponctuelle ou informative</td><td>Non assimilée — régime souple</td><td>« L'entreprise n'est pas responsable des vols au vestiaire »</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Les chartes éthiques et codes de conduite</div>
+        <ul class="f-list">
+          <li>Si elle crée des obligations sanctionnables → doit respecter le cadre du règlement intérieur, sinon inopposable</li>
+          <li>Si elle énonce surtout des valeurs (« respect », « intégrité ») → déclarative, ne suffit pas à sanctionner automatiquement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> Le pouvoir disciplinaire</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — La faute disciplinaire</div>
+      <p class="f-text">La faute disciplinaire correspond à une violation d'une obligation liée au travail : non-respect d'une règle (sécurité, horaires), insubordination (refus d'un ordre légitime), manquement à une obligation du contrat (loyauté, discrétion).</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — La sanction disciplinaire</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Formes licites</div>
+        <ul class="f-list">
+          <li><strong>Avertissement / blâme</strong> : reproche écrit qui « met en garde »</li>
+          <li><strong>Mise à pied disciplinaire</strong> : suspension temporaire + perte de salaire (seulement si prévue et encadrée)</li>
+          <li><strong>Mutation</strong> : changement d'affectation</li>
+          <li><strong>Rétrogradation</strong> : baisse de fonctions/responsabilités (souvent besoin d'accord du salarié)</li>
+          <li><strong>Licenciement</strong> : sanction ultime</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Sanctions interdites</div>
+        <ul class="f-list">
+          <li>Sanctions discriminatoires (fondées sur un motif interdit)</li>
+          <li><strong>Sanctions pécuniaires directes</strong> : amende, retenue punitive sur salaire, suppression punitive d'un avantage</li>
+        </ul>
+        <div class="f-exemple"><strong>Exemple très clair</strong>« Tu es en retard de 10 minutes = je retire 1 heure de salaire pour te punir » → interdit.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Choix de la sanction</div>
+        <p class="f-text">L'employeur choisit une sanction proportionnée à la gravité des faits et peut individualiser, mais jamais pour discriminer.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — La procédure disciplinaire</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Règle</th><th>Délai / principe</th><th>But</th></tr></thead><tbody>
+        <tr><td>Prescription de la faute</td><td>2 mois à partir de la connaissance des faits</td><td>Éviter les sanctions sur « des vieux faits ressortis plus tard »</td></tr>
+        <tr><td>Prescription de la sanction</td><td>3 ans</td><td>« Droit à l'oubli » partiel — sanction ancienne non utilisable indéfiniment</td></tr>
+        <tr><td>Interdiction du cumul</td><td>Même faute = une seule sanction</td><td>Un fait déjà sanctionné ne peut pas être re-sanctionné</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§4 — Le contrôle judiciaire</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. L'étendue du contrôle</div>
+        <ul class="f-list">
+          <li>Régularité de la procédure : étapes et délais respectés ?</li>
+          <li>Existence de la faute : faits prouvés ? imputables au salarié ?</li>
+          <li>Justification et proportionnalité : sanction adaptée et licite ?</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Les suites du contrôle</div>
+        <ul class="f-list">
+          <li>Le juge peut annuler la sanction ou accorder des réparations</li>
+          <li>Nullité : le salarié doit être remis autant que possible dans la situation normale (retrait de la sanction, rétablissement si rétrogradation…)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Le contrat de travail implique subordination → justifie les 3 pouvoirs patronaux : direction, normatif, disciplinaire</li>
+    <li>Règlement intérieur : obligatoire à 50 salariés · contenu fermé (hygiène/sécurité/discipline) · consultation CSE obligatoire</li>
+    <li>Sanctions : délai pour agir (2 mois) · pas de double sanction · sanctions pécuniaires interdites · proportionnalité</li>
+    <li>Le juge contrôle : procédure + existence de la faute + proportionnalité</li>
+  </ul></div>
+  <div class="fiche-nav"><span></span><label for="r-f2">Fiche #2 : La lutte contre les inégalités →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 2 ===== -->
+<div id="page-f2" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #2 · Partie 2 — Droits de la personne du salarié · Leçon 2</div>
+    <h2>La lutte contre les inégalités</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre l'interdiction des discriminations (motifs prohibés, formes, preuve, sanctions) et l'égalité de traitement (différence sans justification entre salariés comparables).</div>
+    <div class="fiche-intro">L'employeur prend en permanence des décisions. Le droit du travail accepte qu'il y ait des différences, mais il refuse deux choses : la discrimination (différence fondée sur un motif interdit) et l'inégalité injustifiée (différence entre salariés comparables sans raison valable). L'employeur peut distinguer, mais avec des raisons légitimes.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> L'interdiction des discriminations</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Le domaine des discriminations prohibées</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Motifs discriminatoires</div>
+        <p class="f-text">La loi donne une liste limitative de motifs interdits. Ce ne sont pas « tout ce qu'on trouve injuste », mais les critères précisément listés.</p>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Motifs « classiques »</th><th>Motifs « moins intuitifs » (souvent piégeux)</th></tr></thead><tbody>
+          <tr><td>Origine, nationalité supposée, appartenance ethnique · Sexe, grossesse, situation de famille · Âge · État de santé, handicap · Religion, opinions politiques · Activité syndicale</td><td>Lieu de résidence · Apparence physique · Domiciliation bancaire · Précarité économique · Identité de genre / orientation sexuelle · Capacité à s'exprimer dans une autre langue que le français</td></tr>
+        </tbody></table></div>
+        <div class="f-key">Une discrimination = motif interdit + décision défavorable.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Actes et décisions discriminatoires</div>
+        <p class="f-text">La discrimination n'est pas limitée à l'embauche. Elle peut apparaître à n'importe quel moment : recrutement (refus d'embauche, stage), rémunération, formation, promotion, affectation, mutation, sanctions disciplinaires, rupture du contrat.</p>
+        <div class="f-key">Si l'employeur « gère » un salarié (embauche → carrière → rupture), il ne peut pas le faire en se basant sur un motif interdit.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Formes de discrimination</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Forme</th><th>Définition</th><th>Exemple</th></tr></thead><tbody>
+          <tr><td>Directe</td><td>On traite une personne moins bien à cause d'un motif interdit</td><td>« Je ne te promeus pas parce que tu es enceinte »</td></tr>
+          <tr><td>Indirecte</td><td>Règle en apparence neutre qui désavantage fortement un groupe protégé</td><td>Prime seulement pour les temps pleins, alors que les temps partiels sont majoritairement des femmes</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Moyens de lutte contre les discriminations</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. L'action — Preuve de la discrimination</div>
+        <p class="f-text">Mécanisme de preuve aménagée :</p>
+        <ul class="f-list">
+          <li><strong>Le salarié</strong> apporte des indices sérieux (faits, comparaisons, statistiques, mails, témoignages…)</li>
+          <li><strong>L'employeur</strong> doit ensuite prouver que sa décision repose sur une raison objective et étrangère à tout motif interdit</li>
+        </ul>
+        <div class="f-key">Le salarié n'a pas à « tout prouver » : il doit apporter un faisceau d'indices.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Protection de la victime et des témoins</div>
+        <ul class="f-list">
+          <li>L'employeur ne peut pas punir quelqu'un qui a dénoncé une discrimination, témoigné ou aidé la victime (<strong>protection contre les mesures de rétorsion</strong>)</li>
+          <li>Les organisations syndicales représentatives et certaines associations peuvent agir (intérêt collectif)</li>
+          <li>Le <strong>Défenseur des droits</strong> peut être saisi : aide à qualifier la situation, oriente, peut intervenir</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Sanctions des discriminations</div>
+        <ul class="f-list">
+          <li><strong>Nullité</strong> : la décision discriminatoire est censée ne jamais avoir existé (conséquences très lourdes pour l'employeur)</li>
+          <li><strong>Dommages et intérêts</strong> : perte de salaire, retard de carrière, atteinte à la dignité…</li>
+          <li><strong>Sanctions pénales</strong> : la discrimination est aussi un comportement pénalement réprimé</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Dérogations au principe de non-discrimination</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Dérogation générale</div>
+        <p class="f-text">Une différence peut être admise si elle répond à une <strong>exigence essentielle liée au poste</strong> et si elle est proportionnée. « C'est plus pratique pour l'entreprise » ne suffit pas.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Dérogations particulières</div>
+        <p class="f-text">Dérogations spécifiques prévues par des textes selon les situations (âge, handicap, nationalité dans certains emplois réglementés…). Ce ne sont pas des « permissions de discriminer », mais des exceptions très encadrées.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> L'égalité de traitement</div>
+    <div class="f-alerte"><strong>Distinction essentielle</strong>Discrimination = motif interdit. Égalité de traitement = différence entre salariés comparables SANS justification objective, même sans motif interdit précis.</div>
+    <p class="f-text">Principe : deux salariés placés dans une situation comparable doivent être traités de manière comparable, sauf si l'employeur peut prouver une raison objective.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">Méthode en 3 étapes</div>
+      <ul class="f-list">
+        <li><strong>Étape 1</strong> — Les salariés sont-ils dans une situation comparable ? (poste, responsabilités, qualification, conditions)</li>
+        <li><strong>Étape 2</strong> — Y a-t-il une différence de traitement ? (salaire, prime, avantage, formation…)</li>
+        <li><strong>Étape 3</strong> — L'employeur a-t-il une justification objective et pertinente ? (compétences, ancienneté, performance mesurée, contraintes du poste…)</li>
+      </ul>
+      <div class="f-exemple"><strong>Exemple concret</strong>Deux vendeurs, mêmes horaires, même magasin, même expérience. L'un a une prime mensuelle, l'autre non. L'employeur doit justifier objectivement (objectifs réellement différents, prime liée à une mission supplémentaire réelle, performance mesurée selon critères clairs).</div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Discrimination = motif interdit + décision défavorable (directe ou indirecte)</li>
+    <li>Preuve aménagée : salarié = indices → employeur = justification objective</li>
+    <li>Protection : victime + témoins protégés contre la rétorsion</li>
+    <li>Sanctions : nullité, dommages-intérêts, parfois pénal</li>
+    <li>Égalité de traitement : différence possible seulement si justification objective entre situations comparables</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f1">← Fiche #1</label><label for="r-f3">Fiche #3 : Droits et libertés →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 3 ===== -->
+<div id="page-f3" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #3 · Partie 2 · Leçon 3</div>
+    <h2>La protection des droits et libertés du salarié</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre jusqu'où l'employeur peut aller lorsqu'il dirige et contrôle le travail, et comment le salarié est protégé (tenue, expression, surveillance, preuves, alcool/drogues).</div>
+    <div class="fiche-intro">Dans l'entreprise, l'employeur dirige : il organise, donne des consignes, contrôle. Mais le salarié reste une personne avec des libertés. Le droit impose une règle de base : l'employeur peut limiter certaines libertés seulement si c'est justifié par le travail à faire et proportionné (pas excessif).</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Présentation générale</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Champ d'application</div>
+      <p class="f-text">La protection s'applique pendant toute la relation de travail : au quotidien ET lors des décisions de l'employeur (sanction, licenciement, mutation…). Même au travail, le salarié ne perd pas toute vie privée.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Le test fondamental (réflexe pour les QCM)</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Question 1</th><th>Question 2</th></tr></thead><tbody>
+        <tr><td><strong>Justifié</strong> par la nature de la tâche ? (sécurité, contact clientèle, image, confidentialité…)</td><td><strong>Proportionné</strong> au but recherché ? (la mesure n'est pas « trop forte » par rapport à l'objectif)</td></tr>
+      </tbody></table></div>
+      <div class="f-exemple"><strong>Exemples d'application</strong>Test alcool sur conducteur d'engin = souvent justifié par la sécurité. Filmer chaque salarié en continu pour « être sûr qu'il bosse » = souvent disproportionné.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Applications</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Liberté vestimentaire</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Obligation de porter une tenue de travail</div>
+        <p class="f-text">Justifiée par : sécurité (casque, chaussures, gants), hygiène (blouse en laboratoire, charlotte en cuisine), identification (uniforme), image/contact clientèle. Si tenue obligatoire → souvent obligation pour l'employeur de la fournir.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Obligation de porter une tenue correcte</div>
+        <p class="f-text">L'employeur peut demander une tenue compatible avec le travail (propreté, décence, sécurité), mais ne peut pas imposer des exigences arbitraires, humiliantes ou discriminatoires.</p>
+        <div class="f-exemple"><strong>Exemples</strong>« Pas de tongs en atelier » (sécurité) → cohérent. « Interdiction des cheveux longs uniquement pour les hommes » → suspicion de discrimination.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Manifestation d'une conviction religieuse</div>
+        <p class="f-text">Le salarié peut en principe porter un signe ou exprimer une conviction, tant que cela ne perturbe pas le travail. Une restriction n'est possible que si elle est justifiée par le bon fonctionnement (sécurité, contact clientèle, neutralité dans certains contextes) et proportionnée.</p>
+        <div class="f-alerte"><strong>La clause de neutralité</strong>Une entreprise peut parfois prévoir une clause de neutralité dans ses règles internes, mais elle doit être encadrée et répondre à un besoin réel du service — pas être générale « au hasard ».</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Liberté d'expression</div>
+      <p class="f-text">Le salarié peut critiquer, alerter, exprimer un désaccord. L'expression devient fautive si elle dégénère en insultes, diffamation, propos excessifs, divulgation d'informations confidentielles, dénigrement massif nuisible.</p>
+      <div class="f-exemple"><strong>Exemples</strong>« L'organisation est mauvaise, il faut changer les plannings » → expression normale. « Mon chef est un voleur, la boîte fraude » sans preuve et en public → risques (diffamation / abus).</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Surveillance des salariés</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Les 3 grands principes</div>
+        <ul class="f-list">
+          <li><strong>Interdiction des procédés clandestins</strong> : information préalable du CSE + information individuelle des salariés sur les dispositifs de contrôle (finalité, fonctionnement)</li>
+          <li><strong>Interdiction des procédés portant une atteinte excessive à la vie privée</strong> : pas de surveillance permanente généralisée sans raison, pas de caméra dans les zones de vie privée (toilettes, vestiaires)</li>
+          <li><strong>Tempérament sur la preuve illicite</strong> : une preuve « sale » peut parfois être admise en justice si elle est indispensable pour prouver un fait grave et si son utilisation reste proportionnée — c'est un cas par cas, pas une autorisation générale</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Contrôle des documents, courriers et connexions internet</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Situation</th><th>Régime</th><th>Exemple</th></tr></thead><tbody>
+          <tr><td>Document non identifié comme personnel</td><td>Accès employeur facilité dans le cadre du travail</td><td>Fichier « Compte-rendu réunion » sur poste pro</td></tr>
+          <tr><td>Document clairement identifié comme personnel</td><td>Protection renforcée</td><td>Dossier « PERSO – photos » : accès limité</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Contrôle de la consommation d'alcool et de drogues</div>
+        <p class="f-text">Conditions cumulatives pour un contrôle licite :</p>
+        <ul class="f-list">
+          <li>Justifié par la nature du poste (<strong>poste à risque</strong> : conduite, machines, sécurité…)</li>
+          <li>Proportionné (pas systématique sur tout le monde sans raison)</li>
+          <li>Prévu par des règles internes quand nécessaire (règlement intérieur ou note assimilée)</li>
+          <li>Garanties assurées : possibilité de contestation / contre-vérification</li>
+        </ul>
+        <div class="f-exemple"><strong>Exemples</strong>Hugo conduit un chariot élévateur : test alcool ponctuel si comportement suspect → souvent justifié. Emma fait du télétravail sur un poste administratif : test systématique hebdomadaire → disproportionné.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Réflexe absolu : justifié par la tâche + proportionné au but</li>
+    <li>Tenue : possible d'imposer si sécurité/hygiène/image — pas arbitraire</li>
+    <li>Expression : libre, mais pas abus (insulte, diffamation, divulgation)</li>
+    <li>Surveillance : pas clandestine + pas excessive + preuve irrégulière parfois admise au cas par cas</li>
+    <li>Documents : non identifié perso = accès plus libre · identifié perso = protection renforcée</li>
+    <li>Alcool/drogues : seulement pour postes à risque + garanties</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f2">← Fiche #2</label><label for="r-f4">Fiche #4 : Obligations de l'employeur →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 4 ===== -->
+<div id="page-f4" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #4 · Partie 3 — Obligations des parties · Leçon 4</div>
+    <h2>Les obligations principales de l'employeur</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre ce que l'employeur doit au salarié : payer, donner du travail (et les moyens), agir de bonne foi, et assumer des responsabilités en cas de faute ou de dommage.</div>
+    <div class="fiche-intro">Le contrat de travail est un échange : le salarié travaille, l'employeur paie et met le salarié en situation de travailler correctement. Si l'employeur ne respecte pas ses obligations, il s'expose à des rappels de salaire, des dommages et intérêts, et parfois une rupture à ses torts.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> L'obligation de rémunération</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Les éléments du salaire</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Le salaire de base</div>
+        <p class="f-text">Somme principale prévue pour le poste, calculée au temps (salaire mensuel pour 35h) ou avec une part variable (commissions). Il doit être clair, non arbitraire et versé selon les règles.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Les accessoires de salaire</div>
+        <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>1. Les primes et gratifications</div>
+        <p class="f-text">Une prime est un élément de salaire obligatoire si elle résulte du contrat, d'une convention collective, d'un usage (répété, général et fixe) ou d'un engagement unilatéral de l'employeur.</p>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Type</th><th>Régime</th><th>Exemple</th></tr></thead><tbody>
+          <tr><td>Prime obligatoire</td><td>L'employeur doit la payer — ne peut pas la supprimer seul</td><td>Prime d'ancienneté prévue par la convention collective</td></tr>
+          <tr><td>Prime libéralité</td><td>L'employeur peut choisir de la verser ou non</td><td>« Prime surprise » versée une seule fois, exceptionnelle, sans être devenue un usage</td></tr>
+        </tbody></table></div></div>
+        <div class="f-item"><div class="f-item-title"><span class="f-dot"></span>2. Les indemnités</div>
+        <ul class="f-list">
+          <li><strong>Indemnités proches du salaire</strong> (remplacent du salaire) : indemnité de congés payés, indemnité compensatrice de préavis</li>
+          <li><strong>Indemnités qui réparent un préjudice</strong> : indemnité pour licenciement injustifié, indemnité pour procédure irrégulière</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Le montant du salaire</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Le SMIC</div>
+        <p class="f-text">Tout salarié doit recevoir au minimum le SMIC pour ses heures de travail. Dans le calcul pour atteindre le SMIC, on inclut le salaire et les compléments liés au travail, mais on exclut les remboursements de frais (qui ne sont pas du salaire).</p>
+        <div class="f-exemple"><strong>Exemple</strong>Si Lina gagne 1 750 € + 100 € de frais de déplacement, les 100 € de frais ne servent pas à « atteindre le SMIC » : c'est un remboursement, pas du salaire.</div>
+        <p class="f-text">Le SMIC est un <strong>plancher évolutif</strong> : il est revalorisé selon des mécanismes légaux (inflation, pouvoir d'achat).</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Les minima conventionnels</div>
+        <p class="f-text">La convention collective de branche fixe souvent des minima selon la catégorie, le coefficient et le niveau de qualification. Si le minimum conventionnel est supérieur au SMIC, c'est le minimum conventionnel qui s'applique.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Le paiement du salaire</div>
+      <ul class="f-list">
+        <li><strong>Périodicité</strong> : le salaire est payé régulièrement, le plus souvent chaque mois (mensualisation). Un salarié peut demander un acompte à mi-mois selon les règles applicables</li>
+        <li><strong>Prescription</strong> : il existe un délai légal au-delà duquel on ne peut plus réclamer des arriérés en justice</li>
+        <li><strong>Constatation (bulletin de paie)</strong> : détaille la rémunération, justifie les retenues, constitue une trace. Le bulletin seul ne prouve pas que l'argent a été versé</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> L'obligation de fournir le travail</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — La fourniture du travail convenu</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Travail aux conditions prévues</div>
+        <p class="f-text">L'employeur doit fournir le travail prévu : laisser un salarié « sans missions » pendant des mois est un manquement grave. Le salarié ne peut plus exercer ses compétences, peut être humilié/mis à l'écart, peut perdre sa qualification dans la pratique.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Fourniture des moyens d'exécution</div>
+        <p class="f-text">L'employeur doit donner les moyens nécessaires : outils, logiciels, matériel, accès, informations. Un commercial sans fichiers clients ni voiture ne peut pas travailler. Si l'employeur ne fournit pas les moyens, le salarié peut contester et demander réparation.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — L'attribution d'une qualification professionnelle</div>
+      <p class="f-text">L'employeur doit reconnaître une qualification cohérente avec le travail réellement fait. La qualification influence le statut (cadre/non-cadre), le salaire (coefficients) et la carrière.</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Catégorie</th><th>Caractéristiques</th></tr></thead><tbody>
+        <tr><td>Cadres</td><td>Plus d'autonomie, plus de responsabilités, souvent management ou expertise élevée</td></tr>
+        <tr><td>Agents de maîtrise</td><td>Intermédiaires, encadrent parfois une équipe, moins d'autonomie qu'un cadre</td></tr>
+        <tr><td>Ouvriers et employés</td><td>Tâches opérationnelles sous encadrement direct</td></tr>
+      </tbody></table></div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Litige</th><th>Situation</th><th>Conséquence</th></tr></thead><tbody>
+        <tr><td>Sous-classement</td><td>Le salarié fait un travail plus qualifié que ce que l'employeur reconnaît</td><td>Souvent sous-payé par rapport à ce qu'il devrait recevoir</td></tr>
+        <tr><td>Sur-classement</td><td>L'employeur reconnaît une qualification supérieure au travail réel</td><td>Problèmes si l'employeur veut revenir en arrière ou si le salarié réclame les avantages liés au statut</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3 & 4</span> Bonne foi et responsabilités</div>
+    <div class="f-sous">
+      <div class="f-sous-title">L'obligation d'exécuter de bonne foi le contrat</div>
+      <p class="f-text">Agir loyalement et honnêtement : ne pas manipuler les règles contre le salarié, ne pas organiser volontairement une situation injuste, permettre une relation de travail correcte. L'employeur a du pouvoir → le droit lui demande d'en faire un usage loyal.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Les responsabilités de l'employeur</div>
+      <ul class="f-list">
+        <li><strong>Envers le salarié</strong> : si l'employeur ne respecte pas ses obligations, il peut être condamné à des dommages et intérêts, des rappels de salaire, et subir une rupture à ses torts</li>
+        <li><strong>Du fait du salarié</strong> : l'employeur est responsable des dommages causés par le salarié dans l'exercice de ses fonctions (il profite du travail, il assume les risques). Exception : si le salarié agit totalement « hors mission » (abus de fonction)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Payer : salaire + règles SMIC/minima + paiement mensuel + bulletin de paie</li>
+    <li>Fournir le travail et les moyens matériels</li>
+    <li>Attribuer et respecter une qualification conforme au travail réel</li>
+    <li>Exécuter le contrat de bonne foi (loyauté, honnêteté)</li>
+    <li>Responsable envers le salarié ET envers les tiers pour les actes du salarié</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f3">← Fiche #3</label><label for="r-f5">Fiche #5 : Obligations du salarié →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 5 ===== -->
+<div id="page-f5" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #5 · Partie 3 · Leçon 5</div>
+    <h2>Les obligations principales du salarié</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre ce que le salarié doit à l'employeur : exécuter le travail ponctuellement, loyalement et consciencieusement ; et savoir quand sa responsabilité peut être engagée.</div>
+    <div class="fiche-intro">Le salarié a des obligations : arriver à l'heure, suivre les consignes, ne pas nuire à l'entreprise, rester discret sur certaines informations, agir sérieusement. Quand il dépasse certaines limites, il peut être sanctionné disciplinairement et parfois engager sa responsabilité civile ou pénale.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> L'obligation d'exécuter le travail convenu</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Une exécution ponctuelle</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Principe de l'exécution ponctuelle</div>
+        <p class="f-text">Être ponctuel signifie : respecter les horaires et le planning, respecter les délais raisonnables, être présent quand on doit l'être. Des retards répétés peuvent constituer une faute disciplinaire même si chaque retard est petit.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Droit de retrait</div>
+        <p class="f-text">Le salarié n'a pas l'obligation de se mettre en danger. Le droit de retrait permet de quitter une situation de travail lorsqu'il existe un <strong>motif raisonnable</strong> de penser qu'il y a un <strong>danger grave et imminent</strong> pour sa santé ou sa sécurité.</p>
+        <div class="f-alerte"><strong>Point de vigilance</strong>Si le salarié invoque le droit de retrait sans raison valable (danger imaginaire), il peut être sanctionné. Le mot clé : motif raisonnable.</div>
+        <div class="f-exemple"><strong>Exemple</strong>Sur un chantier, une plateforme est instable et risque de s'effondrer : le salarié peut refuser d'y monter. Ce n'est pas une faute si le danger est sérieux et crédible.</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Une exécution loyale</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Interdiction des actes illicites</div>
+        <p class="f-text">Le salarié ne doit pas commettre d'actes illégaux dans le cadre du travail : vol, falsification de documents, fraude, violence, harcèlement, détournement de matériel, utilisation illégale des données…</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Obligation de fidélité à l'employeur</div>
+        <p class="f-text">La fidélité signifie ne pas trahir la confiance de l'employeur : ne pas faire concurrence pendant le contrat, ne pas détourner des clients, ne pas utiliser les informations de l'entreprise pour son intérêt personnel. Avoir une activité à côté n'est pas toujours interdit, mais si elle concurrence l'employeur ou nuit au travail, c'est problématique.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Obligation de réserve et de discrétion</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Obligation</th><th>Contenu</th><th>Exemple</th></tr></thead><tbody>
+          <tr><td>Discrétion</td><td>Confidentialité : garder pour soi les informations auxquelles on a accès grâce au travail (fichiers clients, prix, stratégies, données RH, secrets de fabrication…)</td><td>Envoyer le fichier client à un ami → violation de la discrétion</td></tr>
+          <tr><td>Réserve</td><td>Manière de s'exprimer publiquement : ne pas dénigrer publiquement de manière abusive (en interne, on peut critiquer)</td><td>Publier sur les réseaux : « Mon entreprise vole ses clients » sans preuve → manquement à la réserve</td></tr>
+        </tbody></table></div>
+        <div class="f-alerte"><strong>Nuance</strong>La réserve n'interdit pas tout, mais elle interdit l'abus.</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Une exécution consciencieuse</div>
+      <p class="f-text">Faire son travail sérieusement : appliquer les consignes, fournir un effort normal, éviter la négligence volontaire, faire attention à la qualité et à la sécurité. On ne demande pas la perfection, on demande une exécution normale et sérieuse.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> La responsabilité du salarié</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — La responsabilité civile</div>
+      <p class="f-text">En pratique, c'est souvent l'employeur qui supporte les dommages causés par le salarié dans l'exercice normal de ses fonctions. Mais le salarié peut être mis en cause dans des cas plus graves.</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Situation</th><th>Régime</th></tr></thead><tbody>
+        <tr><td>Erreur normale (maladresse dans l'exécution du travail)</td><td>Souvent géré par l'employeur</td></tr>
+        <tr><td>Faute volontaire grave (destruction intentionnelle « par vengeance »)</td><td>Responsabilité civile du salarié peut être recherchée</td></tr>
+      </tbody></table></div>
+      <div class="f-key">Plus c'est intentionnel et grave, plus le salarié s'expose.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — La responsabilité pénale</div>
+      <p class="f-text">Si le salarié commet une infraction (vol, violences, harcèlement, fraude, mise en danger…), il peut être poursuivi pénalement même si c'est « au travail ».</p>
+      <div class="f-alerte"><strong>Important</strong>Disciplinaire ≠ pénal. Les deux peuvent s'ajouter selon les cas. Un licenciement pour faute grave n'empêche pas des poursuites pénales parallèles.</div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Exécution ponctuelle : horaires + présence ; droit de retrait si danger grave et imminent avec motif raisonnable</li>
+    <li>Loyauté : pas d'actes illicites, pas de concurrence déloyale, fidélité à l'employeur</li>
+    <li>Discrétion : confidentialité des informations professionnelles</li>
+    <li>Réserve : ne pas dénigrer abusivement en public</li>
+    <li>Exécution consciencieuse : sérieux, qualité, sécurité</li>
+    <li>Responsabilité civile ET/OU pénale selon gravité et intention</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f4">← Fiche #4</label><label for="r-f6">Fiche #6 : Temps de travail →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 6 ===== -->
+<div id="page-f6" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #6 · Partie 4 — Conditions de travail · Leçon 6</div>
+    <h2>Le temps de travail</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre comment on compte le temps de travail, quelles sont les durées applicables, et quels sont les droits au repos et aux congés.</div>
+    <div class="fiche-intro">Le temps de travail répond à 3 questions : qu'est-ce qui compte comme travail ? combien d'heures peut-on travailler ? quand doit-on se reposer ? Le droit du travail protège la santé → il fixe des limites et des temps de repos obligatoires.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> La durée du travail</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Temps de travail effectif et temps d'astreinte</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. La notion de travail effectif</div>
+        <p class="f-text">Définition : le salarié est à la disposition de l'employeur, suit ses instructions, et <strong>ne peut pas vaquer librement à ses occupations personnelles</strong>.</p>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Situation</th><th>Travail effectif ?</th><th>Principe</th></tr></thead><tbody>
+          <tr><td>Pause / repas</td><td>Non en principe · Oui si le salarié reste à la disposition de l'employeur</td><td>Demandez-vous : la pause est-elle libre ou contrainte ?</td></tr>
+          <tr><td>Habillage / déshabillage</td><td>Non en principe · Possible compensation si tenue obligatoire imposée sur le lieu de travail</td><td>Tenue obligatoire + contrainte de lieu = compensation possible</td></tr>
+          <tr><td>Trajet domicile-travail</td><td>Non</td><td>Mais trajet entre deux lieux de travail dans la journée = souvent lié au travail</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. La notion d'astreinte</div>
+        <p class="f-text">L'astreinte : le salarié n'est pas au travail mais doit rester disponible pour intervenir si appelé. Il peut vaquer à ses occupations, mais doit pouvoir intervenir rapidement.</p>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Pendant l'astreinte</th><th>Pendant une intervention</th></tr></thead><tbody>
+          <tr><td>Pas du travail effectif en lui-même · mais indemnisée</td><td>Compte comme travail effectif</td></tr>
+        </tbody></table></div>
+        <div class="f-exemple"><strong>Exemple</strong>Un informaticien est d'astreinte le week-end. Il reste chez lui. S'il intervient 45 minutes pour résoudre une panne : ces 45 minutes = travail effectif.</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Les différentes durées du travail</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. La durée légale</div>
+        <p class="f-text"><strong>35 heures par semaine</strong> pour un salarié à temps plein. Ce n'est pas une durée maximale : c'est la référence normale. Au-delà → heures supplémentaires avec un régime spécifique.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Les durées maximales</div>
+        <ul class="f-list">
+          <li><strong>Durée maximale quotidienne</strong> : plafond d'heures par jour (avec exceptions/dérogations selon secteurs). On ne peut pas faire travailler quelqu'un de très longues heures journalières « comme ça »</li>
+          <li><strong>Durée maximale hebdomadaire</strong> : plafond sur la semaine (maximum exceptionnel + limite en moyenne sur plusieurs semaines)</li>
+          <li><strong>Travail de nuit</strong> : plus strictement encadré car plus fatigant · définition spécifique · limites particulières · contreparties (repos ou compensation)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Le repos et les congés</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 & §2 — Repos quotidien et hebdomadaire</div>
+      <ul class="f-list">
+        <li><strong>Repos quotidien</strong> : repos minimum entre deux journées de travail — on ne peut pas finir tard et recommencer très tôt sans pause suffisante</li>
+        <li><strong>Repos hebdomadaire</strong> : coupure sur la semaine (classiquement le dimanche, avec dérogations selon secteurs) + repos compensateur et roulement possibles</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Les jours fériés</div>
+      <p class="f-text">Jours fériés légaux — tous ne sont pas forcément chômés. <strong>Point important : le 1er mai a un statut particulier, très protégé.</strong> Pour les autres jours fériés, le régime dépend souvent des règles applicables (branche/entreprise).</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§4 — Les congés payés</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. La durée des congés payés</div>
+        <p class="f-text"><strong>Acquisition</strong> : classiquement 2,5 jours ouvrables par mois de travail effectif → 5 semaines pour une année complète. « Jours ouvrables » = lundi au samedi (le dimanche n'est pas ouvrable). Certaines périodes de suspension peuvent compter pour l'acquisition (maternité/paternité, et selon nouvelles règles pour les arrêts maladie).</p>
+        <p class="f-text"><strong>Période de référence</strong> : souvent du 1er juin au 31 mai, sauf accord collectif différent.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Modalités de prise des congés</div>
+        <ul class="f-list">
+          <li>L'employeur fixe ou applique une période de congés dans une fenêtre annuelle</li>
+          <li>Il organise les départs (ordre, dates) selon certains critères (famille, conjoints…)</li>
+          <li>Des délais de prévenance s'appliquent pour modifier les dates</li>
+          <li><strong>Important</strong> : en principe, on ne « se fait pas payer » ses congés non pris (sauf rupture du contrat ou cas légal de report)</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Rémunération des congés</div>
+        <p class="f-text">Pendant les congés, le salarié reçoit une indemnité. Le droit prévoit deux méthodes de calcul → on retient la plus favorable au salarié (logique de protection).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Travail effectif = à disposition + sous directives + pas libre</li>
+    <li>Pause/repas : pas travail effectif sauf si « mobilisable » · habillage : compensation possible si tenue obligatoire + contraintes</li>
+    <li>Trajet : domicile-travail = non · trajets imposés dans la journée = souvent oui</li>
+    <li>Astreinte : disponibilité ≠ travail effectif · intervention = travail effectif</li>
+    <li>Durée légale = 35h (référence) · durées maximales existent (quotidienne + hebdomadaire)</li>
+    <li>Congés payés : 2,5 jours/mois · période de référence · prise organisée · indemnisation selon méthode la plus favorable</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f5">← Fiche #5</label><label for="r-f7">Fiche #7 : Suspension du contrat →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 7 ===== -->
+<div id="page-f7" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #7 · Partie 5 — Évolution de la relation de travail · Leçon 7</div>
+    <h2>La suspension du contrat de travail</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre ce que signifie « suspension du contrat » : le contrat n'est pas rompu mais mis en pause. Connaître les effets de cette pause et le régime spécifique de la maternité.</div>
+    <div class="fiche-intro">La suspension, c'est comme un film mis sur « pause » : le lien contractuel continue d'exister (on reste salarié), mais certaines obligations sont temporairement arrêtées. Exemple : tu es en arrêt maladie. Tu n'es pas licencié, tu restes salarié, mais tu ne travailles pas.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Le régime général de la suspension</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Les effets de la suspension</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Dispense d'exécution des obligations principales</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Obligation principale</th><th>Principe</th><th>Exception</th></tr></thead><tbody>
+          <tr><td>Prestation de travail</td><td>Salarié dispensé de travailler, de venir, de produire, de répondre aux mails</td><td>Restitution d'éléments indispensables à l'entreprise dans certains cas</td></tr>
+          <tr><td>Rémunération</td><td>L'employeur ne verse pas le salaire correspondant à la période</td><td><strong>Garantie de ressources</strong> : dans certains cas (maladie notamment), l'employeur verse un complément aux indemnités journalières de la Sécu — sous conditions (ancienneté, justificatifs…)</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Maintien des obligations secondaires</div>
+        <p class="f-text">Même si le contrat est suspendu, certaines obligations restent : obligation de loyauté minimale (ne pas nuire à l'entreprise), obligation de discrétion, restitution d'éléments nécessaires si demandée.</p>
+        <div class="f-exemple"><strong>Exemple parlant</strong>Un salarié en arrêt conserve un fichier clients indispensable et refuse de le rendre alors que cela ne lui demande pas de « travailler » : problème potentiel.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Maintien du lien contractuel</div>
+        <p class="f-text">Pendant la suspension : le contrat continue d'exister, le salarié conserve sa qualité de salarié, et il a vocation à reprendre son poste (ou un poste équivalent selon les règles applicables). En congé maternité : tu restes salariée et tu reviens ensuite — ce n'est pas une rupture.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Concours de causes de suspension</div>
+      <p class="f-text">Parfois plusieurs événements se chevauchent (arrêt maladie pendant des congés, maternité puis arrêt maladie…). Le droit doit déterminer quelle cause « commande » et quelles conséquences s'appliquent (rémunération, droits, dates de reprise). L'essentiel à comprendre : le concours existe et le droit organise la priorité selon les cas.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> La maternité</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Dispense d'exécution de la prestation de travail</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Aménagements avant le congé</div>
+        <ul class="f-list">
+          <li><strong>Autorisations d'absence</strong> : examens médicaux liés à la grossesse (ne sont pas des absences fautives)</li>
+          <li><strong>Réduction du temps de travail</strong> : selon règles applicables</li>
+          <li><strong>Changement provisoire d'affectation</strong> : si le poste est dangereux ou incompatible avec l'état de santé ou l'activité</li>
+        </ul>
+        <div class="f-exemple"><strong>Exemple</strong>Une salariée travaille avec des produits chimiques. Elle est basculée temporairement sur un poste administratif.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Le congé de maternité</div>
+        <ul class="f-list">
+          <li>Durée légalement encadrée et variable selon les cas (nombre d'enfants, naissances multiples…)</li>
+          <li>Indemnisation : indemnités de protection sociale + parfois complément employeur (conventions collectives)</li>
+          <li>À la fin du congé : reprise de son emploi ou d'un emploi équivalent avec protection des droits (carrière, ancienneté)</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Autres congés liés à la maternité</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Congé</th><th>Nature</th></tr></thead><tbody>
+          <tr><td>Congé d'adoption</td><td>Suspension liée à l'arrivée d'un enfant par adoption — régime spécifique</td></tr>
+          <tr><td>Congé de naissance</td><td>Congé court au moment de l'arrivée de l'enfant</td></tr>
+          <tr><td>Congé de paternité</td><td>Congé plus structuré — encadré en durée et conditions</td></tr>
+          <tr><td>Congé supplémentaire de naissance</td><td>Congé additionnel selon cadre légal/conventionnel</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Protection contre le licenciement</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Type de protection</th><th>Contenu</th><th>Sanction si violation</th></tr></thead><tbody>
+        <tr><td>Protection relative</td><td>Le licenciement est très encadré, mais pas absolument impossible dans certaines hypothèses strictes</td><td>Conséquences lourdes selon cas</td></tr>
+        <tr><td>Protection absolue</td><td>Pendant certaines périodes, le licenciement est en principe interdit sauf exceptions extrêmement limitées</td><td>Nullité / conséquences renforcées</td></tr>
+      </tbody></table></div>
+      <div class="f-key">Le droit met un « bouclier » autour de la salariée pendant la grossesse et la maternité, pour éviter que l'employeur profite de la situation pour rompre le contrat.</div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Suspension = contrat en pause, pas rupture : lien contractuel maintenu</li>
+    <li>Salarié ne travaille pas · employeur ne paie pas en principe · sauf garantie de ressources dans certains cas</li>
+    <li>Certaines obligations continuent pendant la suspension (loyauté minimale, discrétion)</li>
+    <li>Maternité : aménagements + congé maternité + autres congés liés (adoption/paternité) + protection très forte contre le licenciement</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f6">← Fiche #6</label><label for="r-f8">Fiche #8 : Transmission du contrat →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 8 ===== -->
+<div id="page-f8" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #8 · Partie 5 · Leçon 8</div>
+    <h2>La transmission du contrat de travail</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre ce qui se passe pour les salariés quand une entreprise (ou une partie) change de propriétaire. But du droit : éviter que les salariés perdent leur contrat juste parce que l'entreprise change de mains.</div>
+    <div class="fiche-intro">Tu travailles dans une boulangerie. Un jour elle est rachetée. En principe : ton contrat ne disparaît pas. Le droit prévoit que si une « entité économique » est transférée et garde son identité, les contrats de travail suivent automatiquement. Le contrat « colle » à l'activité, pas seulement au patron.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> Notion de transfert d'entreprise</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Sect. 1 — L'entreprise objet du transfert</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Avant le transfert : l'existence d'une entité économique autonome</div>
+        <p class="f-text">Une entité économique = un ensemble organisé de moyens (matériels + humains) en vue d'une activité économique autonome. Ce n'est pas forcément toute l'entreprise : ça peut être un service, un atelier, une activité identifiable.</p>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Condition</th><th>Contenu</th></tr></thead><tbody>
+          <tr><td>Réunion de moyens</td><td>Combinaison de moyens matériels (locaux, machines, logiciels…) ET/OU humains (équipe, compétences, savoir-faire)</td></tr>
+          <tr><td>Organisation des moyens</td><td>Ils doivent être organisés pour fonctionner ensemble (équipe + procédures + hiérarchie)</td></tr>
+          <tr><td>Activité économique réelle</td><td>L'entité exerce une activité qui produit un service ou un produit</td></tr>
+          <tr><td>Autonomie</td><td>L'entité doit fonctionner comme un « mini-ensemble » identifiable avec une logique propre</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Après le transfert : maintien de l'identité de l'entité</div>
+        <ul class="f-list">
+          <li><strong>Identité économique</strong> : les moyens d'exploitation passent au repreneur + poursuite/reprise de la même activité</li>
+          <li><strong>Identité juridique</strong> : le patron change (nouvelle personne morale), mais l'activité transférée reste identifiable comme « la même entité »</li>
+        </ul>
+        <div class="f-exemple"><strong>Exemples</strong>Restaurant racheté avec cuisine, salle, matériel → forte conservation d'identité. Atelier de peinture transformé en stockage sans production → identité peut ne pas être maintenue.</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Sect. 2 — L'opération à l'origine du transfert</div>
+      <p class="f-text">Situations typiques : vente d'entreprise, cession de fonds, fusion, scission, apport partiel d'actif. Le point central n'est pas le nom de l'opération : c'est le fait qu'une entité économique autonome passe d'un employeur à un autre et continue.</p>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Cas particulier : succession de prestataires de services</div>
+        <p class="f-text">Une entreprise change de prestataire (sécurité, nettoyage, restauration). La question : le nouveau prestataire reprend-il une entité économique ?</p>
+        <ul class="f-list">
+          <li><strong>Activité « matérielle »</strong> (dépend surtout du matériel) : la reprise du matériel compte beaucoup</li>
+          <li><strong>Activité « de personnel »</strong> (dépend surtout de la main-d'œuvre) : la reprise d'une partie significative de l'équipe peut suffire à caractériser la continuité</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> Les effets du transfert</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Sect. 1 — Maintien des contrats de travail</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Qui est concerné ?</div>
+        <p class="f-text">Les salariés affectés à l'entité transférée partent avec l'entité chez le repreneur. Ceux qui travaillent dans une autre activité non transférée restent avec l'ancien employeur.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Maintien automatique et impératif</div>
+        <ul class="f-list">
+          <li><strong>Automatique</strong> : pas besoin de signer un nouveau contrat, pas besoin de l'accord du salarié, le transfert s'impose dès que les conditions sont réunies</li>
+          <li><strong>Impératif</strong> : l'employeur ne peut pas choisir « au cas par cas » qui il transfère si la personne est réellement affectée à l'entité — on ne peut pas écarter la règle</li>
+        </ul>
+        <div class="f-key">Ton contrat est « branché » à l'entité. Si l'entité change de patron, ton contrat change de patron aussi.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Droits et obligations transmis</div>
+        <ul class="f-list">
+          <li>Ancienneté conservée</li>
+          <li>Qualification / poste conservés (dans l'esprit du contrat)</li>
+          <li>Rémunération maintenue selon les règles du contrat</li>
+          <li>Le nouvel employeur doit respecter les engagements contractuels</li>
+        </ul>
+        <div class="f-exemple"><strong>Exemple</strong>Tu étais payé 2 000 € + prime contractuelle prévue dans ton contrat. Le nouvel employeur ne peut pas dire : « chez moi, on ne fait pas ça, je supprime. »</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Sect. 2 — Licenciement</div>
+      <p class="f-text">Le transfert en lui-même <strong>ne doit pas servir de prétexte pour licencier</strong>. Des licenciements peuvent exister si l'employeur a une cause réelle et sérieuse indépendante du simple fait du transfert (difficultés économiques réelles, réorganisation…).</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Illégal</th><th>Possible (si conditions strictes)</th></tr></thead><tbody>
+        <tr><td>« Je vous licencie parce que j'ai vendu l'activité. »</td><td>Baisse d'activité prouvée après reprise + suppression réelle de poste selon les règles</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Il y a transfert si on transmet une entité économique autonome (organisée, réelle, identifiable)</li>
+    <li>Après le transfert : l'entité doit conserver son identité (activité qui continue)</li>
+    <li>Si conditions remplies : contrats transférés automatiquement et impérativement</li>
+    <li>Le nouvel employeur reprend droits et obligations du contrat intégralement</li>
+    <li>Le transfert seul ne justifie pas un licenciement : il faut une vraie cause</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f7">← Fiche #7</label><label for="r-f9">Fiche #9 : Modes de rupture CDD →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 9 ===== -->
+<div id="page-f9" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #9 · Partie 6 — Rupture du contrat · Leçon 9</div>
+    <h2>Présentation des modes de rupture du CDD</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre comment un CDD peut se terminer — à la date prévue (fin normale) ou avant terme (rupture anticipée, exceptionnelle et strictement encadrée).</div>
+    <div class="fiche-intro">Un CDD est fait pour aller jusqu'au terme. La rupture avant terme est exceptionnelle et strictement encadrée. Si l'une des parties veut l'arrêter avant, le droit demande : « As-tu une raison légalement valable ? » Sinon, la rupture est irrégulière et peut coûter cher.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Note</span> La fin « normale » du CDD</div>
+    <p class="f-text">Le CDD s'arrête à la date prévue (ou à l'événement prévu pour un CDD à objet défini/remplacement), sans licenciement ni démission. À la fin, l'employeur remet les documents de fin de contrat. Il peut y avoir une <strong>indemnité de fin de contrat</strong> (« prime de précarité ») sauf exceptions (certains CDD spécifiques, faute grave…).</p>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Les modes de rupture du droit commun</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Rupture d'un commun accord</div>
+      <p class="f-text">Employeur et salarié se mettent d'accord pour arrêter le CDD avant la fin. Possible car les deux consentent. Ce n'est pas une « rupture conventionnelle » CDI : c'est un accord de rupture anticipée. À formaliser par écrit.</p>
+      <div class="f-exemple"><strong>Exemple</strong>Sarah est en CDD 6 mois. Au bout de 2 mois, elle trouve un CDI ailleurs. L'employeur préfère la laisser partir. Ils signent un accord : fin du CDD dans 15 jours.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Force majeure</div>
+      <p class="f-text">Événement <strong>imprévisible, irrésistible, extérieur</strong>, rendant impossible la poursuite du contrat. En droit du travail, la force majeure est rare : les juges sont stricts. Exemple typique : incendie détruisant totalement le seul site de production, rendant l'activité immédiatement impossible.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Résiliation judiciaire</div>
+      <p class="f-text">Le juge met fin au contrat parce qu'une partie a commis des manquements graves. Le salarié peut demander au juge : « L'employeur ne respecte pas ses obligations, je veux que le contrat s'arrête à ses torts. » Ce n'est pas « moi je décide d'arrêter », c'est le juge qui tranche.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Modes de rupture spécifiques au droit du travail</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Ruptures unilatérales</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. À l'initiative de l'employeur</div>
+        <p class="f-text">En CDD, on ne parle pas de « licenciement » pour mettre fin au contrat avant terme, mais de <strong>rupture anticipée du CDD</strong>, autorisée seulement dans certains cas :</p>
+        <ul class="f-list">
+          <li>Faute grave du salarié (rendant impossible le maintien)</li>
+          <li>Force majeure</li>
+          <li>Inaptitude constatée (selon conditions)</li>
+          <li>Période d'essai (rupture libre pendant l'essai, sous conditions)</li>
+        </ul>
+        <div class="f-alerte"><strong>Si l'employeur rompt hors cas autorisés</strong>Rupture irrégulière → il peut devoir verser au salarié des sommes importantes (souvent au moins ce qu'il aurait gagné jusqu'à la fin).</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. À l'initiative du salarié</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Mode</th><th>Conditions</th><th>Remarque</th></tr></thead><tbody>
+          <tr><td>Démission (CDD → CDI)</td><td>Salarié justifie d'une embauche en CDI + préavis à respecter</td><td>La démission « classique » n'existe pas en CDD</td></tr>
+          <tr><td>Départ à la retraite</td><td>Salarié cesse son activité pour la retraite</td><td>Peu fréquent en CDD</td></tr>
+          <tr><td>Prise d'acte</td><td>Salarié part en disant : « Je pars car l'employeur a commis des manquements graves » · le juge tranche ensuite</td><td>Si manquements graves → imputable employeur. Sinon → imputable salarié</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Rupture conventionnelle</div>
+      <div class="f-alerte"><strong>Point méthodologique important</strong>La rupture conventionnelle homologuée est un mécanisme typique du CDI. Pour un CDD, on retombe sur l'accord de rupture anticipée (Sect. 1 §1). En CDD → penser « accord commun » · En CDI → penser « rupture conventionnelle » (procédure spéciale).</div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir (réflexe QCM)</strong><ul>
+    <li>CDD = contrat fait pour aller au bout → rupture avant terme = exception</li>
+    <li>Accord commun possible · force majeure (rare, strict) · résiliation judiciaire (juge tranche)</li>
+    <li>Employeur : seulement cas autorisés (faute grave, force majeure, inaptitude, essai)</li>
+    <li>Salarié : pas de démission libre, sauf cas (notamment embauche en CDI) + prise d'acte possible</li>
+    <li>Rupture conventionnelle au sens strict = CDI · en CDD = accord commun</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f8">← Fiche #8</label><label for="r-f10">Fiche #10 : Exigences communes aux licenciements →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 10 ===== -->
+<div id="page-f10" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #10 · Partie 6 · Leçon 10</div>
+    <h2>Les exigences communes à l'ensemble des licenciements</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre les deux grandes exigences qui s'appliquent à tout licenciement : une cause réelle et sérieuse (CRS) et une procédure correcte. Un licenciement = un motif valable + une procédure correcte.</div>
+    <div class="fiche-intro">Un licenciement n'est pas « un départ libre ». Le droit impose : un contrôle du fond (est-ce que l'employeur a une vraie raison ?) et un contrôle de forme (est-ce que les étapes ont été respectées ?). 3 résultats possibles : licenciement justifié · sans CRS · nul · irrégulier.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> L'exigence d'une cause réelle et sérieuse (CRS)</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Caractéristiques de la CRS</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Une cause réelle</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Caractère</th><th>Signification</th><th>Contre-exemple</th></tr></thead><tbody>
+          <tr><td>Existante</td><td>Le fait existe au moment du licenciement</td><td>L'employeur anticipe un problème imaginaire ou se base sur une rumeur non vérifiée</td></tr>
+          <tr><td>Objective</td><td>Repose sur des faits vérifiables, pas sur un ressenti subjectif</td><td>« Je ne le sens plus » / « il ne me plaît pas »</td></tr>
+          <tr><td>Exacte</td><td>Le motif est fidèle à la réalité, pas déformé</td><td>Licenciement pour « vol » alors que c'est une erreur de caisse non volontaire</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Une cause sérieuse — les niveaux de faute</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Niveau</th><th>Définition</th><th>Exemple</th><th>Effet principal</th></tr></thead><tbody>
+          <tr><td>Faute légère</td><td>Faute simple, sans gravité extrême</td><td>Oubli ponctuel, négligence isolée</td><td>Peut justifier une sanction, pas forcément un licenciement</td></tr>
+          <tr><td>Faute sérieuse</td><td>Suffisamment importante pour justifier le licenciement, sans empêcher le maintien immédiat</td><td>Manquements répétés, désobéissance sérieuse</td><td>Licenciement possible avec préavis</td></tr>
+          <tr><td>Faute grave</td><td>Rend impossible le maintien du salarié, même pendant le préavis</td><td>Violence au travail, vol, insubordination majeure</td><td>Départ immédiat · pas de préavis exécuté</td></tr>
+          <tr><td>Faute lourde</td><td>Faute grave + <strong>intention de nuire</strong> à l'employeur</td><td>Sabotage volontaire, détournement organisé pour faire du tort</td><td>Conséquences les plus lourdes</td></tr>
+        </tbody></table></div>
+        <div class="f-key">grave = impossible de garder le salarié · lourde = impossible + intention de nuire</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 & §3 — Sanctions selon le type de licenciement</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Type</th><th>Problème</th><th>Conséquences</th></tr></thead><tbody>
+        <tr><td>Sans CRS (injustifié)</td><td>Pas de motif valable sur le fond</td><td>Condamnation à verser une indemnisation au salarié</td></tr>
+        <tr><td>Nul</td><td>Motif interdit (discrimination, liberté fondamentale, protection spécifique…)</td><td>Conséquences plus lourdes que « sans CRS » — le droit veut décourager fortement</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Respect de la procédure de licenciement</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Phase de conciliation (entretien préalable)</div>
+      <p class="f-text">L'employeur convoque le salarié à un entretien préalable pour : exposer les motifs envisagés, écouter les explications du salarié, vérifier s'il existe une solution alternative. L'entretien sert à éviter le licenciement « automatique ».</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Phase de notification</div>
+      <p class="f-text">Si l'employeur maintient sa décision, il notifie le licenciement formellement (généralement par écrit). La <strong>lettre de licenciement est essentielle</strong> : elle fixe le cadre du litige (on ne licencie pas « à l'oral »). Elle doit contenir un motif suffisamment précis.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Sanction du licenciement irrégulier</div>
+      <div class="f-alerte"><strong>Distinction fondamentale à apprendre</strong>Sans CRS = problème de fond → licenciement injustifié. Irrégulier = problème de forme → procédure non respectée. Le juge peut condamner l'employeur à une indemnisation spécifique liée à l'irrégularité, même si le motif était valable sur le fond.</div>
+      <div class="f-exemple"><strong>Exemple</strong>Motif valable (faute sérieuse prouvée), mais l'employeur oublie l'entretien préalable. Le licenciement peut rester « justifié » sur le fond, mais être irrégulier sur la procédure → sanction procédurale.</div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir (format QCM)</strong><ul>
+    <li>Tout licenciement doit respecter fond (CRS) + forme (procédure)</li>
+    <li>Cause réelle = existante, objective, exacte</li>
+    <li>Niveaux de faute : légère → sérieuse → grave (départ immédiat) → lourde (intention de nuire)</li>
+    <li>Sans CRS → injustifié → indemnisation · Nul → interdit → conséquences renforcées</li>
+    <li>Irrégulier → défaut de procédure → sanction même si le fond est bon</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f9">← Fiche #9</label><label for="r-f11">Fiche #11 : Licenciement personnel →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 11 ===== -->
+<div id="page-f11" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #11 · Partie 6 · Leçon 11</div>
+    <h2>Les principales causes de licenciement pour motif personnel</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Savoir quels motifs personnels peuvent justifier le licenciement d'un salarié (liés à sa personne, son comportement ou sa situation) et quelles conditions doivent être réunies.</div>
+    <div class="fiche-intro">Motif personnel ≠ motif économique. Personnel = lié au salarié (compétences, comportement, absences, inaptitude…). Pour licencier pour motif personnel : « Ce salarié, dans sa situation ou son comportement, rend la poursuite du contrat impossible ou déraisonnable. » Mais pas sur une impression vague, un motif interdit, ou sans prouver les faits.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> L'insuffisance professionnelle</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — L'insuffisance professionnelle stricto sensu</div>
+      <p class="f-text">L'incapacité du salarié à exécuter correctement son travail <strong>malgré sa bonne volonté</strong>. Ce n'est pas une faute disciplinaire : c'est une inaptitude professionnelle (compétences, méthodes, organisation, erreurs répétées…).</p>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Conditions pour que ce soit une vraie cause</div>
+        <ul class="f-list">
+          <li><strong>Faits objectifs</strong> : erreurs précises, manque de maîtrise technique, qualité insuffisante de manière durable</li>
+          <li><strong>Caractère durable</strong> : pas une erreur isolée</li>
+          <li><strong>Contexte loyal</strong> : si l'employeur n'a jamais formé, jamais expliqué, jamais donné les moyens → fondement fragile</li>
+          <li><strong>Pas une sanction déguisée</strong> : si l'employeur reproche une mauvaise volonté → on bascule vers la faute</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — L'insuffisance de résultats</div>
+      <p class="f-text">Le salarié n'atteint pas les objectifs attendus. « Ne pas atteindre un objectif » ne suffit pas toujours.</p>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Conditions essentielles</div>
+        <ul class="f-list">
+          <li>Objectifs <strong>clairs</strong> (définis, compris, mesurables)</li>
+          <li>Objectifs <strong>réalistes</strong> (atteignables dans le marché et avec les moyens disponibles)</li>
+          <li>Moyens fournis (formation, outils, clientèle/secteur cohérent, délais raisonnables)</li>
+          <li>Comparaison logique : si <em>tous</em> les salariés échouent → problème vient peut-être de l'objectif, pas du salarié</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> L'état de santé du salarié</div>
+    <div class="f-alerte"><strong>Point de départ fondamental</strong>On ne licencie pas quelqu'un « parce qu'il est malade » (discrimination). Mais certaines conséquences objectives de la maladie peuvent, dans des conditions strictes, justifier une rupture.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — L'arrêt de travail du salarié</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Maladie ou accident d'origine non professionnelle</div>
+        <p class="f-text">Pour licencier, l'employeur doit démontrer :</p>
+        <ul class="f-list">
+          <li><strong>Une perturbation au bon fonctionnement de l'entreprise</strong> (poste clé difficile à remplacer, équipe trop petite, retards et désorganisation prouvés)</li>
+          <li><strong>Une nécessité de remplacement définitif</strong> du salarié (pas juste un dépannage temporaire — embauche en CDI pour occuper durablement le poste)</li>
+          <li><strong>Lettre de licenciement motivée avec précision</strong> : perturbation + gravité + nécessité du remplacement définitif</li>
+        </ul>
+        <div class="f-exemple"><strong>Exemple de motivation insuffisante</strong>« Vos absences perturbent l'entreprise » = souvent trop vague. Il faut : « Absences depuis X mois, service de 3 personnes, impossibilité d'assurer les missions, recrutement CDI réalisé le… »</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Accident du travail et maladie professionnelle</div>
+        <p class="f-text">La protection est plus forte car la cause de l'absence est liée au travail. Licencier un salarié en AT/MP est beaucoup plus encadré : l'absence liée à AT/MP ne doit pas servir de prétexte à rupture.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — La reprise du travail</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. La visite de reprise</div>
+        <p class="f-text">Après certaines absences, une visite médicale de reprise peut être obligatoire pour évaluer si le salarié est apte à reprendre, s'il faut des aménagements, ou s'il y a une inaptitude.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. L'inaptitude physique</div>
+        <p class="f-text">Constatée par le <strong>médecin du travail</strong> (pas l'employeur). Peut être d'origine professionnelle (AT/MP) ou non professionnelle. <strong>Avant de licencier, obligation de reclassement</strong> : chercher un poste compatible avec l'état de santé, avec aménagement possible. La recherche doit être sérieuse.</p>
+        <div class="f-key">Le licenciement pour inaptitude est admis si : inaptitude médicalement constatée + reclassement impossible (ou refus du salarié d'une offre adaptée) + procédure respectée.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> La vie personnelle du salarié</div>
+    <p class="f-text">Principe : la vie personnelle ne regarde pas l'employeur. Mais certains faits privés peuvent justifier un licenciement s'ils ont un lien avec l'entreprise.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Licenciement disciplinaire</div>
+      <ul class="f-list">
+        <li><strong>Violation d'une obligation contractuelle</strong> hors travail : obligation de loyauté (concurrence), obligation de discrétion (divulgation d'infos), obligation de sécurité (comportement dangereux lié au poste)</li>
+        <li><strong>Rattachement à la vie professionnelle</strong> : un fait privé avec un impact professionnel direct sur l'entreprise</li>
+      </ul>
+      <div class="f-exemple"><strong>Exemple parlant</strong>Un salarié insulte des clients sur les réseaux sociaux en se présentant comme salarié de l'entreprise : « privé » en apparence, mais effet professionnel (image, clientèle).</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Licenciement non disciplinaire</div>
+      <p class="f-text">Pas pour punir une faute, mais parce que le fait privé crée un <strong>trouble objectif</strong> dans l'entreprise (impact réel, concret, sur le fonctionnement, la crédibilité, la sécurité, les relations internes). Encadré : il faut du concret, pas une morale ou une opinion.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Sanctions si le licenciement est mal construit</div>
+      <ul class="f-list">
+        <li>Lien professionnel non prouvé → licenciement sans CRS (injustifié)</li>
+        <li>Motif cachant une discrimination ou violant une protection → licenciement nul (conséquences renforcées)</li>
+        <li>Procédure mal respectée → licenciement irrégulier (sanction procédurale)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>Le test à faire à chaque fois</strong><ul>
+    <li>Est-ce prouvé et objectif ?</li>
+    <li>Est-ce assez grave pour justifier la rupture ?</li>
+    <li>Est-ce non discriminatoire / non interdit ?</li>
+    <li>L'employeur a-t-il respecté ses obligations préalables (ex : reclassement en inaptitude) ?</li>
+    <li>Insuffisance pro : « n'y arrive pas » (non fautif) · État de santé : perturbation + remplacement définitif / inaptitude + reclassement · Vie personnelle : lien pro ou trouble objectif</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f10">← Fiche #10</label><label for="r-f12">Fiche #12 : Licenciement économique →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 12 ===== -->
+<div id="page-f12" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #12 · Partie 6 · Leçon 12</div>
+    <h2>Le licenciement pour motif économique</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre ce qu'est un licenciement économique, quand il est légal, quelles étapes l'employeur doit respecter, et quels droits ont les salariés concernés.</div>
+    <div class="fiche-intro">Le licenciement économique n'est pas lié à la personne du salarié. L'employeur supprime/modifie des emplois pour une raison liée à l'entreprise. Le droit impose un double verrou : cause économique réelle + impact réel sur l'emploi. Et avant de licencier, l'employeur doit chercher à reclasser.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Définition du licenciement économique</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — La nature économique : cause qualificative</div>
+      <p class="f-text">C'est économique si la raison vient de l'entreprise (difficultés, réorganisation, technologie, fermeture…). Ce n'est pas économique si l'employeur vise en réalité le salarié (faute déguisée, conflit personnel).</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — La cause réelle et sérieuse : cause justificative</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Les causes économiques reconnues</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Cause</th><th>Définition</th><th>Exemple</th></tr></thead><tbody>
+          <tr><td>Difficultés économiques</td><td>Baisse d'activité, pertes, dégradation de trésorerie — difficultés objectives et constatables. Appréciation à un périmètre défini (entreprise, groupe, secteur)</td><td>Chute durable du CA, pertes répétées, commandes en baisse</td></tr>
+          <tr><td>Mutations technologiques</td><td>Changement d'outils/techniques (automatisation, IA, nouvelles machines) entraînant suppressions ou transformations de postes</td><td>Saisie manuelle remplacée par un logiciel automatisé</td></tr>
+          <tr><td>Réorganisation pour sauvegarder la compétitivité</td><td>Pas forcément « déjà en crise » mais réorganisation nécessaire pour ne pas perdre en compétitivité — logique de sauvegarde, pas juste « gagner plus »</td><td>Secteur ultra concurrentiel : regroupement de services, fermeture d'un site trop coûteux</td></tr>
+          <tr><td>Cessation d'activité</td><td>Fermeture totale de l'entreprise</td><td>Société liquidée ou cessant son activité</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Les effets sur l'emploi</div>
+        <ul class="f-list">
+          <li><strong>Suppression d'emploi</strong> : le poste disparaît réellement</li>
+          <li><strong>Transformation d'emploi</strong> : le poste est transformé au point que l'emploi initial n'existe plus sous la même forme</li>
+          <li><strong>Modification refusée</strong> d'un élément essentiel du contrat par le salarié : si modification justifiée par la cause économique et que le salarié refuse → licenciement économique possible dans un cadre strict</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. L'obligation préalable de reclassement</div>
+        <p class="f-text">Avant de licencier, l'employeur doit proposer des postes disponibles compatibles avec les compétences du salarié (ou adaptables par formation). La recherche doit être sérieuse et dans un périmètre défini. Les offres doivent être réelles, concrètes, compatibles et correctement communiquées.</p>
+        <div class="f-key">Le licenciement économique est le « dernier recours ». Avant, l'employeur doit tenter de replacer le salarié.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Les procédures de licenciement économique</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Règles procédurales communes</div>
+      <ul class="f-list">
+        <li><strong>Ordre des licenciements</strong> : critères à appliquer quand plusieurs salariés sont concernés (ancienneté, charges de famille, qualités professionnelles, difficultés de réinsertion…) → non-respect sanctionné</li>
+        <li><strong>Entretien préalable</strong> : convocation + explication + écoute du salarié</li>
+        <li><strong>Lettre de licenciement</strong> : notification individuelle + motivation précise (cause économique + impact sur l'emploi + mentions obligatoires) — une lettre vague fragilise le licenciement</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Le Plan de Sauvegarde de l'Emploi (PSE) — grands licenciements collectifs</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Contenu du PSE</div>
+        <p class="f-text">Mesures concrètes pour limiter les licenciements et aider les salariés : actions de reclassement, formation, aides à la mobilité, accompagnement, mesures de réduction du nombre de ruptures. Le PSE prouve que l'employeur ne licencie pas « à la sauvage ».</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B & C. Procédure et sanctions</div>
+        <p class="f-text">Le PSE se construit avec information/consultation des représentants du personnel + validation/contrôle administratif. Si l'employeur devait faire un PSE et ne le fait pas correctement → conséquences très lourdes (annulation/irrégularités majeures).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> Les droits spécifiques des salariés licenciés pour motif économique</div>
+    <ul class="f-list">
+      <li><strong>Mesures favorisant le reclassement</strong> : dispositifs pour aider le retour à l'emploi (formation, accompagnement, reclassement externe)</li>
+      <li><strong>Priorité de réembauche</strong> : si l'entreprise recrée des postes compatibles, elle doit en priorité les proposer aux salariés concernés (dans les conditions prévues)</li>
+    </ul>
+  </div>
+
+  <div class="f-retenir"><strong>Le test en 3 questions</strong><ul>
+    <li>Cause économique reconnue ? (difficultés / mutations techno / compétitivité / cessation)</li>
+    <li>Impact réel sur l'emploi ? (suppression / transformation / modification essentielle refusée)</li>
+    <li>Reclassement tenté sérieusement ?</li>
+    <li>Procédure : ordre des licenciements + entretien + lettre motivée · PSE si grand collectif</li>
+    <li>Droits salariés : mesures de reclassement + priorité de réembauche</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f11">← Fiche #11</label><label for="r-f13">Fiche #13 : La grève →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 13 ===== -->
+<div id="page-f13" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #13 · Partie 7 — Relations collectives · Leçon 13</div>
+    <h2>La grève</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Savoir définir juridiquement la grève, reconnaître ce qui est une grève et ce qui n'en est pas, puis comprendre ses effets sur le contrat de travail.</div>
+    <div class="fiche-intro">Une grève existe seulement si 2 conditions sont réunies : une cessation de travail + des revendications professionnelles. Si ces 2 conditions sont réunies → grève protégée. Si une condition manque → ce n'est pas une grève (et ça peut devenir une absence injustifiée ou une faute).</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Définition de la grève</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Une cessation de travail</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Un arrêt collectif</div>
+        <p class="f-text">Collectif = plusieurs salariés participent, ou au moins un salarié suit un mouvement collectif (appel syndical). Un salarié peut faire grève seul dans l'entreprise si le mouvement s'inscrit dans une revendication collective (appel national/sectoriel). Ce qui compte c'est l'idée de mouvement collectif, pas « au moins 2 dans le même atelier ».</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Un arrêt caractérisé</div>
+        <p class="f-text">On arrête vraiment de travailler. La grève du zèle (ralentissement volontaire, exécution intentionnellement dégradée) n'est pas une cessation caractérisée.</p>
+        <div class="f-exemple"><strong>Distinction</strong>Grève : les caissiers quittent les caisses et ne scannent plus rien. Pas une cessation claire : les caissiers scannent 3 fois plus lentement « pour bloquer ».</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — La présentation de revendications professionnelles</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Notion de revendication</div>
+        <p class="f-text">Demande adressée à l'employeur (ou liée au travail) portant sur : salaires, horaires, conditions de travail, effectifs, sécurité, organisation, respect d'un accord…</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Caractère professionnel — exclusions</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Situation</th><th>Qualification</th><th>Remarque</th></tr></thead><tbody>
+          <tr><td>Grève d'autosatisfaction</td><td>Arrêt sans revendication précise</td><td>Risque de ne pas être qualifiée de grève protégée</td></tr>
+          <tr><td>Grève politique pure</td><td>Revendication sans lien avec le travail</td><td>N'entre pas dans la définition classique</td></tr>
+          <tr><td>Solidarité externe</td><td>Soutien à des salariés d'une autre entreprise</td><td>Peut être contestable si aucun lien professionnel</td></tr>
+          <tr><td>Solidarité interne</td><td>Soutien à des collègues de la même entreprise</td><td>Peut être rattachée à la vie professionnelle si revendication professionnelle formulée (ex : retrait d'une sanction injustifiée)</td></tr>
+          <tr><td>Revendication déraisonnable</td><td>Revendication manifestement absurde/impossible</td><td>Fragilise la qualification, mais une revendication forte n'est pas automatiquement illégale si elle reste dans un champ professionnel identifiable</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Les conséquences de la grève sur le contrat de travail</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Suspension du contrat de travail</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Absence de versement de la rémunération</div>
+        <p class="f-text">Pendant une grève licite, le contrat est suspendu. Pas de travail = pas de salaire pour le temps de grève. L'employeur ne peut pas « punir » en retirant davantage que le temps réellement non travaillé.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Suspension du pouvoir disciplinaire</div>
+        <p class="f-text">Participer à une grève licite n'est pas une faute. L'employeur ne peut pas sanctionner un salarié uniquement parce qu'il a fait grève. Mais des comportements fautifs pendant la grève (violences, dégradations, menaces…) peuvent être sanctionnés : ce ne sont pas « la grève », ce sont des fautes distinctes.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Licenciement du salarié gréviste : exigence d'une faute lourde</div>
+      <div class="f-alerte"><strong>Point fondamental à retenir</strong>Le licenciement d'un salarié pour fait de grève est interdit. Il ne peut être licencié que si l'employeur prouve une <strong>faute lourde</strong> (faute très grave + intention de nuire à l'employeur) commise à l'occasion de la grève.</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Faute lourde possible</th><th>Pas forcément faute lourde</th></tr></thead><tbody>
+        <tr><td>Sabotage volontaire de machines · destruction volontaire · acte destiné à nuire</td><td>Simple participation à un piquet de grève pacifique</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>Formule à apprendre</strong><ul>
+    <li>Grève = cessation de travail + revendications professionnelles</li>
+    <li>Ce qui casse la qualification : pas d'arrêt réel · pas de revendication · revendication non professionnelle · solidarité/politique sans lien pro</li>
+    <li>Effets : contrat suspendu · pas de salaire pendant la grève · pas de sanction pour avoir fait grève</li>
+    <li>Licenciement possible seulement si faute lourde = intention de nuire + faute très grave</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f12">← Fiche #12</label><label for="r-f14">Fiche #14 : Les syndicats →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 14 ===== -->
+<div id="page-f14" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #14 · Partie 7 · Leçon 14</div>
+    <h2>Les syndicats</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre ce qu'est un syndicat, la liberté syndicale, et surtout la représentativité syndicale et les pouvoirs qu'elle confère.</div>
+    <div class="fiche-intro">Un syndicat existe dès qu'il est légalement créé, mais il devient très puissant quand il est représentatif. Tous les syndicats n'ont pas les mêmes pouvoirs : représentatifs → grands pouvoirs (négocier, signer des accords, désigner un délégué syndical…) · non représentatifs → droits plus limités.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> L'objet syndical</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Nature des activités</div>
+      <p class="f-text">Un syndicat doit avoir un objet professionnel : étude et défense des intérêts liés au travail et à la profession (salaires, temps de travail, sécurité, organisation, promotions, égalité, lutte contre discriminations…). Son activité doit rester centrée sur les intérêts professionnels.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Qualité des adhérents</div>
+      <ul class="f-list">
+        <li><strong>Exercice d'une profession ou d'un métier</strong> : les adhérents sont rattachés à une activité/profession car ils ont des intérêts professionnels communs</li>
+        <li><strong>Similitude ou connexité</strong> : professions similaires ou connexes (différentes mais liées par la même activité/branche)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> La liberté syndicale</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — L'aspect individuel</div>
+      <ul class="f-list">
+        <li>Droit d'adhérer ou de ne pas adhérer à un syndicat (et d'en changer)</li>
+        <li>Interdiction de discrimination syndicale : l'employeur ne peut pas traiter un salarié différemment à cause de son adhésion, ses activités syndicales, sa candidature</li>
+        <li>Protection renforcée des salariés engagés syndicalement (statut protecteur)</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — L'aspect collectif</div>
+      <ul class="f-list">
+        <li>Droit de se constituer et d'exister librement dans le cadre légal</li>
+        <li>Droit d'agir dans l'entreprise : informer les salariés, organiser la vie syndicale, présenter des candidats aux élections, négocier (si représentatifs), saisir le juge</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> La représentativité syndicale</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Conditions d'acquisition</div>
+      <p class="f-text">Un syndicat devient représentatif s'il remplit des critères légaux : activité et valeurs conformes, indépendance, transparence financière, ancienneté, influence réelle, et surtout <strong>audience électorale suffisante aux élections professionnelles</strong>.</p>
+      <div class="f-key">Représentatif = un syndicat réel, stable, indépendant + reconnu par les votes.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Les prérogatives des syndicats représentatifs</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Droit de négocier et conclure des conventions et accords collectifs</div>
+        <p class="f-text">Participation aux négociations (salaires, temps de travail, primes, télétravail…) et signature d'accords collectifs qui s'appliquent dans l'entreprise selon les règles de validité.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Désignation d'un délégué syndical (DS)</div>
+        <p class="f-text">Le DS représente le syndicat pour négocier, porter les revendications, dialoguer avec l'employeur. Il dispose de temps de délégation et de moyens. Sa désignation peut être contestée si le syndicat n'est pas représentatif, si la personne ne remplit pas les conditions, ou si la procédure n'a pas été respectée.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">3. Monopole de la présentation des candidats (1er tour) · Action de substitution</div>
+        <p class="f-text">Au 1er tour des élections professionnelles, les syndicats représentatifs ont un rôle central dans la présentation des candidats. Ils peuvent aussi agir en justice à la place d'un salarié dans certaines conditions.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Les prérogatives résiduelles des syndicats non représentatifs</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Prérogative</th><th>Contenu</th></tr></thead><tbody>
+        <tr><td>Action en défense de l'intérêt collectif</td><td>Agir pour défendre l'intérêt collectif de la profession (contester une pratique illégale touchant un groupe)</td></tr>
+        <tr><td>Présentation candidats au 2e tour</td><td>Au 2e tour, la présentation est plus ouverte</td></tr>
+        <tr><td>Création d'une section syndicale</td><td>Exister et agir dans l'entreprise (informer, structurer)</td></tr>
+        <tr><td>Désignation d'un RSS</td><td>Représentant de la Section Syndicale : porte-voix du syndicat non représentatif (≠ DS)</td></tr>
+      </tbody></table></div>
+      <div class="f-key">DS = négociateur d'un syndicat représentatif · RSS = porte-voix d'un syndicat non représentatif</div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Objet syndical : défense des intérêts professionnels · adhérents d'une même profession ou professions connexes</li>
+    <li>Liberté syndicale individuelle : adhérer/ne pas adhérer + pas de discrimination + protection</li>
+    <li>Liberté syndicale collective : droit d'exister et d'agir</li>
+    <li>Représentatif = critères légaux + audience aux élections</li>
+    <li>Représentatif : négociation/signature accords + désigner DS + rôle majeur aux élections</li>
+    <li>Non représentatif : droits plus limités (intérêt collectif, 2e tour, section syndicale, RSS)</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f13">← Fiche #13</label><label for="r-f15">Fiche #15 : Le CSE →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 15 ===== -->
+<div id="page-f15" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #15 · Partie 7 · Leçon 15</div>
+    <h2>La représentation élue du personnel : le Comité Social et Économique (CSE)</h2>
+    <div class="fiche-obj"><strong>Objectif</strong>Comprendre ce qu'est le CSE, à quoi il sert, ce qu'il peut faire selon la taille de l'entreprise, comment on élit ses membres, et pourquoi ses représentants bénéficient d'un statut protecteur.</div>
+    <div class="fiche-intro">Le CSE est l'instance élue qui représente les salariés dans l'entreprise. Il fait remonter les problèmes, porte des réclamations, est consulté sur des décisions importantes, et traite des sujets économiques et de santé/sécurité dans les grandes entreprises. Plus l'entreprise est grande, plus ses pouvoirs sont importants.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Attributions du CSE</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Le CSE dans les entreprises de 11 à 49 salariés : le « petit CSE »</div>
+      <p class="f-text">Rôle principal : relais et réclamation. Il présente à l'employeur les réclamations des salariés (salaires, application du Code du travail et de la convention collective, horaires, repos, conditions de travail…), peut alerter sur un problème récurrent ou grave, peut participer à l'amélioration des conditions de travail.</p>
+      <div class="f-key">Petit CSE = porte-parole + vigilance.</div>
+      <div class="f-exemple"><strong>Exemple concret</strong>Les salariés se plaignent que les plannings changent tout le temps au dernier moment. Le CSE collecte les situations, les présente officiellement à l'employeur et demande une organisation plus stable.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Le CSE dans les entreprises d'au moins 50 salariés : le « grand CSE »</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Les trois domaines d'attribution</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Domaine</th><th>Contenu</th><th>Exemple</th></tr></thead><tbody>
+          <tr><td>Attributions sociales</td><td>Organisation du travail · formation · égalité professionnelle · conditions d'emploi · politique RH (consultations prévues) · gestion des activités sociales et culturelles (chèques cadeaux, sorties, vacances…)</td><td>Employeur modifie une organisation d'horaires impactant fortement les salariés : le CSE donne son avis dans les cadres prévus</td></tr>
+          <tr><td>Attributions économiques</td><td>Informations sur la marche de l'entreprise · consultations sur orientations et décisions importantes · impact des décisions économiques sur l'emploi</td><td>L'entreprise prévoit de fermer un service : le CSE doit être informé/consulté</td></tr>
+          <tr><td>Santé, sécurité, conditions de travail</td><td>Prévention des risques · accidents du travail · amélioration des postes · situations dangereuses</td><td>Plusieurs salariés se blessent à cause d'un sol glissant : le CSE peut demander des mesures et suivre la prévention</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Fonctionnement</div>
+        <p class="f-text">Réunions régulières avec l'employeur, ordre du jour, échanges formalisés. Le CSE dispose de moyens (heures de délégation, parfois expertises…). Plus l'entreprise est grande → plus le CSE est « outillé » et plus l'employeur doit passer par lui sur certains sujets.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Élections des représentants du CSE</div>
+    <p class="f-text">Le CSE est une instance <strong>élue</strong> : ses membres sont choisis par les salariés lors d'élections professionnelles. Les élus obtiennent un mandat et des moyens (temps, protection…). Le CSE tire sa légitimité du vote : il représente les salariés parce qu'il est élu.</p>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> Statut protecteur des représentants du personnel</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Bénéficiaires de la protection</div>
+      <ul class="f-list">
+        <li>Les membres élus du CSE</li>
+        <li>Souvent les candidats aux élections (avant même d'être élus)</li>
+        <li>Plus largement, les salariés qui exercent des mandats représentatifs</li>
+      </ul>
+      <div class="f-key">On protège à la fois ceux qui exercent et souvent ceux qui se présentent.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Contenu de la protection</div>
+      <p class="f-text">L'employeur ne peut pas licencier librement un salarié protégé. Le licenciement d'un salarié protégé nécessite un cadre renforcé (autorisation/contrôle spécifique) : le droit veut vérifier qu'on ne licencie pas pour se débarrasser d'un représentant.</p>
+      <div class="f-exemple"><strong>Exemple concret</strong>Un élu CSE conteste la sécurité d'une machine dangereuse. Une semaine après, l'employeur veut le licencier « pour mésentente ». La protection oblige à un contrôle renforcé : on vérifie que ce n'est pas une représaille.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Sanctions de la violation du statut protecteur</div>
+      <p class="f-text">Si l'employeur licencie sans respecter le cadre protecteur : licenciement peut être annulé/frappé de nullité selon le régime, condamnation possible, conséquences renforcées pour le salarié. La protection n'a de valeur que si les sanctions sont dissuasives.</p>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Petit CSE (11–49) : réclamations + relais + alerte</li>
+    <li>Grand CSE (≥50) : compétences plus larges — social, économique, santé/sécurité/conditions de travail — fonctionnement plus structuré</li>
+    <li>CSE = instance élue par les salariés → légitimité démocratique</li>
+    <li>Statut protecteur : les représentants sont protégés contre le licenciement « de représailles »</li>
+    <li>Violation du statut protecteur = sanctions lourdes (nullité, indemnisation renforcée)</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f14">← Fiche #14</label><span></span></div>
+</div></main></div>
+
+<footer>
+  <p>Droit <span>du Travail</span> — Fiches de révision 2025-2026 · 7 parties · 15 leçons</p>
+</footer>
+
+</div><!-- end .wrap -->
+</body>
+</html>
