@@ -22,10 +22,40 @@ nav ul{list-style:none;display:flex;flex-wrap:nowrap;min-width:max-content}
 nav label{display:block;padding:.65rem .85rem;color:rgba(255,255,255,.82);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer}
 .page-content{display:none}
 #home-content{display:block}
-#r-home:checked~.wrap #home-content,#r-plan:checked~.wrap #home-content{display:none}
+
+/* Hide home when any radio is checked */
+#r-home:checked~.wrap #home-content,
+#r-plan:checked~.wrap #home-content,
+#r-f1:checked~.wrap #home-content,
+#r-f2:checked~.wrap #home-content,
+#r-f3:checked~.wrap #home-content,
+#r-f4:checked~.wrap #home-content,
+#r-f5:checked~.wrap #home-content,
+#r-f6:checked~.wrap #home-content,
+#r-f7:checked~.wrap #home-content,
+#r-f8:checked~.wrap #home-content{display:none}
 #r-home:checked~.wrap #home-content{display:block}
 #r-plan:checked~.wrap #page-plan{display:block}
-#r-home:checked~.wrap .nav-home,#r-plan:checked~.wrap .nav-plan{color:#fff!important;background:rgba(255,255,255,.15)!important;border-bottom-color:#fff!important}
+#r-f1:checked~.wrap #page-f1{display:block}
+#r-f2:checked~.wrap #page-f2{display:block}
+#r-f3:checked~.wrap #page-f3{display:block}
+#r-f4:checked~.wrap #page-f4{display:block}
+#r-f5:checked~.wrap #page-f5{display:block}
+#r-f6:checked~.wrap #page-f6{display:block}
+#r-f7:checked~.wrap #page-f7{display:block}
+#r-f8:checked~.wrap #page-f8{display:block}
+
+/* Nav active states */
+#r-home:checked~.wrap .nav-home,
+#r-plan:checked~.wrap .nav-plan,
+#r-f1:checked~.wrap .nav-f1,
+#r-f2:checked~.wrap .nav-f2,
+#r-f3:checked~.wrap .nav-f3,
+#r-f4:checked~.wrap .nav-f4,
+#r-f5:checked~.wrap .nav-f5,
+#r-f6:checked~.wrap .nav-f6,
+#r-f7:checked~.wrap .nav-f7,
+#r-f8:checked~.wrap .nav-f8{color:#fff!important;background:rgba(255,255,255,.15)!important;border-bottom-color:#fff!important}
 
 /* ACCUEIL */
 #home{padding:2.5rem 2.5rem 4rem}
@@ -34,12 +64,13 @@ nav label{display:block;padding:.65rem .85rem;color:rgba(255,255,255,.82);font-s
 .home-intro p{color:var(--g);font-size:.95rem;max-width:520px;margin:0 auto}
 .home-section-title{font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin:2rem 0 .9rem;padding-bottom:.3rem;border-bottom:1px solid var(--rb)}
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
-label.card{display:block;background:var(--b);border:1.5px solid var(--rb);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:inherit}
-label.card:active{box-shadow:0 4px 18px rgba(139,0,0,.13)}
+label.card{display:block;background:var(--b);border:1.5px solid var(--rb);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:inherit;transition:box-shadow .15s}
+label.card:hover{box-shadow:0 4px 18px rgba(139,0,0,.13)}
 label.card .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:.3rem}
 label.card h3{font-size:.95rem;font-weight:700;color:var(--r);margin-bottom:.2rem;line-height:1.35}
 label.card p{font-size:.8rem;color:var(--g);line-height:1.4}
-label.card-plan{display:block;background:var(--n);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:#fff}
+label.card-plan{display:block;background:var(--n);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:#fff;transition:opacity .15s}
+label.card-plan:hover{opacity:.9}
 label.card-plan .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.3rem}
 label.card-plan h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.2rem}
 label.card-plan p{font-size:.8rem;color:#aaa;line-height:1.4}
@@ -53,14 +84,16 @@ label.btn-home{display:inline-block;background:transparent;border:1.5px solid rg
 .root-node{display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
 .root-node .node-box{background:var(--n);color:#fff;padding:.9rem 2rem;font-size:1.1rem;font-weight:700;letter-spacing:.04em;text-align:center;border-bottom:3px solid var(--r)}
 .root-node .node-box small{display:block;color:#aaa;font-size:.72rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
-
-/* Plan à une colonne car une seule partie */
 .single-col{display:flex;flex-direction:column;gap:1.5rem;align-items:stretch}
 .partie-block{border:2px solid var(--r);background:#fff}
 .partie-header{background:var(--r);color:#fff;padding:.6rem 1rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
 .partie-body{padding:.8rem;display:flex;flex-direction:column;gap:.7rem}
-
-/* Sections */
+.chap-block{border:1px solid var(--rb);background:#fff}
+.chap-header{background:var(--gc);border-bottom:1px solid var(--rb);padding:.35rem .7rem;font-size:.73rem;font-weight:700;color:var(--r);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;list-style:none}
+.chap-header::-webkit-details-marker{display:none}
+.chap-toggle::after{content:'▸';color:var(--r);font-size:.8rem}
+details[open] .chap-toggle::after{content:'▾'}
+.chap-body{padding:.55rem .7rem;display:flex;flex-direction:column;gap:.3rem}
 .section-item{padding:.28rem .5rem .28rem .85rem;border-left:2px solid var(--rb);font-size:.82rem;color:var(--gf);display:flex;flex-direction:column;gap:.18rem}
 .section-label{font-weight:700;color:var(--rv);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
 .section-name{font-size:.84rem;color:var(--gf);font-weight:600}
@@ -70,29 +103,74 @@ label.btn-home{display:inline-block;background:transparent;border:1.5px solid rg
 .sub-list{margin-top:.1rem;padding-left:.8rem}
 .sub-item{font-size:.74rem;color:#777;position:relative;padding-left:.7rem;line-height:1.4}
 .sub-item::before{content:'–';position:absolute;left:0;color:var(--r)}
-.sub-sub-list{margin-top:.08rem;padding-left:.7rem}
-.sub-sub-item{font-size:.71rem;color:#999;position:relative;padding-left:.65rem;line-height:1.4}
-.sub-sub-item::before{content:'·';position:absolute;left:0;color:#aaa}
-
 .intro-block{border:1.5px solid var(--rb);background:var(--rp);margin-bottom:1rem}
 .intro-block-header{background:#555;color:#fff;padding:.45rem .8rem;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
 .intro-block-body{padding:.6rem .75rem;display:flex;flex-direction:column;gap:.28rem}
 .intro-topic{font-size:.82rem;color:var(--gf);padding-left:.85rem;border-left:2px solid #aaa;font-weight:600}
-
+.plan-fiche-link{display:inline-block;margin-top:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--r);padding:.18rem .55rem;cursor:pointer;border:none;font-family:inherit}
 .legend{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem;padding:.75rem 1rem;background:var(--gc);border:1px solid var(--rb);font-size:.78rem;color:var(--g)}
 .legend-item{display:flex;align-items:center;gap:.35rem}
 .legend-dot{width:12px;height:12px;flex-shrink:0}
+
+/* FICHES */
+.fiche-page{max-width:840px;margin:0 auto}
+.fiche-header{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--r)}
+.fiche-meta{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:.35rem}
+.fiche-header h2{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;color:var(--n)}
+.fiche-loc{margin-top:.7rem;background:var(--n);color:#aaa;padding:.55rem .9rem;font-size:.76rem;line-height:1.6;border-left:3px solid var(--r)}
+.fiche-loc strong{color:#fff;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.fiche-loc span{color:#ccc}
+.fiche-intro{margin-top:.9rem;font-size:.93rem;color:var(--g);line-height:1.65;font-style:italic;padding:.7rem 1rem;background:var(--gc);border-left:3px solid var(--rb)}
+
+.f-bloc{margin-bottom:2.4rem}
+.f-bloc-title{font-size:1.05rem;font-weight:700;color:#fff;background:var(--n);padding:.5rem .9rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.7rem}
+.f-bloc-title .f-num{background:var(--r);padding:.1rem .5rem;font-size:.75rem;letter-spacing:.07em}
+.f-sous{margin-bottom:1.5rem;padding-left:1.1rem;border-left:3px solid var(--r)}
+.f-sous-title{font-size:.98rem;font-weight:700;color:var(--r);margin-bottom:.6rem;padding-bottom:.25rem;border-bottom:1px dotted var(--rb)}
+.f-sous2{margin-bottom:1rem;padding-left:.9rem;border-left:2px solid var(--rb)}
+.f-sous2-title{font-size:.9rem;font-weight:700;color:var(--gf);margin-bottom:.4rem}
+.f-item{margin-bottom:1rem}
+.f-item-title{font-size:.93rem;font-weight:700;color:var(--gf);margin-bottom:.4rem;display:flex;align-items:baseline;gap:.45rem}
+.f-item-title .f-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--rv);flex-shrink:0;margin-bottom:2px}
+.f-text{font-size:.92rem;color:var(--gf);line-height:1.75;margin-bottom:.55rem}
+.f-list{list-style:none;padding:0;margin:.3rem 0 .6rem .1rem}
+.f-list li{font-size:.91rem;color:var(--gf);line-height:1.65;padding:.15rem 0 .15rem 1.1rem;position:relative}
+.f-list li::before{content:'—';position:absolute;left:0;color:var(--r);font-weight:700}
+.f-list li strong{color:var(--r)}
+.f-list-sub{list-style:none;padding:0;margin:.2rem 0 .2rem .8rem}
+.f-list-sub li{font-size:.87rem;color:#555;line-height:1.6;padding:.1rem 0 .1rem .9rem;position:relative}
+.f-list-sub li::before{content:'·';position:absolute;left:0;color:var(--r);font-weight:700}
+.f-alerte{background:#fffbf0;border-left:4px solid #c47900;padding:.75rem 1rem;margin:.5rem 0 .9rem;font-size:.88rem;line-height:1.65;color:var(--gf)}
+.f-alerte strong{color:#9a5e00;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.25rem}
+.f-exemple{background:var(--gc);border-left:3px solid #888;padding:.7rem 1rem;margin:.5rem 0 .9rem;font-size:.88rem;line-height:1.65;color:var(--g)}
+.f-exemple strong{color:var(--gf);font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.f-key{background:var(--rp);border:1.5px solid var(--rb);padding:.65rem 1rem;margin:.5rem 0 .9rem;font-size:.91rem;line-height:1.65;color:var(--gf);display:flex;align-items:baseline;gap:.6rem}
+.f-key::before{content:'→';color:var(--r);font-weight:700;flex-shrink:0;font-size:1rem}
+.f-table-wrap{overflow-x:auto;margin:.6rem 0 .9rem}
+.f-table{width:100%;border-collapse:collapse;font-size:.86rem}
+.f-table thead tr{background:var(--n);color:#fff}
+.f-table thead th{padding:.5rem .8rem;text-align:left;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+.f-table tbody tr:nth-child(even){background:var(--gc)}
+.f-table tbody td{padding:.45rem .8rem;border-bottom:1px solid var(--rb);vertical-align:top}
+.f-table tbody td:first-child{font-weight:700;color:var(--r)}
+.f-retenir{background:var(--rp);border-left:4px solid var(--r);padding:.9rem 1.1rem;margin-top:1.8rem;font-size:.91rem;line-height:1.7;color:var(--gf)}
+.f-retenir strong{color:var(--r);font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:.5rem}
+.f-retenir ul{list-style:none;padding:0;margin:.3rem 0}
+.f-retenir ul li{padding:.1rem 0 .1rem 1rem;position:relative;font-size:.9rem}
+.f-retenir ul li::before{content:'✓';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.78rem}
+.fiche-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rb)}
+.fiche-nav label{color:var(--rv);cursor:pointer;font-size:.85rem}
 
 footer{background:var(--n);color:#777;text-align:center;padding:1.2rem;font-size:.78rem;letter-spacing:.05em;border-top:3px solid var(--r);margin-top:2rem}
 footer span{color:#B22222}
 
 @media(max-width:900px){
+  .mindmap-scroll{min-width:unset}
   main{padding:1.4rem .9rem 4rem}
   header{padding:1.2rem 1rem 1rem}
   nav label{padding:.55rem .5rem;font-size:.68rem}
   #home{padding:1.8rem 1rem 3rem}
   .cards-grid{grid-template-columns:1fr 1fr}
-  .mindmap-scroll{min-width:unset}
 }
 @media(max-width:480px){.cards-grid{grid-template-columns:1fr}}
 </style>
@@ -100,18 +178,34 @@ footer span{color:#B22222}
 <body>
 <input type="radio" name="page" class="nav-radio" id="r-home" checked>
 <input type="radio" name="page" class="nav-radio" id="r-plan">
+<input type="radio" name="page" class="nav-radio" id="r-f1">
+<input type="radio" name="page" class="nav-radio" id="r-f2">
+<input type="radio" name="page" class="nav-radio" id="r-f3">
+<input type="radio" name="page" class="nav-radio" id="r-f4">
+<input type="radio" name="page" class="nav-radio" id="r-f5">
+<input type="radio" name="page" class="nav-radio" id="r-f6">
+<input type="radio" name="page" class="nav-radio" id="r-f7">
+<input type="radio" name="page" class="nav-radio" id="r-f8">
 
 <div class="wrap">
 <header>
   <label for="r-home" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
     <h1>Droit <span>International Public</span></h1>
-    <small>Fiches de révision</small>
+    <small>Fiches de révision — Partie 2 : Les sujets de droit international</small>
   </label>
 </header>
 <nav>
   <ul>
     <li><label class="nav-home" for="r-home">Accueil</label></li>
     <li><label class="nav-plan" for="r-plan">Plan du cours</label></li>
+    <li><label class="nav-f1" for="r-f1">#1 Définition de l'État</label></li>
+    <li><label class="nav-f2" for="r-f2">#2 Naissance de l'État</label></li>
+    <li><label class="nav-f3" for="r-f3">#3 Compétences de l'État</label></li>
+    <li><label class="nav-f4" for="r-f4">#4 Immunités</label></li>
+    <li><label class="nav-f5" for="r-f5">#5 Responsabilité</label></li>
+    <li><label class="nav-f6" for="r-f6">#6 Statut des OI</label></li>
+    <li><label class="nav-f7" for="r-f7">#7 Compétences des OI</label></li>
+    <li><label class="nav-f8" for="r-f8">#8 Personnes privées</label></li>
   </ul>
 </nav>
 
@@ -120,50 +214,92 @@ footer span{color:#B22222}
 <div id="home">
   <div class="home-intro">
     <h2>Droit International Public</h2>
-    <p>Partie 2 — Les sujets de droit international · Fiches de révision</p>
+    <p>Partie 2 — Les sujets de droit international · 8 fiches de révision complètes + plan du cours</p>
   </div>
-  <div class="home-section-title">Navigation</div>
-  <div class="cards-grid">
+
+  <div class="home-section-title">Navigation générale</div>
+  <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));max-width:520px">
     <label class="card-plan" for="r-plan">
       <div class="card-num">Vue d'ensemble</div>
       <h3>Plan du cours</h3>
-      <p>Chapitres, sections, paragraphes — structure complète du cours</p>
+      <p>Chapitres, sections, paragraphes — structure complète avec accès direct aux fiches</p>
+    </label>
+  </div>
+
+  <div class="home-section-title">Chapitre 1 — L'État</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f1">
+      <div class="card-num">Fiche #1</div>
+      <h3>La définition de l'État</h3>
+      <p>Éléments constitutifs : territoire, population, gouvernement · La souveraineté comme critère décisif</p>
+    </label>
+    <label class="card" for="r-f2">
+      <div class="card-num">Fiche #2</div>
+      <h3>La naissance de l'État</h3>
+      <p>Modalités : fusion, sécession, dissolution · Reconnaissance · Succession d'États</p>
+    </label>
+    <label class="card" for="r-f3">
+      <div class="card-num">Fiche #3</div>
+      <h3>Les compétences de l'État</h3>
+      <p>Compétence territoriale, personnelle, extraterritoriale · Compétence universelle</p>
+    </label>
+    <label class="card" for="r-f4">
+      <div class="card-num">Fiche #4</div>
+      <h3>Les immunités de l'État</h3>
+      <p>Immunité restreinte · Actes jure imperii / jure gestionis · Immunités des représentants</p>
+    </label>
+    <label class="card" for="r-f5">
+      <div class="card-num">Fiche #5</div>
+      <h3>La responsabilité internationale</h3>
+      <p>Attribution · Violation d'une obligation · Réparation · Contre-mesures · Protection diplomatique</p>
+    </label>
+  </div>
+
+  <div class="home-section-title">Chapitre 2 — Les organisations internationales</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f6">
+      <div class="card-num">Fiche #6</div>
+      <h3>Le statut des OI</h3>
+      <p>Personnalité juridique internationale · Structure · États membres · Organes · Immunités</p>
+    </label>
+    <label class="card" for="r-f7">
+      <div class="card-num">Fiche #7</div>
+      <h3>Les compétences des OI</h3>
+      <p>Compétence d'attribution · Compétences implicites · Compétences normatives, opérationnelles, institutionnelles</p>
+    </label>
+  </div>
+
+  <div class="home-section-title">Chapitre 3 — Les personnes privées</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f8">
+      <div class="card-num">Fiche #8</div>
+      <h3>Les personnes privées</h3>
+      <p>Protection des droits humains (universel / régional) · Investisseurs étrangers · Crimes internationaux · Droit international pénal</p>
     </label>
   </div>
 </div>
 </div>
 
-<!-- PLAN -->
+<!-- PLAN DU COURS -->
 <div id="page-plan" class="page-content">
 <main>
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.6rem">
     <div>
       <h2 style="font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700">Plan détaillé du cours</h2>
-      <p style="font-size:.85rem;color:var(--g);margin-top:.2rem">Partie 2 — Les sujets de droit international · cliquez sur un chapitre pour le déplier</p>
+      <p style="font-size:.85rem;color:var(--g);margin-top:.2rem">Partie 2 — Les sujets de droit international · cliquez sur un chapitre pour le déplier, puis accédez à la fiche</p>
     </div>
     <label class="btn-home" for="r-home">← Accueil</label>
   </div>
-
   <div class="legend">
     <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#1a1a1a"/></svg> Racine</div>
-    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000"/></svg> Partie</div>
-    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#f6f8fb" stroke="#e8c8c8"/></svg> Chapitre (cliquable)</div>
-    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#B22222" opacity=".6"/></svg> Section</div>
-    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="none" stroke="#8B0000" stroke-width="1.5"/></svg> §</div>
-    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><circle cx="6" cy="6" r="4" fill="none" stroke="#aaa" stroke-width="1.5"/></svg> A / B / C</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000"/></svg> Chapitre</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#f6f8fb" stroke="#e8c8c8"/></svg> Section (cliquable)</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000" opacity=".8"/></svg> Lien fiche</div>
   </div>
-
   <div class="mindmap-container"><div class="mindmap-scroll">
-
-    <!-- RACINE -->
     <div class="root-node">
-      <div class="node-box">
-        DROIT INTERNATIONAL PUBLIC
-        <small>Partie 2 — Les sujets de droit international</small>
-      </div>
+      <div class="node-box">DROIT INTERNATIONAL PUBLIC<small>Partie 2 — Les sujets de droit international</small></div>
     </div>
-
-    <!-- INTRODUCTION -->
     <div class="intro-block" style="margin-bottom:1.5rem">
       <div class="intro-block-header">Introduction générale à la Partie 2</div>
       <div class="intro-block-body">
@@ -172,16 +308,13 @@ footer span{color:#B22222}
         <div class="intro-topic">L'État comme sujet principal</div>
       </div>
     </div>
-
-    <!-- UNE SEULE COLONNE (une seule partie) -->
     <div class="single-col">
 
-      <!-- ===== CHAPITRE 1 ===== -->
+      <!-- CHAPITRE 1 -->
       <div class="partie-block">
         <div class="partie-header">Chapitre 1 — L'État</div>
         <div class="partie-body">
 
-          <!-- Section 1 -->
           <details class="chap-block">
             <summary class="chap-header">Section 1 — La définition de l'État <span class="chap-toggle"></span></summary>
             <div class="chap-body">
@@ -189,19 +322,24 @@ footer span{color:#B22222}
                 <span class="section-label">§ 1</span>
                 <span class="section-name">Les éléments constitutifs de l'État</span>
                 <div class="para-list">
-                  <div class="para-item">A. Le territoire</div>
-                  <div class="para-item">B. La population</div>
-                  <div class="para-item">C. Un gouvernement</div>
+                  <div class="para-item">A. Le territoire<div class="sub-list"><div class="sub-item">Assise territoriale — taille indifférente</div><div class="sub-item">Contenu : terrestre, eaux intérieures, mer territoriale, espace aérien</div><div class="sub-item">Acquisition et disparition</div></div></div>
+                  <div class="para-item">B. La population<div class="sub-list"><div class="sub-item">Communauté humaine permanente — nationaux</div><div class="sub-item">Absence d'exigence d'homogénéité</div></div></div>
+                  <div class="para-item">C. Un gouvernement<div class="sub-list"><div class="sub-item">Autorité politique effective</div><div class="sub-item">Neutralité du DI sur la forme du régime</div><div class="sub-item">États défaillants (failed states)</div></div></div>
                 </div>
               </div>
               <div class="section-item">
                 <span class="section-label">§ 2</span>
                 <span class="section-name">La qualité d'État : la souveraineté</span>
+                <div class="para-list">
+                  <div class="para-item">Définition : indépendance</div>
+                  <div class="para-item">Souveraineté interne / externe</div>
+                  <div class="para-item">Rôle protecteur du droit international</div>
+                </div>
               </div>
+              <label class="plan-fiche-link" for="r-f1">→ Fiche #1</label>
             </div>
           </details>
 
-          <!-- Section 2 -->
           <details class="chap-block">
             <summary class="chap-header">Section 2 — La naissance de l'État <span class="chap-toggle"></span></summary>
             <div class="chap-body">
@@ -209,54 +347,65 @@ footer span{color:#B22222}
                 <span class="section-label">§ 1</span>
                 <span class="section-name">Les modalités de la naissance de l'État</span>
                 <div class="para-list">
-                  <div class="para-item">A. La sécession dans le cadre de la décolonisation</div>
-                  <div class="para-item">B. La sécession en dehors des situations de décolonisation</div>
+                  <div class="para-item">A. La sécession dans le cadre de la décolonisation<div class="sub-list"><div class="sub-item">Droit des peuples à disposer d'eux-mêmes (Rés. 1514)</div><div class="sub-item">Autodétermination interne / externe</div><div class="sub-item">Théorie de l'eau salée</div><div class="sub-item">Trois options : intégration, libre association, indépendance</div></div></div>
+                  <div class="para-item">B. La sécession hors décolonisation<div class="sub-list"><div class="sub-item">Absence de droit à la sécession</div><div class="sub-item">Position de neutralité du DI</div><div class="sub-item">Théorie de la sécession-remède (controversée)</div></div></div>
                 </div>
               </div>
               <div class="section-item">
                 <span class="section-label">§ 2</span>
                 <span class="section-name">La reconnaissance d'un État</span>
                 <div class="para-list">
-                  <div class="para-item">A. Définition de la reconnaissance d'État</div>
-                  <div class="para-item">B. La théorie de la reconnaissance constitutive</div>
-                  <div class="para-item">C. La théorie de la reconnaissance déclarative</div>
+                  <div class="para-item">A. Définition — acte unilatéral libre</div>
+                  <div class="para-item">B. Théorie constitutive (critiquée)</div>
+                  <div class="para-item">C. Théorie déclarative (majoritaire)</div>
+                  <div class="para-item">Limites : interdiction de reconnaître un État né d'une violation grave</div>
                 </div>
               </div>
               <div class="section-item">
                 <span class="section-label">§ 3</span>
                 <span class="section-name">La succession d'États</span>
+                <div class="para-list">
+                  <div class="para-item">Biens, dettes, archives suivent le territoire</div>
+                  <div class="para-item">Succession en matière de traités (règles selon le mode de création)</div>
+                </div>
               </div>
+              <label class="plan-fiche-link" for="r-f2">→ Fiche #2</label>
             </div>
           </details>
 
-          <!-- Section 3 -->
           <details class="chap-block">
             <summary class="chap-header">Section 3 — Les compétences de l'État <span class="chap-toggle"></span></summary>
             <div class="chap-body">
               <div class="section-item">
                 <span class="section-label">§ 1</span>
                 <span class="section-name">La compétence territoriale</span>
+                <div class="para-list">
+                  <div class="para-item">Plénitude et exclusivité</div>
+                  <div class="para-item">Interdiction du recours à la force / non-intervention</div>
+                  <div class="para-item">Limites : cession à bail, condominium, servitudes, ambassades</div>
+                </div>
               </div>
               <div class="section-item">
                 <span class="section-label">§ 2</span>
                 <span class="section-name">La compétence personnelle</span>
                 <div class="para-list">
-                  <div class="para-item">A. Les personnes physiques</div>
-                  <div class="para-item">B. Les personnes morales</div>
+                  <div class="para-item">A. Les personnes physiques — nationalité, lien réel et effectif</div>
+                  <div class="para-item">B. Les personnes morales — incorporation, siège, contrôle</div>
+                  <div class="para-item">Conflit compétence territoriale / personnelle</div>
                 </div>
               </div>
               <div class="section-item">
                 <span class="section-label">§ 3</span>
                 <span class="section-name">La compétence extraterritoriale</span>
                 <div class="para-list">
-                  <div class="para-item">A. Les sanctions extraterritoriales</div>
-                  <div class="para-item">B. La compétence universelle</div>
+                  <div class="para-item">A. Les sanctions extraterritoriales — controverses</div>
+                  <div class="para-item">B. La compétence universelle — crimes portant atteinte à la communauté internationale</div>
                 </div>
               </div>
+              <label class="plan-fiche-link" for="r-f3">→ Fiche #3</label>
             </div>
           </details>
 
-          <!-- Section 4 -->
           <details class="chap-block">
             <summary class="chap-header">Section 4 — Les immunités de l'État <span class="chap-toggle"></span></summary>
             <div class="chap-body">
@@ -264,23 +413,23 @@ footer span{color:#B22222}
                 <span class="section-label">§ 1</span>
                 <span class="section-name">Les immunités de l'État lui-même</span>
                 <div class="para-list">
-                  <div class="para-item">A. La théorie des immunités restreintes</div>
-                  <div class="para-item">B. La remise en cause des immunités de l'État</div>
+                  <div class="para-item">A. Théorie des immunités restreintes<div class="sub-list"><div class="sub-item">Jure imperii (actes de souveraineté) → immunité conservée</div><div class="sub-item">Jure gestionis (actes de gestion) → jugement possible</div><div class="sub-item">Immunité de juridiction vs immunité d'exécution</div></div></div>
+                  <div class="para-item">B. Remise en cause des immunités<div class="sub-list"><div class="sub-item">Argument jus cogens — non retenu en droit positif</div><div class="sub-item">Immunité ≠ légalité de l'acte</div></div></div>
                 </div>
               </div>
               <div class="section-item">
                 <span class="section-label">§ 2</span>
                 <span class="section-name">Les immunités des représentants de l'État</span>
                 <div class="para-list">
-                  <div class="para-item">A. Les immunités personnelles</div>
-                  <div class="para-item">B. Les immunités matérielles (fonctionnelles)</div>
-                  <div class="para-item">C. La contestation des immunités des représentants</div>
+                  <div class="para-item">A. Immunités personnelles (ratione personae) — chef d'État, chef de gouvernement, MAE, diplomates — totales et temporaires</div>
+                  <div class="para-item">B. Immunités matérielles (ratione materiae) — tous agents — actes officiels seulement — permanentes</div>
+                  <div class="para-item">C. Contestation pour crimes internationaux</div>
                 </div>
               </div>
+              <label class="plan-fiche-link" for="r-f4">→ Fiche #4</label>
             </div>
           </details>
 
-          <!-- Section 5 -->
           <details class="chap-block">
             <summary class="chap-header">Section 5 — La responsabilité internationale de l'État <span class="chap-toggle"></span></summary>
             <div class="chap-body">
@@ -288,81 +437,98 @@ footer span{color:#B22222}
                 <span class="section-label">§ 1</span>
                 <span class="section-name">Les conditions de la responsabilité</span>
                 <div class="para-list">
-                  <div class="para-item">A. L'attribution du comportement à l'État</div>
-                  <div class="para-item">B. La violation d'une obligation internationale</div>
+                  <div class="para-item">A. L'attribution du comportement à l'État<div class="sub-list"><div class="sub-item">Actes des organes (toujours attribuables)</div><div class="sub-item">Personnes non officielles (si contrôle / instruction)</div><div class="sub-item">Actes ultérieurement reconnus</div></div></div>
+                  <div class="para-item">B. La violation d'une obligation internationale<div class="sub-list"><div class="sub-item">Faute suffit — dommage non toujours exigé</div><div class="sub-item">Circonstances excluant l'illicéité : détresse, force majeure, consentement, nécessité, légitime défense</div></div></div>
                 </div>
               </div>
               <div class="section-item">
                 <span class="section-label">§ 2</span>
                 <span class="section-name">Le contenu de la responsabilité internationale</span>
                 <div class="para-list">
-                  <div class="para-item">A. La réparation du préjudice</div>
-                  <div class="para-item">B. Les autres conséquences de la responsabilité</div>
+                  <div class="para-item">A. La réparation : restitution → indemnisation → satisfaction</div>
+                  <div class="para-item">B. Cessation, garanties de non-répétition</div>
                 </div>
               </div>
               <div class="section-item">
                 <span class="section-label">§ 3</span>
-                <span class="section-name">L'invocation et la mise en œuvre de la responsabilité internationale</span>
+                <span class="section-name">L'invocation et la mise en œuvre</span>
                 <div class="para-list">
-                  <div class="para-item">A. Invocation de la responsabilité internationale</div>
-                  <div class="para-item">B. Les contre-mesures</div>
-                  <div class="para-item">C. La protection diplomatique</div>
+                  <div class="para-item">A. État lésé / obligations erga omnes</div>
+                  <div class="para-item">B. Contre-mesures — conditions strictes (temporaires, proportionnées)</div>
+                  <div class="para-item">C. Protection diplomatique — nationalité + épuisement des voies internes</div>
                 </div>
               </div>
+              <label class="plan-fiche-link" for="r-f5">→ Fiche #5</label>
             </div>
           </details>
 
         </div>
       </div>
 
-      <!-- ===== CHAPITRE 2 ===== -->
+      <!-- CHAPITRE 2 -->
       <div class="partie-block">
         <div class="partie-header">Chapitre 2 — Les organisations internationales</div>
         <div class="partie-body">
 
-          <!-- Section 1 -->
           <details class="chap-block">
             <summary class="chap-header">Section 1 — Le statut des organisations internationales <span class="chap-toggle"></span></summary>
             <div class="chap-body">
               <div class="section-item">
                 <span class="section-label">§ 1</span>
                 <span class="section-name">La condition juridique des organisations internationales</span>
+                <div class="para-list">
+                  <div class="para-item">Création par traité constitutif</div>
+                  <div class="para-item">Sujets secondaires du droit international</div>
+                  <div class="para-item">Personnalité juridique internationale — fonctionnelle et limitée</div>
+                  <div class="para-item">Distinction avec l'État (pas de territoire, ni de population, ni de souveraineté)</div>
+                  <div class="para-item">Immunités et privilèges</div>
+                </div>
               </div>
               <div class="section-item">
                 <span class="section-label">§ 2</span>
                 <span class="section-name">La structure des organisations internationales</span>
                 <div class="para-list">
-                  <div class="para-item">A. Les États membres des organisations internationales</div>
-                  <div class="para-item">B. Les organes des organisations internationales</div>
+                  <div class="para-item">A. Les États membres — qualité, droits, obligations</div>
+                  <div class="para-item">B. Les organes — pléniers, restreints, administratifs — autonomie institutionnelle</div>
                 </div>
               </div>
+              <label class="plan-fiche-link" for="r-f6">→ Fiche #6</label>
             </div>
           </details>
 
-          <!-- Section 2 -->
           <details class="chap-block">
             <summary class="chap-header">Section 2 — Les compétences des organisations internationales <span class="chap-toggle"></span></summary>
             <div class="chap-body">
               <div class="section-item">
                 <span class="section-label">§ 1</span>
                 <span class="section-name">La compétence d'attribution</span>
+                <div class="para-list">
+                  <div class="para-item">Absence de compétence générale (≠ État)</div>
+                  <div class="para-item">Compétences implicites — nécessaires à l'accomplissement des fonctions</div>
+                </div>
               </div>
               <div class="section-item">
                 <span class="section-label">§ 2</span>
                 <span class="section-name">Les compétences attribuées</span>
+                <div class="para-list">
+                  <div class="para-item">Compétences normatives (contraignantes / soft law)</div>
+                  <div class="para-item">Compétences opérationnelles</div>
+                  <div class="para-item">Compétences décisionnelles et institutionnelles</div>
+                  <div class="para-item">Principe de spécialité — limites</div>
+                </div>
               </div>
+              <label class="plan-fiche-link" for="r-f7">→ Fiche #7</label>
             </div>
           </details>
 
         </div>
       </div>
 
-      <!-- ===== CHAPITRE 3 ===== -->
+      <!-- CHAPITRE 3 -->
       <div class="partie-block">
         <div class="partie-header">Chapitre 3 — Les personnes privées</div>
         <div class="partie-body">
 
-          <!-- Section 1 -->
           <details class="chap-block">
             <summary class="chap-header">Section 1 — Les droits des personnes privées <span class="chap-toggle"></span></summary>
             <div class="chap-body">
@@ -370,23 +536,1305 @@ footer span{color:#B22222}
                 <span class="section-label">§ 1</span>
                 <span class="section-name">La protection des droits humains</span>
                 <div class="para-list">
-                  <div class="para-item">A. La protection des droits humains dans le cadre universel</div>
-                  <div class="para-item">B. La protection des droits humains dans le cadre régional</div>
+                  <div class="para-item">A. Cadre universel (ONU) — instruments déclaratoires et conventionnels — mécanismes de contrôle</div>
+                  <div class="para-item">B. Cadre régional — juridictions régionales — requêtes individuelles — condamnation de l'État</div>
                 </div>
               </div>
+              <div class="section-item">
+                <span class="section-label">§ 2</span>
+                <span class="section-name">La protection des droits des investisseurs étrangers</span>
+                <div class="para-list">
+                  <div class="para-item">Traités bilatéraux / multilatéraux d'investissement</div>
+                  <div class="para-item">Arbitrage international — l'investisseur comme sujet</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="chap-block">
+            <summary class="chap-header">Section 2 — Les obligations des personnes privées <span class="chap-toggle"></span></summary>
+            <div class="chap-body">
+              <div class="section-item">
+                <span class="section-label">§ 1</span>
+                <span class="section-name">Les éléments des crimes internationaux</span>
+                <div class="para-list">
+                  <div class="para-item">Responsabilité pénale individuelle — indépendante de l'ordre hiérarchique</div>
+                  <div class="para-item">Crimes de guerre, crimes contre l'humanité, génocide, crime d'agression</div>
+                </div>
+              </div>
+              <div class="section-item">
+                <span class="section-label">§ 2</span>
+                <span class="section-name">La répression des crimes internationaux</span>
+                <div class="para-list">
+                  <div class="para-item">Juridictions internationales — compétence limitée</div>
+                  <div class="para-item">Juridictions nationales — compétence nationale + universelle</div>
+                  <div class="para-item">Complémentarité : priorité nationale, intervention internationale en cas de défaillance</div>
+                </div>
+              </div>
+              <label class="plan-fiche-link" for="r-f8">→ Fiche #8</label>
             </div>
           </details>
 
         </div>
       </div>
 
-    </div><!-- end single-col -->
-  </div></div><!-- end mindmap -->
+    </div>
+  </div></div>
 </main>
 </div>
 
+<!-- ===================== FICHE 1 ===================== -->
+<div id="page-f1" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem">
+    <label class="btn-home" for="r-home">← Accueil</label>
+    <label class="btn-home" for="r-plan">Plan du cours</label>
+  </div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #1 · Chapitre 1 — L'État · Section 1 — La définition de l'État</div>
+    <h2>La définition de l'État : éléments constitutifs et souveraineté</h2>
+    <div class="fiche-loc">
+      <strong>Localisation dans le plan</strong>
+      <span>Partie 2 – Les sujets de droit international → Chap. 1 – L'État → Sect. 1 → § 1 Éléments constitutifs · § 2 La souveraineté</span>
+    </div>
+    <div class="fiche-intro">En droit international public, tout commence par l'État. Sujet originel du droit international, il possède la souveraineté, conclut les traités, crée les organisations internationales et attribue des droits aux autres acteurs. Qu'est-ce qu'un État en droit international ? Ces critères sont cumulatifs : il faut tous les remplir.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 1</span> Les éléments constitutifs de l'État</div>
+    <p class="f-text">Pour être qualifiée d'État, une entité doit réunir trois éléments matériels et un élément juridique fondamental. Les trois éléments matériels sont traités ici.</p>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. Le territoire</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. L'existence d'une assise territoriale</div>
+        <p class="f-text">Un État doit disposer d'un territoire, c'est-à-dire d'un espace géographique sur lequel il exerce son autorité. On parle d'<strong>assise territoriale</strong>. Il n'existe aucune exigence de taille minimale : un territoire peut être immense (Russie) ou extrêmement petit (Monaco, Vatican). Ce qui compte n'est pas la superficie, mais l'existence d'un territoire déterminé.</p>
+        <div class="f-key">Le territoire, c'est le sol sur lequel l'État peut poser son autorité. Sans sol, il ne peut pas exercer ses fonctions étatiques.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Ce que comprend le territoire de l'État</div>
+        <p class="f-text">Le territoire de l'État ne se limite pas à la terre ferme. Il inclut :</p>
+        <ul class="f-list">
+          <li>L'espace terrestre (continent, îles)</li>
+          <li>Les eaux intérieures (lacs, fleuves)</li>
+          <li>La mer territoriale, jusqu'à 12 milles nautiques à partir des côtes</li>
+          <li>L'espace aérien situé au-dessus du territoire terrestre et de la mer territoriale</li>
+        </ul>
+        <div class="f-alerte"><strong>Distinction importante</strong>La zone économique exclusive (ZEE) et le plateau continental ne font pas partie du territoire au sens strict. Sur ces zones, l'État dispose de droits économiques, mais pas de souveraineté pleine.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">3. Acquisition et disparition du territoire</div>
+        <p class="f-text">Historiquement, les États ont acquis leurs territoires par la guerre, les traités, les accords et les successions territoriales. Aujourd'hui, une règle est essentielle : <strong>la conquête territoriale par la force est interdite en droit international</strong>. Concernant la disparition du territoire (par exemple à cause du changement climatique), le droit international tend à préserver l'existence juridique des États menacés, montrant que l'État est conçu comme une structure destinée à durer.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. La population</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Une communauté humaine permanente</div>
+        <p class="f-text">Un État doit posséder une population, c'est-à-dire une communauté humaine vivant sur le territoire et soumise à l'autorité de l'État. Cette population est composée de <strong>nationaux</strong>, c'est-à-dire de personnes liées juridiquement à l'État par la nationalité. Il n'existe aucune condition de nombre : quelques centaines de personnes suffisent. Ce qui importe, c'est le caractère <strong>permanent</strong> de la population.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Absence d'exigence d'homogénéité</div>
+        <p class="f-text">La population n'a pas besoin d'avoir la même langue, ni la même religion, ni la même origine. Un État peut être multiculturel, multiethnique et multilinguistique sans que cela compromette son existence juridique.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. Un gouvernement</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. L'existence d'une autorité politique effective</div>
+        <p class="f-text">Pour être un État, il faut une autorité politique capable d'exercer le pouvoir sur le territoire et la population : c'est le <strong>gouvernement effectif</strong>. Ce gouvernement doit être en mesure de maintenir l'ordre, d'administrer le territoire et d'assurer les fonctions essentielles de l'État (impôt, justice, état civil).</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Neutralité du droit international sur la forme du régime</div>
+        <p class="f-text">Le droit international ne juge pas la nature du régime : démocratie, autoritarisme, monarchie, dictature. Ce qui compte, ce n'est pas la légitimité politique, mais <strong>l'effectivité du pouvoir</strong>.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">3. Les États défaillants (failed states)</div>
+        <p class="f-text">Lorsqu'un État perd temporairement son gouvernement ou le contrôle effectif de son territoire, le droit international considère en principe que l'État ne disparaît pas immédiatement — il continue juridiquement d'exister dans l'attente d'un rétablissement de l'autorité.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 2</span> La qualité d'État : la souveraineté</div>
+    <p class="f-text">Les trois éléments précédents sont indispensables, mais insuffisants. De nombreuses entités peuvent disposer d'un territoire, d'une population et d'un gouvernement sans être des États.</p>
+    <div class="f-key">Ce qui fait la différence essentielle, c'est la souveraineté.</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">1. Définition de la souveraineté</div>
+      <p class="f-text">En droit international, la souveraineté se définit comme <strong>l'indépendance</strong>. Un État souverain ne dépend juridiquement d'aucun autre État, n'obéit à aucune autorité supérieure et exerce seul les fonctions étatiques sur son territoire.</p>
+      <div class="f-key">La souveraineté, c'est le fait que personne ne peut légalement donner d'ordres à l'État.</div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">2. Les deux dimensions de la souveraineté</div>
+      <div class="f-table-wrap">
+        <table class="f-table">
+          <thead><tr><th>Dimension</th><th>Contenu</th></tr></thead>
+          <tbody>
+            <tr><td>Souveraineté interne</td><td>Capacité d'exercer une autorité effective à l'intérieur du territoire</td></tr>
+            <tr><td>Souveraineté externe</td><td>Indépendance dans les relations internationales, capacité de nouer des relations avec d'autres États</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="f-text">Les deux dimensions sont indissociables.</p>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">3. Rôle protecteur du droit international</div>
+      <p class="f-text">Une fois acquise, la souveraineté est protégée par le droit international, notamment par :</p>
+      <ul class="f-list">
+        <li>Le principe d'égalité souveraine</li>
+        <li>L'interdiction du recours à la force</li>
+        <li>Le respect de l'intégrité territoriale</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir">
+    <strong>Conclusion — Les quatre éléments cumulatifs</strong>
+    <ul>
+      <li>Un territoire (assise géographique déterminée)</li>
+      <li>Une population (communauté humaine permanente)</li>
+      <li>Un gouvernement effectif (autorité politique réelle)</li>
+      <li>Une souveraineté entendue comme indépendance — l'élément décisif</li>
+    </ul>
+    <p class="f-text" style="margin-top:.6rem;font-size:.88rem">Sans souveraineté, une entité peut ressembler à un État sans en être un juridiquement.</p>
+  </div>
+
+  <div class="fiche-nav"><span></span><label for="r-f2">Fiche #2 : La naissance de l'État →</label></div>
+</div></main>
+</div>
+
+<!-- ===================== FICHE 2 ===================== -->
+<div id="page-f2" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem">
+    <label class="btn-home" for="r-home">← Accueil</label>
+    <label class="btn-home" for="r-plan">Plan du cours</label>
+  </div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #2 · Chapitre 1 — L'État · Section 2 — La naissance de l'État</div>
+    <h2>La naissance de l'État</h2>
+    <div class="fiche-loc">
+      <strong>Localisation dans le plan</strong>
+      <span>§ 1 – Modalités de la naissance · § 2 – La reconnaissance d'un État · § 3 – La succession d'États</span>
+    </div>
+    <div class="fiche-intro">Un État ne naît pas librement, comme une entreprise ou une association. Sa naissance est strictement encadrée, car elle implique toujours la disparition, la réduction ou la transformation de la souveraineté d'un autre État. Il n'existe plus de territoires vierges (terra nullius) : tout nouvel État naît sur un territoire où une souveraineté existait déjà.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 1</span> Les modalités de la naissance de l'État</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. Les différentes formes de création d'un État</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. La fusion d'États</div>
+        <p class="f-text">La fusion correspond à l'hypothèse où deux ou plusieurs États existants décident de disparaître pour former un seul nouvel État. Les États initiaux cessent d'exister juridiquement.</p>
+        <div class="f-exemple"><strong>Image mentale</strong>A + B → C, mais A et B n'existent plus.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. La scission ou dissolution d'un État</div>
+        <p class="f-text">La scission se produit lorsqu'un État unique disparaît et que plusieurs nouveaux États naissent sur son territoire. L'État initial ne survit pas. L'<strong>absorption</strong> est un cas particulier : un État est absorbé par un autre, et seul l'État absorbant survit.</p>
+        <div class="f-exemple"><strong>Image mentale</strong>A → B + C + D, A disparaît totalement.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">3. La sécession</div>
+        <p class="f-text">La sécession est la modalité <strong>la plus fréquente et la plus conflictuelle</strong> de naissance d'un État. Une partie du territoire d'un État se détache pour former un nouvel État. L'État d'origine survit, mais avec un territoire réduit.</p>
+        <div class="f-exemple"><strong>Image mentale</strong>A → A + B, A survit, B est le nouvel État.</div>
+        <div class="f-alerte"><strong>Point central</strong>La sécession est au cœur du droit international contemporain.</div>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. La sécession dans le cadre de la décolonisation</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Une situation juridiquement exceptionnelle</div>
+        <p class="f-text">Dans le contexte de la décolonisation, le droit international reconnaît un véritable <strong>droit à la création d'un État</strong>. Ce droit repose sur le droit des peuples à disposer d'eux-mêmes, consacré notamment par la <strong>résolution 1514 de l'Assemblée générale de l'ONU (1960)</strong>. Il s'agit d'un droit coutumier, reconnu comme une norme fondamentale du droit international.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Le droit à l'autodétermination</div>
+        <div class="f-table-wrap">
+          <table class="f-table">
+            <thead><tr><th>Type</th><th>Contenu</th></tr></thead>
+            <tbody>
+              <tr><td>Autodétermination interne</td><td>Droit, pour tout peuple, de voir son identité, sa culture, sa langue respectées à l'intérieur d'un État existant</td></tr>
+              <tr><td>Autodétermination externe</td><td>Droit à la création d'un État indépendant — limité à des catégories précises</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">3. Les peuples bénéficiant de l'autodétermination externe</div>
+        <p class="f-text">Ce droit est réservé à deux catégories de peuples :</p>
+        <ul class="f-list">
+          <li><strong>Les peuples colonisés</strong>, selon la théorie de « l'eau salée » → le peuple colonisé doit être distinct de la population métropolitaine et séparé par la mer</li>
+          <li><strong>Les peuples soumis à une domination ou occupation étrangère</strong> → par exemple la Namibie ou la Palestine</li>
+        </ul>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">4. Les options offertes au peuple colonisé</div>
+        <p class="f-text">Lorsqu'un peuple bénéficie de l'autodétermination externe, il peut choisir par consultation démocratique (référendum) entre trois options :</p>
+        <ul class="f-list">
+          <li>L'intégration à l'État colonisateur</li>
+          <li>La libre association avec l'État colonisateur (indépendance limitée)</li>
+          <li>L'indépendance complète</li>
+        </ul>
+        <p class="f-text">En pratique, l'indépendance est l'option la plus choisie historiquement.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. La sécession en dehors des situations de décolonisation</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Absence de droit à la sécession — mais neutralité du droit international</div>
+        <p class="f-text">Hors décolonisation, le droit international est très clair : <strong>il n'existe pas de droit à la sécession</strong>. Mais — point fondamental — <strong>la sécession n'est ni autorisée ni interdite</strong>.</p>
+        <p class="f-text">Le droit international adopte une position de neutralité : il ne reconnaît pas un droit automatique à la création d'un État, mais il ne sanctionne pas en soi une déclaration d'indépendance. La question devient alors factuelle : le nouvel État parvient-il à réunir les critères de l'État ? parvient-il à s'imposer dans les faits ?</p>
+        <div class="f-key">La sécession hors décolonisation se gagne ou se perd.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. La théorie de la sécession-remède</div>
+        <p class="f-text">Une théorie doctrinale soutient que lorsqu'un État ne respecte gravement pas l'autodétermination interne d'un peuple, ce peuple pourrait accéder à l'autodétermination externe.</p>
+        <div class="f-alerte"><strong>Attention</strong>Cette théorie est très controversée et non pleinement reconnue en droit positif.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 2</span> La reconnaissance d'un État</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">1. Absence de procédure formelle</div>
+      <p class="f-text">Il n'existe aucune procédure internationale officielle pour accéder au statut d'État : pas de candidature, pas d'examen, pas d'organe de validation. La <strong>reconnaissance par les autres États</strong> joue alors un rôle central.</p>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">2. Définition de la reconnaissance d'État</div>
+      <p class="f-text">La reconnaissance est un <strong>acte unilatéral</strong> par lequel un État constate qu'une entité est un État. Ses caractéristiques :</p>
+      <ul class="f-list">
+        <li>Elle est <strong>libre</strong> (aucune obligation de reconnaître)</li>
+        <li>Elle est individuelle ou collective</li>
+        <li>Elle peut être de facto (comportement) ou de jure (traité)</li>
+        <li>Elle peut être simple ou conditionnelle</li>
+      </ul>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">3. Les deux théories sur la portée de la reconnaissance</div>
+      <div class="f-table-wrap">
+        <table class="f-table">
+          <thead><tr><th>Théorie</th><th>Position</th><th>Valeur</th></tr></thead>
+          <tbody>
+            <tr><td>Constitutive</td><td>Un État n'existerait que s'il est reconnu par les autres États</td><td>Largement critiquée</td></tr>
+            <tr><td>Déclarative (majoritaire)</td><td>L'État existe dès lors qu'il remplit les critères objectifs. La reconnaissance rend cette existence opposable aux autres États</td><td>Droit positif actuel</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">4. Limites à la reconnaissance</div>
+      <p class="f-text">Dans certains cas, la reconnaissance est <strong>interdite</strong>, notamment lorsque la création de l'État résulte d'une violation grave du droit international, en particulier de l'interdiction du recours à la force.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 3</span> La succession d'États</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">1. Définition générale</div>
+      <p class="f-text">La succession d'États correspond au <strong>remplacement d'un État par un autre sur un territoire donné</strong>. Il ne s'agit pas de la naissance d'un État « neuf », mais de la transmission des situations juridiques.</p>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">2. Succession en matière de biens, dettes et archives</div>
+      <p class="f-text">Principe général : les biens, archives et dettes <strong>suivent le territoire</strong>. Des aménagements sont possibles par accord entre l'ancien et le nouvel État.</p>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">3. Succession en matière de traités</div>
+      <div class="f-table-wrap">
+        <table class="f-table">
+          <thead><tr><th>Mode de création</th><th>Principe applicable</th></tr></thead>
+          <tbody>
+            <tr><td>Sécession</td><td>Principe de continuité des traités</td></tr>
+            <tr><td>Décolonisation</td><td>Principe de la table rase</td></tr>
+            <tr><td>Fusion</td><td>Maintien des traités</td></tr>
+            <tr><td>Absorption</td><td>Extinction des traités de l'État absorbé</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir">
+    <strong>À retenir</strong>
+    <ul>
+      <li>La naissance d'un État est toujours juridiquement encadrée, politiquement sensible, liée à une souveraineté préexistante</li>
+      <li>La sécession dans le cadre de la décolonisation est la seule hypothèse donnant lieu à un droit à l'indépendance</li>
+      <li>Hors décolonisation : neutralité du DI — ni autorisation ni interdiction</li>
+      <li>La reconnaissance est déclarative (majoritaire) — l'État existe si les critères sont remplis</li>
+      <li>En matière de succession, biens et dettes suivent le territoire ; les traités obéissent à des règles variant selon le mode de création</li>
+    </ul>
+  </div>
+
+  <div class="fiche-nav"><label for="r-f1">← Fiche #1</label><label for="r-f3">Fiche #3 : Les compétences →</label></div>
+</div></main>
+</div>
+
+<!-- ===================== FICHE 3 ===================== -->
+<div id="page-f3" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem">
+    <label class="btn-home" for="r-home">← Accueil</label>
+    <label class="btn-home" for="r-plan">Plan du cours</label>
+  </div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #3 · Chapitre 1 — L'État · Section 3 — Les compétences de l'État</div>
+    <h2>Les compétences de l'État</h2>
+    <div class="fiche-loc">
+      <strong>Localisation dans le plan</strong>
+      <span>§ 1 – Compétence territoriale · § 2 – Compétence personnelle · § 3 – Compétence extraterritoriale</span>
+    </div>
+    <div class="fiche-intro">Quels sont les pouvoirs concrets de l'État en droit international ? Ces pouvoirs sont appelés compétences. La compétence désigne la faculté juridique reconnue par le droit international à un État de connaître d'une situation, d'édicter des règles, de juger ou d'agir. Idée clé : l'État est libre d'agir, mais dans les limites fixées par le droit international.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 1</span> La compétence territoriale</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. Principe général</div>
+      <p class="f-text">La compétence territoriale est la compétence <strong>principale et la plus forte</strong> de l'État. Elle signifie qu'un État a le pouvoir d'exercer son autorité sur <strong>tout ce qui se trouve à l'intérieur de son territoire</strong>.</p>
+      <div class="f-key">Tout ce qui se passe chez moi, sur mon territoire, c'est moi qui décide.</div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les deux caractéristiques fondamentales</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. La plénitude de la compétence territoriale</div>
+        <p class="f-text">La compétence territoriale est <strong>plénière</strong> : l'État peut réglementer tous les domaines de la vie sociale sur son territoire, tant qu'il respecte le droit international. Cela inclut notamment l'organisation politique, le système économique, le droit pénal, le droit fiscal et le système judiciaire.</p>
+        <div class="f-exemple"><strong>Exemple concret</strong>La France est libre de fixer son droit pénal, son système fiscal ou ses règles sanitaires sur son territoire, sauf engagements internationaux contraires.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. L'exclusivité de la compétence territoriale</div>
+        <p class="f-text">La compétence territoriale est aussi <strong>exclusive</strong> : seul l'État territorial peut exercer sa souveraineté sur son territoire ; les autres États ont l'interdiction d'y exercer leur autorité. Ce principe est directement lié à la souveraineté territoriale et au principe d'intégrité territoriale.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. Les obligations liées à la souveraineté territoriale</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. L'interdiction du recours à la force</div>
+        <p class="f-text">Un État ne peut pas utiliser la force armée contre le territoire ou l'indépendance politique d'un autre État.</p>
+        <div class="f-key">Un État n'a pas le droit d'entrer chez un autre État par la force.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Le principe de non-intervention</div>
+        <p class="f-text">Même sans usage de la force armée, il est interdit d'intervenir de manière coercitive dans les affaires internes d'un autre État. Cela inclut les pressions politiques, les pressions économiques graves et les manœuvres visant à influencer le pouvoir interne.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">D. Les limites et exceptions à la compétence territoriale</div>
+      <p class="f-text">La souveraineté territoriale est pleine et exclusive, mais <strong>pas absolue</strong>. Le droit international prévoit des exceptions :</p>
+      <ul class="f-list">
+        <li><strong>La cession à bail</strong> : un État peut louer une partie de son territoire à un autre État par traité ; sur ce territoire, l'État bénéficiaire exerce les compétences prévues par l'accord</li>
+        <li><strong>Le condominium</strong> : deux États exercent simultanément ou alternativement leur souveraineté sur un même territoire — situation rare, uniquement par accord</li>
+        <li><strong>Les servitudes internationales</strong> : droits limités reconnus à un autre État</li>
+        <li><strong>L'occupation militaire</strong> : interdite, mais encadrée juridiquement</li>
+        <li><strong>Les ambassades</strong> : ne constituent pas un territoire étranger, mais bénéficient d'inviolabilité</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 2</span> La compétence personnelle</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. Principe général</div>
+      <p class="f-text">La compétence personnelle repose non pas sur le territoire, mais sur le lien juridique entre l'État et certaines personnes : <strong>la nationalité</strong>. Un État peut exercer sa compétence sur ses nationaux même lorsqu'ils se trouvent à l'étranger.</p>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les personnes physiques</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. La nationalité comme lien juridique</div>
+        <p class="f-text">La nationalité est le lien juridique qui rattache une personne à un État. Chaque État est en principe libre de déterminer les conditions d'attribution de sa nationalité.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Limites internationales à l'attribution de la nationalité</div>
+        <p class="f-text">Cette liberté n'est pas totalement absolue. Le droit international exige que la nationalité repose sur un <strong>lien réel et effectif</strong> avec l'État.</p>
+        <div class="f-key">On ne peut pas distribuer sa nationalité au hasard.</div>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. Les personnes morales</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Nationalité des entreprises</div>
+        <p class="f-text">Pour les entreprises, la nationalité peut être déterminée selon plusieurs critères : lieu d'incorporation, siège social, contrôle effectif. Ces critères ont une importance majeure pour la réglementation, la fiscalité et la responsabilité internationale.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Navires et aéronefs</div>
+        <p class="f-text">Les navires et les aéronefs possèdent une nationalité, généralement déterminée par le lieu d'immatriculation (le pavillon). Tout ce qui se passe à bord dans une zone internationale relève en principe de l'<strong>État du pavillon</strong>.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">D. Conflit entre compétence territoriale et personnelle</div>
+      <p class="f-text">Lorsqu'un national commet un acte à l'étranger, il peut y avoir concurrence de compétences entre la compétence territoriale de l'État du lieu et la compétence personnelle de l'État de nationalité. Principe général : la <strong>compétence territoriale prime</strong>, sauf accord contraire entre États.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 3</span> La compétence extraterritoriale</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. Principe général</div>
+      <p class="f-text">La compétence extraterritoriale concerne les situations où ni le territoire ni la nationalité ne permettent de fonder directement la compétence. En principe, le droit international exige un <strong>lien de rattachement raisonnable</strong> avec l'État.</p>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les sanctions extraterritoriales</div>
+      <p class="f-text">Les États adoptent parfois des sanctions économiques visant des comportements étrangers, parfois même des acteurs non nationaux. Le problème central : jusqu'où un État peut-il imposer ses règles au-delà de son territoire ? Cette pratique est <strong>controversée</strong> car elle peut entrer en conflit avec la souveraineté des autres États.</p>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. La compétence universelle</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Principe et justification</div>
+        <p class="f-text">La compétence universelle permet à un État de juger certaines infractions <strong>même si elles n'ont aucun lien territorial ou personnel avec lui</strong>. Elle repose sur l'idée que certains crimes portent atteinte à l'ensemble de la communauté internationale et ne doivent pas rester impunis.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Portée</div>
+        <p class="f-text">La compétence universelle est exceptionnelle, concerne un nombre limité d'infractions (crimes de guerre, crimes contre l'humanité, génocide, actes de piraterie…) et est souvent strictement encadrée par le droit interne.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir">
+    <strong>Synthèse des compétences de l'État</strong>
+    <ul>
+      <li><strong>Compétence territoriale</strong> : principale, plénière et exclusive — fondée sur le territoire — encadrée par interdiction de la force et non-intervention</li>
+      <li><strong>Compétence personnelle</strong> : fondée sur la nationalité — suit le national à l'étranger — la territoriale prime en cas de conflit</li>
+      <li><strong>Compétence extraterritoriale</strong> : exceptionnelle — compétence universelle pour les crimes les plus graves</li>
+      <li>Dans tous les cas, l'État est libre d'agir uniquement dans les limites fixées par le droit international</li>
+    </ul>
+  </div>
+
+  <div class="fiche-nav"><label for="r-f2">← Fiche #2</label><label for="r-f4">Fiche #4 : Les immunités →</label></div>
+</div></main>
+</div>
+
+<!-- ===================== FICHE 4 ===================== -->
+<div id="page-f4" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem">
+    <label class="btn-home" for="r-home">← Accueil</label>
+    <label class="btn-home" for="r-plan">Plan du cours</label>
+  </div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #4 · Chapitre 1 — L'État · Section 4 — Les immunités de l'État</div>
+    <h2>Les immunités de l'État</h2>
+    <div class="fiche-loc">
+      <strong>Localisation dans le plan</strong>
+      <span>§ 1 – Immunités de l'État lui-même · § 2 – Immunités des représentants de l'État</span>
+    </div>
+    <div class="fiche-intro">Lorsqu'un État ou ses représentants agissent sur le territoire d'un autre État, peuvent-ils être jugés par les juridictions de cet État ? La réponse générale du droit international est : non, ou en tout cas pas toujours. C'est l'objet des immunités, fondées sur une idée centrale : <em>Par in parem non habet imperium</em> — un égal n'a pas de pouvoir sur un égal.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 1</span> Les immunités de l'État lui-même</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. Principe général : l'immunité de juridiction</div>
+      <p class="f-text">L'immunité de l'État signifie qu'<strong>un État ne peut pas être jugé par les juridictions internes d'un autre État</strong> pour des actes accomplis en tant qu'État. Même si un État agit sur le territoire d'un autre ou y cause un dommage, il ne peut pas automatiquement être poursuivi devant les tribunaux de cet autre État.</p>
+      <div class="f-key">Un État ne peut pas être le « justiciable » d'un autre État comme un simple particulier.</div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. L'évolution du droit : de l'immunité absolue à l'immunité restreinte</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. L'immunité absolue (logique traditionnelle)</div>
+        <p class="f-text">Historiquement, l'immunité de l'État était totale : aucun acte de l'État ne pouvait être jugé, quelle que soit sa nature. Cette conception reposait sur une vision souverainiste très forte de l'État.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. L'immunité restreinte (droit contemporain)</div>
+        <p class="f-text">Avec le développement des activités économiques des États, le droit international a évolué. Aujourd'hui, on distingue deux types d'actes :</p>
+        <div class="f-table-wrap">
+          <table class="f-table">
+            <thead><tr><th>Type d'acte</th><th>Définition</th><th>Régime</th></tr></thead>
+            <tbody>
+              <tr><td>Jure imperii (actes de souveraineté)</td><td>Actes accomplis dans l'exercice des fonctions étatiques (armée, police, diplomatie, fiscalité)</td><td>Immunité conservée</td></tr>
+              <tr><td>Jure gestionis (actes de gestion)</td><td>Actes comparables à ceux d'une personne privée (contrats commerciaux, activités économiques)</td><td>Jugement possible</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. Les immunités d'exécution</div>
+      <p class="f-text">Même lorsqu'une juridiction est compétente pour juger un État, une autre question se pose : peut-on exécuter une décision de justice contre un État ? Le droit international distingue donc :</p>
+      <ul class="f-list">
+        <li><strong>L'immunité de juridiction</strong> : être jugé</li>
+        <li><strong>L'immunité d'exécution</strong> : saisir les biens</li>
+      </ul>
+      <p class="f-text">Les biens d'un État ne peuvent pas être saisis sauf si l'État a expressément renoncé à son immunité, ou si les biens ne sont pas affectés à une mission de service public non commercial.</p>
+      <div class="f-exemple"><strong>Exemple</strong>On ne peut pas saisir une ambassade ou un compte bancaire diplomatique comme on saisirait les biens d'une entreprise.</div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">D. La remise en cause contemporaine des immunités de l'État</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. L'argument du jus cogens</div>
+        <p class="f-text">Certains ont soutenu que pour des violations graves du droit international (crimes de guerre, crimes contre l'humanité), l'immunité de l'État devrait être levée. L'idée : une règle d'immunité ne peut pas protéger un comportement contraire à des normes impératives (jus cogens).</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. La position du droit positif</div>
+        <p class="f-text">La jurisprudence internationale majoritaire considère aujourd'hui que <strong>les immunités de l'État subsistent, même en cas de violation grave du droit international</strong>, car l'immunité ne porte pas sur la légalité de l'acte, mais sur la compétence pour juger.</p>
+        <div class="f-alerte"><strong>Point fondamental</strong>Le fait qu'un acte soit illégal n'implique pas automatiquement la fin de l'immunité.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 2</span> Les immunités des représentants de l'État</div>
+    <p class="f-text">Les représentants de l'État bénéficient d'immunités afin d'éviter que l'État soit indirectement jugé par l'intermédiaire des personnes qui agissent en son nom. Il existe deux grandes catégories d'immunités, dont le régime juridique est très différent.</p>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. Les immunités personnelles (ratione personae)</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Bénéficiaires</div>
+        <p class="f-text">Les immunités personnelles bénéficient à un nombre très limité de personnes : le chef d'État, le chef de gouvernement, le ministre des affaires étrangères, les diplomates, certains hauts représentants.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Portée : totale et temporaire</div>
+        <p class="f-text">L'immunité personnelle est <strong>totale</strong> (protège tous les actes, qu'ils soient officiels ou privés) et <strong>temporaire</strong> (valable pendant toute la durée des fonctions uniquement).</p>
+        <div class="f-key">Tant que la personne est en fonction, elle est intouchable devant les juridictions étrangères.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">3. Fin de l'immunité personnelle</div>
+        <p class="f-text">Lorsque la personne quitte ses fonctions, l'immunité personnelle disparaît. Mais une autre immunité (matérielle) peut subsister pour les actes officiels accomplis pendant le mandat.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les immunités matérielles ou fonctionnelles (ratione materiae)</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Bénéficiaires et portée</div>
+        <p class="f-text">Les immunités matérielles bénéficient à <strong>tous les agents de l'État</strong>, quelle que soit leur fonction ou leur rang. Elles ne protègent que <strong>les actes accomplis dans l'exercice des fonctions</strong>. Les actes privés ne sont pas couverts.</p>
+        <div class="f-key">Ce n'est pas la personne qui est protégée, mais la fonction exercée au nom de l'État.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Caractère permanent</div>
+        <p class="f-text">Contrairement à l'immunité personnelle, l'immunité matérielle <strong>ne disparaît pas avec la fin des fonctions</strong>. Même un ancien dirigeant peut être protégé pour les actes officiels accomplis pendant son mandat.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. La contestation des immunités des représentants</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Les crimes internationaux</div>
+        <p class="f-text">Un débat important existe concernant les crimes de guerre, les crimes contre l'humanité et le génocide. Certains États et juridictions tendent à considérer que l'immunité fonctionnelle ne devrait pas faire obstacle aux poursuites.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. État du droit actuel</div>
+        <p class="f-text">Le droit international reste en pleine évolution :</p>
+        <ul class="f-list">
+          <li>L'immunité personnelle reste intacte tant que la personne est en fonction</li>
+          <li>L'immunité matérielle est de plus en plus contestée pour les crimes les plus graves</li>
+          <li>Il n'existe pas encore de consensus absolu</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir">
+    <strong>Tableau récapitulatif des immunités des représentants</strong>
+    <div class="f-table-wrap" style="margin-top:.6rem">
+      <table class="f-table">
+        <thead><tr><th>Immunité</th><th>Bénéficiaires</th><th>Portée</th><th>Durée</th></tr></thead>
+        <tbody>
+          <tr><td>Personnelle (ratione personae)</td><td>Chef d'État, chef de gouvernement, MAE, diplomates</td><td>Totale (actes officiels ET privés)</td><td>Temporaire (durée des fonctions)</td></tr>
+          <tr><td>Matérielle (ratione materiae)</td><td>Tous les agents de l'État</td><td>Limitée aux actes officiels</td><td>Permanente (subsiste après les fonctions)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="f-text" style="margin-top:.5rem;font-size:.88rem">Les immunités ne signifient pas l'impunité absolue, mais une répartition des compétences de jugement fondée sur l'égalité souveraine des États.</p>
+  </div>
+
+  <div class="fiche-nav"><label for="r-f3">← Fiche #3</label><label for="r-f5">Fiche #5 : La responsabilité →</label></div>
+</div></main>
+</div>
+
+<!-- ===================== FICHE 5 ===================== -->
+<div id="page-f5" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem">
+    <label class="btn-home" for="r-home">← Accueil</label>
+    <label class="btn-home" for="r-plan">Plan du cours</label>
+  </div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #5 · Chapitre 1 — L'État · Section 5 — La responsabilité internationale de l'État</div>
+    <h2>La responsabilité internationale de l'État</h2>
+    <div class="fiche-loc">
+      <strong>Localisation dans le plan</strong>
+      <span>§ 1 – Conditions · § 2 – Contenu · § 3 – Invocation et mise en œuvre</span>
+    </div>
+    <div class="fiche-intro">L'État est souverain, autonome et libre… mais il n'est pas au-dessus du droit international. Lorsqu'un État viole le droit international, il engage sa responsabilité. La responsabilité internationale de l'État est le corollaire de la souveraineté, le mécanisme par lequel le droit international devient effectif. Sans responsabilité, le droit international serait une simple déclaration morale.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 1</span> Les conditions de la responsabilité internationale</div>
+    <p class="f-text">La responsabilité internationale de l'État n'est engagée que si certaines conditions sont réunies. Le droit international n'admet ni responsabilité automatique, ni responsabilité pénale de l'État.</p>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. L'attribution du comportement à l'État</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Principe général</div>
+        <p class="f-text">Un État est responsable uniquement de ses propres actes. Comme l'État est une personne juridique abstraite, il ne peut agir que par ses organes ou par des personnes agissant pour son compte.</p>
+        <div class="f-key">Question centrale : le comportement peut-il être juridiquement attribué à l'État ?</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Les actes des organes de l'État</div>
+        <p class="f-text">Tout acte accompli par les autorités exécutives, les juridictions, les forces de police ou militaires et les autorités administratives est <strong>automatiquement attribuable à l'État</strong>, même si l'organe a violé le droit interne ou a agi en dehors de ses instructions.</p>
+        <div class="f-key">L'État répond de ses agents, quoi qu'ils fassent dans l'exercice de leurs fonctions.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">3. Les personnes ou groupes non officiels</div>
+        <p class="f-text">Un comportement commis par des personnes privées peut être attribué à l'État si ces personnes agissent sous le contrôle ou sur les instructions de l'État. L'attribution dépend alors du <strong>degré de contrôle effectif</strong> exercé par l'État.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">4. Les cas particuliers</div>
+        <p class="f-text">Certaines situations spécifiques sont prévues par le droit international : les mouvements insurrectionnels, les actes ultérieurement reconnus ou adoptés par l'État. Lorsque l'État <strong>endosse</strong> le comportement, il en devient juridiquement responsable.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. La violation d'une obligation internationale</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Existence d'une obligation internationale</div>
+        <p class="f-text">Pour engager la responsabilité d'un État, il faut une obligation issue du droit international, qui peut résulter d'un traité, de la coutume ou d'un principe général. Un État ne peut jamais invoquer son droit interne pour justifier une violation.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Constat de la violation</div>
+        <p class="f-text">Il y a violation lorsque le comportement de l'État est contraire à ce que prescrit l'obligation internationale. Peu importe l'intention ou l'existence d'un dommage matériel.</p>
+        <div class="f-alerte"><strong>Point crucial</strong>En droit international, la faute suffit, le dommage n'est pas toujours exigé.</div>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. Les circonstances excluant l'illicéité</div>
+      <p class="f-text">Même si une obligation est violée, le comportement peut être excusable dans certaines circonstances strictement encadrées :</p>
+      <div class="f-table-wrap">
+        <table class="f-table">
+          <thead><tr><th>Circonstance</th><th>Conditions</th></tr></thead>
+          <tbody>
+            <tr><td>La détresse</td><td>Le comportement illicite était le seul moyen de sauver des vies humaines</td></tr>
+            <tr><td>La force majeure</td><td>Événement extérieur, irrésistible, rendant matériellement impossible l'exécution de l'obligation</td></tr>
+            <tr><td>Le consentement de l'État lésé</td><td>L'État concerné a valablement consenti à l'acte</td></tr>
+            <tr><td>L'état de nécessité</td><td>Seul moyen de protéger un intérêt essentiel contre un péril grave et imminent — strictement interprété</td></tr>
+            <tr><td>La légitime défense</td><td>Mesure licite de légitime défense conforme à la Charte des Nations Unies</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 2</span> Le contenu de la responsabilité internationale</div>
+    <p class="f-text">Lorsqu'un État engage sa responsabilité, de nouvelles obligations secondaires apparaissent.</p>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. La réparation du préjudice</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Principe général</div>
+        <p class="f-text">L'État responsable est tenu de <strong>réparer intégralement le préjudice causé</strong>. La réparation vise à effacer les conséquences de l'acte illicite et à rétablir la situation qui aurait existé sans la violation.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Les formes de réparation, dans l'ordre de priorité</div>
+        <ul class="f-list">
+          <li><strong>La restitution</strong> : rétablir la situation antérieure lorsque cela est matériellement possible</li>
+          <li><strong>L'indemnisation</strong> : lorsque la restitution est impossible, une compensation financière est versée</li>
+          <li><strong>La satisfaction</strong> : pour les préjudices moraux — excuses officielles, déclarations solennelles, reconnaissance de la violation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les autres conséquences de la responsabilité</div>
+      <ul class="f-list">
+        <li><strong>L'obligation de cessation</strong> : si le fait illicite est en cours, l'État doit y mettre fin immédiatement</li>
+        <li><strong>Les garanties de non-répétition</strong> : l'État peut être tenu de prendre des mesures législatives, administratives ou institutionnelles pour éviter que la violation ne se reproduise</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 3</span> L'invocation et la mise en œuvre de la responsabilité</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. L'invocation de la responsabilité internationale</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. L'État lésé</div>
+        <p class="f-text">En principe, seul l'État directement lésé peut invoquer la responsabilité.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Les obligations erga omnes</div>
+        <p class="f-text">Pour certaines obligations fondamentales (prohibitions du génocide, de l'esclavage, de l'apartheid…), <strong>tous les États peuvent invoquer la responsabilité</strong>, même s'ils ne sont pas directement victimes.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les contre-mesures</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Définition</div>
+        <p class="f-text">Les contre-mesures sont des réactions illicites en temps normal, <strong>rendues licites parce qu'elles répondent à une violation antérieure</strong>.</p>
+        <div class="f-key">« Je suspends mes obligations parce que tu n'as pas respecté les tiennes. »</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Conditions strictes</div>
+        <p class="f-text">Les contre-mesures doivent être :</p>
+        <ul class="f-list">
+          <li>Temporaires</li>
+          <li>Proportionnées à la violation</li>
+          <li>Visant uniquement l'État responsable</li>
+          <li>Respectant certaines obligations fondamentales (droits humains, jus cogens)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. La protection diplomatique</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Principe et caractère fictif</div>
+        <p class="f-text">Un État peut invoquer la responsabilité d'un autre État pour un dommage subi par l'un de ses ressortissants. Juridiquement, ce n'est pas l'individu qui agit, mais l'État, qui fait comme s'il était lui-même lésé.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Conditions</div>
+        <p class="f-text">La protection diplomatique suppose notamment :</p>
+        <ul class="f-list">
+          <li>L'existence d'un lien de nationalité entre la victime et l'État demandeur</li>
+          <li>L'épuisement des voies de recours internes dans l'État responsable</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir">
+    <strong>À retenir</strong>
+    <ul>
+      <li>Deux conditions cumulatives : un fait illicite + son attribution à l'État</li>
+      <li>Les organes de l'État engagent toujours la responsabilité de celui-ci, même en dehors de leurs instructions</li>
+      <li>La faute suffit — le dommage n'est pas toujours requis</li>
+      <li>Réparation dans l'ordre : restitution → indemnisation → satisfaction</li>
+      <li>Contre-mesures possibles mais strictement encadrées (proportionnalité, temporalité)</li>
+      <li>Protection diplomatique : l'État agit pour son ressortissant, après épuisement des recours internes</li>
+    </ul>
+  </div>
+
+  <div class="fiche-nav"><label for="r-f4">← Fiche #4</label><label for="r-f6">Fiche #6 : Statut des OI →</label></div>
+</div></main>
+</div>
+
+<!-- ===================== FICHE 6 ===================== -->
+<div id="page-f6" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem">
+    <label class="btn-home" for="r-home">← Accueil</label>
+    <label class="btn-home" for="r-plan">Plan du cours</label>
+  </div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #6 · Chapitre 2 — Les organisations internationales · Section 1 — Le statut des OI</div>
+    <h2>Le statut des organisations internationales</h2>
+    <div class="fiche-loc">
+      <strong>Localisation dans le plan</strong>
+      <span>§ 1 – La condition juridique des OI · § 2 – La structure des OI</span>
+    </div>
+    <div class="fiche-intro">Pendant longtemps, l'État était le seul sujet du droit international. Progressivement, les États ont ressenti le besoin de créer des structures permanentes pour coopérer, gérer des intérêts communs, organiser le fonctionnement de certains domaines (paix, commerce, santé…). Les organisations internationales possèdent une personnalité juridique internationale propre, distincte de celle des États qui les ont créées : ni État, ni simple instrument, mais acteur autonome du droit international.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 1</span> La condition juridique des organisations internationales</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. La naissance des organisations internationales</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Création par traité</div>
+        <p class="f-text">Une organisation internationale est toujours créée par un ou plusieurs États, au moyen d'un traité international appelé <strong>traité constitutif</strong> ou charte. Sans traité constitutif, il ne peut pas y avoir d'organisation internationale.</p>
+        <div class="f-key">Les États « signent l'acte de naissance » de l'organisation.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Nature juridique particulière</div>
+        <p class="f-text">Les organisations internationales sont des <strong>sujets secondaires</strong> du droit international : elles n'existent pas par elles-mêmes, elles sont créées par les États, qui restent les sujets primaires. Conséquence majeure : leurs droits et obligations sont limités à ce que les États ont prévu.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. La personnalité juridique internationale des organisations</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Reconnaissance de la personnalité juridique</div>
+        <p class="f-text">Une organisation internationale dispose de la personnalité juridique internationale lorsqu'elle est capable d'avoir des droits, d'avoir des obligations et d'agir sur la scène internationale. Cette personnalité existe même si le traité constitutif ne la mentionne pas explicitement, dès lors qu'elle est nécessaire à l'accomplissement de ses fonctions.</p>
+        <div class="f-key">Si une organisation doit remplir une mission, elle doit avoir les moyens juridiques de le faire.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Contenu de la personnalité juridique</div>
+        <p class="f-text">La personnalité juridique internationale permet notamment à l'organisation de :</p>
+        <ul class="f-list">
+          <li>Conclure des accords internationaux</li>
+          <li>Posséder des biens</li>
+          <li>Agir en justice</li>
+          <li>Faire valoir des droits à l'égard des États</li>
+        </ul>
+        <div class="f-alerte"><strong>Attention</strong>Contrairement aux États, cette personnalité est <strong>fonctionnelle et limitée</strong>.</div>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. La distinction avec l'État</div>
+      <div class="f-table-wrap">
+        <table class="f-table">
+          <thead><tr><th>Critère</th><th>État</th><th>Organisation internationale</th></tr></thead>
+          <tbody>
+            <tr><td>Population</td><td>Oui</td><td>Non</td></tr>
+            <tr><td>Territoire souverain</td><td>Oui</td><td>Non</td></tr>
+            <tr><td>Souveraineté</td><td>Oui</td><td>Non</td></tr>
+            <tr><td>Compétence générale</td><td>Oui</td><td>Non (compétence d'attribution uniquement)</td></tr>
+            <tr><td>Personnalité juridique</td><td>Pleine</td><td>Fonctionnelle et limitée</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">D. Les immunités et privilèges des organisations internationales</div>
+      <p class="f-text">Pour fonctionner librement, les organisations internationales bénéficient de <strong>privilèges</strong> (exonérations fiscales, facilités) et d'<strong>immunités</strong> (contre certaines poursuites). Ces immunités ne sont pas fondées sur la souveraineté, mais sur la nécessité de garantir le bon fonctionnement de l'organisation. Elles sont prévues par le traité constitutif ou par des accords conclus avec les États hôtes.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 2</span> La structure des organisations internationales</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. Les États membres des organisations internationales</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Qualité d'État membre</div>
+        <p class="f-text">Une organisation internationale est composée exclusivement d'États membres (en principe), qui restent souverains et juridiquement égaux. Les États peuvent être membres fondateurs ou membres admis ultérieurement. L'adhésion suppose généralement le respect de conditions prévues par le traité constitutif et une procédure d'admission.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Droits et obligations des États membres</div>
+        <p class="f-text">Les États membres participent au fonctionnement de l'organisation, disposent de droits (vote, participation) mais sont aussi liés par les obligations résultant de leur adhésion. En adhérant, l'État accepte volontairement certaines contraintes.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les organes des organisations internationales</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Nécessité d'organes propres</div>
+        <p class="f-text">Pour fonctionner, une organisation internationale doit disposer d'organes distincts des États membres, capables de prendre des décisions. Ces organes sont prévus par le traité constitutif.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Types d'organes</div>
+        <ul class="f-list">
+          <li><strong>Organes pléniers</strong> : composés de l'ensemble des États membres (exemple : assemblée générale)</li>
+          <li><strong>Organes restreints</strong> : composés d'un nombre limité d'États (exemple : conseil)</li>
+          <li><strong>Organes administratifs</strong> : assurent le fonctionnement quotidien (secrétariat, direction)</li>
+        </ul>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">3. Indépendance relative des organes</div>
+        <p class="f-text">Même si les organes sont composés de représentants d'États, l'organisation dispose d'une autonomie institutionnelle. Les décisions sont prises au nom de l'organisation, et non des États individuellement.</p>
+        <div class="f-key">L'organisation agit en tant que personne distincte, même si ce sont des États qui la composent.</div>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. Le fonctionnement institutionnel</div>
+      <p class="f-text">Les règles de fonctionnement (vote, majorité, quorum) sont fixées par le traité constitutif, parfois précisées par des règlements internes. Ces règles peuvent être consensuelles, majoritaires ou pondérées. Elles traduisent toujours un compromis entre l'égalité juridique des États et la nécessité d'efficacité.</p>
+    </div>
+  </div>
+
+  <div class="f-retenir">
+    <strong>À retenir</strong>
+    <ul>
+      <li>Les OI sont créées par les États via un traité constitutif — sujets secondaires du DI</li>
+      <li>Elles possèdent une personnalité juridique internationale propre, mais fonctionnelle et limitée</li>
+      <li>Elles ne sont ni État, ni simple instrument : acteurs autonomes du DI</li>
+      <li>Leur structure repose sur des États membres (souverains et égaux) et des organes propres (pléniers, restreints, administratifs)</li>
+      <li>Leurs immunités reposent sur la nécessité fonctionnelle, non sur la souveraineté</li>
+    </ul>
+  </div>
+
+  <div class="fiche-nav"><label for="r-f5">← Fiche #5</label><label for="r-f7">Fiche #7 : Compétences des OI →</label></div>
+</div></main>
+</div>
+
+<!-- ===================== FICHE 7 ===================== -->
+<div id="page-f7" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem">
+    <label class="btn-home" for="r-home">← Accueil</label>
+    <label class="btn-home" for="r-plan">Plan du cours</label>
+  </div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #7 · Chapitre 2 — Les organisations internationales · Section 2 — Les compétences des OI</div>
+    <h2>Les compétences des organisations internationales</h2>
+    <div class="fiche-loc">
+      <strong>Localisation dans le plan</strong>
+      <span>§ 1 – La compétence d'attribution · § 2 – Les compétences attribuées</span>
+    </div>
+    <div class="fiche-intro">Contrairement aux États, les organisations internationales ne sont pas souveraines. Elles ne disposent donc pas d'une liberté générale d'action. Leur pouvoir repose sur une idée fondamentale, absolument centrale : une organisation internationale ne peut agir que si les États le lui ont permis.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 1</span> La compétence d'attribution</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. Principe fondamental : l'absence de compétence générale</div>
+      <div class="f-table-wrap">
+        <table class="f-table">
+          <thead><tr><th></th><th>État</th><th>Organisation internationale</th></tr></thead>
+          <tbody>
+            <tr><td>Liberté d'action</td><td>Compétence générale — libre sauf interdiction</td><td>Aucune compétence générale — libre seulement sur autorisation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="f-key">L'État a une liberté « par défaut » ; l'organisation a une liberté « sur autorisation ».</div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. La compétence d'attribution : définition et portée</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Définition</div>
+        <p class="f-text">La compétence d'attribution signifie que l'organisation internationale ne possède que les compétences <strong>expressément ou implicitement attribuées</strong> par les États membres dans le traité constitutif. Tout ce qui n'a pas été attribué reste de la compétence des États.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Le traité constitutif : « constitution » de l'organisation</div>
+        <p class="f-text">Les compétences de l'organisation proviennent du traité constitutif, parfois complété par des protocoles ou des accords annexes. Ce traité joue un rôle central : c'est la « constitution » de l'organisation.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">3. Interprétation stricte</div>
+        <p class="f-text">En principe, les compétences s'interprètent de manière stricte afin de respecter la souveraineté des États. Une organisation internationale ne peut pas étendre librement ses propres pouvoirs, ni s'octroyer de nouvelles compétences sans base juridique.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. Les compétences implicites</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Logique des compétences implicites</div>
+        <p class="f-text">Même si une compétence n'est pas explicitement prévue dans le traité, elle peut exister lorsqu'elle est <strong>nécessaire à l'accomplissement des fonctions</strong> confiées à l'organisation.</p>
+        <div class="f-key">Si on donne une mission, il faut aussi donner les outils pour la remplir.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Portée limitée</div>
+        <p class="f-text">Les compétences implicites ne créent pas une compétence générale et restent étroitement liées à l'objectif de l'organisation. Elles servent uniquement à rendre effectives les compétences explicitement attribuées.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">§ 2</span> Les compétences attribuées</div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">A. Les compétences normatives</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Définition</div>
+        <p class="f-text">Une compétence normative permet à l'organisation d'adopter des règles ayant une valeur juridique plus ou moins contraignante. Ces règles peuvent s'adresser aux États membres, parfois aux individus ou aux entreprises.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Nature des actes normatifs</div>
+        <ul class="f-list">
+          <li><strong>Actes contraignants</strong> : obligatoires pour les destinataires</li>
+          <li><strong>Actes non contraignants (soft law)</strong> : recommandations, orientations</li>
+        </ul>
+        <div class="f-exemple"><strong>Image</strong>Certaines règles sont des « ordres juridiques », d'autres des « recommandations ».</div>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">B. Les compétences opérationnelles</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Définition</div>
+        <p class="f-text">Les compétences opérationnelles permettent à l'organisation de mettre en œuvre concrètement ses missions par des actions matérielles ou administratives : opérations de terrain, missions d'assistance, interventions techniques ou humanitaires.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Encadrement</div>
+        <p class="f-text">Même lorsqu'elle agit opérationnellement, l'organisation doit respecter son mandat et ne pas dépasser les limites fixées par les États membres.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">C. Les compétences décisionnelles et institutionnelles</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Adoption de décisions internes</div>
+        <p class="f-text">Les organisations disposent de compétences leur permettant d'organiser leur fonctionnement interne, d'adopter des règlements, de gérer leur personnel et leur budget.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Effets sur les États membres</div>
+        <p class="f-text">Selon le degré d'intégration, certaines décisions lient directement les États, d'autres nécessitent une transposition ou une mise en œuvre nationale. Tout dépend de ce qui a été accepté lors de l'adhésion.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">D. Les limites aux compétences des organisations internationales</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">1. Le principe de spécialité</div>
+        <p class="f-text">Les organisations internationales sont gouvernées par le <strong>principe de spécialité</strong> : elles n'existent qu'en vue d'objectifs précis et ne peuvent agir qu'en lien avec ces objectifs.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">2. Contrôle par les États membres</div>
+        <p class="f-text">Les États membres conservent un pouvoir de contrôle politique, parfois juridique, sur l'action des organisations. Les organisations ne remplacent pas les États : elles n'agissent que par délégation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir">
+    <strong>À retenir</strong>
+    <ul>
+      <li>Principe central : <strong>compétence d'attribution</strong> — une OI ne dispose que des compétences que les États lui ont données</li>
+      <li>Le traité constitutif est la « constitution » de l'organisation</li>
+      <li>Les compétences implicites complètent les explicites, sans créer de compétence générale</li>
+      <li>Trois types de compétences attribuées : normatives, opérationnelles, institutionnelles</li>
+      <li>Principe de spécialité : l'OI ne peut agir que pour ses objectifs propres</li>
+      <li>Les OI sont des instruments puissants, mais étroitement encadrés par la volonté des États</li>
+    </ul>
+  </div>
+
+  <div class="fiche-nav"><label for="r-f6">← Fiche #6</label><label for="r-f8">Fiche #8 : Les personnes privées →</label></div>
+</div></main>
+</div>
+
+<!-- ===================== FICHE 8 ===================== -->
+<div id="page-f8" class="page-content">
+<main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem">
+    <label class="btn-home" for="r-home">← Accueil</label>
+    <label class="btn-home" for="r-plan">Plan du cours</label>
+  </div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #8 · Chapitre 3 — Les personnes privées</div>
+    <h2>Les personnes privées en droit international</h2>
+    <div class="fiche-loc">
+      <strong>Localisation dans le plan</strong>
+      <span>Section 1 – Les droits des personnes privées · Section 2 – Les obligations des personnes privées</span>
+    </div>
+    <div class="fiche-intro">Pendant longtemps, le droit international public ne concernait que les États. Les individus étaient de simples objets du droit international, jamais des sujets. Cette vision a profondément changé au XX° siècle. Aujourd'hui, les personnes privées disposent de droits en droit international et, dans certains cas précis, de véritables obligations internationales. Elles ne sont pas des sujets primaires comme les États, mais elles sont devenues des sujets secondaires, au cœur du droit international contemporain.</div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Les droits des personnes privées</div>
+    <p class="f-text">La première reconnaissance du rôle des individus en droit international s'est faite par les droits. L'idée centrale : certaines valeurs sont tellement fondamentales qu'elles doivent protéger l'individu, <strong>même contre son propre État</strong>.</p>
+
+    <div class="f-sous">
+      <div class="f-sous-title">§ 1 — La protection des droits humains</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Principe général</div>
+        <p class="f-text">Les droits humains sont des droits reconnus à toute personne, <strong>indépendamment de la nationalité</strong> et du consentement de l'État concerné. Ils marquent une rupture historique : l'individu devient directement concerné par le droit international.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. La protection des droits humains dans le cadre universel</div>
+
+        <p class="f-text"><strong>1. Le cadre des Nations Unies</strong></p>
+        <p class="f-text">Au niveau international, la protection s'est développée dans le cadre de l'ONU. On distingue :</p>
+        <ul class="f-list">
+          <li><strong>Instruments déclaratoires</strong> : valeur politique (ex. Déclaration universelle des droits de l'homme, 1948)</li>
+          <li><strong>Instruments conventionnels</strong> : valeur juridique — ils créent des obligations à la charge des États</li>
+        </ul>
+
+        <p class="f-text"><strong>2. Les conventions universelles</strong></p>
+        <p class="f-text">Les conventions universelles posent des obligations à la charge des États, au bénéfice direct des individus. Les États s'engagent à respecter, protéger et garantir les droits reconnus.</p>
+        <div class="f-key">L'État accepte volontairement de se laisser juger sur la manière dont il traite ses propres ressortissants.</div>
+
+        <p class="f-text"><strong>3. Mécanismes de contrôle</strong></p>
+        <p class="f-text">Au niveau universel, les mécanismes sont principalement des comités, des rapports et des procédures de plainte parfois individuelles. Ils ont souvent une forte <strong>autorité morale</strong>, mais une force contraignante limitée.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. La protection des droits humains dans le cadre régional</div>
+
+        <p class="f-text"><strong>1. Logique régionale</strong></p>
+        <p class="f-text">Les systèmes régionaux ont été créés car ils sont plus proches des États et offrent des mécanismes plus efficaces.</p>
+
+        <p class="f-text"><strong>2. Juridictions régionales</strong></p>
+        <p class="f-text">Dans plusieurs régions du monde existent des cours ou commissions spécialisées, capables de recevoir des <strong>requêtes individuelles</strong>. Ici, l'individu agit directement contre un État — avancée majeure du droit international.</p>
+
+        <p class="f-text"><strong>3. Effet sur les États</strong></p>
+        <p class="f-text">Les décisions rendues peuvent condamner l'État, l'obliger à indemniser ou l'obliger à modifier sa législation.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">§ 2 — La protection des droits des investisseurs étrangers</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Justification de cette protection</div>
+        <p class="f-text">Les investisseurs étrangers sont exposés à des risques spécifiques : expropriation, discrimination, instabilité politique ou juridique. Le droit international a développé une protection spécifique, distincte des droits humains.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Fondement juridique</div>
+        <p class="f-text">Cette protection repose principalement sur des <strong>traités bilatéraux ou multilatéraux d'investissement</strong>, qui créent des droits directs au profit des investisseurs. L'investisseur devient titulaire de droits internationaux sans passer par son État.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Mécanismes de règlement des différends</div>
+        <p class="f-text">L'investisseur peut engager directement une procédure contre l'État hôte devant des juridictions ou mécanismes d'arbitrage internationaux. Cela marque une évolution très importante : l'individu (investisseur) agit comme un véritable sujet du droit international.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Les obligations des personnes privées</div>
+    <p class="f-text">Pendant longtemps, seuls les États pouvaient être juridiquement responsables en droit international. Aujourd'hui, une idée centrale s'impose : certaines violations sont tellement graves que leurs auteurs doivent être sanctionnés personnellement, même s'ils agissent pour un État. C'est la naissance du <strong>droit international pénal</strong>.</p>
+
+    <div class="f-sous">
+      <div class="f-sous-title">§ 1 — Les éléments des crimes internationaux</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Principe de responsabilité pénale individuelle</div>
+        <p class="f-text">En droit international pénal, ce sont les individus qui sont responsables, même s'ils agissent en qualité d'agent de l'État ou sur ordre d'un supérieur.</p>
+        <div class="f-alerte"><strong>Règle fondamentale</strong>L'obéissance aux ordres ne justifie pas les crimes internationaux.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Les crimes internationaux fondamentaux</div>
+        <div class="f-table-wrap">
+          <table class="f-table">
+            <thead><tr><th>Crime</th><th>Définition</th></tr></thead>
+            <tbody>
+              <tr><td>Crimes de guerre</td><td>Violations graves du droit international humanitaire</td></tr>
+              <tr><td>Crimes contre l'humanité</td><td>Attaques généralisées ou systématiques contre des civils</td></tr>
+              <tr><td>Génocide</td><td>Destruction intentionnelle, totale ou partielle, d'un groupe protégé</td></tr>
+              <tr><td>Crime d'agression</td><td>Recours illégal à la force armée à l'échelle internationale</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="f-key">Ces crimes portent atteinte à l'humanité tout entière, et non à un seul État.</div>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Caractère international de ces crimes</div>
+        <p class="f-text">Ces crimes sont définis par le droit international, indépendamment de la qualification donnée par le droit interne. Un État ne peut pas les rendre licites par une loi nationale.</p>
+      </div>
+    </div>
+
+    <div class="f-sous">
+      <div class="f-sous-title">§ 2 — La répression des crimes internationaux</div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Les juridictions internationales</div>
+        <p class="f-text">Certaines juridictions internationales ont été créées pour juger les individus pour crimes internationaux. Elles illustrent pleinement l'idée que l'individu est désormais directement justiciable du droit international. Ces juridictions n'ont pas de compétence générale : elles ne jugent que certains crimes dans certaines conditions strictes.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. Les juridictions nationales</div>
+        <p class="f-text">Les États peuvent juger leurs nationaux ou les crimes commis sur leur territoire (compétence nationale classique). Pour certains crimes particulièrement graves, un État peut poursuivre un individu même sans lien de nationalité ou de territorialité : c'est la <strong>compétence universelle</strong>. Justification : certains crimes ne doivent jamais rester impunis.</p>
+      </div>
+
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. Articulation entre États et juridictions internationales</div>
+        <p class="f-text">Le système repose sur une logique <strong>complémentaire</strong> : priorité aux juridictions nationales, intervention internationale en cas de défaillance de l'État.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir">
+    <strong>Conclusion générale — La place des personnes privées en DI</strong>
+    <ul>
+      <li>Les personnes privées sont titulaires de <strong>droits</strong> : droits humains (cadre universel + régional), droits des investisseurs</li>
+      <li>Elles sont porteuses d'<strong>obligations</strong> : crimes internationaux — responsabilité pénale individuelle indépendante de l'ordre hiérarchique</li>
+      <li>Elles ne sont pas des sujets primaires, mais elles sont devenues des <strong>acteurs incontournables</strong> du droit international contemporain</li>
+      <li>La complémentarité entre juridictions nationales et internationales est le principe directeur de la répression</li>
+    </ul>
+  </div>
+
+  <div class="fiche-nav"><label for="r-f7">← Fiche #7</label><span></span></div>
+</div></main>
+</div>
+
 <footer>
-  <p>Droit <span>International Public</span> — Fiches de révision 2025-2026</p>
+  <p>Droit <span>International Public</span> — Fiches de révision 2025-2026 · Partie 2 : Les sujets de droit international</p>
 </footer>
 
 </div><!-- end .wrap -->
