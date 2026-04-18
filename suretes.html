@@ -31,13 +31,16 @@ nav label:active{color:#fff;background:rgba(255,255,255,.15)}
 #home-content{display:block}
 
 #r-home:checked ~ .wrap #home-content,
-#r-plan:checked ~ .wrap #home-content { display:none; }
+#r-plan:checked ~ .wrap #home-content,
+#r-f1:checked ~ .wrap #home-content { display:none; }
 #r-home:checked ~ .wrap #home-content{display:block}
 #r-plan:checked ~ .wrap #page-plan{display:block}
+#r-f1:checked ~ .wrap #page-f1{display:block}
 
 /* Nav active */
 #r-home:checked ~ .wrap .nav-home,
-#r-plan:checked ~ .wrap .nav-plan {color:#fff !important;background:rgba(255,255,255,.15) !important;border-bottom-color:#fff !important}
+#r-plan:checked ~ .wrap .nav-plan,
+#r-f1:checked ~ .wrap .nav-f1 {color:#fff !important;background:rgba(255,255,255,.15) !important;border-bottom-color:#fff !important}
 
 /* ── LAYOUT ── */
 #home{padding:2.5rem 2.5rem 4rem;max-width:100%;margin:0 auto;border-bottom:3px solid var(--rb)}
@@ -281,6 +284,49 @@ details[open] .chap-toggle::after{content:'▾'}
   width:12px;height:12px;flex-shrink:0;
 }
 
+/* ── FICHE CONTENT ── */
+.fiche-page{max-width:860px;margin:0 auto}
+.fiche-header{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--r)}
+.fiche-header .fiche-meta{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:.35rem}
+.fiche-header h2{font-size:clamp(1.2rem,3vw,1.65rem);font-weight:700;color:var(--n)}
+
+/* Niveaux hiérarchiques */
+.f-section{margin-bottom:2rem}
+.f-section-title{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;background:var(--n);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+.f-section-title .sec-num{background:var(--r);padding:.1rem .45rem;font-size:.7rem;letter-spacing:.08em}
+
+.f-para{margin-bottom:1.4rem;padding-left:1.1rem;border-left:3px solid var(--r)}
+.f-para-title{font-size:1rem;font-weight:700;color:var(--r);margin-bottom:.6rem}
+
+.f-I{margin-bottom:1.1rem}
+.f-I-title{font-size:.93rem;font-weight:700;color:var(--gf);margin-bottom:.45rem;display:flex;align-items:baseline;gap:.5rem}
+.f-I-title::before{content:'';display:inline-block;width:18px;height:2px;background:var(--rv);flex-shrink:0;margin-bottom:2px}
+
+.f-A{margin-bottom:.8rem;padding-left:1rem}
+.f-A-title{font-size:.88rem;font-weight:700;color:var(--gf);margin-bottom:.3rem}
+.f-A-title::before{content:'';display:inline-block;width:10px;height:1.5px;background:#aaa;margin-right:.4rem;vertical-align:middle}
+
+.f-1{padding-left:1rem;margin-bottom:.5rem}
+.f-1-title{font-size:.85rem;font-weight:600;color:var(--g);margin-bottom:.2rem}
+
+/* Paragraphe de texte courant */
+.f-text{font-size:.91rem;color:var(--gf);line-height:1.7;margin-bottom:.55rem}
+.f-text+.f-text{margin-top:-.2rem}
+
+/* Liste simple */
+.f-list{list-style:none;padding:0;margin:.35rem 0 .55rem .2rem}
+.f-list li{font-size:.9rem;color:var(--gf);line-height:1.6;padding:.12rem 0 .12rem 1.1rem;position:relative}
+.f-list li::before{content:'—';position:absolute;left:0;color:var(--r);font-weight:700}
+
+/* Bloc à retenir */
+.f-retenir{background:var(--rp);border-left:4px solid var(--r);padding:.8rem 1.1rem;margin-top:1.5rem;font-size:.9rem;line-height:1.65;color:var(--gf)}
+.f-retenir strong{color:var(--r);font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:.4rem}
+
+/* Navigation inter-fiches */
+.fiche-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rb);font-size:.82rem}
+.fiche-nav label{color:var(--rv);cursor:pointer;letter-spacing:.04em}
+.fiche-nav label:hover{text-decoration:underline}
+
 @media(max-width:900px){
   .two-cols{grid-template-columns:1fr}
   main{padding:1.4rem .9rem 4rem}
@@ -294,6 +340,7 @@ details[open] .chap-toggle::after{content:'▾'}
 
 <input type="radio" name="page" class="nav-radio" id="r-home" checked>
 <input type="radio" name="page" class="nav-radio" id="r-plan">
+<input type="radio" name="page" class="nav-radio" id="r-f1">
 
 <div class="wrap">
 
@@ -308,6 +355,7 @@ details[open] .chap-toggle::after{content:'▾'}
   <ul>
     <li><label class="nav-home" for="r-home">Accueil</label></li>
     <li><label class="nav-plan" for="r-plan">Plan du cours</label></li>
+    <li><label class="nav-f1" for="r-f1">F1 — Cautionnement en général</label></li>
   </ul>
 </nav>
 
@@ -703,6 +751,146 @@ details[open] .chap-toggle::after{content:'▾'}
 
 </main>
 </div><!-- /page-plan -->
+
+<!-- ═══════════════════════════════════════ FICHE 1 ═══ -->
+<div id="page-f1" class="page-content">
+<main>
+<div class="fiche-page">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.6rem">
+    <label class="btn-home" for="r-home">← Accueil</label>
+    <label class="btn-home" for="r-plan">Plan du cours</label>
+  </div>
+
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche n°1 — P1 Sûretés personnelles · T1 Cautionnement · C1 Notion</div>
+    <h2>Le cautionnement en général</h2>
+  </div>
+
+  <!-- ══ I. UN CONTRAT ══ -->
+  <div class="f-para">
+    <div class="f-para-title">I. Un contrat</div>
+
+    <div class="f-I">
+      <div class="f-I-title">1. Nature contractuelle</div>
+      <p class="f-text">Le cautionnement est un contrat, conclu entre la caution et le créancier. Il ne doit pas être confondu avec l'<em>opération de cautionnement</em>, qui implique trois personnes :</p>
+      <ul class="f-list">
+        <li>le créancier (acteur principal),</li>
+        <li>la caution (celle qui s'engage),</li>
+        <li>le débiteur principal (tiers au contrat, mais intéressé).</li>
+      </ul>
+      <p class="f-text">Le contrat peut être conclu à l'initiative du débiteur, mais la loi prévoit qu'il est également valable que la caution s'engage à l'insu du débiteur principal.</p>
+    </div>
+
+    <div class="f-I">
+      <div class="f-I-title">2. Les protagonistes</div>
+
+      <div class="f-A">
+        <div class="f-A-title">a) Le créancier</div>
+        <p class="f-text">Il peut être n'importe quelle personne. Lorsqu'il est créancier professionnel, des règles particulières s'appliquent, notamment en matière d'information, de mise en garde et de protection du consentement de la caution. Certains créanciers sont des professionnels du crédit (banques), auxquels le droit impose historiquement des obligations renforcées.</p>
+      </div>
+
+      <div class="f-A">
+        <div class="f-A-title">b) La caution</div>
+        <p class="f-text">La caution peut être toute personne, physique ou morale. L'évolution du droit montre un déplacement des distinctions :</p>
+        <ul class="f-list">
+          <li>anciennement : cautions profanes / averties (distinction jurisprudentielle),</li>
+          <li>depuis la loi de 2003 : personne physique / personne morale,</li>
+          <li>la réforme de 2021 généralise le régime tout en maintenant certaines protections spécifiques aux cautions personnes physiques.</li>
+        </ul>
+      </div>
+
+      <div class="f-A">
+        <div class="f-A-title">c) Le débiteur principal</div>
+        <p class="f-text">C'est un tiers au contrat, mais un tiers intéressé. Dans la pratique, il est souvent à l'origine de la mise en place du cautionnement. Il existe fréquemment un rapport contractuel préalable entre le débiteur et la caution.</p>
+      </div>
+    </div>
+
+    <div class="f-I">
+      <div class="f-I-title">3. Cautionnements d'origine légale ou judiciaire</div>
+      <p class="f-text">La loi distingue :</p>
+      <ul class="f-list">
+        <li>le <strong>cautionnement légal</strong> : la loi subordonne l'exercice d'un droit à la fourniture d'une caution,</li>
+        <li>le <strong>cautionnement judiciaire</strong> : le juge impose une caution comme condition de satisfaction d'une demande.</li>
+      </ul>
+      <p class="f-text">Ces cautionnements demeurent contractuels : ils supposent toujours la conclusion d'un contrat entre créancier et caution ; seule l'origine de l'obligation diffère.</p>
+    </div>
+  </div>
+
+  <!-- ══ II. UN CONTRAT UNILATÉRAL ══ -->
+  <div class="f-para">
+    <div class="f-para-title">II. Un contrat unilatéral</div>
+
+    <div class="f-I">
+      <div class="f-I-title">1. Principe</div>
+      <p class="f-text">Le cautionnement est un contrat unilatéral : une seule partie (la caution) s'oblige juridiquement, bien que les deux parties aient consenti au contrat. L'obligation essentielle pèse exclusivement sur la caution : payer la dette d'autrui en cas de défaillance.</p>
+    </div>
+
+    <div class="f-I">
+      <div class="f-I-title">2. Conséquences juridiques</div>
+      <p class="f-text">Le contrat ne devient pas synallagmatique du fait des obligations légales pesant sur le créancier (information annuelle, information ponctuelle). Ces obligations sont légales, sanctionnées par des déchéances, mais ne constituent pas la contrepartie de l'engagement de la caution.</p>
+      <p class="f-text">La Cour de cassation a confirmé que ces obligations ne transforment pas le cautionnement en contrat synallagmatique : l'exception de nullité reste donc opposable tant que le contrat n'a pas été exécuté.</p>
+    </div>
+
+    <div class="f-I">
+      <div class="f-I-title">3. Régime de preuve</div>
+      <p class="f-text">Le cautionnement, en tant que contrat unilatéral, obéit à des règles spécifiques de preuve :</p>
+      <ul class="f-list">
+        <li>exigence d'un écrit,</li>
+        <li>mention de l'engagement en lettres et en chiffres,</li>
+        <li>régime renforcé par les règles de formalisme protecteur.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ III. UN CONTRAT ACCESSOIRE ══ -->
+  <div class="f-para">
+    <div class="f-para-title">III. Un contrat accessoire</div>
+
+    <div class="f-I">
+      <div class="f-I-title">1. Principe d'accessoriété</div>
+      <p class="f-text">Le cautionnement est nécessairement accessoire d'une dette principale. Il n'existe qu'en raison de l'existence d'une obligation garantie. Conséquence centrale : la dette de la caution a le même objet que la dette du débiteur principal.</p>
+    </div>
+
+    <div class="f-I">
+      <div class="f-I-title">2. Conséquences majeures</div>
+
+      <div class="f-A">
+        <div class="f-A-title">a) Limitation de l'engagement</div>
+        <p class="f-text">La caution ne peut être tenue à plus que ce que doit le débiteur principal. Si la dette principale est nulle, le cautionnement est en principe privé d'effet.</p>
+      </div>
+
+      <div class="f-A">
+        <div class="f-A-title">b) Opposabilité des exceptions</div>
+        <p class="f-text">En raison de l'accessoriété, la caution peut opposer au créancier les exceptions que le débiteur principal pourrait lui opposer.</p>
+      </div>
+
+      <div class="f-A">
+        <div class="f-A-title">c) Qualification juridique</div>
+        <p class="f-text">Le caractère accessoire est un critère déterminant pour qualifier une garantie de cautionnement. Si l'engagement est indépendant de la dette principale, on bascule vers un autre mécanisme (ex. garantie autonome).</p>
+      </div>
+    </div>
+
+    <div class="f-I">
+      <div class="f-I-title">3. Renforcement par la réforme de 2021</div>
+      <p class="f-text">La réforme du 15 septembre 2021 a réaffirmé une conception plus stricte et rigoureuse de l'accessoriété, après une période d'affaiblissement jurisprudentiel.</p>
+    </div>
+  </div>
+
+  <!-- ══ À RETENIR ══ -->
+  <div class="f-retenir">
+    <strong>À retenir</strong>
+    Le cautionnement est un contrat unilatéral accessoire d'une dette principale. Trois acteurs dans l'opération, deux parties au contrat. L'accessoriété structure l'objet, l'étendue et les moyens de défense de la caution.
+  </div>
+
+  <div class="fiche-nav">
+    <span></span>
+    <label for="r-plan">Plan du cours →</label>
+  </div>
+
+</div>
+</main>
+</div><!-- /page-f1 -->
 
 </div><!-- /wrap -->
 
