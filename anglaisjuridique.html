@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anglais Juridique — Fiches de Révision</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+:root{
+  --r:#8B0000;--rv:#B22222;--rp:#fdf0f0;--rb:#e8c8c8;
+  --n:#1a1a1a;--gf:#2d2d2d;--g:#555;--gc:#f6f8fb;--b:#fefefe;
+  --en:#003580;--enp:#f0f4ff;--enb:#c5d3ef;
+  --fr:#5c0000;--frp:#fff8f0;--frb:#f0d5c0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--b);color:var(--n);font-size:17px;line-height:1.75}
+header{background:var(--n);color:#fff;padding:1.8rem 2rem 1.4rem;border-bottom:4px solid var(--r);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+header h1{font-size:clamp(1.3rem,4vw,2rem);font-weight:600}
+header h1 span{color:#B22222}
+header small{color:#aaa;font-size:.82rem;letter-spacing:.06em;display:block;margin-top:.2rem}
+nav{background:var(--r);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav ul{list-style:none;display:flex;flex-wrap:nowrap;min-width:max-content}
+.nav-radio{display:none}
+nav label{display:block;padding:.65rem .85rem;color:rgba(255,255,255,.82);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer}
+.page-content{display:none}
+#home-content{display:block}
+#r-home:checked~.wrap #home-content,#r-plan:checked~.wrap #home-content,
+#r-f1:checked~.wrap #home-content,#r-f2:checked~.wrap #home-content,
+#r-f3:checked~.wrap #home-content,#r-f4:checked~.wrap #home-content,
+#r-f5:checked~.wrap #home-content,#r-f6:checked~.wrap #home-content,
+#r-f7:checked~.wrap #home-content,#r-f8:checked~.wrap #home-content,
+#r-f9:checked~.wrap #home-content,#r-f10:checked~.wrap #home-content{display:none}
+#r-home:checked~.wrap #home-content{display:block}
+#r-plan:checked~.wrap #page-plan{display:block}
+#r-f1:checked~.wrap #page-f1{display:block}
+#r-f2:checked~.wrap #page-f2{display:block}
+#r-f3:checked~.wrap #page-f3{display:block}
+#r-f4:checked~.wrap #page-f4{display:block}
+#r-f5:checked~.wrap #page-f5{display:block}
+#r-f6:checked~.wrap #page-f6{display:block}
+#r-f7:checked~.wrap #page-f7{display:block}
+#r-f8:checked~.wrap #page-f8{display:block}
+#r-f9:checked~.wrap #page-f9{display:block}
+#r-f10:checked~.wrap #page-f10{display:block}
+#r-home:checked~.wrap .nav-home,#r-plan:checked~.wrap .nav-plan,
+#r-f1:checked~.wrap .nav-f1,#r-f2:checked~.wrap .nav-f2,
+#r-f3:checked~.wrap .nav-f3,#r-f4:checked~.wrap .nav-f4,
+#r-f5:checked~.wrap .nav-f5,#r-f6:checked~.wrap .nav-f6,
+#r-f7:checked~.wrap .nav-f7,#r-f8:checked~.wrap .nav-f8,
+#r-f9:checked~.wrap .nav-f9,#r-f10:checked~.wrap .nav-f10{color:#fff!important;background:rgba(255,255,255,.15)!important;border-bottom-color:#fff!important}
+
+/* ACCUEIL */
+#home{padding:2.5rem 2.5rem 4rem}
+.home-intro{text-align:center;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--rb)}
+.home-intro h2{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;margin-bottom:.4rem}
+.home-intro p{color:var(--g);font-size:.95rem;max-width:600px;margin:.3rem auto 0}
+.home-section-title{font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin:2rem 0 .9rem;padding-bottom:.3rem;border-bottom:1px solid var(--rb)}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+label.card{display:block;background:var(--b);border:1.5px solid var(--rb);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:inherit;transition:box-shadow .15s}
+label.card:hover{box-shadow:0 4px 18px rgba(139,0,0,.13)}
+label.card .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:.3rem}
+label.card h3{font-size:.95rem;font-weight:700;color:var(--r);margin-bottom:.25rem;line-height:1.35}
+label.card p{font-size:.8rem;color:var(--g);line-height:1.4}
+label.card .bilingual-tag{display:inline-block;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:.1rem .4rem;margin-top:.35rem;border:1px solid var(--rb);color:var(--g)}
+label.card-plan{display:block;background:var(--n);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:#fff;transition:opacity .15s}
+label.card-plan:hover{opacity:.9}
+label.card-plan .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.3rem}
+label.card-plan h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+label.card-plan p{font-size:.8rem;color:#aaa;line-height:1.4}
+
+/* NAV BUTTONS */
+main{max-width:100%;margin:0 auto;padding:2.2rem 2.5rem 5rem}
+label.btn-home{display:inline-block;background:transparent;border:1.5px solid rgba(139,0,0,.3);color:var(--rv);padding:.4rem 1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+
+/* PLAN */
+.plan-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.partie-block{border:2px solid var(--r);background:#fff;margin-bottom:1rem}
+.partie-header{background:var(--r);color:#fff;padding:.6rem 1rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.partie-body{padding:.8rem;display:flex;flex-direction:column;gap:.6rem}
+.chap-block{border:1px solid var(--rb)}
+.chap-header{background:var(--gc);border-bottom:1px solid var(--rb);padding:.35rem .7rem;font-size:.73rem;font-weight:700;color:var(--r);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;list-style:none}
+.chap-header::-webkit-details-marker{display:none}
+.chap-toggle::after{content:'▸';color:var(--r);font-size:.8rem}
+details[open] .chap-toggle::after{content:'▾'}
+.chap-body{padding:.55rem .7rem;display:flex;flex-direction:column;gap:.3rem}
+.section-item{padding:.28rem .5rem .28rem .85rem;border-left:2px solid var(--rb);font-size:.82rem;color:var(--gf);display:flex;flex-direction:column;gap:.15rem}
+.section-label{font-weight:700;color:var(--rv);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.section-name{font-size:.84rem;color:var(--gf);font-weight:600}
+.para-list{margin-top:.2rem;padding-left:.7rem;display:flex;flex-direction:column;gap:.1rem}
+.para-item{font-size:.78rem;color:var(--g);position:relative;padding-left:.9rem;line-height:1.4}
+.para-item::before{content:'·';position:absolute;left:0;color:var(--r);font-weight:700}
+.plan-fiche-link{display:inline-block;margin-top:.45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--r);padding:.18rem .55rem;cursor:pointer;border:none;font-family:inherit}
+
+/* FICHES */
+.fiche-page{max-width:860px;margin:0 auto}
+.fiche-header{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--r)}
+.fiche-meta{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:.35rem}
+.fiche-header h2{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;color:var(--n)}
+.fiche-intro{margin-top:.8rem;font-size:.93rem;color:var(--g);line-height:1.68;font-style:italic;padding:.7rem 1rem;background:var(--gc);border-left:3px solid var(--rb)}
+
+/* LANGUE SWITCHER */
+.lang-divider{display:flex;align-items:center;gap:1rem;margin:2.2rem 0 1.5rem}
+.lang-divider::before,.lang-divider::after{content:'';flex:1;height:1px;background:var(--rb)}
+.lang-pill{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem 1rem;white-space:nowrap}
+.lang-pill.en{background:var(--n);color:#fff;border-left:4px solid #1a5fa8}
+.lang-pill.fr{background:var(--r);color:#fff}
+
+/* BLOCS LANGUE */
+.en-section{background:#fff;border:1.5px solid var(--enb);border-left:4px solid var(--en);padding:1.4rem 1.5rem 1rem;margin-bottom:1.4rem}
+.en-section .section-title{font-size:.98rem;font-weight:700;color:var(--en);margin-bottom:.8rem;padding-bottom:.25rem;border-bottom:1px dotted var(--enb)}
+.fr-section{background:#fff;border:1.5px solid var(--frb);border-left:4px solid var(--fr);padding:1.4rem 1.5rem 1rem;margin-bottom:1.4rem}
+.fr-section .section-title{font-size:.98rem;font-weight:700;color:var(--fr);margin-bottom:.8rem;padding-bottom:.25rem;border-bottom:1px dotted var(--frb)}
+
+.f-bloc{margin-bottom:2.2rem}
+.f-bloc-title{font-size:1.02rem;font-weight:700;color:#fff;background:var(--n);padding:.5rem .9rem;margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
+.f-bloc-title .f-num{background:var(--r);padding:.1rem .5rem;font-size:.75rem;letter-spacing:.07em;white-space:nowrap}
+.f-sous{margin-bottom:1.3rem;padding-left:1rem;border-left:3px solid var(--r)}
+.f-sous-title{font-size:.95rem;font-weight:700;color:var(--r);margin-bottom:.55rem;padding-bottom:.2rem;border-bottom:1px dotted var(--rb)}
+.f-sous.en{border-left-color:var(--en)}
+.f-sous.en .f-sous-title{color:var(--en)}
+.f-sous.fr{border-left-color:var(--fr)}
+.f-sous.fr .f-sous-title{color:var(--fr)}
+.f-sous2{margin-bottom:.9rem;padding-left:.8rem;border-left:2px solid var(--rb)}
+.f-sous2-title{font-size:.88rem;font-weight:700;color:var(--gf);margin-bottom:.3rem}
+.f-text{font-size:.92rem;color:var(--gf);line-height:1.75;margin-bottom:.5rem}
+.f-list{list-style:none;padding:0;margin:.3rem 0 .6rem .1rem}
+.f-list li{font-size:.91rem;color:var(--gf);line-height:1.65;padding:.1rem 0 .1rem 1.1rem;position:relative}
+.f-list li::before{content:'—';position:absolute;left:0;color:var(--r);font-weight:700}
+.f-list li strong{color:var(--r)}
+.f-list.en li::before{color:var(--en)}
+.f-list.fr li::before{color:var(--fr)}
+.f-alerte{background:#fffbf0;border-left:4px solid #c47900;padding:.7rem 1rem;margin:.5rem 0 .9rem;font-size:.88rem;line-height:1.65;color:var(--gf)}
+.f-alerte strong{color:#9a5e00;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.22rem}
+.f-exemple{background:var(--gc);border-left:3px solid #888;padding:.65rem 1rem;margin:.5rem 0 .9rem;font-size:.87rem;line-height:1.65;color:var(--g)}
+.f-exemple strong{color:var(--gf);font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.f-key{background:var(--rp);border:1.5px solid var(--rb);padding:.6rem 1rem;margin:.5rem 0 .9rem;font-size:.91rem;line-height:1.65;color:var(--gf);display:flex;align-items:baseline;gap:.6rem}
+.f-key::before{content:'→';color:var(--r);font-weight:700;flex-shrink:0;font-size:1rem}
+.f-table-wrap{overflow-x:auto;margin:.6rem 0 .9rem}
+.f-table{width:100%;border-collapse:collapse;font-size:.85rem}
+.f-table thead tr{background:var(--n);color:#fff}
+.f-table thead th{padding:.5rem .75rem;text-align:left;font-weight:600;font-size:.77rem;text-transform:uppercase;letter-spacing:.05em}
+.f-table tbody tr:nth-child(even){background:var(--gc)}
+.f-table tbody td{padding:.42rem .75rem;border-bottom:1px solid var(--rb);vertical-align:top}
+.f-table tbody td:first-child{font-weight:700;color:var(--r)}
+.f-retenir{background:var(--rp);border-left:4px solid var(--r);padding:.9rem 1.1rem;margin-top:1.8rem;font-size:.91rem;line-height:1.7;color:var(--gf)}
+.f-retenir strong{color:var(--r);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:.5rem}
+.f-retenir ul{list-style:none;padding:0;margin:.3rem 0}
+.f-retenir ul li{padding:.1rem 0 .1rem 1rem;position:relative;font-size:.9rem}
+.f-retenir ul li::before{content:'✓';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.78rem}
+.fiche-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rb)}
+.fiche-nav label{color:var(--rv);cursor:pointer;font-size:.85rem}
+.vocab-box{background:var(--enp);border:1.5px solid var(--enb);padding:.8rem 1rem;margin:.5rem 0 .9rem}
+.vocab-box .vocab-title{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--en);margin-bottom:.4rem}
+
+footer{background:var(--n);color:#777;text-align:center;padding:1.2rem;font-size:.78rem;letter-spacing:.05em;border-top:3px solid var(--r);margin-top:2rem}
+footer span{color:#B22222}
+
+@media(max-width:900px){
+  .plan-cols{grid-template-columns:1fr}
+  main{padding:1.4rem .9rem 4rem}
+  header{padding:1.2rem 1rem 1rem}
+  nav label{padding:.55rem .5rem;font-size:.68rem}
+  #home{padding:1.8rem 1rem 3rem}
+  .cards-grid{grid-template-columns:1fr 1fr}
+  .en-section,.fr-section{padding:1rem .9rem .8rem}
+}
+@media(max-width:480px){.cards-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<input type="radio" name="page" class="nav-radio" id="r-home" checked>
+<input type="radio" name="page" class="nav-radio" id="r-plan">
+<input type="radio" name="page" class="nav-radio" id="r-f1">
+<input type="radio" name="page" class="nav-radio" id="r-f2">
+<input type="radio" name="page" class="nav-radio" id="r-f3">
+<input type="radio" name="page" class="nav-radio" id="r-f4">
+<input type="radio" name="page" class="nav-radio" id="r-f5">
+<input type="radio" name="page" class="nav-radio" id="r-f6">
+<input type="radio" name="page" class="nav-radio" id="r-f7">
+<input type="radio" name="page" class="nav-radio" id="r-f8">
+<input type="radio" name="page" class="nav-radio" id="r-f9">
+<input type="radio" name="page" class="nav-radio" id="r-f10">
+
+<div class="wrap">
+<header>
+  <label for="r-home" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+    <h1>Anglais <span>Juridique</span></h1>
+    <small>Fiches de révision bilingues · 10 cours · EN + FR</small>
+  </label>
+</header>
+<nav><ul>
+  <li><label class="nav-home" for="r-home">Accueil</label></li>
+  <li><label class="nav-plan" for="r-plan">Plan</label></li>
+  <li><label class="nav-f1"  for="r-f1">#1 Common Law / Civil Law</label></li>
+  <li><label class="nav-f2"  for="r-f2">#2 Liberté religieuse — Cas</label></li>
+  <li><label class="nav-f3"  for="r-f3">#3 Liberté religieuse — Limites</label></li>
+  <li><label class="nav-f4"  for="r-f4">#4 Affirmative Action — Origines</label></li>
+  <li><label class="nav-f5"  for="r-f5">#5 Affirmative Action — Affaires</label></li>
+  <li><label class="nav-f6"  for="r-f6">#6 Affirmative Action — Fin</label></li>
+  <li><label class="nav-f7"  for="r-f7">#7 Migrations — Cadre juridique</label></li>
+  <li><label class="nav-f8"  for="r-f8">#8 Migrations — USA &amp; Australie</label></li>
+  <li><label class="nav-f9"  for="r-f9">#9 Migrations — Europe</label></li>
+  <li><label class="nav-f10" for="r-f10">#10 Migrations — Pacte &amp; Bilan</label></li>
+</ul></nav>
+
+<!-- ACCUEIL -->
+<div id="home-content">
+<div id="home">
+  <div class="home-intro">
+    <h2>Anglais Juridique</h2>
+    <p>10 fiches bilingues (🇬🇧 English + 🇫🇷 Français) · 3 grands thèmes : Traditions juridiques · Liberté religieuse · Migrations</p>
+    <p style="margin-top:.5rem;font-size:.82rem">Chaque fiche contient la partie anglaise complète suivie de la fiche de révision française</p>
+  </div>
+
+  <div class="home-section-title">Navigation</div>
+  <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));max-width:520px">
+    <label class="card-plan" for="r-plan">
+      <div class="card-num">Vue d'ensemble</div>
+      <h3>Plan du cours</h3>
+      <p>3 thèmes · 10 cours · structure et accès direct aux fiches</p>
+    </label>
+  </div>
+
+  <div class="home-section-title">Thème 1 — Traditions juridiques comparées</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f1">
+      <div class="card-num">Cours #1</div>
+      <h3>Common Law vs Civil Law</h3>
+      <p>Sources du droit · procédure inquisitoire vs adversariale · jury · Magna Carta · Habeas Corpus · Constitution US</p>
+      <span class="bilingual-tag">🇬🇧 EN + 🇫🇷 FR</span>
+    </label>
+  </div>
+
+  <div class="home-section-title">Thème 2 — La liberté religieuse</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f2">
+      <div class="card-num">Cours #2</div>
+      <h3>Liberté religieuse — Deux cas emblématiques</h3>
+      <p>Samantha Elauf (EEOC v. Abercrombie 2015) · Jack Phillips (Masterpiece 2018) · G4S v. Achbita · Bougnaoui · transfusions sanguines</p>
+      <span class="bilingual-tag">🇬🇧 EN + 🇫🇷 FR</span>
+    </label>
+    <label class="card" for="r-f3">
+      <div class="card-num">Cours #3</div>
+      <h3>Liberté religieuse — Bilan et limites</h3>
+      <p>Clarifications finales des deux affaires · santé/sécurité · Roe v. Wade · Dobbs 2023 · 303 Creative · Sieur-Azu · pharmaciens</p>
+      <span class="bilingual-tag">🇬🇧 EN + 🇫🇷 FR</span>
+    </label>
+  </div>
+
+  <div class="home-section-title">Thème 3 — L'Affirmative Action</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f4">
+      <div class="card-num">Cours #4</div>
+      <h3>Affirmative Action — Origines et histoire</h3>
+      <p>GPA / SAT · définition · ségrégation · Plessy v. Ferguson · Brown v. Board · Civil Rights Act · busing · Swann 1971</p>
+      <span class="bilingual-tag">🇬🇧 EN + 🇫🇷 FR</span>
+    </label>
+    <label class="card" for="r-f5">
+      <div class="card-num">Cours #5</div>
+      <h3>Affirmative Action — Des principes aux affaires</h3>
+      <p>Loving v. Virginia · NLRA 1935 · New Deal · égalité des chances vs résultats · Bakke 1978 (quotas ≠ race comme facteur)</p>
+      <span class="bilingual-tag">🇬🇧 EN + 🇫🇷 FR</span>
+    </label>
+    <label class="card" for="r-f6">
+      <div class="card-num">Cours #6</div>
+      <h3>Affirmative Action — Batailles et fin</h3>
+      <p>Gratz vs Grutter 2003 · Fisher 2016 · Trump/Sessions · Students for Fair Admissions v. Harvard 2023 · Thomas vs Jackson</p>
+      <span class="bilingual-tag">🇬🇧 EN + 🇫🇷 FR</span>
+    </label>
+  </div>
+
+  <div class="home-section-title">Thème 4 — Le droit international des migrations</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f7">
+      <div class="card-num">Cours #7</div>
+      <h3>Migrations — Concepts et cadre juridique</h3>
+      <p>Définitions (migrant, réfugié, demandeur d'asile) · DUDH · Convention de Genève · non-refoulement · Dublin · Frontex · données 2020</p>
+      <span class="bilingual-tag">🇬🇧 EN + 🇫🇷 FR</span>
+    </label>
+    <label class="card" for="r-f8">
+      <div class="card-num">Cours #8</div>
+      <h3>Migrations — USA et Australie</h3>
+      <p>Resettlement · mur Trump · Travel Ban · Remain in Mexico · ICE (budget $6B→$85B) · offshore processing Nauru ($189K/migrant)</p>
+      <span class="bilingual-tag">🇬🇧 EN + 🇫🇷 FR</span>
+    </label>
+    <label class="card" for="r-f9">
+      <div class="card-num">Cours #9</div>
+      <h3>Migrations — Europe et pratiques</h3>
+      <p>Campagne "No Way" · Dublin défaillant · statuts (réfugié/subsidiaire/humanitaire) · crise 2015 · accord UE-Turquie · Italie-Libye · bateaux ONG · Salvini</p>
+      <span class="bilingual-tag">🇬🇧 EN + 🇫🇷 FR</span>
+    </label>
+    <label class="card" for="r-f10">
+      <div class="card-num">Cours #10</div>
+      <h3>Migrations — Front anti-immigration et Pacte</h3>
+      <p>Visegrád · accord Maroc · alliance Italie-Hongrie · France (Aquarius) · camp Moria · Brexit · exception ukrainienne · Pacte UE 2024 · Marrakech 2018 · Elie Wiesel</p>
+      <span class="bilingual-tag">🇬🇧 EN + 🇫🇷 FR</span>
+    </label>
+  </div>
+</div>
+</div>
+
+<!-- PLAN -->
+<div id="page-plan" class="page-content"><main>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.6rem">
+    <div><h2 style="font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700">Plan du cours</h2>
+    <p style="font-size:.85rem;color:var(--g);margin-top:.2rem">4 thèmes · 10 cours bilingues (EN + FR)</p></div>
+    <label class="btn-home" for="r-home">← Accueil</label>
+  </div>
+  <div class="plan-cols">
+    <div>
+      <div class="partie-block">
+        <div class="partie-header">Thème 1 — Traditions juridiques comparées</div>
+        <div class="partie-body">
+          <details class="chap-block"><summary class="chap-header">Cours 1 — Common Law vs Civil Law <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Les deux grandes traditions</span><div class="para-list"><div class="para-item">Civil Law : codes, législateur, procédure inquisitoire</div><div class="para-item">Common Law : jurisprudence, stare decisis, procédure adversariale</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Sources en Common Law</span><div class="para-list"><div class="para-item">Case law, statutes, regulations, Constitution</div><div class="para-item">Rôle de la Cour Suprême américaine · Roe v. Wade</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 3</span><span class="section-name">Procédure pénale</span><div class="para-list"><div class="para-item">Tableau comparatif inquisitoire / adversarial · jury</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 4-5</span><span class="section-name">Pouvoir judiciaire · Grands textes</span><div class="para-list"><div class="para-item">Activisme vs retenue judiciaire · Magna Carta · Habeas Corpus · Constitution US + Bill of Rights</div></div></div>
+            <label class="plan-fiche-link" for="r-f1">→ Fiche #1</label>
+          </div></details>
+        </div>
+      </div>
+      <div class="partie-block">
+        <div class="partie-header">Thème 2 — La liberté religieuse</div>
+        <div class="partie-body">
+          <details class="chap-block"><summary class="chap-header">Cours 2 — Deux cas emblématiques <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Sect. 1-2</span><span class="section-name">Cadre juridique</span><div class="para-list"><div class="para-item">DUDH art. 18 · CEDH art. 9 · 1er Amendement · laïcité US vs française</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 3</span><span class="section-name">EEOC v. Abercrombie (2015)</span><div class="para-list"><div class="para-item">Samantha Elauf · Look Policy · 8-1 en faveur de Samantha</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 4</span><span class="section-name">Masterpiece Cakeshop (2018)</span><div class="para-list"><div class="para-item">Jack Phillips · victoire limitée au cas par cas</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 5-6</span><span class="section-name">Perspectives européennes · Transfusions</span><div class="para-list"><div class="para-item">G4S v. Achbita · Bougnaoui (CJUE 2017) · adultes (France vs Canada) · enfants (accord universel)</div></div></div>
+            <label class="plan-fiche-link" for="r-f2">→ Fiche #2</label>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Cours 3 — Bilan et limites légitimes <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Récapitulatif des deux affaires</span><div class="para-list"><div class="para-item">Précisions finales Jack Phillips et Samantha Elauf</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 2</span><span class="section-name">Limites légitimes</span><div class="para-list"><div class="para-item">Santé/sécurité universelle · tableau transfusions · enfants (accord universel)</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 3</span><span class="section-name">Les lois peuvent-elles violer la liberté religieuse ?</span><div class="para-list"><div class="para-item">Roe v. Wade 1973 · Dobbs 2023 (renversement) · 6/9 juges catholiques</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 4-5</span><span class="section-name">303 Creative · Vision européenne</span><div class="para-list"><div class="para-item">Lorie Smith 2023 · 6-3 · distinction personne/message · Sieur-Azu (CEDH 2001) · pharmaciens français 1995</div></div></div>
+            <label class="plan-fiche-link" for="r-f3">→ Fiche #3</label>
+          </div></details>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="partie-block">
+        <div class="partie-header">Thème 3 — L'Affirmative Action</div>
+        <div class="partie-body">
+          <details class="chap-block"><summary class="chap-header">Cours 4 — Origines et histoire <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Sect. 1-2</span><span class="section-name">Critères d'admission · Définition</span><div class="para-list"><div class="para-item">GPA · SAT · critères non-académiques · définition US vs UK · égalité chances vs résultats</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 3</span><span class="section-name">Histoire de la ségrégation</span><div class="para-list"><div class="para-item">Constitution 1787 · 13e/14e Amendement · Reconstruction · Lois Jim Crow · Plessy 1896 · Brown 1954</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 4-5</span><span class="section-name">Mouvement des droits civiques</span><div class="para-list"><div class="para-item">Kennedy 1961 (terme "affirmative action") · Civil Rights Act 1964 · Johnson 1965 · busing · Swann 1971</div></div></div>
+            <label class="plan-fiche-link" for="r-f4">→ Fiche #4</label>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Cours 5 — Des principes aux affaires <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Sect. 1-2</span><span class="section-name">Post-Brown · Origines théoriques</span><div class="para-list"><div class="para-item">Brown II · Loving v. Virginia 1967 · NLRA 1935 · New Deal quotas raciaux · chances vs résultats</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 3-4</span><span class="section-name">Busing · Affaire Bakke 1978</span><div class="para-list"><div class="para-item">Swann 1971 · ségrégation de facto dans le Nord · UC Davis · quotas inconstitutionnels mais race = facteur possible</div></div></div>
+            <label class="plan-fiche-link" for="r-f5">→ Fiche #5</label>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Cours 6 — Batailles judiciaires jusqu'à l'interdiction <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Affaires Michigan 2003</span><div class="para-list"><div class="para-item">Gratz (points auto → inconstitutionnel 6-3) · Grutter (holistic review → constitutionnel 5-4)</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 2-3</span><span class="section-name">Fisher 2016 · Trump/Sessions</span><div class="para-list"><div class="para-item">Top 10% policy · dernier succès · Obama · Sessions / Yale 2020 / Biden 2022</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 4-5</span><span class="section-name">Harvard 2023 · Et maintenant ?</span><div class="para-list"><div class="para-item">Students for Fair Admissions · racial balancing · 6-3 contre AA · Thomas vs Jackson · impact réel · opinion publique</div></div></div>
+            <label class="plan-fiche-link" for="r-f6">→ Fiche #6</label>
+          </div></details>
+        </div>
+      </div>
+      <div class="partie-block">
+        <div class="partie-header">Thème 4 — Le droit international des migrations</div>
+        <div class="partie-body">
+          <details class="chap-block"><summary class="chap-header">Cours 7 — Concepts et cadre juridique <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Sect. 1-2</span><span class="section-name">Définitions · Contexte historique</span><div class="para-list"><div class="para-item">Migrant/réfugié/demandeur d'asile/irrégulier · avant/après XXe siècle · Genève 1951 · Marrakech 2018</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 3-4</span><span class="section-name">Textes internationaux · Cadre européen</span><div class="para-list"><div class="para-item">DUDH 1948 · Convention de Genève · non-refoulement · Dublin · Frontex · EURODAC</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 5</span><span class="section-name">Données 2020</span><div class="para-list"><div class="para-item">281M migrants · 48% femmes · top pays hôtes (Turquie, Pakistan, Ouganda) → pas les pays riches</div></div></div>
+            <label class="plan-fiche-link" for="r-f7">→ Fiche #7</label>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Cours 8 — USA et Australie <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Sect. 1</span><span class="section-name">Resettlement</span><div class="para-list"><div class="para-item">Définition · accords bilatéraux · déclin US/Canada/Australie</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 2-3</span><span class="section-name">Trump 1er mandat · ICE</span><div class="para-list"><div class="para-item">Mur $16Mds · Travel Ban · Remain in Mexico · ICE $6B→$85B · 1M expulsions/an · agents masqués</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 4</span><span class="section-name">Australie : offshore processing</span><div class="para-list"><div class="para-item">Nauru · $284M pour 1500 migrants ($189K/migrant) · enfants · 2019 Nauru vidé</div></div></div>
+            <label class="plan-fiche-link" for="r-f8">→ Fiche #8</label>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Cours 9 — Politiques migratoires européennes <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Sect. 1-2</span><span class="section-name">"No Way" · Dublin défaillant</span><div class="para-list"><div class="para-item">Campagne australienne · EURODAC · injustice des pays frontaliers</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 3-4</span><span class="section-name">Statuts · Crise 2015</span><div class="para-list"><div class="para-item">Réfugié (10 ans) · subsidiaire (1 an, sans travail) · humanitaire (2 ans) · Merkel · accord UE-Turquie €6Mds</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 5-6</span><span class="section-name">Libye · ONG</span><div class="para-list"><div class="para-item">Accord Italie-Libye 2017 · esclavage · non-refoulement · MSF · droit maritime · Salvini · 10% morts 2018</div></div></div>
+            <label class="plan-fiche-link" for="r-f9">→ Fiche #9</label>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Cours 10 — Front anti-immigration et Pacte <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Sect. 1-3</span><span class="section-name">Front européen · France</span><div class="para-list"><div class="para-item">Visegrád · accord Maroc 2019 · Salvini+Orbán · Aquarius · migrants = outil diplomatique</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 4-5</span><span class="section-name">Moria · Brexit</span><div class="para-list"><div class="para-item">Camp 2200→20000→incendie · Illegal Migration Act 2023 · exception ukrainienne (raciale/géopolitique)</div></div></div>
+            <div class="section-item"><span class="section-label">Sect. 6-7</span><span class="section-name">Pacte UE 2024 · Marrakech 2018</span><div class="para-list"><div class="para-item">12 semaines · solidarité flexible · 152 pays · non contraignant · réfugiés climatiques (140-200M-1Md) · Elie Wiesel</div></div></div>
+            <label class="plan-fiche-link" for="r-f10">→ Fiche #10</label>
+          </div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</main></div>
+
+<!-- ===== FICHE 1 ===== -->
+<div id="page-f1" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Cours #1 · Thème 1 — Traditions juridiques comparées</div>
+    <h2>Common Law vs Civil Law — Les grandes traditions juridiques</h2>
+    <div class="fiche-intro">Le monde est divisé en deux grandes familles juridiques. La Civil Law vient du droit romain et repose sur des codes écrits ; la Common Law est née en Angleterre et repose sur la jurisprudence (les décisions passées des juges font la loi).</div>
+  </div>
+
+  <!-- ENGLISH PART -->
+  <div class="lang-divider"><span class="lang-pill en">🇬🇧 English Part — Study Sheet</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1 &amp; 2</span> The Two Great Legal Traditions &amp; Sources of Law</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Civil Law — The tradition of codes</div>
+      <p class="f-text">Civil Law comes from <strong>Roman Law</strong>. France exported it to Canada (Quebec) and Louisiana. Law is written in <strong>codes</strong> (Civil Code, Penal Code…). The <strong>legislature</strong> (Parliament) is the main creator of law. The judge <strong>studies the case beforehand</strong> → <strong>inquisitorial procedure</strong> (the judge asks questions, is active in court). Main divide: <strong>public law</strong> vs <strong>private law</strong>.</p>
+      <div class="f-exemple"><strong>Illustration</strong>Imagine a rulebook for a board game. Before you start, every rule is written down. If you have a question, you look it up in the rulebook (the code).</div>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Common Law — The tradition of judges</div>
+      <p class="f-text">Common Law was born in England after <strong>William the Conqueror</strong> (11th century). Law is largely based on <strong>case law</strong> = judicial decisions made by judges in the past. Each past decision becomes a <strong>precedent</strong>. Principle of <strong>stare decisis</strong>: future judges <em>must</em> follow past decisions on similar cases. The judge has <strong>no prior knowledge</strong> of the case → <strong>adversarial procedure</strong> (the lawyers fight it out, the judge watches). Main divide: <strong>criminal law</strong> vs <strong>civil law</strong>.</p>
+      <div class="f-exemple"><strong>Illustration</strong>Instead of a rulebook, imagine a collection of solved puzzles. When you face a new puzzle, you look at how similar puzzles were solved before.</div>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Four sources of law in Common Law countries</div>
+      <ul class="f-list en">
+        <li><strong>Common Law</strong> (case law): past judicial decisions = precedents</li>
+        <li><strong>Statutes</strong>: written laws voted by Parliament/Congress</li>
+        <li><strong>Regulations</strong>: rules made by the executive branch</li>
+        <li><strong>The Constitution</strong>: the supreme law, above everything else</li>
+      </ul>
+      <p class="f-text">In the US, the <strong>Supreme Court</strong> interprets the Constitution — it can say "this law is unconstitutional" and strike it down. Example: in 1973, the Supreme Court said the Constitution protects privacy → right to abortion (<strong>Roe v. Wade</strong>). In 2023, the new Supreme Court reversed that.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> Criminal Procedure: Adversarial vs Inquisitorial</div>
+    <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Civil Law (France…)</th><th>Common Law (US, UK…)</th></tr></thead><tbody>
+      <tr><td>Judge's role</td><td>Active, asks questions</td><td>Passive referee</td></tr>
+      <tr><td>Who asks questions?</td><td>The judge</td><td>The lawyers</td></tr>
+      <tr><td>Prior knowledge?</td><td>Yes, studies case before</td><td>No, learns everything in court</td></tr>
+      <tr><td>Who decides guilt?</td><td>The judge</td><td>Often a <strong>jury</strong></td></tr>
+      <tr><td>System name</td><td>Inquisitorial</td><td>Adversarial</td></tr>
+    </tbody></table></div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The jury system</div>
+      <p class="f-text">In Common Law countries, serious criminal cases are decided by a <strong>jury</strong> of citizens (peers). The jury says <strong>guilty</strong> or <strong>not guilty</strong>. Then the <strong>judge</strong> gives the <strong>sentence</strong> (the punishment).</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 4 &amp; 5</span> Judicial Power &amp; Key Documents</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Judicial activism vs judicial restraint</div>
+      <ul class="f-list en">
+        <li><strong>Judicial activism</strong>: judges actively interpret laws, sometimes going against legislature or executive (e.g., desegregating schools in the 1950s)</li>
+        <li><strong>Judicial restraint</strong>: judges limit themselves to applying the law, letting the legislature decide</li>
+      </ul>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Key documents in the Common Law tradition</div>
+      <ul class="f-list en">
+        <li><strong>Magna Carta (1215)</strong>: everyone, including the king, is subject to the law — first foundation of the Rule of Law</li>
+        <li><strong>Habeas Corpus</strong>: right to a fair trial — the king cannot throw you in prison without a trial. Juries introduced here as protection against arbitrary justice</li>
+        <li><strong>US Constitution + Bill of Rights</strong>: the first Republican constitution, drafted before the French one. Two parts: how the three branches work + the <strong>Bill of Rights</strong> (first 10 amendments): freedom of speech, religion, press, assembly…</li>
+      </ul>
+      <div class="f-alerte"><strong>Note</strong>In England, there is NO written constitution. Everything runs on tradition and precedent. No need to write it down.</div>
+    </div>
+  </div>
+
+  <!-- FRENCH PART -->
+  <div class="lang-divider"><span class="lang-pill fr">🇫🇷 Partie Française — Fiche de révision</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1 &amp; 2</span> Les deux traditions · Sources du droit</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Le droit civil : la tradition des codes</div>
+      <ul class="f-list fr">
+        <li>Droit codifié (Code civil, Code pénal…) · le <strong>législateur</strong> est la source principale</li>
+        <li>Procédure <strong>inquisitoire</strong> : le juge mène les débats, connaît le dossier à l'avance</li>
+        <li>Distinction principale : <strong>droit public</strong> vs <strong>droit privé</strong></li>
+        <li>Exporté par la France au Québec et en Louisiane</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">La Common Law : la tradition des juges</div>
+      <ul class="f-list fr">
+        <li>Droit basé sur la <strong>jurisprudence</strong> (case law) : les décisions passées font la loi</li>
+        <li>Principe du <strong>stare decisis</strong> : les juges sont liés par les décisions antérieures</li>
+        <li>Procédure <strong>contradictoire (adversariale)</strong> : les avocats mènent les débats, le juge arbitre</li>
+        <li>Distinction principale : <strong>droit pénal</strong> vs <strong>droit civil</strong></li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">La Constitution américaine</div>
+      <p class="f-text">La <strong>Cour Suprême</strong> américaine interprète la Constitution. Elle peut annuler des lois inconstitutionnelles. Exemple : <strong>Roe v. Wade (1973)</strong> → droit à la vie privée → droit à l'avortement. En 2023, une nouvelle Cour Suprême conservatrice a renversé cette décision.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3–5</span> Procédure · Grands textes</div>
+    <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Droit civil (France…)</th><th>Common Law (États-Unis, UK…)</th></tr></thead><tbody>
+      <tr><td>Rôle du juge</td><td>Actif, pose des questions</td><td>Arbitre passif</td></tr>
+      <tr><td>Qui interroge ?</td><td>Le juge</td><td>Les avocats</td></tr>
+      <tr><td>Connaissance préalable ?</td><td>Oui</td><td>Non</td></tr>
+      <tr><td>Qui décide ?</td><td>Le juge</td><td>Souvent un <strong>jury</strong></td></tr>
+      <tr><td>Système</td><td>Inquisitoire</td><td>Contradictoire</td></tr>
+    </tbody></table></div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Les grands textes</div>
+      <ul class="f-list fr">
+        <li><strong>Magna Carta (1215)</strong> : tout le monde, y compris le roi, est soumis à la loi</li>
+        <li><strong>Habeas Corpus</strong> : droit au procès équitable · origine du jury</li>
+        <li><strong>Constitution américaine + Bill of Rights</strong> (10 premiers amendements) : liberté d'expression, de religion, de presse, de réunion…</li>
+      </ul>
+      <div class="f-alerte"><strong>À noter</strong>L'Angleterre n'a PAS de constitution écrite. Tout repose sur la tradition et les précédents.</div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Civil Law = codes + législateur + procédure inquisitoire (juge actif)</li>
+    <li>Common Law = jurisprudence + stare decisis + procédure adversariale (avocats actifs) + jury</li>
+    <li>Séparation Église/État : US = liberté maximale · France (laïcité) = neutralité stricte dans l'espace public</li>
+    <li>Activisme judiciaire = juges interprètent activement · retenue = juges s'effacent devant le législateur</li>
+    <li>Magna Carta → Habeas Corpus → Constitution US + Bill of Rights : les 3 piliers de la Common Law</li>
+  </ul></div>
+  <div class="fiche-nav"><span></span><label for="r-f2">Cours #2 : Liberté religieuse →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 2 ===== -->
+<div id="page-f2" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Cours #2 · Thème 2 — La liberté religieuse</div>
+    <h2>La liberté religieuse — Deux cas emblématiques</h2>
+    <div class="fiche-intro">Deux personnes, deux États américains, un même principe constitutionnel : la liberté religieuse. Samantha Elauf l'utilise contre la discrimination. Jack Phillips l'utilise pour justifier la sienne. Même droit, buts opposés.</div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill en">🇬🇧 English Part — Study Sheet</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1–2</span> Legal Foundation: What is Religious Freedom?</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">International texts</div>
+      <ul class="f-list en">
+        <li><strong>UDHR 1948, Art. 18</strong>: freedom of thought, conscience and religion — includes the right to change religion and to manifest it in public or in private</li>
+        <li><strong>ECHR 1950, Art. 9</strong>: freedom to manifest religion in worship, teaching, practice, and observance — alone or in community, in public or in private</li>
+        <li><strong>First Amendment (US Bill of Rights)</strong>: Congress cannot establish any religion OR prohibit its free exercise. Same amendment also protects: freedom of speech, press, and assembly</li>
+      </ul>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Separation of Church and State: two visions</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>US version</th><th>French version (laïcité)</th></tr></thead><tbody>
+        <tr><td>About <strong>freedom</strong> — maximum religious liberty, minimum state interference. A police officer CAN wear a religious symbol</td><td>About <strong>equality</strong> — no religion above another, public sphere is neutral. A police officer CANNOT wear a religious symbol</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> EEOC v. Abercrombie &amp; Fitch (2015) — Samantha's Case</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Facts</div>
+      <p class="f-text">Samantha Elauf, 17, applied for a job at Abercrombie &amp; Fitch. She wore a headscarf. The store had a <strong>"Look Policy"</strong> requiring employees to embody a "Classic East Coast college style." Managers never told her the headscarf violated the policy, but decided not to hire her because of it. She filed a complaint with the <strong>EEOC</strong> (Equal Employment Opportunity Commission).</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Supreme Court Decision: 8 to 1 in favor of Samantha</div>
+      <ul class="f-list en">
+        <li>A company <strong>can</strong> have a Look Policy</li>
+        <li>But a Look Policy <strong>cannot</strong> ban religious symbols without making exceptions for religious accommodation</li>
+        <li>Even a neutral-looking policy discriminates if it ignores religious exceptions</li>
+      </ul>
+      <div class="f-exemple"><strong>Illustration</strong>You can say "No baseball caps in the office." But you can't apply that rule to ban a turban or headscarf without offering a religious exception.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 4</span> Masterpiece Cakeshop v. Colorado (2018) — Jack's Case</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Facts &amp; Decision</div>
+      <p class="f-text">In 2012, gay couple David Mullins and Charlie Craig asked Jack Phillips (Christian fundamentalist) to make a wedding cake. He refused, citing religious beliefs. They filed a complaint with the <strong>Colorado Civil Rights Commission</strong>.</p>
+      <p class="f-text">Jack argued: making a cake is a <strong>creative activity</strong> = a form of <strong>expression</strong> (free speech) → being forced violates his religious freedom AND free speech.</p>
+      <p class="f-text">The Supreme Court ruled <strong>narrowly</strong>: in this specific case, the Colorado Civil Rights Commission showed <strong>hostility to Jack's religion</strong> (procedural problem). So Jack won — but the Supreme Court did NOT say "all bakers can refuse gay customers." It was a <strong>case-by-case ruling</strong>, not a general license to discriminate.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 5–6</span> European Perspectives &amp; Blood Transfusions</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">G4S v. Achbita (ECJ, 2017) &amp; Bougnaoui v. Micropole (ECJ, 2017 — same day)</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Case</th><th>Facts</th><th>ECJ ruling</th></tr></thead><tbody>
+        <tr><td>G4S v. Achbita</td><td>Belgian Muslim woman fired for wearing headscarf at work</td><td>A company CAN ban all religious/political symbols if the ban is <strong>neutral</strong> (all beliefs), clearly written in company rules, and about image of neutrality</td></tr>
+        <tr><td>Bougnaoui v. Micropole</td><td>French engineer asked to remove headscarf because a client requested it</td><td>A <strong>client's preference</strong> is NOT a valid reason to restrict religious freedom. Only a formal company neutrality policy can justify such restrictions</td></tr>
+      </tbody></table></div>
+      <div class="f-alerte"><strong>Key difference from US</strong>In Europe, protecting a company's neutral image is enough justification. In the US, it is NOT.</div>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Blood transfusions and Jehovah's Witnesses</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Adults</th><th>Children</th></tr></thead><tbody>
+        <tr><td>France (2001)</td><td>Doctor CAN override patient's refusal in emergency</td><td rowspan="2">Almost everywhere: a doctor CAN override parents' wishes to save a child's life. The state has an interest in protecting children's lives superior to parents' religious freedom</td></tr>
+        <tr><td>Canada (2016)</td><td>Doctor CANNOT override the patient's refusal. Two pregnant women died. Quebec Premier: "We live in a society of freedoms and religious rights."</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill fr">🇫🇷 Partie Française — Fiche de révision</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1–2</span> Le cadre juridique</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Les textes fondateurs</div>
+      <ul class="f-list fr">
+        <li><strong>DUDH 1948, art. 18</strong> : liberté de pensée, conscience et religion — inclut le droit de changer de religion et de la manifester <em>en public ou en privé</em></li>
+        <li><strong>CEDH 1950, art. 9</strong> : même langage — seul ou en communauté, en public ou en privé</li>
+        <li><strong>1er Amendement américain</strong> : liberté de religion + expression + presse + réunion dans le même amendement — car toutes forment l'expression des Pères Fondateurs</li>
+      </ul>
+      <p class="f-text"><strong>Version américaine</strong> : liberté maximale, l'État ne choisit aucune religion. <strong>Version française (laïcité)</strong> : égalité maximale, neutralité stricte dans l'espace public. → Un policier peut porter un symbole religieux aux USA. En France, non.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3–4</span> Les deux affaires américaines</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">EEOC v. Abercrombie (2015) — Samantha Elauf</div>
+      <p class="f-text">Samantha, 17 ans, postule chez Abercrombie &amp; Fitch. Elle porte un voile. L'entreprise a une <strong>Look Policy</strong> style "Classic East Coast College". Personne ne lui dit que son voile pose problème lors de l'entretien. Elle est recalée.</p>
+      <p class="f-text"><strong>Cour Suprême : 8 contre 1 en faveur de Samantha.</strong> Une entreprise peut avoir une Look Policy, mais elle <strong>ne peut pas interdire les symboles religieux</strong> sans prévoir d'exception pour les croyants. Même une politique neutre peut discriminer si elle ignore la religion.</p>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Masterpiece Cakeshop v. Colorado (2018) — Jack Phillips</div>
+      <p class="f-text">2012 : un couple gay demande un gâteau de mariage. Jack Phillips refuse pour raisons religieuses. Argument : créer un gâteau = <strong>activité créative</strong> = <strong>liberté d'expression</strong>. Forcer = violation du 1er Amendement.</p>
+      <p class="f-text"><strong>Victoire limitée pour Jack</strong> : la Commission du Colorado avait fait preuve d'hostilité envers sa religion → vice de procédure. La Cour Suprême n'a pas dit que tout boulanger peut refuser des clients gay. <strong>Décision au cas par cas.</strong></p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 5–6</span> Europe · Transfusions</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">G4S v. Achbita + Bougnaoui (CJUE, 2017, même jour)</div>
+      <ul class="f-list fr">
+        <li><strong>Achbita</strong> : une entreprise PEUT interdire tous les symboles religieux/politiques si la règle est neutre (toutes convictions), clairement écrite, et motivée par l'image de neutralité</li>
+        <li><strong>Bougnaoui</strong> : la <strong>préférence d'un client</strong> n'est PAS une raison valable pour restreindre la liberté religieuse — seule une politique de neutralité formelle de l'entreprise peut justifier une restriction</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Transfusions sanguines et Témoins de Jéhovah</div>
+      <ul class="f-list fr">
+        <li><strong>Adultes — France (2001)</strong> : le médecin PEUT passer outre le refus en urgence pour sauver la vie</li>
+        <li><strong>Adultes — Canada (2016)</strong> : le médecin NE PEUT PAS. Deux femmes enceintes sont mortes. Respect absolu de la liberté religieuse</li>
+        <li><strong>Enfants — accord universel</strong> (France, UK, USA, Canada) : le médecin PEUT transfuser un enfant dont la vie est en danger, même contre la volonté des parents. L'État a un intérêt supérieur à protéger la vie des enfants</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Même droit (liberté religieuse) utilisé dans des sens opposés : Samantha (victime) vs Jack (auteur de la discrimination)</li>
+    <li>EEOC v. Abercrombie : Look Policy possible mais pas sans exception religieuse — 8-1</li>
+    <li>Masterpiece : victoire étroite de Jack (vice de procédure uniquement) — pas un droit général de refuser</li>
+    <li>CJUE (Europe) : neutralité de l'entreprise = motif suffisant · préférence d'un client = motif insuffisant</li>
+    <li>Transfusions : adultes = divergence France/Canada · enfants = accord universel (intérêt supérieur de l'État)</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f1">← Cours #1</label><label for="r-f3">Cours #3 : Liberté religieuse — Limites →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 3 ===== -->
+<div id="page-f3" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Cours #3 · Thème 2 — La liberté religieuse</div>
+    <h2>Liberté religieuse — Bilan des cas et limites légitimes</h2>
+    <div class="fiche-intro">Précisions finales sur les deux affaires phares, puis les grandes questions : quelles limites sont légitimes ? les lois elles-mêmes peuvent-elles violer la liberté religieuse ? comment la vision européenne diffère-t-elle de la vision américaine ?</div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill en">🇬🇧 English Part — Study Sheet</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Recap: Final Clarifications</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Jack Phillips (Masterpiece) — What the Court actually said</div>
+      <ul class="f-list en">
+        <li>NOT a general right for religious people to discriminate against customers</li>
+        <li>Only: the Colorado Civil Rights Commission showed <strong>hostility to religion</strong> → procedural flaw</li>
+        <li>Cake-making for weddings is a <strong>creative activity</strong> — a specific, limited circumstance</li>
+      </ul>
+      <div class="f-alerte"><strong>Important nuance</strong>The Supreme Court was NOT saying "Jack is right in general." It was saying "the process was unfair to Jack in this case." Two very different things.</div>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Samantha Elauf (EEOC v. Abercrombie) — What the Court actually said</div>
+      <ul class="f-list en">
+        <li>The Look Policy was unconstitutional because: it made no exceptions for religious dress · it was not clear during the hiring process</li>
+        <li>But the Court did NOT say: companies cannot have Look Policies · companies must always accommodate any religious request</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Legitimate Limits on Religious Freedom</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Health and safety — the universal limit</div>
+      <p class="f-text">On both sides of the Atlantic, one reason is accepted everywhere: <strong>health and safety</strong>. Examples: safety equipment at work overrides religious dress · in surgery, a doctor can ask a religious professional to remove their headscarf for hygienic reasons (this is health, not neutrality).</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Blood transfusions: full cross-Atlantic comparison</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>France</th><th>Canada</th></tr></thead><tbody>
+        <tr><td>Adult refuses transfusion</td><td>Doctor CAN override in emergency</td><td>Doctor CANNOT override</td></tr>
+        <tr><td>Logic</td><td>Life first</td><td>Religious freedom first</td></tr>
+        <tr><td>Outcome</td><td>Patient saved against their will</td><td>Two women died by their choice</td></tr>
+      </tbody></table></div>
+      <div class="f-key">Children: universal agreement — a doctor CAN override parents' wishes to save a child's life. Your religious freedom does NOT extend to making life-or-death decisions for your children.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> Can Laws Violate Religious Freedom? Abortion &amp; Roe v. Wade</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The Baptist minister's argument before Roe v. Wade</div>
+      <p class="f-text">Before Roe v. Wade (1973), many US states banned abortion based on the idea that <strong>life begins at conception</strong> — a <strong>religious</strong> (specifically Catholic) definition. A Baptist minister argued: these laws banning abortion are themselves <strong>a violation of religious freedom</strong> — because they impose one religion's definition of life onto everyone.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Roe v. Wade (1973) → Dobbs v. Jackson (2023)</div>
+      <ul class="f-list en">
+        <li><strong>Roe v. Wade (1973)</strong>: women have a right to privacy → their body is private → right to choose abortion → states cannot ban it. Always controversial: the Constitution never mentions abortion or privacy in those terms</li>
+        <li><strong>Dobbs v. Jackson (2023)</strong>: the new (conservative) Supreme Court reversed Roe. The Constitution does not protect abortion. Each state decides. The Court was 6 to 3 — <strong>6 of the 9 justices were Catholic</strong> (a statistical outlier in a predominantly Protestant country)</li>
+      </ul>
+      <div class="f-alerte"><strong>The paradox</strong>The Court claimed neutrality ("abortion isn't in the Constitution"). But the majority was composed of a minority religion that officially opposes abortion. Is that truly neutral?</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 4</span> 303 Creative (2023) — The Next Step</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Facts &amp; Ruling (6 to 3 in her favor)</div>
+      <p class="f-text">Lorie Smith, a web designer in Colorado, refused to design websites for same-sex weddings and posted this policy publicly. She argued: designing websites is a <strong>creative activity</strong> = <strong>free speech</strong> → Colorado's anti-discrimination law forces her to "speak" against her beliefs → violation of the 1st Amendment.</p>
+      <p class="f-text">Justice Neil Gorsuch drew a thin but important line:</p>
+      <ul class="f-list en">
+        <li><strong>CANNOT say</strong>: "I refuse gay <em>customers</em>" (discrimination based on person's status)</li>
+        <li><strong>CAN say</strong>: "I refuse to create <em>gay wedding content</em>" (discrimination based on message)</li>
+      </ul>
+      <div class="f-exemple"><strong>The domino effect concern</strong>If this is now precedent, could any "creative" business refuse service based on content? Where does "creative" end?</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 5</span> European/French Contrast: Sieur-Azu v. France (ECHR, 2001)</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Key European principle &amp; Application: the pharmacists' case (France, 1995)</div>
+      <p class="f-text"><strong>Key principle</strong>: Religious freedom protects the person's <strong>private sphere of conscience</strong> — but NOT all public conduct inspired by that conscience.</p>
+      <p class="f-text"><strong>Application</strong>: Two French pharmacists refused to sell contraceptive pills to three women, citing religious beliefs. The court ruled: <strong>they were wrong.</strong> Pharmacists have a <strong>social role</strong> in the health sector. When acting as pharmacists, they act on behalf of society — not according to their personal conscience. The law determines what they must do, not their religion.</p>
+      <div class="f-key">A Jehovah's Witness doctor must perform blood transfusions. Their job is determined by society's rules, not their private beliefs.</div>
+    </div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill fr">🇫🇷 Partie Française — Fiche de révision</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1–2</span> Bilan · Limites légitimes</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Précisions finales sur les deux affaires</div>
+      <ul class="f-list fr">
+        <li><strong>Jack Phillips</strong> : pas un droit général de discriminer — seulement un vice de procédure dans ce cas précis. La fabrication de gâteaux de mariage = activité créative → circonstance particulière</li>
+        <li><strong>Samantha Elauf</strong> : Look Policy inconstitutionnelle car pas d'exception religieuse et pas claire lors de l'entretien. Mais les entreprises PEUVENT avoir des Look Policies</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Les limites légitimes</div>
+      <p class="f-text"><strong>Santé et sécurité</strong> : limite universelle (des deux côtés de l'Atlantique). Une chirurgienne doit enlever son voile en salle d'opération pour raisons d'hygiène.</p>
+      <p class="f-text"><strong>Transfusions — adultes</strong> : France → médecin PEUT passer outre · Canada → médecin NE PEUT PAS. <strong>Enfants</strong> : accord universel — le médecin peut transfuser contre la volonté des parents.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3–5</span> Lois, avortement, 303 Creative, Europe</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Avortement : les lois peuvent-elles violer la liberté religieuse ?</div>
+      <p class="f-text">Avant Roe v. Wade (1973), les lois américaines interdisant l'avortement étaient fondées sur la définition catholique de la vie (commence à la conception). Un pasteur baptiste a argué : ces lois elles-mêmes violent la liberté religieuse car elles imposent la définition d'une seule religion à tous.</p>
+      <ul class="f-list fr">
+        <li><strong>Roe v. Wade (1973)</strong> : droit à la vie privée → le corps est privé → droit à l'avortement</li>
+        <li><strong>Dobbs v. Jackson (2023)</strong> : renversement de Roe · 6 juges sur 9 sont catholiques (minorité statistique aux USA) · chaque État décide désormais</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">303 Creative (2023) · Pharmaciens français (1995)</div>
+      <ul class="f-list fr">
+        <li><strong>303 Creative</strong> : Lorie Smith, webdesigner, refuse des sites pour mariages homosexuels. 6-3 en sa faveur. Distinction Gorsuch : refuser des <em>clients gay</em> = interdit · refuser du <em>contenu gay</em> = autorisé</li>
+        <li><strong>Sieur-Azu c. France (CEDH, 2001)</strong> : la liberté religieuse protège la <em>sphère privée de conscience</em> — pas tous les actes publics qui en découlent</li>
+        <li><strong>Pharmaciens français (1995)</strong> : refus de vendre des pilules contraceptives → condamnés. En tant que pharmaciens, ils agissent au nom de la société, pas selon leur conscience privée</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Limite universelle : santé et sécurité justifient de restreindre la liberté religieuse partout</li>
+    <li>Roe v. Wade (1973) renversé par Dobbs (2023) — 6/9 juges catholiques dans un pays majoritairement protestant</li>
+    <li>303 Creative : distinction personne (interdit de refuser) vs message (autorisé de refuser)</li>
+    <li>Vision européenne (Sieur-Azu) : liberté religieuse = sphère privée de conscience ≠ actes publics professionnels</li>
+    <li>Pharmaciens : rôle social défini par la loi, pas par la religion personnelle</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f2">← Cours #2</label><label for="r-f4">Cours #4 : Affirmative Action — Origines →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 4 ===== -->
+<div id="page-f4" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Cours #4 · Thème 3 — L'Affirmative Action</div>
+    <h2>L'Affirmative Action — Origines et histoire</h2>
+    <div class="fiche-intro">Comment corriger les effets de 200 ans d'esclavage et 100 ans de ségrégation ? L'Affirmative Action est la réponse américaine : des politiques actives pour rétablir l'égalité dans l'accès à l'emploi et à l'éducation. Mais cette réponse soulève une question insoluble : peut-on corriger une discrimination par une autre ?</div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill en">🇬🇧 English Part — Study Sheet</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1–2</span> University Admissions &amp; Definition</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Classic admission tools</div>
+      <ul class="f-list en">
+        <li><strong>GPA</strong> (grade point average): school grades</li>
+        <li><strong>SAT</strong> (Scholastic Assessment Test): standardized test — same for all schools, to level the playing field between good private schools and poor public schools</li>
+      </ul>
+      <div class="f-exemple"><strong>Problem</strong>An 80% from a top private school in Cambridge, MA ≠ an 80% from a poor public school in Orlando, FL. The SAT levels the playing field.</div>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Definition &amp; vocabulary</div>
+      <p class="f-text"><strong>Affirmative action</strong> = a policy aimed at correcting the effects of past discrimination in employment or education for members of specific groups (historically: women and people of colour).</p>
+      <div class="f-alerte"><strong>⚠️ Vocabulary warning</strong>In the US: <strong>affirmative action</strong>. In the UK: <strong>positive discrimination</strong>. Do NOT say "positive discrimination" in an American context.</div>
+      <p class="f-text">Two goals: <strong>equality of opportunities</strong> (equal access) vs <strong>equality of outcomes</strong> (equal results — more ambitious, more controversial). Illustration: opportunity = everyone gets a ladder. Outcomes = everyone actually reaches the same shelf.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> History of Racial Segregation</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Timeline: from slavery to desegregation</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Date</th><th>Event</th><th>Significance</th></tr></thead><tbody>
+        <tr><td>1787</td><td>US Constitution</td><td>Allowed disenfranchisement of slaves · Native Americans excluded from citizenship</td></tr>
+        <tr><td>1863</td><td>Emancipation Proclamation (Lincoln)</td><td>Freed the slaves — strategic move to get Black soldiers on the Union side</td></tr>
+        <tr><td>1865</td><td>13th Amendment</td><td>Abolished slavery</td></tr>
+        <tr><td>1868</td><td>14th Amendment — Equal Protection Clause</td><td>All citizens must be treated equally under federal law</td></tr>
+        <tr><td>1865–1875</td><td>Reconstruction</td><td>Union army in the South → Black Americans vote, get elected. Then: political deals → discrimination comes back</td></tr>
+        <tr><td>1870s–1960s</td><td>Jim Crow Laws</td><td>Legal racial segregation: "separate but equal" — never actually equal</td></tr>
+        <tr><td>1896</td><td>Plessy v. Ferguson</td><td>Homer Plessy (1/8 Black) arrested for sitting in white train car. Supreme Court: segregation is constitutional. "Separate but equal" validated for 58 more years</td></tr>
+        <tr><td>1954</td><td>Brown v. Board of Education</td><td>Linda Brown denied entry to white school. Supreme Court UNANIMOUSLY: separate is inherently unequal. Segregation in schools is unconstitutional</td></tr>
+      </tbody></table></div>
+      <div class="f-exemple"><strong>The argument that won in Brown</strong>Even if you gave Black students perfect schools, the fact of being separated makes them feel inferior — and that affects their academic performance. Integration is the only solution.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 4–5</span> Civil Rights Movement &amp; Busing</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Key legislative steps</div>
+      <ul class="f-list en">
+        <li><strong>Executive Order 10925 (Kennedy, 1961)</strong>: the lawyer Harris Wofford Jr. coined the phrase "affirmative action" — meaning active steps to ensure non-discrimination in federal agencies and contracts</li>
+        <li><strong>Civil Rights Act (1964)</strong>: banned discrimination based on race, color, religion, or national origin in voting, education, and public facilities. Gave the federal government power to enforce desegregation</li>
+        <li><strong>24th Amendment (1964)</strong>: abolished poll taxes that prevented poor Black Americans from voting</li>
+        <li><strong>Executive Order 11246 (Johnson, 1965)</strong>: shift from equality of opportunities to equality of outcomes — "We seek not just equality as a right and a theory, but equality as a fact and as a result"</li>
+      </ul>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Busing &amp; Swann v. Charlotte-Mecklenburg (1971)</div>
+      <p class="f-text">Transporting Black students from Black neighborhoods to white schools by bus. <strong>Swann (1971)</strong>: the Supreme Court ruled busing is legal if ordered by a state authority. Numbers: 1967: 22% of Black students in the South in integrated schools → 1972: 44% (doubled in 5 years). But busing also had a paradox: as Black students arrived in white schools, white families moved to the suburbs, creating new de facto segregation.</p>
+    </div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill fr">🇫🇷 Partie Française — Fiche de révision</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Résumé</span> Origines et histoire</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Définition et vocabulaire</div>
+      <p class="f-text"><strong>Affirmative action</strong> : politique visant à corriger les effets de la discrimination passée dans l'emploi ou l'éducation pour certains groupes. ⚠️ Aux États-Unis : <em>affirmative action</em> · Royaume-Uni : <em>positive discrimination</em>.</p>
+      <p class="f-text"><strong>Égalité des chances</strong> (accès ouvert à tous) vs <strong>Égalité des résultats</strong> (s'assurer que les résultats sont réellement égaux — plus ambitieux, plus controversé). La France est sensible aux inégalités socio-économiques mais réticente aux critères raciaux. Les États-Unis sont très sensibles à la diversité raciale (200 ans d'esclavage, 100 ans de ségrégation).</p>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Chronologie historique</div>
+      <ul class="f-list fr">
+        <li><strong>1787</strong> : Constitution US — esclaves sans droits civiques</li>
+        <li><strong>1863–1868</strong> : Émancipation · 13e Amendement (abolition) · 14e Amendement (égale protection)</li>
+        <li><strong>1865–1875</strong> : Reconstruction — les Noirs votent et sont élus → puis compromis politiques → discrimination revient</li>
+        <li><strong>1870s–1960s</strong> : Lois Jim Crow — ségrégation légale, doctrine "séparés mais égaux"</li>
+        <li><strong>1896</strong> : Plessy v. Ferguson — Cour Suprême valide la ségrégation pour 58 ans</li>
+        <li><strong>1954</strong> : Brown v. Board — séparés ne peut jamais être égaux · ségrégation scolaire inconstitutionnelle</li>
+        <li><strong>1961–1965</strong> : Kennedy (terme "affirmative action") · Civil Rights Act 1964 · Johnson (égalité des résultats)</li>
+        <li><strong>1971</strong> : Swann v. Charlotte-Mecklenburg — busing constitutionnel · 22% → 44% d'élèves noirs intégrés</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>⚠️ Affirmative action (US) ≠ positive discrimination (UK) — ne pas confondre les termes selon le contexte</li>
+    <li>Plessy 1896 = "séparés mais égaux" validé · Brown 1954 = renversé unanimement (séparés = inégaux)</li>
+    <li>Kennedy 1961 : naissance du terme "affirmative action" · Johnson 1965 : passage à l'égalité des résultats</li>
+    <li>Busing (Swann 1971) : constitutionnel mais effet pervers — les familles blanches fuient vers les banlieues</li>
+    <li>Ségrégation de facto dans le Nord : jamais de lois Jim Crow, mais quartiers séparés → écoles séparées → financement local inégal</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f3">← Cours #3</label><label for="r-f5">Cours #5 : Affirmative Action — Affaires →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 5 ===== -->
+<div id="page-f5" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Cours #5 · Thème 3 — L'Affirmative Action</div>
+    <h2>L'Affirmative Action — Des principes aux affaires judiciaires</h2>
+    <div class="fiche-intro">Post-Brown, la désségrégation avance lentement. Les origines théoriques de l'affirmative action remontent aux syndicats de 1935, bien avant la question raciale. L'affaire Bakke (1978) pose la première grande limite : les quotas raciaux sont inconstitutionnels, mais la race peut rester un facteur parmi d'autres.</div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill en">🇬🇧 English Part — Study Sheet</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> From Brown to Broader Desegregation</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Key milestones after Brown</div>
+      <ul class="f-list en">
+        <li><strong>Brown II</strong>: many southern states refused to comply with Brown → Supreme Court had to affirm that federal court rulings bind all states</li>
+        <li><strong>Loving v. Virginia (1967)</strong>: anti-miscegenation laws finally struck down — 13 years after Brown, it was still illegal in Virginia for a Black and a white person to marry</li>
+        <li><strong>The judiciary alone was not enough</strong>: Kennedy and Johnson used executive orders · federal agents escorted Black children to school · the president sent military troops to a university in Little Rock, Arkansas, where the governor had sent state troops to block Black students</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Theoretical Origins of Affirmative Action</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">First use of "affirmative action": unions (1935)</div>
+      <p class="f-text">The term "affirmative action" first appeared in the <strong>National Labor Relations Act (NLRA) of 1935</strong> — to protect unionized workers. If an employer fired someone for joining a union, they had to rehire the person or pay compensation. So: affirmative action was first about <strong>unions, not race</strong>. The goal was the same: correct an injustice that had already occurred.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">New Deal and racial quotas (1930s)</div>
+      <p class="f-text">Roosevelt's <strong>Public Works Administration (PWA)</strong> built roads, bridges, dams. Secretary Harold Ickes implemented <strong>racial quotas</strong>: a certain percentage of workers had to be Black. This was the first system of racial quotas in US history.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Opportunities vs Outcomes: the evolution</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Era</th><th>Goal</th><th>Logic</th></tr></thead><tbody>
+        <tr><td>Kennedy / early (1961)</td><td>Equality of <em>opportunities</em></td><td>Make sure everyone has a fair shot</td></tr>
+        <tr><td>Johnson (1965)</td><td>Equality of <em>outcomes</em></td><td>"Not just equality as a right and theory, but equality as a fact and as a result"</td></tr>
+        <tr><td>The problem</td><td colspan="2">To get more Black students into good schools, you have to reserve seats — which means taking seats from white students. You're helping some by limiting others. Is that fair?</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 4</span> The First Legal Challenge: Bakke (1978)</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Facts: Regents of the University of California v. Bakke</div>
+      <p class="f-text"><strong>Allan Bakke</strong> — a white Californian — applied twice to the medical school of UC Davis. He was rejected both times. Some minority students with lower test scores were admitted because <strong>16% of seats were reserved for minorities</strong> (quotas).</p>
+      <p class="f-text">Bakke argued: this is <strong>reverse discrimination</strong> — a violation of the 14th Amendment (Equal Protection Clause) AND the Civil Rights Act of 1964. The irony: the same laws that created affirmative action were being used to challenge it.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Supreme Court ruling: deeply divided (6 different opinions among 9 justices)</div>
+      <ul class="f-list en">
+        <li>✅ Race <strong>can</strong> be used as one factor among many — diversity is a legitimate goal</li>
+        <li>❌ <strong>Racial quotas are unconstitutional</strong> — Bakke was right</li>
+      </ul>
+      <div class="f-key">The compromise: you can consider race. You just can't have a quota. Think about the individual, not the group.</div>
+    </div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill fr">🇫🇷 Partie Française — Fiche de révision</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Résumé</span> Des origines aux premières limites</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Post-Brown : les trois pouvoirs agissent ensemble</div>
+      <ul class="f-list fr">
+        <li>Après Brown (1954), beaucoup d'États du Sud refusent de s'y conformer → <strong>Brown II</strong> pour confirmer l'autorité fédérale</li>
+        <li><strong>Loving v. Virginia (1967)</strong> : 13 ans après Brown, les mariages inter-raciaux sont encore illégaux en Virginie → la Cour Suprême les rend légaux</li>
+        <li>La justice seule ne suffit pas : ordres exécutifs Kennedy/Johnson · agents fédéraux · troupes militaires à Little Rock</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Origines théoriques : syndicats et New Deal</div>
+      <ul class="f-list fr">
+        <li>Le terme <strong>"affirmative action"</strong> apparaît d'abord dans la <strong>NLRA de 1935</strong> — pour les travailleurs syndiqués illégalement licenciés. Première utilisation : syndicats, pas race</li>
+        <li><strong>New Deal (PWA, années 1930)</strong> : Harold Ickes impose des <strong>quotas raciaux</strong> sur les chantiers fédéraux. Premier système de quotas raciaux de l'histoire américaine</li>
+        <li><strong>Kennedy (1961)</strong> : égalité des <em>chances</em> → <strong>Johnson (1965)</strong> : égalité des <em>résultats</em></li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">L'affaire Bakke (1978) — première grande limite judiciaire</div>
+      <p class="f-text"><strong>Allan Bakke</strong>, Californien blanc, refusé deux fois à l'école de médecine de UC Davis. 16% des places réservées aux minorités. Des candidats minoritaires avec des notes inférieures sont admis. Bakke crie à la <strong>discrimination inverse</strong> (violation du 14e Amendement et du Civil Rights Act de 1964).</p>
+      <p class="f-text">Cour Suprême profondément divisée (6 opinions différentes parmi 9 juges) :</p>
+      <ul class="f-list fr">
+        <li>✅ La <strong>race peut être un facteur parmi d'autres</strong> → l'affirmative action survit</li>
+        <li>❌ Les <strong>quotas raciaux sont inconstitutionnels</strong> → Bakke a gagné</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Loving v. Virginia (1967) : 13 ans après Brown, les mariages inter-raciaux encore illégaux en Virginie</li>
+    <li>"Affirmative action" = d'abord un terme syndical (NLRA 1935), pas racial</li>
+    <li>New Deal : premiers quotas raciaux dans l'histoire américaine (PWA, Ickes)</li>
+    <li>Johnson 1965 : passage de l'égalité des chances à l'égalité des résultats</li>
+    <li><strong>Bakke 1978</strong> : quotas = inconstitutionnels · race comme facteur parmi d'autres = constitutionnel · c'est le compromis de base qui durera jusqu'en 2023</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f4">← Cours #4</label><label for="r-f6">Cours #6 : Affirmative Action — Fin →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 6 ===== -->
+<div id="page-f6" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Cours #6 · Thème 3 — L'Affirmative Action</div>
+    <h2>L'Affirmative Action — Les batailles judiciaires jusqu'à son interdiction</h2>
+    <div class="fiche-intro">De 2003 à 2023, la Cour Suprême précise, affine, puis finalement abolit l'affirmative action. La distinction clé : les points automatiques par race (Gratz 2003) vs l'examen holiste individuel (Grutter 2003). En 2023, même l'examen holiste est jugé inconstitutionnel.</div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill en">🇬🇧 English Part — Study Sheet</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> University of Michigan Cases (2003)</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Gratz v. Bollinger (Undergraduate) — 6 to 3: Gratz WINS</div>
+      <p class="f-text">Jennifer Gratz and Patrick Hamacher were rejected. The university used a <strong>point system</strong>: minority applicants received <strong>automatic 20 bonus points</strong> because of their race alone (1/5 of the 100 minimum). Ruled: the point system was <strong>unconstitutional</strong> — giving automatic bonus points to entire racial groups is mechanical, it doesn't consider individuals.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Grutter v. Bollinger (Law School) — 5 to 4: University of Michigan WINS</div>
+      <p class="f-text">Barbara Grutter was rejected. Unlike the undergrad system, the law school used a <strong>holistic review</strong>: examining each application individually, considering all aspects of the person. Race was one factor among many. Ruled: the holistic review <strong>is constitutional</strong> — race is one factor among many, the goal of a diverse student body is legitimate, individual profiles are considered.</p>
+      <p class="f-text"><strong>Justice Sandra Day O'Connor:</strong> "In order to cultivate a set of leaders with legitimacy in the eyes of the citizenry, it is necessary that the path to leadership be visibly open to talented and qualified individuals of every race." → Society needs Black lawyers and Black judges.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Combined ruling: what is and is not acceptable</div>
+      <ul class="f-list en">
+        <li>✅ A <strong>diverse student body</strong> is a legitimate educational goal</li>
+        <li>✅ <strong>Race can be a factor</strong> in a holistic review</li>
+        <li>❌ <strong>Quotas</strong> are unconstitutional</li>
+        <li>❌ <strong>Point systems</strong> based on race are unconstitutional</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2–3</span> Fisher (2016) &amp; Trump/Sessions</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Fisher v. University of Texas (2016) — Last win for affirmative action</div>
+      <p class="f-text">The University of Texas had a <strong>"Top 10% policy"</strong>: the top 10% of any Texas high school class automatically got a place. For the remaining places, a holistic review including race was used. Abigail Fisher (white, NOT in the top 10%) argued the holistic review discriminated against her. The Supreme Court upheld the process as constitutional.</p>
+      <p class="f-text">This was 2016 — the last year of the Obama administration. <strong>Notice the evolution:</strong> Johnson (1965) wanted equality of outcomes. Obama (2016) only talks about equality of opportunities. The language has shifted over 50 years.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Trump's first term: dismantling affirmative action</div>
+      <ul class="f-list en">
+        <li><strong>Jeff Sessions (AG):</strong> universities should NOT consider race as a factor. Quote: "All persons… should be judged by their character, talents and achievements — not the colour of their skin." (echoing MLK's language against civil rights)</li>
+        <li><strong>Yale sued (2020)</strong>: allegedly discriminating against white and Asian American applicants</li>
+        <li><strong>3 new conservative justices</strong> nominated by Trump → shifted the court's ideological balance</li>
+        <li><strong>Biden (2022)</strong>: dropped the charges against Yale. But Trump would be back…</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 4–5</span> Harvard (2023) — The End of Affirmative Action</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Students for Fair Admissions v. Harvard — 6 to 3 against affirmative action</div>
+      <p class="f-text">Led by conservative activist Edward Blum, mostly Asian American students rejected from Harvard. Accusation: Harvard's holistic review was actually <strong>racial balancing</strong> — engineering the racial composition of its student body. Asian American applicants were rated lower on subjective qualities (likability, social skills) due to racial stereotypes by mostly non-Asian reviewers.</p>
+      <p class="f-text"><strong>Supreme Court ruling:</strong> Affirmative action in university admissions violates the Equal Protection Clause of the 14th Amendment. Race cannot be considered in any admission policy — not in quotas, not in points, not in holistic review. All previous decisions (Bakke, Grutter, Fisher) overturned.</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Justice</th><th>Position</th><th>Quote</th></tr></thead><tbody>
+        <tr><td>Chief Justice Roberts (majority)</td><td>Affirmative action unconstitutional</td><td>Overturns all previous decisions</td></tr>
+        <tr><td>Justice Clarence Thomas (Black, conservative)</td><td>Against affirmative action</td><td>"The time has come to end racial preferences in college admissions." Quoted MLK: "All men are created equal."</td></tr>
+        <tr><td>Justice Ketanji Brown Jackson (Black, progressive — dissent)</td><td>For affirmative action</td><td>"Deeming race irrelevant in law does not make it so in life."</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Real-world impact</div>
+      <ul class="f-list en">
+        <li>When California banned affirmative action in 1996: UC Berkeley saw a <strong>60% drop in minority students</strong> over 20 years</li>
+        <li>University of Michigan after the ban: Black undergraduates <strong>7% → 4%</strong></li>
+        <li>Public opinion: <strong>63% of US adults</strong> believe race should be a factor in college admissions → the Supreme Court ruled against the majority's view</li>
+        <li>Universities can still pursue diversity through socio-economic, geographic criteria, or first-generation college student programs — "You can pursue integration without saying you're integrating."</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill fr">🇫🇷 Partie Française — Fiche de révision</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Résumé</span> De 2003 à la fin de l'Affirmative Action</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Les affaires de l'Université du Michigan (2003)</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Affaire</th><th>Système</th><th>Résultat</th></tr></thead><tbody>
+        <tr><td>Gratz v. Bollinger (Licence)</td><td>20 points automatiques pour les minorités raciales</td><td><strong>6-3 : Gratz gagne</strong> — Points automatiques = inconstitutionnels (mécaniques, ne considèrent pas l'individu)</td></tr>
+        <tr><td>Grutter v. Bollinger (Droit)</td><td>Examen holiste individuel, race = facteur parmi d'autres</td><td><strong>5-4 : Michigan gagne</strong> — Examen holiste constitutionnel</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Fisher 2016 · Trump · Harvard 2023</div>
+      <ul class="f-list fr">
+        <li><strong>Fisher v. Texas (2016)</strong> : dernier succès de l'affirmative action. Top 10% policy + examen holiste → constitutionnel. Obama : <em>"We strive to provide an equal shot to everybody."</em> (plus de discours sur l'égalité des résultats)</li>
+        <li><strong>Trump 1er mandat</strong> : Sessions oriente les universités contre la race · Yale poursuivi 2020 · 3 juges conservateurs nommés · Biden abandonne les poursuites 2022</li>
+        <li><strong>Students for Fair Admissions v. Harvard (2023)</strong> : 6-3 contre l'affirmative action. La Cour Suprême invalide toutes les décisions précédentes (Bakke, Grutter, Fisher). La prise en compte de la race dans les admissions viole le 14e Amendement</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Thomas vs Jackson — le débat symbolique</div>
+      <ul class="f-list fr">
+        <li><strong>Clarence Thomas (noir, conservateur)</strong> : "Le moment est venu de mettre fin aux préférences raciales." Cite Martin Luther King</li>
+        <li><strong>Ketanji Brown Jackson (noire, progressiste, dissidente)</strong> : "Dire que la race est hors-sujet en droit ne la rend pas hors-sujet dans la vie"</li>
+        <li>Impact réel : -60% d'étudiants minoritaires à UC Berkeley après l'interdiction en Californie (1996). Michigan : 7% → 4% d'étudiants noirs</li>
+        <li><strong>63% des adultes américains</strong> pensent que la race devrait être un facteur → la Cour Suprême a décidé l'inverse</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Gratz 2003 : points automatiques = inconstitutionnels · Grutter 2003 : examen holiste = constitutionnel</li>
+    <li>Fisher 2016 : dernier succès de l'affirmative action sous Obama</li>
+    <li>Harvard 2023 : même l'examen holiste est désormais inconstitutionnel — fin de l'affirmative action</li>
+    <li>Thomas (conservateur) vs Jackson (progressiste) — deux juges noirs, deux visions radicalement opposées</li>
+    <li>Impact mesuré : -60% à UC Berkeley · 7%→4% à Michigan · 63% des Américains contre la décision de la Cour</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f5">← Cours #5</label><label for="r-f7">Cours #7 : Migrations — Cadre juridique →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 7 ===== -->
+<div id="page-f7" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Cours #7 · Thème 4 — Le droit international des migrations</div>
+    <h2>Migrations — Concepts et cadre juridique international</h2>
+    <div class="fiche-intro">Avant de comprendre les politiques migratoires, il faut maîtriser les définitions et les textes fondateurs. Qui est "réfugié" ? Qui est "demandeur d'asile" ? La Convention de Genève (1951) pose le cadre. Le système de Dublin organise la réponse européenne — imparfaitement.</div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill en">🇬🇧 English Part — Study Sheet</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Key Definitions</div>
+    <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Status</th><th>Definition</th><th>Key point</th></tr></thead><tbody>
+      <tr><td>Migrant</td><td>Umbrella term (IOM) — anyone who crosses borders, regardless of reason</td><td>Not always one-way; includes skilled workers, domestic workers, etc.</td></tr>
+      <tr><td>Economic migrant</td><td>Moving for better economic opportunities (skilled or unskilled)</td><td></td></tr>
+      <tr><td>Refugee</td><td>Cannot return home due to persecution, war, or state failure — formal legal status</td><td>Defined by the 1951 Geneva Convention</td></tr>
+      <tr><td>Climate refugee</td><td>Displaced by desertification, rising sea levels, natural disasters</td><td>Emerging category, not yet solid legal status in international law</td></tr>
+      <tr><td>Asylum seeker</td><td>Status while waiting for refugee claim to be processed — from the moment you leave your country</td><td>You are NOT illegal if your claim is pending</td></tr>
+      <tr><td>Irregular migrant</td><td>No work visa, or asylum application denied but staying</td><td>Crossing a border without documents does not make you "illegal" if you are seeking asylum</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> Key International Legal Texts</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">UDHR (1948): four key rights</div>
+      <ul class="f-list en">
+        <li><strong>Right to life</strong> → right to flee if your life is in danger</li>
+        <li><strong>Article 13</strong>: right to freedom of movement (within your own country; crossing borders is a state's sovereign right)</li>
+        <li><strong>Right to seek asylum</strong>: "Everyone has the right to seek and enjoy in other countries asylum from persecution"</li>
+        <li><strong>Article 15</strong>: right to a nationality → states cannot leave people stateless</li>
+      </ul>
+      <div class="f-exemple"><strong>Statelessness example</strong>Palestinians who fled to Syria were given "Palestinian documents" by Syria — not Syrian passports. Their children remained Palestinians. When war broke out in Syria, they had to flee again with documents no country recognized.</div>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The Geneva Convention (1951) — the most important text. Ratified by 196 countries</div>
+      <p class="f-text"><strong>Definition of a refugee:</strong> A person with a well-founded fear of persecution based on: race, religion, nationality, membership of a particular social group, or political opinion — who cannot return to or get protection from their country.</p>
+      <p class="f-text"><strong>Core principle (non-refoulement):</strong> A refugee cannot be returned to a country where their life or freedom is at serious risk.</p>
+      <p class="f-text"><strong>Who decides if you are a refugee?</strong> Nation states, case-by-case. Each country has its own list of safe and unsafe countries of origin.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 4</span> The European Framework</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The Dublin Convention (1990, effective 1997) — The flawed system</div>
+      <p class="f-text"><strong>Key rule:</strong> The first EU country where an asylum seeker arrives is responsible for processing their application.</p>
+      <p class="f-text"><strong>The deep unfairness:</strong> Italy, Greece, and Spain are at the border — they receive almost all the arrivals and must process all applications. Germany, Sweden, France almost never receive direct arrivals by sea. The system is deeply unfair to border states. This is why Italy and Greece were overwhelmed during the 2015 migrant crisis.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 5</span> Migration Data (2020 figures)</div>
+    <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Figure</th><th>Data</th></tr></thead><tbody>
+      <tr><td>International migrants</td><td><strong>281 million</strong> = 3.6% of world population · +128 million over 30 years (growing faster than population)</td></tr>
+      <tr><td>Women migrants</td><td><strong>48%</strong> of migrants are women (contrary to popular image — many are domestic workers, nurses, teachers)</td></tr>
+      <tr><td>Irregular migrants</td><td>Estimated <strong>55 million</strong></td></tr>
+      <tr><td>Internal vs international</td><td><strong>3x more</strong> internal migrants than international</td></tr>
+      <tr><td>Refugees peak</td><td>2018 (Syria war): 25.9 million refugees. Rise again after Ukraine war and Gaza</td></tr>
+      <tr><td>Top host countries</td><td><strong>Turkey, Pakistan, Uganda, Sudan, Colombia, Iran</strong> — NOT rich Western countries. Neighboring developing countries absorb the first wave</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill fr">🇫🇷 Partie Française — Fiche de révision</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Résumé</span> Définitions · Textes · Données</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Les définitions clés</div>
+      <ul class="f-list fr">
+        <li><strong>Migrant</strong> : terme-parapluie (IOM) — toute personne qui traverse des frontières · pas automatiquement "illégal" si demande d'asile en cours</li>
+        <li><strong>Réfugié</strong> : ne peut pas rentrer chez lui (persécutions, guerre, État défaillant) → statut juridique formel (Convention de Genève 1951)</li>
+        <li><strong>Réfugié climatique</strong> : catégorie émergente (désertification, montée des eaux) — pas encore statut solide en droit international</li>
+        <li><strong>Demandeur d'asile</strong> : statut pendant l'attente du traitement de la demande (dès la sortie du pays)</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Convention de Genève (1951) — 196 pays</div>
+      <p class="f-text"><strong>Définition du réfugié :</strong> crainte fondée d'être persécuté pour sa race, religion, nationalité, appartenance à un groupe social particulier ou opinion politique — qui ne peut pas bénéficier de la protection de son pays.</p>
+      <p class="f-text"><strong>Principe clé (non-refoulement) :</strong> Un réfugié ne peut pas être renvoyé dans un pays où sa vie ou sa liberté est menacée.</p>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Dublin (1997) + Données 2020</div>
+      <ul class="f-list fr">
+        <li><strong>Dublin</strong> : le premier pays de l'UE où arrive un demandeur d'asile est responsable du traitement de sa demande → profondément injuste pour les pays frontaliers (Italie, Grèce, Espagne)</li>
+        <li><strong>281 millions</strong> de migrants internationaux · <strong>48% de femmes</strong> · <strong>55 millions</strong> d'irréguliers · 3x plus de migrants internes qu'internationaux</li>
+        <li><strong>Pays hôtes</strong> : Turquie, Pakistan, Ouganda, Soudan → pas les pays riches d'Occident</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Migrant ≠ réfugié ≠ demandeur d'asile — chaque statut a une définition précise en droit international</li>
+    <li>Non-refoulement (Genève 1951) : principe fondamental — on ne renvoie pas quelqu'un où sa vie est menacée</li>
+    <li>Dublin : premier pays d'entrée responsable → système injuste pour l'Italie, la Grèce, l'Espagne</li>
+    <li>48% des migrants sont des femmes — contre l'image populaire</li>
+    <li>Les pays qui accueillent le plus de réfugiés = pays voisins en développement (Turquie, Pakistan, Ouganda), PAS les pays riches occidentaux</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f6">← Cours #6</label><label for="r-f8">Cours #8 : USA et Australie →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 8 ===== -->
+<div id="page-f8" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Cours #8 · Thème 4 — Le droit international des migrations</div>
+    <h2>Migrations — Politiques des États-Unis et de l'Australie</h2>
+    <div class="fiche-intro">Les États-Unis et l'Australie, traditionnellement nations d'immigration, ont radicalement durci leurs politiques. L'Australie invente l'externalisation offshore (Nauru). Trump érige des murs, impose des Travel Bans et veut porter ICE à $85 milliards. Morale récurrente du cours : lutter contre l'immigration coûte extrêmement cher.</div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill en">🇬🇧 English Part — Study Sheet</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Resettlement</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Definition &amp; decline</div>
+      <p class="f-text"><strong>Resettlement</strong> = the transfer of a refugee from the country where they first sought asylum (usually a neighboring country) to a third country that has agreed to permanently host them. Works through bilateral deals. Traditionally the most proactive countries: <strong>US, Canada, Australia</strong> — all three became much less welcoming. US: from ~70,000/year to ~20,000/year between 2015-2018.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> US Immigration Policy: Trump's First Term</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The Border Wall</div>
+      <p class="f-text"><strong>450 miles of wall, $16 billion</strong>. Funded through Pentagon budget → Congress resisted → government shutdown. Trump declared a <strong>national emergency</strong> (reframing immigration as national security) → Supreme Court agreed: the president can use Pentagon funds. Construction started but never completed during the first term. Biden paused it in 2021 → Trump (second term, 2025) resumed it.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The Travel Ban ("Muslim Ban")</div>
+      <p class="f-text">Ban on citizens of 7 predominantly Muslim countries (Syria, Iran, Yemen, Somalia, Libya, Sudan, Chad). Challenged in court as unconstitutional (equal treatment, 1st Amendment). <strong>Supreme Court ruling: the ban is legal.</strong> Security concerns (terrorism) justify the restriction, even if it infringes on fundamental rights. Later expanded to non-Muslim countries (Nigeria, Eritrea…) to protect the policy from "Muslim ban" accusations.</p>
+      <div class="f-alerte"><strong>Note</strong>The Supreme Court applies US Constitutional law — NOT international law. The Constitution is above international treaties in US jurisprudence.</div>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The Remain in Mexico Policy (2019) &amp; Biden's evolution</div>
+      <p class="f-text">Asylum seekers had to wait in Mexico while their US asylum application was processed — 60,000 people stuck in Mexico for up to 18 months. Supreme Court: legal (March 2020). Biden ended it (March 2021) → by 2023, introduced new restrictions resembling Trump's (apply from country of origin or first country traveled through).</p>
+      <div class="f-key">The pattern: the US and most Western countries end up in a similar place regardless of the administration. The pressure to restrict is structural.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> ICE and Trump's Second Term</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">What is ICE?</div>
+      <p class="f-text"><strong>ICE = Immigration and Customs Enforcement</strong> — part of the Department of Homeland Security. NOT the police (FBI). NOT the military. Primarily a bureaucratic administration dealing with paperwork. Irregular migration (overstaying a visa) = a <strong>civil</strong> violation, not a criminal offense in the US.</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Year</th><th>ICE Budget</th></tr></thead><tbody>
+        <tr><td>2015</td><td>$6 billion/year</td></tr>
+        <tr><td>Trump 1st term</td><td>$10 billion/year</td></tr>
+        <tr><td>Proposed 2026</td><td><strong>$85 billion/year</strong> (+$75 billion emergency supplement) — would exceed the entire Canadian military budget</td></tr>
+      </tbody></table></div>
+      <p class="f-text">Goal: 1 million deportations per year = 3,000 people arrested per day. Problem: due process cannot realistically process 3,000 people per day. ICE agents now routinely cover their faces (no rule requiring identification — unlike police officers). This has raised serious civil liberties concerns.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 4</span> Australia: Offshore Processing</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The Nauru solution (2012)</div>
+      <p class="f-text">Australia made a deal with <strong>Nauru</strong> (21 km², 3,000 km northeast of Australia): asylum seekers intercepted before reaching Australian shores were sent to Nauru for processing. Asylum seekers never set foot on Australian soil → far from media and public scrutiny.</p>
+      <p class="f-text">Controversial: arbitrary detention (before status determined) · inhumane conditions · possible violation of <strong>non-refoulement</strong>.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The cost — the course's key moral</div>
+      <p class="f-text">Australia paid <strong>$284 million per year</strong> to Nauru to process <strong>1,500 migrants</strong>. Simple math: $284M ÷ 1,500 = ~<strong>$189,000 per migrant</strong>.</p>
+      <div class="f-key">Politicians who say they will "save money" by reducing immigration rarely account for the massive infrastructure costs of enforcement. Anti-immigration policy is extremely expensive.</div>
+      <p class="f-text">By 2016, <strong>children</strong> were included in the offshore facilities. Some children attempted suicide. International pressure forced Australia to resettle children back. By 2019, Nauru was empty — but overcrowding simply shifted to other detention centers.</p>
+    </div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill fr">🇫🇷 Partie Française — Fiche de révision</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Résumé</span> USA et Australie</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Trump 1er mandat — les grandes mesures</div>
+      <ul class="f-list fr">
+        <li><strong>Mur (450 miles, $16 milliards)</strong> : financement via le Pentagone · shutdown gouvernemental · déclaration d'urgence nationale · Cour Suprême valide · jamais achevé · Biden stoppe · Trump reprend en 2025</li>
+        <li><strong>Travel Ban ("Muslim Ban")</strong> : 7 pays à majorité musulmane · Cour Suprême valide (sécurité nationale > droits fondamentaux) · élargi ensuite à pays non-musulmans pour éviter l'accusation de discrimination religieuse</li>
+        <li><strong>Reste au Mexique (2019)</strong> : 60 000 personnes bloquées jusqu'à 18 mois · Cour Suprême valide · Biden annule (2021) puis introduit des restrictions similaires (2023)</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">ICE — explosion budgétaire</div>
+      <ul class="f-list fr">
+        <li><strong>ICE</strong> : Immigration and Customs Enforcement, partie du DHS. Ni police, ni armée. Administration bureaucratique. Rester illégalement = <strong>infraction civile</strong>, pas pénale</li>
+        <li>Budget : 2015 → $6Mds · Trump 1er mandat → $10Mds · Proposé 2026 → <strong>$85Mds</strong> (supérieur à l'armée canadienne entière)</li>
+        <li>Objectif : 1 million d'expulsions/an = 3 000 arrestations/jour → irréalisable dans le respect de la procédure légale · agents masqués (aucune règle d'identification)</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Australie : traitement offshore à Nauru</div>
+      <ul class="f-list fr">
+        <li>Accord avec <strong>Nauru</strong> (île de 21 km², 3 000 km de l'Australie) · les migrants interceptés ne foulent jamais le sol australien · loin des médias</li>
+        <li><strong>Controversé</strong> : détention arbitraire · conditions inhumaines · violation potentielle du non-refoulement</li>
+        <li><strong>Coût : $284 millions/an pour 1 500 migrants = ~$189 000 par migrant</strong></li>
+        <li>Enfants dans les centres → tentatives de suicide → pression internationale → retour en Australie 2016 → Nauru vidé en 2019</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Resettlement : transfert depuis le 1er pays d'accueil vers un pays tiers acceptant l'hébergement définitif · US passé de 70 000 à 20 000/an sous Trump</li>
+    <li>Travel Ban : légal selon la Cour Suprême (sécurité nationale) — le droit constitutionnel américain prime sur le droit international</li>
+    <li>ICE en 2026 : $85 milliards proposés = plus que le budget militaire canadien</li>
+    <li>Nauru : $189 000 par migrant → la lutte contre l'immigration coûte extrêmement cher</li>
+    <li>Conclusion structurelle : quel que soit le gouvernement (Trump ou Biden), la pression à durcir les politiques migratoires est structurelle</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f7">← Cours #7</label><label for="r-f9">Cours #9 : Migrations — Europe →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 9 ===== -->
+<div id="page-f9" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Cours #9 · Thème 4 — Le droit international des migrations</div>
+    <h2>Migrations — Politiques migratoires européennes et pratiques extralégales</h2>
+    <div class="fiche-intro">L'Europe répond à la crise migratoire de 2015 par des accords controversés (Turquie, Libye), des pratiques extralégales (refoulements, fermeture de ports) et une désunion politique permanente. Le système Dublin, conçu pour l'ordre, est profondément injuste pour les pays frontaliers. Pendant ce temps, des milliers de personnes meurent en Méditerranée.</div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill en">🇬🇧 English Part — Study Sheet</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1–2</span> Australia's PR Campaign &amp; Dublin's Flaws</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The "No Way" campaign (2012) — Australia, first mover</div>
+      <p class="f-text">Australia was the first country to develop an aggressive PR campaign to discourage migrants in their country of origin. Slogan: <strong>"No Way. You Will Not Make Australia Home."</strong> Goal: deterrence. Europe followed with campaigns in Africa emphasizing how difficult life is for migrants there. Counter-argument from migration studies: people don't migrate because they think Europe is paradise — they migrate because something has gone badly wrong at home.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Dublin's deep unfairness</div>
+      <p class="f-text">Italy, Greece, Spain = entry doors → must process nearly all applications. Germany, Sweden, Belgium = interior countries → almost never get direct arrivals. The system was not designed for mass migration. The 2015 crisis exposed its limits completely. Dublin II, Dublin III were attempts to fix it. Now we're in a "New Pact on Migration and Asylum" (2024) — still not fully working.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> European Asylum Statuses</div>
+    <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Status</th><th>Who gets it</th><th>Permit</th><th>Notes</th></tr></thead><tbody>
+      <tr><td>Refugee status (Geneva Convention)</td><td>Meets 1951 Convention criteria</td><td><strong>10-year</strong> renewable</td><td>After 10 years: naturalization often available</td></tr>
+      <tr><td>Subsidiary protection</td><td>Doesn't formally qualify as refugee BUT would face real risk of serious harm if returned</td><td><strong>1-year</strong>, renewable annually</td><td>Often NO work permit → person cannot work, depends on government aid. Creates years of limbo</td></tr>
+      <tr><td>Humanitarian protection</td><td>Climate refugees, people whose health would be endangered by return</td><td><strong>2-year</strong></td><td>France stopped giving it in 2018</td></tr>
+    </tbody></table></div>
+    <div class="f-exemple"><strong>The human cost of subsidiary protection</strong>A Syrian on subsidiary protection waits 1-2 years unable to work, unable to plan, dependent on aid. Not a solution — just legal limbo.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 4–5</span> 2015 Crisis, EU-Turkey Deal &amp; Italy-Libya Deal</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The 2015 crisis and its political consequences</div>
+      <p class="f-text">Massive inflow 2015-2018 from Syria, Iraq, Afghanistan. Italy and Greece overwhelmed. <strong>Political consequence: this is when anti-immigration politics became mainstream in Europe. You cannot understand Brexit without understanding the 2015 migration crisis.</strong></p>
+      <p class="f-text">Germany (Merkel) accepted 1 million Syrian refugees in 2015 — generous but unilateral. Huge backlash in Germany. Germany later joined the restrictionist camp.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">EU-Turkey Deal (March 2016)</div>
+      <p class="f-text"><strong>€6 billion</strong> to Turkey in exchange for: closing borders to migrants heading to the EU · opening detention centers · an exchange (1 irregular migrant returned to Turkey = 1 legitimate Syrian refugee sent to EU). 2020: Erdogan, tired of the deal, partially opened the border. Greece deployed military ships.</p>
+      <div class="f-key">The precedent: this deal turned migrants into bargaining chips in international diplomacy.</div>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Italy-Libya Deal (2017) — Extralegal practices</div>
+      <p class="f-text">Italy funded and armed the <strong>Libyan Coast Guard</strong> to intercept migrants before they reach Italian waters. Problem: Libya in 2017 was in civil war. The "Coast Guard" was a faction in that civil war. <strong>Slave trade had restarted</strong> in Libya. Libya cannot grant asylum to anyone. This violates non-refoulement. But nobody in Europe objected because nobody wanted to host those migrants. Amnesty International has extensively documented the atrocities in Libyan detention centers.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 6</span> NGO Rescue Boats and European Responses</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Legal obligation to rescue &amp; Salvini's response</div>
+      <p class="f-text">Under international maritime law: any captain (commercial, military, NGO, tourist) is legally obligated to rescue people in distress at sea. NGOs (MSF, etc.) deployed rescue boats because Frontex and EU Coast Guards received instructions not to rescue all boats. Human traffickers put 100+ people on small inflatable boats with minimal fuel — without rescue, they die of thirst, starvation, or drowning.</p>
+      <p class="f-text">Matteo Salvini (Italian Interior Minister): began refusing to let NGO rescue boats dock in Italian ports — a violation of maritime rescue law. One Italian Coast Guard ship was prevented by Salvini from disembarking its own rescued passengers. An Italian prosecutor sued Salvini for <strong>kidnapping and illegal detention</strong>.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The numbers</div>
+      <p class="f-text"><strong>2018:</strong> 21,000 people crossed the Mediterranean on small boats. Nearly <strong>10% died</strong> (~2,054 confirmed deaths). <strong>2023:</strong> A boat carrying 150+ people from Afghanistan, Pakistan, and Somalia crashed off the Italian coast — half died.</p>
+    </div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill fr">🇫🇷 Partie Française — Fiche de révision</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Résumé</span> Europe : Dublin · Crise 2015 · Pratiques extralégales</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Dublin et les statuts de protection</div>
+      <ul class="f-list fr">
+        <li><strong>Dublin (1997)</strong> : premier pays d'entrée responsable → injuste pour Italie, Grèce, Espagne (portes d'entrée) · Dublin II et III n'ont pas résolu le problème</li>
+        <li><strong>Réfugié</strong> : titre de 10 ans renouvelable · <strong>Protection subsidiaire</strong> : 1 an renouvelable, souvent sans droit au travail → limbe administratif · <strong>Protection humanitaire</strong> : 2 ans, France arrête en 2018</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Crise 2015 · Accords controversés</div>
+      <ul class="f-list fr">
+        <li><strong>Crise 2015-2018</strong> : afflux massif depuis Syrie, Irak, Afghanistan. Consequence politique : montée des partis anti-immigration. <strong>Brexit incompréhensible sans cette crise.</strong> Merkel accepte 1 million de Syriens → énorme backlash → Allemagne rejoint le camp restrictif</li>
+        <li><strong>Accord UE-Turquie (2016)</strong> : €6 milliards → fermeture des frontières + centres de détention + échange (1 irrégulier retourné = 1 Syrien envoyé en UE). 2020 : Erdogan ouvre partiellement → Grèce déploie des navires</li>
+        <li><strong>Accord Italie-Libye (2017)</strong> : Italie finance les Garde-côtes libyens (État en guerre civile, traite des esclaves relancée) → violation du non-refoulement. Personne en Europe ne proteste car personne ne veut accueillir</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Bateaux d'ONG · Salvini</div>
+      <ul class="f-list fr">
+        <li><strong>Droit maritime international</strong> : tout capitaine est légalement obligé de secourir les personnes en détresse en mer et de les amener au port le plus proche</li>
+        <li><strong>Salvini</strong> : interdit aux bateaux d'ONG de débarquer en Italie · empêche même un bateau des Garde-côtes italiens de débarquer ses rescapés → poursuivi pour séquestration et détention illégale</li>
+        <li><strong>Chiffres</strong> : 2018 → 21 000 traversées · ~10% morts (~2 054 confirmés) · 2023 → bateau afghan/pakistanais/somalien s'échoue → moitié morts</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Campagne "No Way" (2012) : l'Australie invente la dissuasion par communication — mais les études migratoires montrent que les gens fuient des situations désespérées, pas un "paradis imaginaire"</li>
+    <li>Statuts en Europe : réfugié (10 ans) · subsidiaire (1 an, sans travail) · humanitaire (2 ans) — chaque statut inférieur crée des années de limbe</li>
+    <li>Accord UE-Turquie : les migrants deviennent une monnaie d'échange diplomatique</li>
+    <li>Accord Italie-Libye : violation délibérée du non-refoulement — esclavage documenté par Amnesty International</li>
+    <li>2018 : ~10% des traversants meurent en Méditerranée — le chiffre à retenir</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f8">← Cours #8</label><label for="r-f10">Cours #10 : Front anti-immigration et Pacte →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 10 ===== -->
+<div id="page-f10" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Cours #10 · Thème 4 — Le droit international des migrations</div>
+    <h2>Migrations — Front anti-immigration européen et Pacte sur la Migration</h2>
+    <div class="fiche-intro">L'Europe se fragmente. Un front anti-immigration (Visegrád, Italie, Hongrie, Autriche) s'oppose à un camp officiellement "pro-migrants" (Macron) qui pratique en réalité le refoulement. Le camp de Moria brûle. L'exception ukrainienne révèle les contradictions. Le Pacte de 2024 tente de réformer Dublin. Et Elie Wiesel rappelle : "Aucun être humain n'est illégal."</div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill en">🇬🇧 English Part — Study Sheet</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1–3</span> The Anti-Immigration Front &amp; France's Contradictions</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The Visegrád Group (V4) and the Morocco Deal</div>
+      <p class="f-text"><strong>Poland, Hungary, Slovakia, Czech Republic</strong> — historically conservative on migration, formed a political bloc within the EU. Joined by Austria and eventually Germany (after Merkel's CDU shifted right). In February 2019, V4 + Germany + Austria signed a <strong>joint deal with Morocco</strong>: money and equipment in exchange for reinforced borders and detention centers. Italy's reaction: "See? We're not the only ones doing it."</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The Italy-Hungary Alliance (2018)</div>
+      <p class="f-text"><strong>Salvini + Orbán</strong>: shared vision of a "non-welcoming Europe." They targeted Macron as their main opponent. They claimed Macron and <strong>George Soros</strong> were behind "pro-migrant" policies. Note: the "Soros conspiracy theory" — Soros funds various NGOs but the conspiracy is politically convenient and factually unfounded. In Hungary, it became the central scapegoat for Orbán's anti-immigration narrative.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">France: rhetoric vs practice</div>
+      <p class="f-text">Macron was seen as "pro-migrant." In reality, France: rejected 2/3 of asylum applications · practiced pushbacks at the border · refused to let the Aquarius (rescue boat with 230 migrants) dock in a French port. When Italy finally allowed the Aquarius to dock in Toulon, France was furious and <strong>suspended the relocation of 3,500 refugees from Italy</strong> that had been previously agreed upon.</p>
+      <div class="f-key">Key observation: migrants became diplomatic leverage — a bargaining chip in EU relations.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 4–5</span> Moria Camp &amp; Brexit</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Moria Camp (Lesbos, Greece)</div>
+      <p class="f-text">Originally designed for <strong>2,200 people</strong>. At its peak, held <strong>20,000 people</strong> (nearly 10 times capacity). By September 2020: still ~12,000 people. In 2020, the camp <strong>burned down in an accidental fire</strong>. 12,000 migrants left homeless. With no European solidarity mechanism to relocate them quickly, they were moved to another overcrowded Greek camp.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">Brexit and the Illegal Migration Act (July 2023)</div>
+      <p class="f-text">Key promise of Brexit: leave the EU = no more obligation to accept EU migration quotas. <strong>Illegal Migration Act (July 2023):</strong> "No asylum seeker will be allowed to apply for asylum in the UK if they crossed the Channel illegally." The EU Home Affairs Commissioner called it a breach of the Refugee Convention. The UK washes its hands.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The exception: Ukrainians</div>
+      <p class="f-text">Ukrainian refugees received preferential treatment under the EU's Temporary Protection Directive: automatic status, right to work, healthcare, education immediately — without lengthy asylum process. Why Ukrainians and not Syrians, Afghans, Somalis? All are fleeing war. <strong>The answer is largely racial and geopolitical.</strong> By 2025: Poland and Hungary hosting significant numbers wanted them to go back. Protection extended to April 2026 → ongoing political tensions.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 6–7</span> EU Migration Pact (2024) &amp; Marrakech (2018)</div>
+    <div class="f-sous en">
+      <div class="f-sous-title">EU Migration Pact (April 2024)</div>
+      <p class="f-text">Voted by the European Parliament to replace Dublin. Key goals: asylum applications processed within <strong>12 weeks</strong> · negative answers → immediate return · end administrative limbo.</p>
+      <p class="f-text"><strong>Mandatory solidarity ("flexible solidarity"):</strong> Member states can choose to relocate asylum seekers from Italy/Greece/Spain to their country · pay money · provide operational support · help fund deportations. In practice: nobody wants to take migrants, nobody wants to pay. The "flexible solidarity" framework is a negotiating tool — not a binding, operational policy.</p>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The Marrakech Global Compact (2018)</div>
+      <p class="f-text">Signed by <strong>152 countries</strong>, rejected by the US (and others). <strong>Non-binding</strong> — a political declaration, not hard law. Key contributions:</p>
+      <ul class="f-list en">
+        <li>Reminds signatories of non-discrimination and non-refoulement</li>
+        <li><strong>Collective expulsion is prohibited</strong>: you cannot deport a group without examining individual cases</li>
+        <li>Formal recognition of <strong>climate refugees</strong> as a category</li>
+      </ul>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Source</th><th>Projected climate refugees by 2050</th></tr></thead><tbody>
+        <tr><td>IOM</td><td><strong>200 million</strong></td></tr>
+        <tr><td>World Bank</td><td><strong>140 million</strong></td></tr>
+        <tr><td>UN University (worst case)</td><td><strong>Up to 1 billion</strong></td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="f-sous en">
+      <div class="f-sous-title">The philosophical conclusion</div>
+      <p class="f-text"><strong>Elie Wiesel (Nobel Prize):</strong> "No human being is illegal."</p>
+      <p class="f-text">International law was built in 1948-1951 to protect as many vulnerable people as possible. Today, Western countries have transformed it into a system of classification — finding ways to deny protection rather than grant it. The priority has shifted: not "how can we protect people" but "how can we avoid taking responsibility."</p>
+    </div>
+  </div>
+
+  <div class="lang-divider"><span class="lang-pill fr">🇫🇷 Partie Française — Fiche de révision</span></div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Résumé</span> Front anti-immigration · Moria · Brexit · Pacte · Conclusion</div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Le front anti-immigration et les contradictions françaises</div>
+      <ul class="f-list fr">
+        <li><strong>Visegrád</strong> (Pologne, Hongrie, Slovaquie, Rép. tchèque) + Autriche + Allemagne (post-Merkel) → accord collectif avec le Maroc (2019) : même logique que Turquie et Libye</li>
+        <li><strong>Alliance Salvini-Orbán (2018)</strong> : vision commune d'une "Europe non-accueillante" · Macron désigné comme ennemi principal · théorie du complot Soros (philanthrope devenu bouc émissaire)</li>
+        <li><strong>France : contradiction</strong> → rejette 2/3 des demandes d'asile · pratique les refoulements · refuse l'Aquarius (230 rescapés) → suspend la relocalisation de 3 500 réfugiés depuis l'Italie. <strong>Les migrants deviennent un outil de pression diplomatique.</strong></li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Camp de Moria · Brexit · Exception ukrainienne</div>
+      <ul class="f-list fr">
+        <li><strong>Moria (Grèce)</strong> : prévu 2 200 personnes · héberge jusqu'à 20 000 · incendie accidentel 2020 → 12 000 sans abri · relocalisés dans un autre camp surpeuplé</li>
+        <li><strong>Brexit + Illegal Migration Act (2023)</strong> : aucun demandeur d'asile ayant traversé la Manche illégalement ne peut déposer une demande d'asile au Royaume-Uni → violation de la Convention de Genève selon l'UE</li>
+        <li><strong>Exception ukrainienne</strong> : protection temporaire quasi-citoyenne (travail, santé, éducation immédiatement). Pourquoi les Ukrainiens et pas les Syriens/Afghans qui fuient aussi la guerre ? Réponse : raisons largement raciales et géopolitiques. 2025 : protection étendue à avril 2026 → tensions politiques en Pologne et Hongrie</li>
+      </ul>
+    </div>
+    <div class="f-sous fr">
+      <div class="f-sous-title">Pacte UE 2024 · Marrakech 2018 · Conclusion</div>
+      <ul class="f-list fr">
+        <li><strong>Pacte UE 2024</strong> : 12 semaines de traitement max · solidarité "flexible" (relocaliser, payer, soutenir ou financer les expulsions) → en pratique personne ne veut accueillir ni payer</li>
+        <li><strong>Pacte de Marrakech (2018)</strong> : 152 pays · non contraignant · expulsions collectives interdites · reconnaissance formelle des réfugiés climatiques · projections : 140M (Banque Mondiale) à 200M (OIM) voire 1 milliard (ONU, pire cas) d'ici 2050</li>
+        <li><strong>Elie Wiesel (Prix Nobel) :</strong> "Aucun être humain n'est illégal." Le droit international de 1948-1951 était conçu pour <em>protéger</em>. Aujourd'hui, il sert à <em>classer</em> pour trouver des raisons de refuser la protection</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir — Le bilan du thème migrations</strong><ul>
+    <li>Front anti-immigration : Visegrád + Autriche + Allemagne post-Merkel + accords avec Maroc, Turquie, Libye</li>
+    <li>France : discours pro-migrants, pratique restrictive (2/3 des demandes refusées, refoulements, Aquarius refusé)</li>
+    <li>Moria : 2 200 places → 20 000 personnes → incendie 2020 → pas de solidarité européenne effective</li>
+    <li>Exception ukrainienne : traitement préférentiel lié à la race et à la géopolitique — contradiction avec le traitement des Syriens/Afghans</li>
+    <li>Réfugiés climatiques 2050 : 140M à 1 milliard selon les projections — le défi migratoire du siècle</li>
+    <li><strong>Conclusion philosophique :</strong> le droit international des migrations est passé de l'outil de protection à l'outil de classification pour refuser</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f9">← Cours #9</label><span></span></div>
+</div></main></div>
+
+<footer>
+  <p>Anglais <span>Juridique</span> — Fiches de révision bilingues 2025-2026 · 10 cours · 🇬🇧 EN + 🇫🇷 FR</p>
+</footer>
+
+</div><!-- end .wrap -->
+</body>
+</html>
