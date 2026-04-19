@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analyse Économique du Droit — Fiches de Révision</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+:root{
+  --r:#8B0000;--rv:#B22222;--rp:#fdf0f0;--rb:#e8c8c8;
+  --n:#1a1a1a;--gf:#2d2d2d;--g:#555;--gc:#f6f8fb;--b:#fefefe;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--b);color:var(--n);font-size:17px;line-height:1.75}
+header{background:var(--n);color:#fff;padding:1.8rem 2rem 1.4rem;border-bottom:4px solid var(--r);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+header h1{font-size:clamp(1.3rem,4vw,2rem);font-weight:600}
+header h1 span{color:#B22222}
+header small{color:#aaa;font-size:.82rem;letter-spacing:.06em;display:block;margin-top:.2rem}
+nav{background:var(--r);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav ul{list-style:none;display:flex;flex-wrap:nowrap;min-width:max-content}
+.nav-radio{display:none}
+nav label{display:block;padding:.65rem .9rem;color:rgba(255,255,255,.82);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer}
+.page-content{display:none}
+#home-content{display:block}
+#r-home:checked~.wrap #home-content,#r-plan:checked~.wrap #home-content,
+#r-f1:checked~.wrap #home-content,#r-f2:checked~.wrap #home-content,
+#r-f3:checked~.wrap #home-content,#r-f4:checked~.wrap #home-content,
+#r-f5:checked~.wrap #home-content{display:none}
+#r-home:checked~.wrap #home-content{display:block}
+#r-plan:checked~.wrap #page-plan{display:block}
+#r-f1:checked~.wrap #page-f1{display:block}
+#r-f2:checked~.wrap #page-f2{display:block}
+#r-f3:checked~.wrap #page-f3{display:block}
+#r-f4:checked~.wrap #page-f4{display:block}
+#r-f5:checked~.wrap #page-f5{display:block}
+#r-home:checked~.wrap .nav-home,#r-plan:checked~.wrap .nav-plan,
+#r-f1:checked~.wrap .nav-f1,#r-f2:checked~.wrap .nav-f2,
+#r-f3:checked~.wrap .nav-f3,#r-f4:checked~.wrap .nav-f4,
+#r-f5:checked~.wrap .nav-f5{color:#fff!important;background:rgba(255,255,255,.15)!important;border-bottom-color:#fff!important}
+
+#home{padding:2.5rem 2.5rem 4rem}
+.home-intro{text-align:center;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--rb)}
+.home-intro h2{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;margin-bottom:.4rem}
+.home-intro p{color:var(--g);font-size:.95rem;max-width:580px;margin:0 auto}
+.home-section-title{font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin:2rem 0 .9rem;padding-bottom:.3rem;border-bottom:1px solid var(--rb)}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+label.card{display:block;background:var(--b);border:1.5px solid var(--rb);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:inherit;transition:box-shadow .15s}
+label.card:hover{box-shadow:0 4px 18px rgba(139,0,0,.13)}
+label.card .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:.3rem}
+label.card h3{font-size:.95rem;font-weight:700;color:var(--r);margin-bottom:.2rem;line-height:1.35}
+label.card p{font-size:.8rem;color:var(--g);line-height:1.4}
+label.card-plan{display:block;background:var(--n);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:#fff;transition:opacity .15s}
+label.card-plan:hover{opacity:.9}
+label.card-plan .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.3rem}
+label.card-plan h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+label.card-plan p{font-size:.8rem;color:#aaa;line-height:1.4}
+
+main{max-width:100%;margin:0 auto;padding:2.2rem 2.5rem 5rem}
+label.btn-home{display:inline-block;background:transparent;border:1.5px solid rgba(139,0,0,.3);color:var(--rv);padding:.4rem 1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+
+.plan-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.partie-block{border:2px solid var(--r);background:#fff;margin-bottom:1rem}
+.partie-header{background:var(--r);color:#fff;padding:.6rem 1rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.partie-body{padding:.8rem;display:flex;flex-direction:column;gap:.6rem}
+.chap-block{border:1px solid var(--rb);background:#fff}
+.chap-header{background:var(--gc);border-bottom:1px solid var(--rb);padding:.35rem .7rem;font-size:.73rem;font-weight:700;color:var(--r);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;list-style:none}
+.chap-header::-webkit-details-marker{display:none}
+.chap-toggle::after{content:'▸';color:var(--r);font-size:.8rem}
+details[open] .chap-toggle::after{content:'▾'}
+.chap-body{padding:.55rem .7rem;display:flex;flex-direction:column;gap:.3rem}
+.section-item{padding:.28rem .5rem .28rem .85rem;border-left:2px solid var(--rb);font-size:.82rem;color:var(--gf);display:flex;flex-direction:column;gap:.18rem}
+.section-label{font-weight:700;color:var(--rv);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.section-name{font-size:.84rem;color:var(--gf);font-weight:600}
+.para-list{margin-top:.22rem;padding-left:.7rem;display:flex;flex-direction:column;gap:.1rem}
+.para-item{font-size:.78rem;color:var(--g);position:relative;padding-left:.9rem;line-height:1.4}
+.para-item::before{content:'§';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.7rem}
+.plan-fiche-link{display:inline-block;margin-top:.45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--r);padding:.18rem .55rem;cursor:pointer;border:none;font-family:inherit}
+
+/* FICHES */
+.fiche-page{max-width:860px;margin:0 auto}
+.fiche-header{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--r)}
+.fiche-meta{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:.35rem}
+.fiche-header h2{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;color:var(--n)}
+.fiche-intro{margin-top:.8rem;font-size:.93rem;color:var(--g);line-height:1.68;font-style:italic;padding:.7rem 1rem;background:var(--gc);border-left:3px solid var(--rb)}
+
+.f-bloc{margin-bottom:2.4rem}
+.f-bloc-title{font-size:1.05rem;font-weight:700;color:#fff;background:var(--n);padding:.5rem .9rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.7rem}
+.f-bloc-title .f-num{background:var(--r);padding:.1rem .5rem;font-size:.75rem;letter-spacing:.07em;white-space:nowrap}
+.f-sous{margin-bottom:1.4rem;padding-left:1.1rem;border-left:3px solid var(--r)}
+.f-sous-title{font-size:.98rem;font-weight:700;color:var(--r);margin-bottom:.6rem;padding-bottom:.25rem;border-bottom:1px dotted var(--rb)}
+.f-sous2{margin-bottom:1rem;padding-left:.9rem;border-left:2px solid var(--rb)}
+.f-sous2-title{font-size:.9rem;font-weight:700;color:var(--gf);margin-bottom:.35rem}
+.f-text{font-size:.92rem;color:var(--gf);line-height:1.75;margin-bottom:.5rem}
+.f-list{list-style:none;padding:0;margin:.3rem 0 .6rem .1rem}
+.f-list li{font-size:.91rem;color:var(--gf);line-height:1.65;padding:.12rem 0 .12rem 1.1rem;position:relative}
+.f-list li::before{content:'—';position:absolute;left:0;color:var(--r);font-weight:700}
+.f-list li strong{color:var(--r)}
+.f-alerte{background:#fffbf0;border-left:4px solid #c47900;padding:.75rem 1rem;margin:.5rem 0 .9rem;font-size:.88rem;line-height:1.65;color:var(--gf)}
+.f-alerte strong{color:#9a5e00;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.25rem}
+.f-exemple{background:var(--gc);border-left:3px solid #888;padding:.7rem 1rem;margin:.5rem 0 .9rem;font-size:.88rem;line-height:1.65;color:var(--g)}
+.f-exemple strong{color:var(--gf);font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.f-key{background:var(--rp);border:1.5px solid var(--rb);padding:.65rem 1rem;margin:.5rem 0 .9rem;font-size:.91rem;line-height:1.65;color:var(--gf);display:flex;align-items:baseline;gap:.6rem}
+.f-key::before{content:'→';color:var(--r);font-weight:700;flex-shrink:0;font-size:1rem}
+.f-cite{background:#f8f8ff;border-left:3px solid #5c5c8a;padding:.65rem 1rem;margin:.5rem 0 .9rem;font-size:.89rem;line-height:1.65;color:#33335a;font-style:italic}
+.f-cite strong{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-style:normal;color:#5c5c8a;display:block;margin-bottom:.2rem}
+.f-table-wrap{overflow-x:auto;margin:.6rem 0 .9rem}
+.f-table{width:100%;border-collapse:collapse;font-size:.86rem}
+.f-table thead tr{background:var(--n);color:#fff}
+.f-table thead th{padding:.5rem .8rem;text-align:left;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+.f-table tbody tr:nth-child(even){background:var(--gc)}
+.f-table tbody td{padding:.45rem .8rem;border-bottom:1px solid var(--rb);vertical-align:top;font-size:.87rem}
+.f-table tbody td:first-child{font-weight:700;color:var(--r)}
+.f-retenir{background:var(--rp);border-left:4px solid var(--r);padding:.9rem 1.1rem;margin-top:1.8rem;font-size:.91rem;line-height:1.7;color:var(--gf)}
+.f-retenir strong{color:var(--r);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:.5rem}
+.f-retenir ul{list-style:none;padding:0;margin:.3rem 0}
+.f-retenir ul li{padding:.1rem 0 .1rem 1rem;position:relative;font-size:.9rem}
+.f-retenir ul li::before{content:'✓';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.78rem}
+.fiche-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rb)}
+.fiche-nav label{color:var(--rv);cursor:pointer;font-size:.85rem}
+
+footer{background:var(--n);color:#777;text-align:center;padding:1.2rem;font-size:.78rem;letter-spacing:.05em;border-top:3px solid var(--r);margin-top:2rem}
+footer span{color:#B22222}
+
+@media(max-width:900px){
+  .plan-cols{grid-template-columns:1fr}
+  main{padding:1.4rem .9rem 4rem}
+  header{padding:1.2rem 1rem 1rem}
+  nav label{padding:.55rem .5rem;font-size:.68rem}
+  #home{padding:1.8rem 1rem 3rem}
+  .cards-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){.cards-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<input type="radio" name="page" class="nav-radio" id="r-home" checked>
+<input type="radio" name="page" class="nav-radio" id="r-plan">
+<input type="radio" name="page" class="nav-radio" id="r-f1">
+<input type="radio" name="page" class="nav-radio" id="r-f2">
+<input type="radio" name="page" class="nav-radio" id="r-f3">
+<input type="radio" name="page" class="nav-radio" id="r-f4">
+<input type="radio" name="page" class="nav-radio" id="r-f5">
+
+<div class="wrap">
+<header>
+  <label for="r-home" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+    <h1>Analyse Économique <span>du Droit</span></h1>
+    <small>Fiches de révision — 4 chapitres · 5 fiches · AED positive &amp; normative</small>
+  </label>
+</header>
+<nav><ul>
+  <li><label class="nav-home" for="r-home">Accueil</label></li>
+  <li><label class="nav-plan" for="r-plan">Plan du cours</label></li>
+  <li><label class="nav-f1" for="r-f1">#1 Introduction à l'AED</label></li>
+  <li><label class="nav-f2" for="r-f2">#2 Propriété</label></li>
+  <li><label class="nav-f3" for="r-f3">#3 Contrats</label></li>
+  <li><label class="nav-f4" for="r-f4">#4 Responsabilité</label></li>
+  <li><label class="nav-f5" for="r-f5">#5 Conclusions générales</label></li>
+</ul></nav>
+
+<!-- ACCUEIL -->
+<div id="home-content">
+<div id="home">
+  <div class="home-intro">
+    <h2>Analyse Économique du Droit</h2>
+    <p>L'application des outils de l'économie aux règles de droit — propriété, contrats, responsabilité. 5 fiches complètes.</p>
+  </div>
+  <div class="home-section-title">Navigation rapide</div>
+  <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));max-width:520px">
+    <label class="card-plan" for="r-plan"><div class="card-num">Vue d'ensemble</div><h3>Plan du cours</h3><p>Structure complète — 4 chapitres et 5 fiches</p></label>
+  </div>
+  <div class="home-section-title">Les 5 fiches</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f1"><div class="card-num">Fiche #1</div><h3>Introduction à l'AED</h3><p>Histoire · paradigme de la rareté (Robbins, homo œconomicus, behaviorisme) · paradigme de la connaissance (Hayek, Menger) · AED normative (Pareto, Bentham, Kaldor-Hicks · anticipations légitimes)</p></label>
+    <label class="card" for="r-f2"><div class="card-num">Fiche #2</div><h3>Analyse économique des règles de propriété</h3><p>Usus, fructus, abusus · Bastiat · De Soto · externalités · théorème de Coase · Demsetz · PI (brevet, marque) · typologies des biens · Ostrom</p></label>
+    <label class="card" for="r-f3"><div class="card-num">Fiche #3</div><h3>Analyse économique du droit des contrats</h3><p>Raison d'être · négociation · sélection adverse (Akerlof, lemons) · hasard moral · incomplétude · 5 fonctions du droit des contrats · efficient breach · imprévision</p></label>
+    <label class="card" for="r-f4"><div class="card-num">Fiche #4</div><h3>La responsabilité (Tort Law)</h3><p>Rôle économique · optimum de précaution · Coase · cheapest cost avoider (Calabresi) · negligence vs strict liability · 4 cas d'analyse · Ford Pinto · Exxon Valdez</p></label>
+    <label class="card" for="r-f5"><div class="card-num">Fiche #5</div><h3>Conclusions générales</h3><p>Importance du droit · leçon de Bastiat · efficience statique vs dynamique · évolution du droit (bottom-up / top-down) · humilité et pattern predictions</p></label>
+  </div>
+</div>
+</div>
+
+<!-- PLAN DU COURS -->
+<div id="page-plan" class="page-content"><main>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.6rem">
+    <div><h2 style="font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700">Plan du cours</h2>
+    <p style="font-size:.85rem;color:var(--g);margin-top:.2rem">4 chapitres · 5 fiches · cliquez pour déplier</p></div>
+    <label class="btn-home" for="r-home">← Accueil</label>
+  </div>
+  <div class="plan-cols">
+    <div>
+      <div class="partie-block">
+        <div class="partie-header">Fiche #1 — Introduction à l'AED</div>
+        <div class="partie-body">
+          <details class="chap-block"><summary class="chap-header">Préambule &amp; Histoire <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">Préambule</span><span class="section-name">Définition · juristes vs économistes · histoire</span><div class="para-list"><div class="para-item">Coase (1960, 1958) · Posner (1973) · Calabresi · EALE 1989 · Aix-Marseille 2008</div></div></div>
+            <label class="plan-fiche-link" for="r-f1">→ Fiche #1</label>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Section 1 — L'AED positive <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">§1</span><span class="section-name">Paradigme de la rareté</span><div class="para-list"><div class="para-item">Démarche positive · Robbins · individualisme méthodologique · rareté · rationalité (homo œconomicus)</div><div class="para-item">Droit comme contrainte et incitation (SMIC, loyer plafonné, responsabilité sans faute)</div><div class="para-item">Behavioristes : Simon (rationalité limitée) · Kahneman &amp; Tversky (biais) · Sunstein (nudging)</div><div class="para-item">Nuance Coase &amp; Hayek : rationalité = résultat de la concurrence</div></div></div>
+            <div class="section-item"><span class="section-label">§2</span><span class="section-name">Paradigme de la connaissance</span><div class="para-list"><div class="para-item">Mises, Hayek, Menger — école autrichienne</div><div class="para-item">Ressources subjectives (Menger) · univers ouvert · problème de la connaissance (Hayek)</div><div class="para-item">Conséquence : bonne règle = inciter à découvrir, pas gérer le stock existant</div></div></div>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Section 2 — L'AED normative <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">§1 — Rareté</span><span class="section-name">Effectivité / efficacité / efficience</span><div class="para-list"><div class="para-item">A. Pareto : améliorer sans pénaliser — ✅ unanimité ❌ quasi-inutilisable</div><div class="para-item">B. Bentham : maximiser le bonheur total — ❌ mesure impossible</div><div class="para-item">C. Kaldor-Hicks : compensation potentielle — ✅ opérationnel ❌ justice</div></div></div>
+            <div class="section-item"><span class="section-label">§2 — Connaissance</span><span class="section-name">Rejet des critères · bien commun · anticipations légitimes</span><div class="para-list"><div class="para-item">3 faiblesses des critères précédents (conséquences inconnues, options non connues, pas d'objectif commun)</div><div class="para-item">Métarègles négatives · Rule of Law · stare decisis · sécurité juridique</div></div></div>
+          </div></details>
+        </div>
+      </div>
+      <div class="partie-block">
+        <div class="partie-header">Fiche #3 — Analyse économique des contrats</div>
+        <div class="partie-body">
+          <details class="chap-block"><summary class="chap-header">Section 1 — Économie du contrat <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">§1</span><span class="section-name">Raison d'être du contrat</span><div class="para-list"><div class="para-item">Coopération + incertitude → s'engager dans le temps · procédure de découverte</div></div></div>
+            <div class="section-item"><span class="section-label">§2</span><span class="section-name">Phase des négociations</span><div class="para-list"><div class="para-item">Alternatives · asymétries d'information · enchères (anglaise, hollandaise, second prix)</div><div class="para-item">Malédiction du vainqueur (Milgrom &amp; Wilson, Nobel 2020) · modèle principal/agent</div></div></div>
+            <div class="section-item"><span class="section-label">§3</span><span class="section-name">Sélection adverse</span><div class="para-list"><div class="para-item">Akerlof, Market for Lemons (1970) · solutions : signaux (diplôme, garantie) · marque · menu de contrats · expérience</div></div></div>
+            <div class="section-item"><span class="section-label">§4</span><span class="section-name">Hasard moral</span><div class="para-list"><div class="para-item">Adam Smith · solutions : contremaître, franchise, bonus-malus, stock-options · illustration Kreps</div></div></div>
+            <div class="section-item"><span class="section-label">§5</span><span class="section-name">L'incomplétude</span><div class="para-list"><div class="para-item">Sources : coûts de transaction, non-vérifiable, rationalité limitée, incomplétude stratégique · droits résiduels · Coase 1937 (nature de la firme)</div></div></div>
+            <label class="plan-fiche-link" for="r-f3">→ Fiche #3</label>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Section 2 — 5 fonctions du droit des contrats <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">§1</span><span class="section-name">Faciliter la coopération</span></div>
+            <div class="section-item"><span class="section-label">§2</span><span class="section-name">Efficient breach (rupture efficiente)</span><div class="para-list"><div class="para-item">Expectation damages · Art. 1231-2 · Art. 1217</div></div></div>
+            <div class="section-item"><span class="section-label">§3</span><span class="section-name">Inciter à un investissement optimal</span><div class="para-list"><div class="para-item">Art. 1231-3 · foreseeability</div></div></div>
+            <div class="section-item"><span class="section-label">§4</span><span class="section-name">Minimiser les coûts de transaction</span><div class="para-list"><div class="para-item">Cheapest cost avoider · force majeure · Art. 1188 &amp; 1192</div></div></div>
+            <div class="section-item"><span class="section-label">§5</span><span class="section-name">Modifier les contrats imparfaits</span><div class="para-list"><div class="para-item">Incapacité, violence, dol, réticence dolosive, lésion · réforme 2016 (imprévision)</div></div></div>
+          </div></details>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="partie-block">
+        <div class="partie-header">Fiche #2 — Analyse économique des règles de propriété</div>
+        <div class="partie-body">
+          <details class="chap-block"><summary class="chap-header">Section 1 — Effets et efficience dynamique <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">§1</span><span class="section-name">Usus — exclusivité d'usage</span><div class="para-list"><div class="para-item">Art. 544 C.civ. · connaissances tacites · divorce usus/fructus (crise 2008) · Bastiat</div></div></div>
+            <div class="section-item"><span class="section-label">§2</span><span class="section-name">Fructus — exclusivité sur les fruits</span><div class="para-list"><div class="para-item">Incitation à bien gérer · courbe de Laffer</div></div></div>
+            <div class="section-item"><span class="section-label">§3</span><span class="section-name">Abusus — transférabilité</span><div class="para-list"><div class="para-item">Inciter à gérer · meilleure allocation · De Soto (capital mort) · expropriation (Art. 17 DDHC, Art. 545 C.civ.) · hold-up · free-riding</div></div></div>
+            <label class="plan-fiche-link" for="r-f2">→ Fiche #2</label>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Section 2 — Émergence et dynamique des droits <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">§1</span><span class="section-name">Le concept d'externalité</span><div class="para-list"><div class="para-item">Positive (abeilles, chercheur) · négative (usine polluante) · internaliser : Pigou (taxes) vs Coase (droits de propriété)</div></div></div>
+            <div class="section-item"><span class="section-label">§2</span><span class="section-name">Émergence des droits (Demsetz 1967)</span><div class="para-list"><div class="para-item">Indiens des Rocheuses · droits émergent si gains &gt; coûts · top-down vs bottom-up</div></div></div>
+            <div class="section-item"><span class="section-label">§3</span><span class="section-name">Évolution du panier de droits</span><div class="para-list"><div class="para-item">Partenariat → SA → private equity · bundle of rights · typologie des biens · Ostrom (Nobel 2009)</div></div></div>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Section 3 — Propriété intellectuelle <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label">A-E</span><span class="section-name">Le dilemme PI</span><div class="para-list"><div class="para-item">Inciter à innover ↔ rareté artificielle (Jefferson) · durée optimale d* · malédiction du vainqueur · tragédie des anti-commons · patent trolls</div><div class="para-item">Solutions : patent pools, defensive aggregators, liability rule · droit des marques</div></div></div>
+          </div></details>
+        </div>
+      </div>
+      <div class="partie-block">
+        <div class="partie-header">Fiche #4 — La responsabilité (Tort Law)</div>
+        <div class="partie-body">
+          <details class="chap-block"><summary class="chap-header">Section 1 — Rôle économique <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label"></span><span class="section-name">Minimiser le coût social des accidents</span><div class="para-list"><div class="para-item">Optimum de précaution · théorème de Coase appliqué · cheapest cost avoider (Calabresi)</div></div></div>
+            <label class="plan-fiche-link" for="r-f4">→ Fiche #4</label>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Section 2 — Quelle règle choisir ? <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label"></span><span class="section-name">Negligence vs strict liability</span><div class="para-list"><div class="para-item">Juge Learned Hand · bonus pater familias · paradigme de la connaissance</div><div class="para-item">Analyse des 4 cas : victime seule · auteur seul · les deux · niveau d'activité</div></div></div>
+          </div></details>
+          <details class="chap-block"><summary class="chap-header">Section 3 — Applications <span class="chap-toggle"></span></summary>
+          <div class="chap-body">
+            <div class="section-item"><span class="section-label"></span><span class="section-name">Produit défectueux · Ford Pinto · Exxon Valdez</span><div class="para-list"><div class="para-item">Art. 1245-9 · responsabilité stricte · consumer expectation test · leçon Bastiat (effets invisibles)</div></div></div>
+          </div></details>
+        </div>
+      </div>
+      <div class="partie-block">
+        <div class="partie-header">Fiche #5 — Conclusions générales</div>
+        <div class="partie-body">
+          <div class="section-item"><span class="section-label">1</span><span class="section-name">L'importance du droit</span><div class="para-list"><div class="para-item">Les 3 piliers : propriété / contrat / responsabilité</div></div></div>
+          <div class="section-item"><span class="section-label">2</span><span class="section-name">Le savoir de l'économiste</span><div class="para-list"><div class="para-item">Bastiat : ce qu'on voit et ce qu'on ne voit pas</div></div></div>
+          <div class="section-item"><span class="section-label">3</span><span class="section-name">Le choix de la norme</span><div class="para-list"><div class="para-item">Efficience statique vs dynamique · humilité</div></div></div>
+          <div class="section-item"><span class="section-label">4</span><span class="section-name">L'évolution du droit</span><div class="para-list"><div class="para-item">Bottom-up vs top-down</div></div></div>
+          <div class="section-item"><span class="section-label">5</span><span class="section-name">Humilité</span><div class="para-list"><div class="para-item">Pattern predictions · l'AED pose des questions, ne donne pas de réponses définitives</div></div></div>
+          <label class="plan-fiche-link" for="r-f5">→ Fiche #5</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</main></div>
+
+<!-- ===== FICHE 1 ===== -->
+<div id="page-f1" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #1 · Introduction à l'Analyse Économique du Droit</div>
+    <h2>Introduction à l'AED — Positive et normative</h2>
+    <div class="fiche-intro">L'AED, c'est l'application des outils et raisonnements de l'économie aux règles de droit. Juristes et économistes s'intéressent à la même réalité — les interactions sociales — mais avec des méthodes différentes. L'économiste cherche des lois générales ; le juriste s'attache au cas concret.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Préambule</span> Histoire de l'AED</div>
+    <ul class="f-list">
+      <li><strong>Racines anciennes</strong> : les scolastiques (Thomas d'Aquin, XIe-XVIe s.) et Adam Smith réfléchissaient déjà aux liens entre droit et économie</li>
+      <li><strong>Naissance contemporaine</strong> : années 1960, université de Chicago</li>
+      <li><strong>Ronald Coase</strong> : article fondateur <em>The Problem of Social Cost</em> (1960) · direction du <em>Journal of Law and Economics</em> (fondé 1958)</li>
+      <li><strong>Richard Posner</strong> (juriste, Chicago) : <em>Economic Analysis of Law</em> (1973)</li>
+      <li><strong>Guido Calabresi</strong> (juriste, Yale) : contributions dès les années 1960</li>
+      <li><strong>Association Européenne de Droit et d'Économie</strong> créée en 1989</li>
+      <li><strong>En France</strong> : premier cours en 2008 à Aix-Marseille</li>
+    </ul>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> L'AED positive — ce qui est</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Le paradigme de la rareté</div>
+      <p class="f-text">L'analyse positive cherche à expliquer les phénomènes sociaux, à en trouver les causes — sans dire ce qui devrait être. Elle utilise des modèles et recherche des régularités.</p>
+      <div class="f-cite"><strong>Lord Robbins — définition centrale</strong>« L'économie est la science qui étudie le comportement humain en tant que relation entre des fins et des moyens rares à usages alternatifs. »</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Les trois piliers</div>
+        <ul class="f-list">
+          <li><strong>Individualisme méthodologique</strong> : pour expliquer un phénomène social, on part du comportement des individus, pas des agrégats abstraits (« la France », « les marchés »)</li>
+          <li><strong>La rareté</strong> : les moyens sont toujours rares par rapport aux fins visées — c'est la rareté qui oblige à choisir</li>
+          <li><strong>La rationalité</strong> : l'individu utilise les moyens à sa disposition du mieux qu'il peut pour atteindre ses objectifs → l'<em>homo œconomicus</em></li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Le droit vu comme une contrainte et une incitation</div>
+        <p class="f-text">Comme les prix, les règles de droit contraignent les choix des individus rationnels. Si les règles changent, les comportements changent.</p>
+        <div class="f-exemple"><strong>Illustrations</strong>SMIC → les employeurs embauchent moins de peu qualifiés. Loyer plafonné → moins d'investissement, pénurie. Responsabilité sans faute → les acteurs prennent une assurance et relâchent leur vigilance.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Les behavioristes : limites de la rationalité</div>
+        <ul class="f-list">
+          <li><strong>Herbert Simon</strong> : rationalité limitée — on suit des routines et on se contente de solutions « assez bonnes »</li>
+          <li><strong>Kahneman &amp; Tversky</strong> : biais systématiques — on surévalue certains risques, on sous-évalue d'autres ; effet de framing</li>
+          <li><strong>Cass Sunstein</strong> : le nudging — pousser les individus dans la bonne direction sans les forcer (mécanismes par défaut, paquets de cigarettes)</li>
+        </ul>
+        <div class="f-alerte"><strong>Nuance Coase &amp; Hayek</strong>La rationalité n'est pas une hypothèse de départ, c'est un résultat de la concurrence. Le marché élimine ceux qui font de mauvais choix ; les comportements rationnels se répandent par imitation.</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Le paradigme de la connaissance (école autrichienne)</div>
+      <p class="f-text">Mises, Hayek, Menger affirment que le vrai problème économique n'est pas seulement de gérer des ressources rares — c'est de <strong>découvrir de nouvelles ressources</strong>.</p>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Les ressources sont subjectives (Carl Menger)</div>
+        <p class="f-text">Pour qu'une chose devienne un bien économique, il faut simultanément : un besoin humain · des propriétés permettant de satisfaire ce besoin · la connaissance humaine de ce lien · la capacité de diriger cette chose vers la satisfaction du besoin.</p>
+        <div class="f-exemple"><strong>Illustration</strong>Le pétrole existait depuis des millions d'années. Il n'est devenu une ressource que lorsque des hommes ont découvert comment l'utiliser. Avant ça : c'était juste une boue noire gênante.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Hayek : le problème de la connaissance</div>
+        <p class="f-text">Les connaissances dans une société sont <strong>dispersées</strong> (chacun en sait un bout), <strong>tacites</strong> (savoir-faire difficile à transmettre) et <strong>changeantes</strong>. Personne — ni le juge, ni le législateur, ni le planificateur — ne peut tout savoir. D'où l'intérêt de systèmes décentralisés (marché, propriété privée) qui permettent d'utiliser les connaissances locales de chacun.</p>
+      </div>
+      <div class="f-key">Dans ce paradigme, une bonne règle de droit n'est pas celle qui « gère au mieux » des ressources données — c'est celle qui incite à découvrir de nouvelles ressources et de nouvelles solutions.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> L'AED normative — ce qui devrait être</div>
+    <p class="f-text">La démarche normative dit ce qui devrait être. Elle nécessite un critère — une norme — pour classer les règles. Mais attention au <em>is-ought problem</em> (Hume) : on ne peut pas tirer une conclusion normative d'une analyse exclusivement positive. Il faut toujours ajouter un jugement de valeur.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Analyse normative et rareté</div>
+      <div class="f-alerte"><strong>Distinctions préalables</strong><strong>Effectivité</strong> = la règle est appliquée. <strong>Efficacité</strong> = la règle atteint l'objectif. <strong>Efficience</strong> = la règle atteint l'objectif au moindre coût. (Illustration : le rond-point est plus efficient que le feu rouge.)</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. L'efficience au sens de Pareto</div>
+        <p class="f-text">Une règle B est meilleure que A au sens de Pareto si elle améliore la situation de certains <strong>sans en pénaliser personne</strong>. La valeur est subjective ; l'échange est un jeu à somme positive (les deux parties y gagnent, sinon elles n'échangeraient pas).</p>
+        <ul class="f-list">
+          <li>✅ <strong>Avantage</strong> : pas besoin de comparer les utilités entre individus · proche de l'unanimité</li>
+          <li>❌ <strong>Limite</strong> : quasi-inutilisable en pratique — presque tout changement crée des gagnants et des perdants</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. L'utilitarisme de Bentham</div>
+        <p class="f-text">« Le plus grand bonheur pour le plus grand nombre » — maximiser le bien-être social en additionnant les utilités de tous.</p>
+        <ul class="f-list"><li>❌ <strong>Problème</strong> : on ne peut ni mesurer le bonheur de quelqu'un, ni comparer celui de deux personnes différentes</li></ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C. L'efficience de Kaldor-Hicks</div>
+        <p class="f-text">Un changement de règle est efficient si les gagnants <strong>pourraient</strong> compenser les perdants — même s'ils ne le font pas effectivement.</p>
+        <div class="f-exemple"><strong>Illustration</strong>La libéralisation commerciale enrichit Paul de 110 € et appauvrit Jean de 80 €. Paul pourrait donner 81 € à Jean et garder 29 €. Kaldor-Hicks efficient — même si Paul ne verse rien à Jean.</div>
+        <ul class="f-list">
+          <li>✅ <strong>Avantage</strong> : plus opérationnel que Pareto — permet de trancher quand il y a des gagnants et des perdants</li>
+          <li>❌ <strong>Limite</strong> : la compensation est souvent virtuelle · peut sacrifier des perdants au nom de l'efficience globale</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Analyse normative et connaissance</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">A. Rejet des critères précédents — 3 faiblesses</div>
+        <ul class="f-list">
+          <li>Les conséquences des règles sont inconnues dans un univers ouvert où les individus innoveront</li>
+          <li>Le concept d'efficience suppose que toutes les options sont connues à l'avance — or de nouvelles options se découvrent</li>
+          <li>Pas d'objectif commun — l'objectif commun ne serait-il pas de laisser chacun poursuivre librement ses objectifs sans entraver ceux des autres ?</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">B. À la recherche du bien commun</div>
+        <p class="f-text">Une bonne règle de droit est celle qui laisse chacun chercher les voies de son épanouissement sans empêcher les autres de faire de même, et qui incite à la découverte de nouvelles solutions. Ce sont surtout des <strong>métarègles négatives</strong> : elles disent ce qu'on ne doit pas faire (ne pas mentir, ne pas voler, ne pas rompre sa promesse sans raison valable…).</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">C &amp; D. Anticipations légitimes · Rule of Law</div>
+        <p class="f-text">Le droit crée des anticipations chez les citoyens. Pour Hayek, un ordre social existe quand les individus peuvent former des anticipations qui ont de bonnes chances d'être exactes. Le rôle du droit : protéger cet ordre d'anticipations, pas le créer de toutes pièces.</p>
+        <ul class="f-list">
+          <li><strong>Common law / stare decisis</strong> : le droit évolue par les précédents, assurant cohérence et prévisibilité</li>
+          <li><strong>Sécurité juridique</strong> : les règles doivent être stables, prévisibles, non rétroactives</li>
+          <li><strong>Rule of Law</strong> : personne n'est au-dessus du droit (<em>lex rex, non rex lex</em>) — le droit est universel, prévisible, non arbitraire</li>
+          <li><strong>Efficience statique vs dynamique</strong> : la statique gère au mieux des ressources données ; la dynamique favorise la découverte de nouvelles ressources</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>AED = appliquer les outils économiques aux règles de droit (propriété, contrats, responsabilité)</li>
+    <li>Paradigme de la rareté : individualisme méthodologique + rareté + rationalité. Le droit = contrainte et incitation</li>
+    <li>Paradigme de la connaissance : ressources subjectives (Menger), problème de dispersion (Hayek) → bonne règle = inciter à découvrir</li>
+    <li>AED normative : Pareto (quasi-inutilisable) · Bentham (mesure impossible) · Kaldor-Hicks (opérationnel mais compensation virtuelle)</li>
+    <li>Perspective connaissance : métarègles négatives + Rule of Law + sécurité juridique + anticipations légitimes</li>
+  </ul></div>
+  <div class="fiche-nav"><span></span><label for="r-f2">Fiche #2 : Propriété →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 2 ===== -->
+<div id="page-f2" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #2 · Chapitre 1 — Analyse économique des règles de propriété</div>
+    <h2>Analyse économique des règles de propriété</h2>
+    <div class="fiche-intro">Dès qu'un bien est rare et convoité, des conflits apparaissent. La propriété privée accorde un droit exclusif sur l'usage, opposable aux autres, et transférable. L'analyse économique montre que la propriété n'est pas seulement juste — elle est efficiente, dynamiquement.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Effets et efficience dynamique de la propriété</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Efficience et excluabilité : l'USUS</div>
+      <p class="f-text">L'<strong>usus</strong> donne à son détenteur le droit exclusif de décider de l'usage du bien. Cela permet d'utiliser ses connaissances personnelles (y compris tacites) et de prendre des décisions décentralisées sans qu'une autorité centrale doive tout décider.</p>
+      <div class="f-cite"><strong>Art. 544 C.civ.</strong>« La propriété est le droit de jouir et disposer des choses de la manière la plus absolue, pourvu qu'on n'en fasse pas un usage prohibé par les lois ou par les règlements. »</div>
+      <div class="f-exemple"><strong>Divorce usus/fructus — crise de 2008</strong>Les banquiers prenaient des risques énormes (usus) mais c'est l'État et les contribuables qui absorbaient les pertes (fructus négatif). Résultat : prise de risque excessive. Le divorce usus/fructus est la cause profonde de la crise des subprimes.</div>
+      <div class="f-alerte"><strong>La leçon de Bastiat</strong>L'usage n'est pas absolu — il est encadré. Mais attention aux effets non visibles des restrictions ! « Dans la sphère économique, un acte n'engendre pas seulement un effet, mais une série d'effets. Le premier seul est immédiat, on le voit. Les autres se déroulent successivement, on ne les voit pas. »</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Exclusivité sur les fruits : le FRUCTUS</div>
+      <p class="f-text">Le propriétaire a droit aux fruits de son usage — c'est ce qui l'incite à choisir le meilleur usage possible et à en assumer les conséquences. C'est le fondement de la responsabilité économique.</p>
+      <div class="f-key">Courbe de Laffer : si on taxe trop les fruits (revenus, profits), les propriétaires modifient leur comportement — ils travaillent moins, fuient l'imposition, investissent ailleurs. Au-delà d'un certain taux, augmenter les impôts réduit les recettes fiscales.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Les mérites de la transférabilité : l'ABUSUS</div>
+      <p class="f-text">La propriété est transférable. Deux effets : incite à bien gérer (un investissement dans sa propriété n'est pas perdu si on la revend) · permet une meilleure allocation (quelqu'un qui a une meilleure idée d'usage peut racheter le bien).</p>
+      <div class="f-exemple"><strong>De Soto — le « capital mort »</strong>Au Pérou, de nombreux habitants possèdent un terrain ou une maison, mais sans titre de propriété officiel. Résultat : ils ne peuvent pas hypothéquer, emprunter, vendre facilement. Ce capital existe mais est « mort » — il ne peut pas circuler pour créer de la richesse.</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">L'expropriation</div>
+        <div class="f-cite"><strong>Art. 17 DDHC</strong>« La propriété étant un droit inviolable et sacré, nul ne peut en être privé si ce n'est lorsque la nécessité publique l'exige évidemment, et sous la condition d'une juste et préalable indemnité. »</div>
+        <p class="f-text">Justifications économiques de l'expropriation :</p>
+        <ul class="f-list">
+          <li><strong>Hold-up (stratégie du bastion)</strong> : si l'État doit acheter 100 terrains pour construire une route, le dernier propriétaire peut bloquer tout le projet et exiger un prix exorbitant. L'expropriation évite ce chantage</li>
+          <li><strong>Free-riding (stratégie du profiteur)</strong> : chacun attend que les autres paient pour éloigner une nuisance — personne ne paye. L'expropriation financée par l'impôt résout ce problème</li>
+        </ul>
+        <div class="f-alerte"><strong>Problème de la juste indemnité</strong>La valeur marchande ≠ la valeur subjective pour le propriétaire exproprié. On ne peut jamais être certain que la compensation le laisse aussi bien qu'avant.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> L'émergence et la dynamique des droits de propriété</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Le concept d'externalité</div>
+      <p class="f-text">Il y a externalité quand le comportement d'une personne affecte le bien-être d'une autre sans que cette dernière ait consenti à cet effet.</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Type</th><th>Définition</th><th>Exemple</th></tr></thead><tbody>
+        <tr><td>Positive</td><td>Bénéfices sociaux &gt; bénéfices privés. L'auteur fait du bien sans en tirer tout le bénéfice</td><td>Éleveur d'abeilles qui profite aux apiculteurs voisins · chercheur dont la découverte bénéficie à tous</td></tr>
+        <tr><td>Négative</td><td>Coûts sociaux &gt; coûts privés. L'auteur impose des coûts à la société sans les supporter lui-même</td><td>Usine qui pollue une rivière</td></tr>
+      </tbody></table></div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Comment internaliser les externalités ?</div>
+        <ul class="f-list">
+          <li><strong>Taxes et subventions (Pigou)</strong> : taxer les externalités négatives, subventionner les positives. Problème : sans marché, pas de prix pour évaluer le coût social</li>
+          <li><strong>Définir des droits de propriété (Coase)</strong> : si les droits sont clairs et les coûts de transaction faibles, les parties trouveront elles-mêmes une solution efficiente — quelle que soit la décision initiale du juge</li>
+        </ul>
+        <div class="f-exemple"><strong>Le problème de Coase</strong>Troupeaux piétinent des cultures. Dommages = 200 €, clôturer = 100 €. Si le juge donne raison à l'agriculteur, l'éleveur négociera pour que l'agriculteur clôture (100 € &lt; 200 €). Si le juge donne raison à l'éleveur, l'agriculteur clôturera de toute façon. Dans les deux cas : même résultat efficient.</div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — L'émergence des droits de propriété (Demsetz 1967)</div>
+      <p class="f-text">Avant l'arrivée des Européens, les Indiens des Rocheuses chassaient librement. L'arrivée du commerce des fourrures intensifie la chasse → risque de disparition des castors. Solution émergente : les Indiens ont <strong>spontanément</strong> développé des droits de chasse exclusifs par territoire.</p>
+      <div class="f-key">Leçon de Demsetz : des droits de propriété émergent quand les gains de l'internalisation dépassent les coûts de définition et de mise en œuvre de ces droits.</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Top-down (Pigou, État)</th><th>Bottom-up (Demsetz, parties)</th></tr></thead><tbody>
+        <tr><td>Délai</td><td>Rapide</td><td>Inconnu</td></tr>
+        <tr><td>Connaissance</td><td>Générale, insuffisante</td><td>Locale, précise</td></tr>
+        <tr><td>Flexibilité</td><td>Difficile à modifier</td><td>S'ajuste naturellement</td></tr>
+        <tr><td>Coûts</td><td>Lobbying, décision politique</td><td>Négociation privée</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — L'évolution du panier de droits (bundle of rights)</div>
+      <p class="f-text">Les droits de propriété évoluent progressivement en réponse aux besoins nouveaux. L'exemple du statut des sociétés :</p>
+      <ul class="f-list">
+        <li>Partenariat simple → partage profits et responsabilités</li>
+        <li>Personne morale → existence juridique propre</li>
+        <li>Société anonyme (SA) → capital fragmenté en actions</li>
+        <li>Responsabilité limitée → l'actionnaire ne risque que sa mise</li>
+        <li>Aujourd'hui : private equity → regrouper propriété et contrôle pour résoudre le problème des gestionnaires</li>
+      </ul>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Typologie des biens</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Coût d'exclusion élevé</th><th>Coût d'exclusion faible</th></tr></thead><tbody>
+          <tr><td>Rivalité faible</td><td><strong>Bien public</strong> (phare, sécurité nationale) — financé par l'impôt</td><td><strong>Bien club</strong> (Netflix, wifi) — on peut exclure</td></tr>
+          <tr><td>Rivalité forte</td><td><strong>Bien en accès libre</strong> (forêts, océans) — problème des communs</td><td><strong>Bien ordinaire</strong> — propriété privée classique</td></tr>
+        </tbody></table></div>
+        <div class="f-key">Elinor Ostrom (Prix Nobel 2009) : des solutions émergentes ni marchandes ni étatiques peuvent gérer efficacement les ressources en accès libre (via règles communautaires, réputation, sanctions sociales).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> Le dilemme de la propriété intellectuelle</div>
+    <div class="f-cite"><strong>Juge Breyer</strong>La propriété intellectuelle est « une arme à double tranchant » : elle incite à innover (bénéfice) mais crée un monopole qui freine la diffusion des idées (coût).</div>
+    <div class="f-sous">
+      <div class="f-sous-title">A. Justification : inciter à l'innovation</div>
+      <p class="f-text">Sans protection, les concurrents copient immédiatement → l'innovateur ne récupère pas ses investissements en R&amp;D → plus personne n'innove. Le brevet résout le problème du free-rider en accordant un monopole temporaire. Avantages supplémentaires : ne coûte rien à l'État · force la publication · incite à innover ce qui est utile.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">B. Inconvénients : une rareté artificielle</div>
+      <ul class="f-list">
+        <li>Création d'un monopole → prix élevés, perte sèche pour la société</li>
+        <li>Freine la diffusion des connaissances</li>
+        <li>Les idées n'ont pas de rivalité naturelle : si tu copies mon idée, je l'ai toujours</li>
+      </ul>
+      <div class="f-cite"><strong>Thomas Jefferson</strong>« He who receives an idea from me, receives instruction himself without lessening mine; as he who lights his candle at mine, receives light without darkening me. »</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">C–E. Durée optimale &amp; nouveaux problèmes</div>
+      <p class="f-text">On peut trouver une durée de protection d* qui maximise les bénéfices sociaux nets (intersection du coût marginal croissant et du gain marginal décroissant). Mais on ne connaît pas ces courbes.</p>
+      <ul class="f-list">
+        <li><strong>Malédiction du vainqueur</strong> : les entreprises dilapident tous les bénéfices futurs du brevet en courant pour « arriver les premières »</li>
+        <li><strong>Tragédie des anti-commons</strong> : si tout est breveté, personne ne peut rien construire sans enfreindre des droits</li>
+        <li><strong>Patent trolls</strong> : des entités qui n'innovent pas mais achètent des brevets pour poursuivre en justice des entreprises productives</li>
+      </ul>
+      <p class="f-text"><strong>Solutions émergentes :</strong> patent pools · defensive patent aggregators · passage de la property rule (injonction) à la liability rule (indemnisation) → réduit le pouvoir des patent trolls. <strong>Droit des marques :</strong> lutte contre le free-riding sur la réputation · incite à la qualité · réduit les coûts de transaction · ne crée pas de rareté artificielle.</p>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Usus (usage) + fructus (fruits) + abusus (transfert) = le triptyque de la propriété. Divorce usus/fructus = inefficience (crise 2008)</li>
+    <li>Bastiat : toujours chercher les effets visibles ET invisibles des règles</li>
+    <li>Externalité → internaliser : Pigou (taxes) ou Coase (droits de propriété + négociation)</li>
+    <li>Demsetz : droits émergent spontanément quand les gains d'internalisation &gt; coûts de définition</li>
+    <li>Ostrom (Nobel 2009) : solutions communautaires possibles pour les biens en accès libre</li>
+    <li>PI = arme à double tranchant : monopole nécessaire à l'innovation mais frein à la diffusion</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f1">← Fiche #1</label><label for="r-f3">Fiche #3 : Contrats →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 3 ===== -->
+<div id="page-f3" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #3 · Chapitre 2 — Analyse économique du droit des contrats</div>
+    <h2>Analyse économique du droit des contrats</h2>
+    <div class="fiche-intro">Le contrat est un outil pour saisir des opportunités de coopération dans un contexte d'incertitude. Il permet de « se lier les mains » mutuellement pour que la coopération ait lieu malgré le risque. C'est un moyen imparfait — mais suffisamment bon.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Économie du contrat — les 5 problématiques</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — La raison d'être du contrat</div>
+      <p class="f-text">Le contrat existe parce que la coopération crée de la valeur mais nécessite du temps — et donc de l'incertitude. Il faut s'engager maintenant sur ce qui se passera plus tard. Le contrat est aussi une <strong>procédure de découverte</strong> : les contractants sont incités à trouver les meilleures solutions et les arrangements les plus adaptés.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — La phase des négociations</div>
+      <ul class="f-list">
+        <li><strong>Gain mutuel</strong> → pousse à coopérer, mais il faut s'accorder sur le partage</li>
+        <li><strong>Alternatives</strong> : les alternatives de chaque partie (ce qu'elle peut faire si l'accord échoue) déterminent son pouvoir de négociation</li>
+        <li><strong>Asymétries d'information</strong> : souvent une partie en sait plus que l'autre</li>
+        <li><strong>Contrats d'adhésion</strong> : pré-rédigés par une partie, influencent le résultat</li>
+        <li><strong>Enchères</strong> : anglaise (montante), hollandaise (descendante), au second prix (le plus offrant paye le second prix le plus élevé)</li>
+      </ul>
+      <div class="f-alerte"><strong>Malédiction du vainqueur (Milgrom &amp; Wilson, Nobel 2020)</strong>Quand tous les enchérisseurs estiment un bien (droits miniers, brevets…), celui qui gagne a peut-être été trop optimiste. Il a payé plus que la valeur réelle.</div>
+      <div class="f-key">Modèle principal/agent : le principal rédige le contrat ; l'agent l'exécute. Exemples : employeur/employé · actionnaire/dirigeant · assureur/assuré · banquier/emprunteur.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — La sélection adverse</div>
+      <p class="f-text">Il y a sélection adverse quand une <strong>asymétrie d'information avant la signature</strong> pousse à sélectionner les mauvais partenaires.</p>
+      <div class="f-exemple"><strong>Akerlof, The Market for Lemons (1970)</strong>Sur le marché des voitures d'occasion, le vendeur sait si sa voiture est bonne (peach) ou mauvaise (lemon) ; l'acheteur ne sait pas. Ne voulant pas payer le prix d'une bonne voiture pour une mauvaise, l'acheteur offre un prix moyen bas. Le vendeur de bonne voiture refuse. Seules les lemons s'échangent → le marché des bonnes voitures d'occasion disparaît.</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Les solutions</div>
+        <ul class="f-list">
+          <li><strong>Les signaux</strong> : pour être crédible, un signal doit coûter quelque chose et coûter moins à celui de bonne qualité. Le diplôme est un signal — il coûte des années d'études, mais coûte moins à ceux qui ont les capacités</li>
+          <li><strong>La marque et la réputation</strong> : un vendeur répété a intérêt à maintenir sa qualité</li>
+          <li><strong>Le menu de contrats et l'auto-sélection</strong> : proposer plusieurs options et laisser les clients choisir — les conducteurs prudents choisissent la franchise haute ; les autres paient pour être couverts. L'assureur n'a pas besoin de demander si tu es un bon conducteur : tu te sélectionnes toi-même</li>
+          <li><strong>L'expérience</strong> : au fil des échanges répétés, chacun apprend la qualité de l'autre</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§4 — Le hasard moral</div>
+      <p class="f-text">Il y a hasard moral quand une <strong>asymétrie d'information pendant l'exécution</strong> pousse l'agent à réduire ses efforts ou à se comporter de façon opportuniste.</p>
+      <div class="f-cite"><strong>Adam Smith (déjà !)</strong>« Les administrateurs de telles sociétés gèrent plutôt l'argent d'autrui que le leur. On ne peut pas s'attendre à ce qu'ils veillent dessus avec la même vigilance anxieuse. La négligence et la profusion doivent donc toujours prévaloir. »</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Les solutions pour rendre le contrat incitatif</div>
+        <ul class="f-list">
+          <li><strong>Contremaître</strong> : surveillance directe</li>
+          <li><strong>Franchise</strong> : l'agent supporte une part du coût des problèmes → il fait attention</li>
+          <li><strong>Bonus-malus</strong> : incitation financière liée aux résultats</li>
+          <li><strong>Travail à façon</strong> : paiement conditionné à la qualité du travail livré</li>
+          <li><strong>Participation / stock-options</strong> : l'agent devient actionnaire → ses intérêts s'alignent avec ceux du principal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§5 — Le problème de l'incomplétude</div>
+      <p class="f-text">Tous les contrats sont incomplets : ils ne couvrent pas toutes les situations possibles. Sources :</p>
+      <ul class="f-list">
+        <li><strong>Coûts de transaction</strong> : anticiper et rédiger chaque clause a un coût</li>
+        <li><strong>Éléments non vérifiables</strong> : certaines choses se produisent mais ne peuvent pas être prouvées devant un juge</li>
+        <li><strong>Rationalité limitée</strong> : on ne peut pas tout imaginer à l'avance</li>
+        <li><strong>Incomplétude stratégique</strong> : laisser des zones floues peut être un signal de confiance</li>
+        <li><strong>Ignorance authentique</strong> : on ne sait tout simplement pas ce qui va se passer</li>
+      </ul>
+      <div class="f-key">L'incomplétude justifie l'existence d'une hiérarchie dans la firme (Coase, 1937 — <em>The Nature of the Firm</em>) : le patron décide des cas non prévus par le contrat de travail.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Analyse économique du droit des contrats — 5 fonctions</div>
+    <p class="f-text">Sauf tort causé à un tiers, le droit des contrats ne peut pas remettre en cause la volonté des parties. Les parties connaissent mieux leurs besoins que n'importe quel juge.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — Faciliter la coopération</div>
+      <p class="f-text">Le droit donne une force obligatoire aux promesses échangées : il permet aux parties de s'engager crédiblement, même dans l'incertitude. Sans force obligatoire, personne ne ferait confiance → coopérations bénéfiques abandonnées.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§2 — Faire en sorte que les contrats inefficients soient abandonnés</div>
+      <p class="f-text"><strong>La rupture efficiente (efficient breach)</strong> : parfois, il est socialement préférable qu'un contrat soit rompu. Si le coût de l'exécution dépasse le bénéfice que la victime en tire, mieux vaut rompre et indemniser.</p>
+      <div class="f-sous2">
+        <div class="f-sous2-title">La règle efficiente : les expectation damages</div>
+        <p class="f-text">La sanction optimale pour rupture = compenser la victime à hauteur de ce qu'elle attendait du contrat (perte subie + gain manqué).</p>
+        <div class="f-cite"><strong>Art. 1231-2 C.civ.</strong>« Les dommages et intérêts dus au créancier sont, en général, de la perte qu'il a faite et du gain dont il a été privé. »</div>
+        <p class="f-text">Les options du créancier en droit français (Art. 1217 C.civ.) : refuser d'exécuter · poursuivre l'exécution forcée · demander une réduction du prix · provoquer la résolution · demander des dommages et intérêts.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§3 — Inciter à un investissement optimal</div>
+      <p class="f-text">Les parties peuvent faire des investissements spécifiques avant l'exécution (qui n'ont de valeur que dans ce contrat). La règle efficiente : compenser seulement si l'investissement était raisonnable (prévisible, efficient). Sinon, le créancier sur-investirait.</p>
+      <div class="f-cite"><strong>Art. 1231-3 C.civ.</strong>« Le débiteur n'est tenu que des dommages et intérêts qui ont été prévus ou qui pouvaient être prévus lors de la conclusion du contrat. »</div>
+      <div class="f-key">Règle de foreseeability (common law) — même logique qu'en droit français : on n'indemnise que ce qui était prévisible.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§4 — Minimiser les coûts de transaction</div>
+      <p class="f-text">Quand le contrat est incomplet, le droit doit se substituer aux parties pour remplir les lacunes — en cherchant ce qu'elles auraient voulu si elles y avaient pensé. La règle : trouver le <strong>cheapest cost avoider</strong> — celui qui était le mieux placé pour anticiper et prévenir le problème.</p>
+      <div class="f-cite"><strong>Art. 1188 C.civ.</strong>« Le contrat s'interprète d'après la commune intention des parties plutôt qu'en s'arrêtant au sens littéral de ses termes. »</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">§5 — Modifier les contrats imparfaits</div>
+      <p class="f-text">C'est le point le plus délicat : le juge intervient pour modifier ou invalider un contrat. C'est une atteinte à l'autonomie de la volonté — elle doit donc être exceptionnelle. Sources d'imperfection : incapacité · violence · dol / fraude · réticence dolosive · monopole / lésion / nécessité.</p>
+      <div class="f-sous2">
+        <div class="f-sous2-title">La révision pour imprévision (réforme 2016)</div>
+        <div class="f-cite"><strong>Art. 1195 C.civ.</strong>« Si un changement de circonstances imprévisible lors de la conclusion du contrat rend l'exécution excessivement onéreuse pour une partie qui n'avait pas accepté d'en assumer le risque, celle-ci peut demander une renégociation. En cas d'échec, le juge peut réviser ou mettre fin au contrat. »</div>
+        <div class="f-alerte"><strong>Nuance économique</strong>Les juges ont des informations limitées et des motivations imparfaites. Le droit des contrats doit aussi les décourager de dépasser leurs propres limites dans leur désir de corriger les imperfections du marché.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Sélection adverse (avant la signature) : Akerlof / lemons. Solutions : signaux coûteux, marque, menus de contrats</li>
+    <li>Hasard moral (pendant l'exécution) : Adam Smith / dirigeants. Solutions : franchise, bonus-malus, stock-options</li>
+    <li>Incomplétude : tous les contrats ont des lacunes → droits résiduels → hiérarchie dans la firme (Coase 1937)</li>
+    <li>Efficient breach : mieux rompre et indemniser que d'exécuter un contrat dont le coût dépasse le bénéfice</li>
+    <li>Expectation damages (Art. 1231-2) = perte subie + gain manqué → protège les anticipations légitimes</li>
+    <li>Foreseeability (Art. 1231-3) : on n'indemnise que les investissements qui étaient prévisibles au moment du contrat</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f2">← Fiche #2</label><label for="r-f4">Fiche #4 : Responsabilité →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 4 ===== -->
+<div id="page-f4" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #4 · Chapitre 3 — La responsabilité (Tort Law)</div>
+    <h2>La responsabilité — Analyse économique</h2>
+    <div class="fiche-intro">La propriété et le contrat organisent les interactions volontaires. Mais des interactions involontaires créent des dommages (accidents, nuisances). Le droit de la responsabilité intervient là où les coûts de transaction sont trop élevés pour qu'un contrat soit conclu à l'avance.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 1</span> Rôle économique de la responsabilité</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Objectif : minimiser le coût social des accidents</div>
+      <p class="f-text">Pour le juriste : réparer le préjudice. Pour l'économiste : minimiser le coût social des accidents = prévenir ET indemniser. L'optimum se trouve là où le gain marginal d'un effort supplémentaire de précaution (réduction du risque × dommage potentiel) est égal à son coût marginal.</p>
+      <div class="f-exemple"><strong>Illustration</strong>Si une précaution supplémentaire coûte 2 € et réduit de 2 % la probabilité d'un dommage de 100 €, elle coûte 2 € pour un gain espéré de 2 €. C'est le seuil : en deçà, l'effort vaut le coup ; au-delà, il ne vaut plus rien.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Le théorème de Coase appliqué à la responsabilité</div>
+      <p class="f-text">Si les coûts de transaction sont nuls, peu importe la décision du juge : les parties négocieront ensuite pour aboutir à une solution efficiente.</p>
+      <div class="f-exemple"><strong>Troupeaux et cultures</strong>Dommages = 200 €, parquer les bêtes = 150 €, clôturer = 100 €. Quelle que soit la décision du juge, la solution efficiente (clôturer à 100 €) sera atteinte par négociation.</div>
+      <div class="f-key">Quand les coûts de transaction sont élevés (victimes multiples, difficiles à identifier), la décision du juge a un impact réel. Il doit alors trouver le <strong>cheapest cost avoider</strong> (Calabresi) : celui qui peut faire cesser la nuisance au moindre coût.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 2</span> Quelle règle de responsabilité choisir ?</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Les deux grandes familles</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Responsabilité pour faute (negligence)</th><th>Responsabilité sans faute (strict liability)</th></tr></thead><tbody>
+        <tr><td>Conditions</td><td>Préjudice + lien de causalité + négligence</td><td>Préjudice + lien de causalité</td></tr>
+        <tr><td>En clair</td><td>L'auteur n'est responsable que s'il a mal agi</td><td>L'auteur est responsable quoi qu'il arrive</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">La faute : comment la définir ?</div>
+      <ul class="f-list">
+        <li><strong>Juge Learned Hand (duty of reasonable care)</strong> : il y a faute si le coût de la précaution était inférieur au gain espéré (probabilité × dommage)</li>
+        <li><strong>Droit français</strong> : standard du <em>bonus pater familias</em> — comportement du bon père de famille, raisonnable et prudent</li>
+        <li><strong>Paradigme de la connaissance</strong> : est fautif celui qui ne respecte pas les anticipations légitimes de ses concitoyens</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Analyse des 4 cas</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Cas</th><th>Situation</th><th>Règle optimale</th></tr></thead><tbody>
+        <tr><td>Cas 1</td><td>Seule la victime peut prévenir — ex. quelqu'un qui marche sur les voies de chemin de fer</td><td>Absence de responsabilité ou responsabilité pour faute (l'auteur n'est jamais fautif → la victime fait attention). Strict liability = sous-optimal (la victime ne fait plus rien)</td></tr>
+        <tr><td>Cas 2</td><td>Seul l'auteur peut prévenir — ex. camion aux freins défaillants</td><td>Les deux règles sont efficientes. Mais strict liability est moins coûteuse à administrer (pas besoin de prouver la faute)</td></tr>
+        <tr><td>Cas 3</td><td>Les deux peuvent réduire le risque — ex. accident entre deux conducteurs</td><td>Seule la responsabilité pour faute est efficiente : elle met la pression sur les deux parties</td></tr>
+        <tr><td>Cas 4</td><td>Le niveau d'activité accroît le risque — ex. plus on conduit (même prudemment), plus le risque augmente</td><td>Parfois utile de combiner responsabilité civile et réglementation (Shavell) : aucune règle seule ne contrôle les deux dimensions simultanément</td></tr>
+      </tbody></table></div>
+      <div class="f-key">Le bon niveau d'indemnisation : remettre la victime dans l'état où elle était avant le préjudice — ni plus, ni moins (sinon le niveau optimal de précaution est faussé).</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Sect. 3</span> Applications</div>
+    <div class="f-sous">
+      <div class="f-sous-title">§1 — La responsabilité pour produit défectueux</div>
+      <div class="f-cite"><strong>Art. 1245-9 C.civ.</strong>Le producteur peut être responsable du défaut même s'il a respecté toutes les règles de l'art et les normes existantes.</div>
+      <p class="f-text">C'est donc un régime de <strong>responsabilité sans faute (stricte)</strong>. Analyse économique : le producteur s'assure → répercute le coût dans le prix → c'est l'acheteur qui paye in fine · la victime n'a plus d'incitation à faire attention (relâchement de sa vigilance) · la responsabilité pour faute aurait laissé au consommateur le choix de son niveau de sécurité.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Cas Ford Pinto — consumer expectation test</div>
+      <p class="f-text">Ford avait calculé qu'il était moins coûteux de payer les indemnités aux victimes que de sécuriser le réservoir (qui explosait lors de chocs arrière). Le juge a estimé que le producteur devait tenir compte des <strong>anticipations légitimes des consommateurs</strong> sur la sécurité du véhicule. Ford fut condamné.</p>
+      <div class="f-key">Leçon : le producteur ne peut pas faire un arbitrage cynique coût/dommages si cela viole les attentes raisonnables des consommateurs.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Cas Exxon Valdez — conséquences inattendues</div>
+      <p class="f-text">Après la catastrophe (marée noire en Alaska), les règles de responsabilité ont été considérablement durcies pour les transporteurs de pétrole. Conséquence inattendue : de nombreuses compagnies ont cessé de transporter du pétrole, faute de pouvoir assumer un tel niveau de risque.</p>
+      <div class="f-key">Leçon Bastiat : on voit l'effet immédiat (responsabilité plus sévère), mais pas l'effet indirect (retrait du marché, pénurie).</div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Objectif économique de la responsabilité : minimiser le coût social des accidents (prévention + indemnisation)</li>
+    <li>Coase : si coûts de transaction faibles → peu importe la décision du juge · si élevés → trouver le cheapest cost avoider (Calabresi)</li>
+    <li>Negligence (faute) vs strict liability (sans faute) : la règle optimale dépend de qui peut le mieux prévenir</li>
+    <li>Cas 3 (les deux peuvent prévenir) → seule la negligence est efficiente. Cas 4 (niveau d'activité) → combiner responsabilité + réglementation</li>
+    <li>Ford Pinto : le producteur ne peut pas faire un arbitrage coût/vie s'il viole les anticipations légitimes des consommateurs</li>
+    <li>Exxon Valdez : une règle trop sévère peut provoquer le retrait du marché — Bastiat toujours présent</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f3">← Fiche #3</label><label for="r-f5">Fiche #5 : Conclusions →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 5 ===== -->
+<div id="page-f5" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #5 · Conclusions générales</div>
+    <h2>Conclusions générales — Cinq leçons de l'AED</h2>
+    <div class="fiche-intro">Ces conclusions synthétisent les grandes leçons du cours. Elles peuvent être lues comme un ensemble de techniques pour analyser les effets des règles de droit, ou comme une invitation à la philosophie du droit — s'interroger sur ce qu'est un bon droit.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">1</span> L'importance du droit</div>
+    <p class="f-text">Le droit est un outil majeur du développement économique et social. C'est ce qui justifie l'intérêt de l'économiste pour le droit.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">Les trois piliers du droit civil</div>
+      <ul class="f-list">
+        <li><strong>La propriété</strong> crée une dynamique de découverte et de création</li>
+        <li><strong>Le contrat</strong> favorise la coopération et la division du travail</li>
+        <li><strong>La responsabilité délictuelle</strong> incite à anticiper l'effet de nos actions sur le bien-être d'autrui</li>
+      </ul>
+      <div class="f-key">Un pays ne peut bien aller si son droit va mal.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">2</span> Le savoir de l'économiste</div>
+    <p class="f-text">L'économiste étudie comment les individus rationnels réagissent aux incitations (dont les règles de droit) dans un contexte de rareté et d'incertitude. Mais il ne sait pas tout.</p>
+    <div class="f-cite"><strong>La leçon centrale de Bastiat</strong>Ce qu'on voit et ce qu'on ne voit pas — il faut toujours chercher les effets indirects, invisibles, différés des règles. Le mauvais économiste s'arrête au premier effet visible. Le bon tient compte de tous les effets.</div>
+    <div class="f-exemple"><strong>Illustrations vues en cours</strong>SMIC (effet visible : salaire plancher · effet invisible : moins d'embauches) · Loyer plafonné (visible : loyers bas · invisible : pénurie) · Responsabilité Exxon Valdez (visible : entreprises sanctionnées · invisible : retrait du marché pétrolier)</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">3</span> Le choix de la norme</div>
+    <p class="f-text">Choisir la « bonne règle » de droit est un choix qui dépasse la science économique — il implique des jugements de valeur.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">Deux critères proposés par les économistes</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Critère</th><th>Logique</th><th>Limite</th></tr></thead><tbody>
+        <tr><td>Efficience statique (Pareto, Kaldor-Hicks)</td><td>Maximiser la richesse sociale à ressources données</td><td>Ignore les ressources encore à découvrir · peut sacrifier des perdants</td></tr>
+        <tr><td>Efficience dynamique (paradigme de la connaissance)</td><td>Favoriser la découverte de nouvelles ressources et solutions</td><td>Plus difficile à mesurer · pattern predictions, pas des certitudes</td></tr>
+      </tbody></table></div>
+      <div class="f-key">Il n'y a pas de consensus absolu, mais la prise en compte du problème de la connaissance invite à une plus grande humilité dans les prétentions normatives.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">4</span> L'évolution du droit</div>
+    <p class="f-text">Le droit est vivant : il s'adapte aux besoins des individus et à l'évolution des sociétés.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">Exemples vus en cours</div>
+      <ul class="f-list">
+        <li>Les droits de chasse des Indiens des Rocheuses (Demsetz) — émergence spontanée face à la surexploitation</li>
+        <li>L'évolution du statut des sociétés (partenariat → SA → private equity) — chaque étape résout un problème mais en crée d'autres</li>
+        <li>L'évolution du droit de la responsabilité civile — de la faute à la responsabilité sans faute</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Bottom-up vs Top-down</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Approche</th><th>Avantage</th><th>Limite</th></tr></thead><tbody>
+        <tr><td>Bottom-up : des individus directement concernés trouvent des arrangements spontanés → le droit s'adapte</td><td>Utilise mieux les connaissances locales · solutions sur mesure</td><td>Lent · incertain · peut ne jamais émerger</td></tr>
+        <tr><td>Top-down : le législateur impose une solution</td><td>Agit plus vite · couverture universelle</td><td>Connaissances insuffisantes · risque d'effets non visibles</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">5</span> Une nécessaire humilité</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Pourquoi l'humilité s'impose</div>
+      <ul class="f-list">
+        <li>Nous ne savons pas tout sur ce que serait « un monde meilleur »</li>
+        <li>Il y a des divergences légitimes sur les valeurs</li>
+        <li>Il y a des divergences sur ce que nous croyons savoir</li>
+        <li>Le paradigme de la connaissance rappelle que nos prévisions sont limitées : on peut faire des <strong>« prédictions de tendance »</strong> (pattern prediction), pas des certitudes</li>
+      </ul>
+    </div>
+    <div class="f-key">L'AED ne donne pas de réponse définitive. Elle donne des outils pour poser les bonnes questions.</div>
+    <div class="f-exemple"><strong>En pratique</strong>L'AED permet de repérer les effets non visibles d'une règle (Bastiat) · d'identifier le cheapest cost avoider · de comprendre pourquoi un droit de propriété clair favorise la découverte · de savoir quand la responsabilité pour faute est préférable à la responsabilité sans faute · et finalement, de savoir qu'il faut se méfier de ceux qui sont trop sûrs d'avoir « la bonne réponse ».</div>
+  </div>
+
+  <div class="f-retenir"><strong>Les 5 leçons en bref</strong><ul>
+    <li><strong>1 — Le droit compte</strong> : propriété + contrat + responsabilité = les 3 piliers du développement économique et social</li>
+    <li><strong>2 — Bastiat toujours</strong> : chercher les effets visibles ET les effets invisibles, différés, indirects des règles</li>
+    <li><strong>3 — Deux critères normatifs</strong> : efficience statique (Pareto, Kaldor-Hicks) · efficience dynamique (paradigme de la connaissance)</li>
+    <li><strong>4 — Le droit évolue</strong> : bottom-up (connaissances locales, lent) vs top-down (rapide, risque d'effets non visibles)</li>
+    <li><strong>5 — Humilité</strong> : pattern predictions, pas des certitudes. L'AED pose les bonnes questions, elle ne fournit pas de réponses définitives</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f4">← Fiche #4 : Responsabilité</label><span></span></div>
+</div></main></div>
+
+<footer>
+  <p>Analyse Économique <span>du Droit</span> — Fiches de révision 2025-2026 · 4 chapitres · 5 fiches</p>
+</footer>
+
+</div><!-- end .wrap -->
+</body>
+</html>
