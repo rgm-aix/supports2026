@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Régime Général des Obligations — Fiches de Révision</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+:root{
+  --r:#8B0000;--rv:#B22222;--rp:#fdf0f0;--rb:#e8c8c8;
+  --n:#1a1a1a;--gf:#2d2d2d;--g:#555;--gc:#f6f8fb;--b:#fefefe;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--b);color:var(--n);font-size:17px;line-height:1.75}
+header{background:var(--n);color:#fff;padding:1.8rem 2rem 1.4rem;border-bottom:4px solid var(--r);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+header h1{font-size:clamp(1.3rem,4vw,2rem);font-weight:600}
+header h1 span{color:#B22222}
+header small{color:#aaa;font-size:.82rem;letter-spacing:.06em;display:block;margin-top:.2rem}
+nav{background:var(--r);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav ul{list-style:none;display:flex;flex-wrap:nowrap;min-width:max-content}
+.nav-radio{display:none}
+nav label{display:block;padding:.65rem .85rem;color:rgba(255,255,255,.82);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer}
+.page-content{display:none}
+#home-content{display:block}
+#r-home:checked~.wrap #home-content,#r-plan:checked~.wrap #home-content,
+#r-f1:checked~.wrap #home-content,#r-f2:checked~.wrap #home-content,
+#r-f3:checked~.wrap #home-content,#r-f4:checked~.wrap #home-content,
+#r-f5:checked~.wrap #home-content,#r-f6:checked~.wrap #home-content,
+#r-f7:checked~.wrap #home-content,#r-f8:checked~.wrap #home-content,
+#r-f9:checked~.wrap #home-content,#r-f10:checked~.wrap #home-content,
+#r-f11:checked~.wrap #home-content{display:none}
+#r-home:checked~.wrap #home-content{display:block}
+#r-plan:checked~.wrap #page-plan{display:block}
+#r-f1:checked~.wrap #page-f1{display:block}
+#r-f2:checked~.wrap #page-f2{display:block}
+#r-f3:checked~.wrap #page-f3{display:block}
+#r-f4:checked~.wrap #page-f4{display:block}
+#r-f5:checked~.wrap #page-f5{display:block}
+#r-f6:checked~.wrap #page-f6{display:block}
+#r-f7:checked~.wrap #page-f7{display:block}
+#r-f8:checked~.wrap #page-f8{display:block}
+#r-f9:checked~.wrap #page-f9{display:block}
+#r-f10:checked~.wrap #page-f10{display:block}
+#r-f11:checked~.wrap #page-f11{display:block}
+#r-home:checked~.wrap .nav-home,#r-plan:checked~.wrap .nav-plan,
+#r-f1:checked~.wrap .nav-f1,#r-f2:checked~.wrap .nav-f2,
+#r-f3:checked~.wrap .nav-f3,#r-f4:checked~.wrap .nav-f4,
+#r-f5:checked~.wrap .nav-f5,#r-f6:checked~.wrap .nav-f6,
+#r-f7:checked~.wrap .nav-f7,#r-f8:checked~.wrap .nav-f8,
+#r-f9:checked~.wrap .nav-f9,#r-f10:checked~.wrap .nav-f10,
+#r-f11:checked~.wrap .nav-f11{color:#fff!important;background:rgba(255,255,255,.15)!important;border-bottom-color:#fff!important}
+
+#home{padding:2.5rem 2.5rem 4rem}
+.home-intro{text-align:center;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--rb)}
+.home-intro h2{font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;margin-bottom:.4rem}
+.home-intro p{color:var(--g);font-size:.95rem;max-width:560px;margin:0 auto}
+.home-section-title{font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin:2rem 0 .9rem;padding-bottom:.3rem;border-bottom:1px solid var(--rb)}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+label.card{display:block;background:var(--b);border:1.5px solid var(--rb);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:inherit;transition:box-shadow .15s}
+label.card:hover{box-shadow:0 4px 18px rgba(139,0,0,.13)}
+label.card .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:.3rem}
+label.card h3{font-size:.95rem;font-weight:700;color:var(--r);margin-bottom:.2rem;line-height:1.35}
+label.card p{font-size:.8rem;color:var(--g);line-height:1.4}
+label.card-plan{display:block;background:var(--n);border-top:4px solid var(--r);padding:1.2rem 1.1rem 1rem;cursor:pointer;color:#fff;transition:opacity .15s}
+label.card-plan:hover{opacity:.9}
+label.card-plan .card-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.3rem}
+label.card-plan h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+label.card-plan p{font-size:.8rem;color:#aaa;line-height:1.4}
+
+main{max-width:100%;margin:0 auto;padding:2.2rem 2.5rem 5rem}
+label.btn-home{display:inline-block;background:transparent;border:1.5px solid rgba(139,0,0,.3);color:var(--rv);padding:.4rem 1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+
+.mindmap-container{width:100%;overflow-x:auto;padding:1.5rem 0}
+.mindmap-scroll{min-width:820px}
+.root-node{display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
+.root-node .node-box{background:var(--n);color:#fff;padding:.9rem 2rem;font-size:1.1rem;font-weight:700;letter-spacing:.04em;text-align:center;border-bottom:3px solid var(--r)}
+.root-node .node-box small{display:block;color:#aaa;font-size:.72rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
+.plan-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.partie-block{border:2px solid var(--r);background:#fff;margin-bottom:1rem}
+.partie-header{background:var(--r);color:#fff;padding:.6rem 1rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.partie-body{padding:.8rem;display:flex;flex-direction:column;gap:.6rem}
+.chap-block{border:1px solid var(--rb);background:#fff}
+.chap-header{background:var(--gc);border-bottom:1px solid var(--rb);padding:.35rem .7rem;font-size:.73rem;font-weight:700;color:var(--r);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;list-style:none}
+.chap-header::-webkit-details-marker{display:none}
+.chap-toggle::after{content:'▸';color:var(--r);font-size:.8rem}
+details[open] .chap-toggle::after{content:'▾'}
+.chap-body{padding:.55rem .7rem;display:flex;flex-direction:column;gap:.3rem}
+.section-item{padding:.28rem .5rem .28rem .85rem;border-left:2px solid var(--rb);font-size:.82rem;color:var(--gf);display:flex;flex-direction:column;gap:.18rem}
+.section-label{font-weight:700;color:var(--rv);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.section-name{font-size:.84rem;color:var(--gf);font-weight:600}
+.para-list{margin-top:.22rem;padding-left:.7rem;display:flex;flex-direction:column;gap:.1rem}
+.para-item{font-size:.78rem;color:var(--g);position:relative;padding-left:.9rem;line-height:1.4}
+.para-item::before{content:'§';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.7rem}
+.sub-list{margin-top:.08rem;padding-left:.7rem}
+.sub-item{font-size:.74rem;color:#777;position:relative;padding-left:.7rem;line-height:1.4}
+.sub-item::before{content:'–';position:absolute;left:0;color:var(--r)}
+.plan-fiche-link{display:inline-block;margin-top:.45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--r);padding:.18rem .55rem;cursor:pointer;border:none;font-family:inherit}
+.legend{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem;padding:.75rem 1rem;background:var(--gc);border:1px solid var(--rb);font-size:.78rem;color:var(--g)}
+.legend-item{display:flex;align-items:center;gap:.35rem}
+.legend-dot{width:12px;height:12px;flex-shrink:0}
+
+/* FICHES */
+.fiche-page{max-width:840px;margin:0 auto}
+.fiche-header{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--r)}
+.fiche-meta{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:.35rem}
+.fiche-header h2{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;color:var(--n)}
+.fiche-intro{margin-top:.8rem;font-size:.93rem;color:var(--g);line-height:1.68;font-style:italic;padding:.7rem 1rem;background:var(--gc);border-left:3px solid var(--rb)}
+
+.f-bloc{margin-bottom:2.4rem}
+.f-bloc-title{font-size:1.05rem;font-weight:700;color:#fff;background:var(--n);padding:.5rem .9rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.7rem}
+.f-bloc-title .f-num{background:var(--r);padding:.1rem .5rem;font-size:.75rem;letter-spacing:.07em;white-space:nowrap}
+.f-sous{margin-bottom:1.4rem;padding-left:1.1rem;border-left:3px solid var(--r)}
+.f-sous-title{font-size:.98rem;font-weight:700;color:var(--r);margin-bottom:.6rem;padding-bottom:.25rem;border-bottom:1px dotted var(--rb)}
+.f-sous2{margin-bottom:1rem;padding-left:.9rem;border-left:2px solid var(--rb)}
+.f-sous2-title{font-size:.9rem;font-weight:700;color:var(--gf);margin-bottom:.35rem}
+.f-text{font-size:.92rem;color:var(--gf);line-height:1.75;margin-bottom:.5rem}
+.f-list{list-style:none;padding:0;margin:.3rem 0 .6rem .1rem}
+.f-list li{font-size:.91rem;color:var(--gf);line-height:1.65;padding:.12rem 0 .12rem 1.1rem;position:relative}
+.f-list li::before{content:'—';position:absolute;left:0;color:var(--r);font-weight:700}
+.f-list li strong{color:var(--r)}
+.f-alerte{background:#fffbf0;border-left:4px solid #c47900;padding:.75rem 1rem;margin:.5rem 0 .9rem;font-size:.88rem;line-height:1.65;color:var(--gf)}
+.f-alerte strong{color:#9a5e00;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.25rem}
+.f-exemple{background:var(--gc);border-left:3px solid #888;padding:.7rem 1rem;margin:.5rem 0 .9rem;font-size:.88rem;line-height:1.65;color:var(--g)}
+.f-exemple strong{color:var(--gf);font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.f-key{background:var(--rp);border:1.5px solid var(--rb);padding:.65rem 1rem;margin:.5rem 0 .9rem;font-size:.91rem;line-height:1.65;color:var(--gf);display:flex;align-items:baseline;gap:.6rem}
+.f-key::before{content:'→';color:var(--r);font-weight:700;flex-shrink:0;font-size:1rem}
+.f-table-wrap{overflow-x:auto;margin:.6rem 0 .9rem}
+.f-table{width:100%;border-collapse:collapse;font-size:.86rem}
+.f-table thead tr{background:var(--n);color:#fff}
+.f-table thead th{padding:.5rem .8rem;text-align:left;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+.f-table tbody tr:nth-child(even){background:var(--gc)}
+.f-table tbody td{padding:.45rem .8rem;border-bottom:1px solid var(--rb);vertical-align:top}
+.f-table tbody td:first-child{font-weight:700;color:var(--r)}
+.f-retenir{background:var(--rp);border-left:4px solid var(--r);padding:.9rem 1.1rem;margin-top:1.8rem;font-size:.91rem;line-height:1.7;color:var(--gf)}
+.f-retenir strong{color:var(--r);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:.5rem}
+.f-retenir ul{list-style:none;padding:0;margin:.3rem 0}
+.f-retenir ul li{padding:.1rem 0 .1rem 1rem;position:relative;font-size:.9rem}
+.f-retenir ul li::before{content:'✓';position:absolute;left:0;color:var(--r);font-weight:700;font-size:.78rem}
+.fiche-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rb)}
+.fiche-nav label{color:var(--rv);cursor:pointer;font-size:.85rem}
+
+footer{background:var(--n);color:#777;text-align:center;padding:1.2rem;font-size:.78rem;letter-spacing:.05em;border-top:3px solid var(--r);margin-top:2rem}
+footer span{color:#B22222}
+
+@media(max-width:900px){
+  .plan-cols{grid-template-columns:1fr}
+  .mindmap-scroll{min-width:unset}
+  main{padding:1.4rem .9rem 4rem}
+  header{padding:1.2rem 1rem 1rem}
+  nav label{padding:.55rem .5rem;font-size:.68rem}
+  #home{padding:1.8rem 1rem 3rem}
+  .cards-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){.cards-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<input type="radio" name="page" class="nav-radio" id="r-home" checked>
+<input type="radio" name="page" class="nav-radio" id="r-plan">
+<input type="radio" name="page" class="nav-radio" id="r-f1">
+<input type="radio" name="page" class="nav-radio" id="r-f2">
+<input type="radio" name="page" class="nav-radio" id="r-f3">
+<input type="radio" name="page" class="nav-radio" id="r-f4">
+<input type="radio" name="page" class="nav-radio" id="r-f5">
+<input type="radio" name="page" class="nav-radio" id="r-f6">
+<input type="radio" name="page" class="nav-radio" id="r-f7">
+<input type="radio" name="page" class="nav-radio" id="r-f8">
+<input type="radio" name="page" class="nav-radio" id="r-f9">
+<input type="radio" name="page" class="nav-radio" id="r-f10">
+<input type="radio" name="page" class="nav-radio" id="r-f11">
+
+<div class="wrap">
+<header>
+  <label for="r-home" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+    <h1>Régime Général <span>des Obligations</span></h1>
+    <small>Fiches de révision — 4 parties · 11 fiches</small>
+  </label>
+</header>
+<nav><ul>
+  <li><label class="nav-home" for="r-home">Accueil</label></li>
+  <li><label class="nav-plan" for="r-plan">Plan du cours</label></li>
+  <li><label class="nav-f1"  for="r-f1">#1 Condition &amp; terme</label></li>
+  <li><label class="nav-f2"  for="r-f2">#2 Pluralité objective</label></li>
+  <li><label class="nav-f3"  for="r-f3">#3 Pluralité subjective</label></li>
+  <li><label class="nav-f4"  for="r-f4">#4 Cession</label></li>
+  <li><label class="nav-f5"  for="r-f5">#5 Subrogation</label></li>
+  <li><label class="nav-f6"  for="r-f6">#6 Novation &amp; délégation</label></li>
+  <li><label class="nav-f7"  for="r-f7">#7 Actions contre le débiteur</label></li>
+  <li><label class="nav-f8"  for="r-f8">#8 Actions contre les tiers</label></li>
+  <li><label class="nav-f9"  for="r-f9">#9 Paiement</label></li>
+  <li><label class="nav-f10" for="r-f10">#10 Extinction indirecte</label></li>
+  <li><label class="nav-f11" for="r-f11">#11 Extinction sans satisfaction</label></li>
+</ul></nav>
+
+<!-- ACCUEIL -->
+<div id="home-content">
+<div id="home">
+  <div class="home-intro">
+    <h2>Régime Général des Obligations</h2>
+    <p>4 parties · 11 fiches de révision complètes · Plan du cours interactif</p>
+  </div>
+  <div class="home-section-title">Navigation générale</div>
+  <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));max-width:520px">
+    <label class="card-plan" for="r-plan">
+      <div class="card-num">Vue d'ensemble</div>
+      <h3>Plan du cours</h3>
+      <p>4 parties · titres · chapitres — structure complète avec accès direct aux fiches</p>
+    </label>
+  </div>
+  <div class="home-section-title">Partie 1 — Les modalités de l'obligation</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f1"><div class="card-num">Fiche #1</div><h3>Les obligations conditionnelles et à terme</h3><p>Condition suspensive/résolutoire · validité · effets · réalisation · terme judiciaire/légal/conventionnel · déchéance</p></label>
+    <label class="card" for="r-f2"><div class="card-num">Fiche #2</div><h3>La pluralité objective</h3><p>Obligation cumulative · obligation alternative (choix, impossibilité) · obligation facultative</p></label>
+    <label class="card" for="r-f3"><div class="card-num">Fiche #3</div><h3>La pluralité subjective</h3><p>Solidarité active/passive · in solidum · obligation indivisible · effets et sources</p></label>
+  </div>
+  <div class="home-section-title">Partie 2 — La circulation de l'obligation</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f4"><div class="card-num">Fiche #4</div><h3>La circulation par voie de cession</h3><p>Cession de créance · cession de dette (libératoire/cumulative) · cession de contrat (parfaite/imparfaite)</p></label>
+    <label class="card" for="r-f5"><div class="card-num">Fiche #5</div><h3>La circulation par voie de subrogation</h3><p>Subrogation légale · conventionnelle (par créancier/débiteur) · effet translatif · limites · opposabilité</p></label>
+    <label class="card" for="r-f6"><div class="card-num">Fiche #6</div><h3>Novation et délégation</h3><p>Animus novandi · changement d'obligation · effets extinctifs · délégation parfaite/imparfaite · inopposabilité des exceptions</p></label>
+  </div>
+  <div class="home-section-title">Partie 3 — Les actions ouvertes au créancier</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f7"><div class="card-num">Fiche #7</div><h3>Les actions contre le débiteur</h3><p>Mesures conservatoires · astreinte (provisoire/définitive) · exécution forcée · droit de gage général</p></label>
+    <label class="card" for="r-f8"><div class="card-num">Fiche #8</div><h3>Les actions contre les tiers</h3><p>Action oblique (carence, conditions, effets) · action directe (cas limitatifs) · action paulienne (fraude, acte à titre onéreux/gratuit)</p></label>
+  </div>
+  <div class="home-section-title">Partie 4 — L'extinction des obligations</div>
+  <div class="cards-grid">
+    <label class="card" for="r-f9"><div class="card-num">Fiche #9</div><h3>Le paiement</h3><p>Solvens/accipiens · objet · date et lieu · incidents · preuve · imputation (dette unique et pluralité)</p></label>
+    <label class="card" for="r-f10"><div class="card-num">Fiche #10</div><h3>L'extinction avec satisfaction indirecte</h3><p>Compensation (légale, judiciaire, connexité, conventionnelle) · confusion · dation en paiement</p></label>
+    <label class="card" for="r-f11"><div class="card-num">Fiche #11</div><h3>L'extinction sans satisfaction</h3><p>Remise de dette · impossibilité d'exécuter (force majeure) · prescription extinctive (délais, suspension, interruption)</p></label>
+  </div>
+</div>
+</div>
+
+<!-- PLAN DU COURS -->
+<div id="page-plan" class="page-content">
+<main>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.6rem">
+    <div><h2 style="font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700">Plan détaillé du cours</h2>
+    <p style="font-size:.85rem;color:var(--g);margin-top:.2rem">4 parties · 3 titres principaux · cliquez pour déplier, puis accédez à la fiche</p></div>
+    <label class="btn-home" for="r-home">← Accueil</label>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#1a1a1a"/></svg>Partie</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000"/></svg>Titre</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#f6f8fb" stroke="#e8c8c8"/></svg>Chapitre (cliquable)</div>
+    <div class="legend-item"><svg class="legend-dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#8B0000" opacity=".8"/></svg>Lien fiche</div>
+  </div>
+  <div class="mindmap-container"><div class="mindmap-scroll">
+    <div class="root-node"><div class="node-box">RÉGIME GÉNÉRAL DES OBLIGATIONS<small>4 Parties · 11 Fiches</small></div></div>
+    <div class="plan-cols">
+      <!-- COLONNE GAUCHE -->
+      <div>
+        <div class="partie-block">
+          <div class="partie-header">Partie 1 — Les modalités de l'obligation</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">T1 — Obligations conditionnelles et à terme <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">L'obligation conditionnelle</span>
+                  <div class="para-list">
+                    <div class="para-item">Sect. 1 – CS et CR · caractéristiques communes</div>
+                    <div class="para-item">Sect. 2 – Validité : modalité · événement futur/incertain · condition licite</div>
+                    <div class="para-item">Sect. 3 – Effets : réalisation · CS (pendante, réalisée, défaillie) · CR · effets communs</div>
+                    <div class="para-item">Sect. 4 – Renonciation à la condition</div>
+                  </div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">L'obligation à terme</span>
+                  <div class="para-list">
+                    <div class="para-item">Catégories : certain/incertain · judiciaire/légal/conventionnel</div>
+                    <div class="para-item">Effets : suspensif · extinctif · déchéance du terme</div>
+                  </div>
+                </div>
+                <label class="plan-fiche-link" for="r-f1">→ Fiche #1</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">T2 — Pluralité objective <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">Obligation cumulative (conjonctive)</span></div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">Obligation alternative</span>
+                  <div class="para-list"><div class="para-item">Choix (débiteur) · irrévocabilité · impossibilité d'une branche</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 3</span><span class="section-name">Obligation facultative</span>
+                  <div class="para-list"><div class="para-item">Différence avec l'alternative · force majeure sur la prestation principale</div></div>
+                </div>
+                <label class="plan-fiche-link" for="r-f2">→ Fiche #2</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">T3 — Pluralité subjective <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">L'obligation solidaire</span>
+                  <div class="para-list">
+                    <div class="para-item">Sect. 1 – Solidarité active : sources · effets</div>
+                    <div class="para-item">Sect. 2 – Solidarité passive : légale · conventionnelle · rapports créancier/débiteurs · contribution</div>
+                  </div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">L'obligation in solidum</span>
+                  <div class="para-list"><div class="para-item">Domaine (responsabilité extracontractuelle) · régime · différence avec solidarité</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 3</span><span class="section-name">L'obligation indivisible</span>
+                  <div class="para-list"><div class="para-item">Sources : naturelle (matérielle, rationnelle) · conventionnelle</div><div class="para-item">Effets active et passive · différence avec solidarité (héritiers)</div></div>
+                </div>
+                <label class="plan-fiche-link" for="r-f3">→ Fiche #3</label>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="partie-block">
+          <div class="partie-header">Partie 3 — Les actions ouvertes au créancier</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">T1 — Actions contre le débiteur <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">Mesures conservatoires</span>
+                  <div class="para-list"><div class="para-item">Saisie conservatoire · sûretés judiciaires · 4 conditions</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">L'astreinte</span>
+                  <div class="para-list"><div class="para-item">Provisoire → définitive · liquidation · révision à la baisse</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 3</span><span class="section-name">L'exécution forcée</span></div>
+                <label class="plan-fiche-link" for="r-f7">→ Fiche #7</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">T2 — Actions contre les tiers <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">L'action oblique</span>
+                  <div class="para-list"><div class="para-item">Art. 1341-1 · conditions · effets (transit par patrimoine du débiteur)</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">L'action directe</span>
+                  <div class="para-list"><div class="para-item">Caractère limitatif · ex. art. 1753, 1798 · paiement direct au créancier</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 3</span><span class="section-name">L'action paulienne</span>
+                  <div class="para-list"><div class="para-item">Art. 1341-2 · 3 conditions · acte onéreux/gratuit · inopposabilité</div></div>
+                </div>
+                <label class="plan-fiche-link" for="r-f8">→ Fiche #8</label>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <!-- COLONNE DROITE -->
+      <div>
+        <div class="partie-block">
+          <div class="partie-header">Partie 2 — La circulation de l'obligation</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">T1 — Circulation par voie de cession <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">Cession de créance</span>
+                  <div class="para-list">
+                    <div class="para-item">Conditions : validité (objet, forme écrite) · opposabilité (tiers, débiteur cédé)</div>
+                    <div class="para-item">Effets : transmission + accessoires · exceptions · frais · garanties cédant · retrait litigieux</div>
+                  </div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">Cession de dette</span>
+                  <div class="para-list"><div class="para-item">Consentement créancier indispensable · libératoire (parfaite) · cumulative (imparfaite = principe)</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 3</span><span class="section-name">Cession de contrat</span>
+                  <div class="para-list"><div class="para-item">Consentement cédé · forme écrite · parfaite (libération cédant) · imparfaite (solidarité)</div></div>
+                </div>
+                <label class="plan-fiche-link" for="r-f4">→ Fiche #4</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">T2 — Circulation par subrogation <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">Sources</span>
+                  <div class="para-list"><div class="para-item">Légale (art. 1346) · conventionnelle : par créancier / par débiteur</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">Effets</span>
+                  <div class="para-list"><div class="para-item">Effet translatif (extinctif + translatif) · limites (concurrence, paiement partiel) · opposabilité · exceptions</div></div>
+                </div>
+                <label class="plan-fiche-link" for="r-f5">→ Fiche #5</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">T3 — Novation et délégation <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">Novation</span>
+                  <div class="para-list"><div class="para-item">Animus novandi · extinction ancienne obligation · création nouvelle · effets extinctifs et accessoires</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">Délégation</span>
+                  <div class="para-list">
+                    <div class="para-item">3 parties : déléguant, délégué, délégataire</div>
+                    <div class="para-item">Parfaite : décharge du déléguant · inopposabilité absolue des exceptions</div>
+                    <div class="para-item">Imparfaite : adjonction de débiteurs · fil initial maintenu</div>
+                  </div>
+                </div>
+                <label class="plan-fiche-link" for="r-f6">→ Fiche #6</label>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="partie-block">
+          <div class="partie-header">Partie 4 — L'extinction des obligations</div>
+          <div class="partie-body">
+            <details class="chap-block">
+              <summary class="chap-header">T1 — Le paiement <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">Parties au paiement</span>
+                  <div class="para-list"><div class="para-item">Solvens (débiteur ou tiers) · accipiens (créancier ou apparence)</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">Réalisation du paiement</span>
+                  <div class="para-list"><div class="para-item">Identité et intégralité · nominalisme monétaire · date et lieu · incidents (refus, consignation)</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 3 & 4</span><span class="section-name">Preuve et imputation</span>
+                  <div class="para-list"><div class="para-item">Charge sur débiteur · fait juridique · imputation intérêts/capital · pluralité de dettes</div></div>
+                </div>
+                <label class="plan-fiche-link" for="r-f9">→ Fiche #9</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">T2 — Extinction avec satisfaction indirecte <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">Compensation</span>
+                  <div class="para-list"><div class="para-item">Légale (6 conditions) · judiciaire · connexité · conventionnelle</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">Confusion</span>
+                  <div class="para-list"><div class="para-item">Réunion créancier/débiteur · effets sur solidarité et cautions · réversibilité</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 3</span><span class="section-name">Dation en paiement</span></div>
+                <label class="plan-fiche-link" for="r-f10">→ Fiche #10</label>
+              </div>
+            </details>
+            <details class="chap-block">
+              <summary class="chap-header">T3 — Extinction sans satisfaction <span class="chap-toggle"></span></summary>
+              <div class="chap-body">
+                <div class="section-item"><span class="section-label">Chap. 1</span><span class="section-name">Remise de dette</span>
+                  <div class="para-list"><div class="para-item">Contrat consensuel · présomptions · effets sur solidarité et cautions</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 2</span><span class="section-name">Impossibilité d'exécuter</span>
+                  <div class="para-list"><div class="para-item">Force majeure · effets · risques (res perit debitori / creditori) · exceptions</div></div>
+                </div>
+                <div class="section-item"><span class="section-label">Chap. 3</span><span class="section-name">Prescription extinctive</span>
+                  <div class="para-list">
+                    <div class="para-item">Délais : quinquennale · trentenaire · décennale · vingtennale · inférieures à 5 ans</div>
+                    <div class="para-item">Computation : point de départ · délai butoir · suspension · interruption</div>
+                    <div class="para-item">Prescriptions conventionnelles · effets · mise en œuvre</div>
+                  </div>
+                </div>
+                <label class="plan-fiche-link" for="r-f11">→ Fiche #11</label>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</main>
+</div>
+
+<!-- ===== FICHE 1 ===== -->
+<div id="page-f1" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #1 · Partie 1 — Les modalités de l'obligation · Titre 1</div>
+    <h2>Les obligations conditionnelles et à terme</h2>
+    <div class="fiche-intro">L'obligation conditionnelle existe ou disparaît selon qu'un événement futur et incertain se réalise ou non. L'obligation à terme est due mais pas encore exigible, le terme différant non son existence mais son exécution. L'achat sous condition d'obtenir un prêt : tant que la banque n'a pas répondu, l'obligation « flotte » ; si le prêt est accordé, on achète ; s'il est refusé, tout tombe.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> L'obligation conditionnelle</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — Les différentes sortes de conditions</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — Conditions suspensives et conditions résolutoires</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Condition suspensive (CS)</th><th>Condition résolutoire (CR)</th></tr></thead><tbody>
+          <tr><td>Principe</td><td>Subordonne l'<strong>existence</strong> de l'obligation à la réalisation d'un événement. Avant réalisation : l'obligation n'existe pas encore.</td><td>Subordonne la <strong>disparition</strong> de l'obligation à la réalisation d'un événement. Dès le départ : l'obligation existe pleinement.</td></tr>
+          <tr><td>Si la condition se réalise</td><td>L'obligation devient pure et simple</td><td>L'obligation est anéantie rétroactivement</td></tr>
+          <tr><td>Si la condition échoue</td><td>L'obligation est réputée n'avoir jamais existé</td><td>L'obligation devient définitivement pure et simple</td></tr>
+          <tr><td>Exemple</td><td>« Je t'achète ta voiture si j'obtiens mon CDI. » Avant la réponse, aucune obligation n'existe.</td><td>« Je te loue ma voiture, mais si la voiture n°1 est volée, le contrat prend fin. »</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — Caractéristiques communes à toutes les conditions</div>
+        <p class="f-text">L'événement doit être à la fois <strong>futur</strong> (un événement déjà réalisé n'est pas une condition) et <strong>incertain</strong> (ce n'est pas la date qui doit être incertaine, mais la réalisation même de l'événement — ce qui distingue la condition du terme).</p>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Catégorie</th><th>Définition</th><th>Validité</th></tr></thead><tbody>
+          <tr><td>Casuelle</td><td>Dépend du hasard — « Je t'achète si l'OM gagne 4 matchs. »</td><td>Valide</td></tr>
+          <tr><td>Purement potestative</td><td>Dépend de la seule volonté du débiteur — « Je t'achète si j'en ai encore envie. »</td><td>Nulle (art. 1304-2) — le débiteur pourrait ne jamais être tenu</td></tr>
+          <tr><td>Mixte</td><td>Dépend en partie de la volonté du débiteur, en partie d'un tiers — « Je t'achète si la banque m'accorde un prêt. »</td><td>Valide</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — La validité des conditions</div>
+      <ul class="f-list">
+        <li><strong>§1 — Une simple modalité</strong> : la condition ne peut pas porter sur un élément essentiel à la formation du contrat (comme les consentements eux-mêmes)</li>
+        <li><strong>§2 — Un événement futur et incertain</strong> : l'incertitude doit être à la fois objective (tout observateur la percevrait) et subjective (les parties la ressentent)</li>
+        <li><strong>§3 — Une condition licite</strong> : ne doit pas être contraire à la loi, à l'ordre public ou aux bonnes mœurs (art. 1304-1). Sanction : nullité de l'obligation conditionnelle</li>
+      </ul>
+      <div class="f-exemple"><strong>Exemple illicite</strong>« Je te donne 10 000 € si tu n'épouses pas cette personne. » → atteinte excessive à la liberté du mariage → nullité. ⚠️ Mais un événement illicite par nature peut être érigé en condition si son accomplissement est indépendant de la volonté des parties (ex. CR « si la voiture est volée »).</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 3 — Les effets des conditions</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — La réalisation de la condition</div>
+        <p class="f-text"><strong>Principe</strong> : si un délai est fixé et qu'il expire sans réalisation → CS réputée défaillie, CR réputée accomplie. Si aucun délai, le juge peut déduire un délai raisonnable tacitement voulu.</p>
+        <p class="f-text"><strong>Condition réputée accomplie (art. 1304-3)</strong> : si celui qui avait intérêt à ce que la CS échoue en a empêché la réalisation, la loi la répute accomplie. À l'inverse, si celui qui avait intérêt à ce que la CR se réalise l'a provoquée, elle est réputée défaillie.</p>
+        <div class="f-exemple"><strong>Exemple</strong>L'acheteur « oublie » de déposer son dossier de prêt pour ne pas être lié → condition réputée accomplie, il est tenu d'acheter. But : empêcher le débiteur de bloquer discrétionnairement la réalisation de la condition.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — Effets de la condition suspensive</div>
+        <ul class="f-list">
+          <li><strong>Pendante conditione</strong> : l'obligation n'existe pas → le créancier ne peut pas en exiger l'exécution. Si le débiteur paie quand même, il peut demander la répétition (art. 1304-5). Mais il n'y a pas le néant absolu : le créancier a un droit en germe, lui permettant de prendre des mesures conservatoires</li>
+          <li><strong>La CS se réalise</strong> : l'obligation devient pure et simple. Depuis la réforme de 2016 (art. 1304-6), <strong>pas d'effet rétroactif</strong> par défaut — l'obligation naît pour l'avenir. La rétroactivité est possible seulement si les parties l'ont expressément prévue</li>
+          <li><strong>La CS ne se réalise pas</strong> : l'obligation est réputée n'avoir jamais existé (caducité)</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§3 — Effets de la condition résolutoire</div>
+        <ul class="f-list">
+          <li><strong>Pendante conditione</strong> : l'obligation existe pleinement. Le créancier peut en exiger l'exécution. L'acquéreur sous CR est immédiatement propriétaire — mais avec une épée de Damoclès</li>
+          <li><strong>La CR se réalise</strong> : <strong>effet rétroactif</strong> (art. 1304-7) — l'obligation est anéantie comme si elle n'avait jamais existé. Les actes conservatoires et d'administration restent valables, mais les actes de disposition sont susceptibles d'être remis en cause. Restitutions réciproques en principe</li>
+          <li><strong>La CR ne se réalise pas</strong> : l'obligation devient définitivement pure et simple</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§4 — Les effets communs</div>
+        <p class="f-text">Que la condition se réalise ou défaille, les effets s'opèrent <strong>de plein droit, sans intervention nécessaire du juge</strong> — c'est un automatisme.</p>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 4 — La renonciation à la condition</div>
+      <p class="f-text">La partie dans l'intérêt exclusif de qui la condition a été stipulée peut y renoncer tant qu'elle n'est pas accomplie (art. 1304-4). La renonciation peut être expresse ou tacite.</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Renonciation à une CS</th><th>Renonciation à une CR</th></tr></thead><tbody>
+        <tr><td>Mêmes effets que si la CS s'était réalisée → obligation pure et simple</td><td>Mêmes effets que si la CR avait défailli → obligation pure et simple définitivement</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> L'obligation à terme</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">L'obligation à terme suspend l'<strong>exigibilité</strong> (et non l'existence) de l'obligation jusqu'à la survenance d'un événement futur et <strong>certain</strong> (art. 1305). Une dette à terme existe déjà — elle n'est simplement pas encore réclamable.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — Les catégories de termes</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Catégorie</th><th>Définition</th><th>Notes</th></tr></thead><tbody>
+        <tr><td>Terme certain</td><td>La date est connue à l'avance — « tu me paieras le 30 janvier »</td><td></td></tr>
+        <tr><td>Terme incertain</td><td>L'événement est certain mais sa date ne l'est pas — « tu me paieras à mon décès »</td><td>Différence fondamentale avec la condition : ici, la mort est certaine</td></tr>
+        <tr><td>Terme judiciaire (délai de grâce)</td><td>Le juge peut reporter ou échelonner les paiements sur 2 ans max (art. 1343-5), réduire le taux d'intérêt, et imputer les paiements d'abord sur le capital</td><td>Le délai de grâce suspend les procédures d'exécution mais les intérêts continuent</td></tr>
+        <tr><td>Terme légal (moratoire)</td><td>Accordé par la loi dans des circonstances exceptionnelles</td><td>Rare</td></tr>
+        <tr><td>Terme conventionnel</td><td>Fixé par les parties, expressément ou tacitement (art. 1305-1)</td><td>Présumé en faveur du débiteur (art. 1305-3) — renversable</td></tr>
+      </tbody></table></div>
+      <div class="f-alerte"><strong>Qui bénéficie du terme ?</strong>Art. 1305-3 : présomption simple en faveur du débiteur (il peut y renoncer et payer par anticipation). Si le terme profite aux deux parties, ni l'une ni l'autre ne peut y renoncer seule. Si le débiteur paie avant le terme, ce paiement est valable et ne peut pas être répété (art. 1305-2) — la dette existait déjà.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — Les effets liés au terme</div>
+      <ul class="f-list">
+        <li><strong>Terme suspensif</strong> : suspend l'<em>exigibilité</em>. L'obligation existe mais ne peut pas encore être réclamée en justice. Le créancier peut prendre des mesures conservatoires. La prescription ne court qu'à compter de l'arrivée du terme (art. 2233)</li>
+        <li><strong>Terme extinctif</strong> : met fin à l'exigibilité de l'obligation (ex. fin d'un CDD)</li>
+      </ul>
+      <div class="f-sous2">
+        <div class="f-sous2-title">La déchéance du terme</div>
+        <p class="f-text">Sanction : rend l'obligation <strong>immédiatement exigible</strong> avant l'échéance prévue.</p>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Type</th><th>Cause</th></tr></thead><tbody>
+          <tr><td>Judiciaire</td><td>Si le débiteur ne fournit pas les sûretés promises (art. 1305-4)</td></tr>
+          <tr><td>Légale</td><td>En cas de liquidation judiciaire du débiteur</td></tr>
+          <tr><td>Conventionnelle</td><td>Clause de déchéance du terme dans les contrats de prêt (ex. non-paiement d'une mensualité)</td></tr>
+        </tbody></table></div>
+        <div class="f-alerte"><strong>Règle importante — Art. 1305-5</strong>La déchéance du terme est <strong>inopposable aux co-obligés et aux cautions</strong> : seul le débiteur fautif en subit les effets.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Condition = incertitude sur l'existence / terme = incertitude sur l'exigibilité</li>
+    <li>CS : rien n'existe pendant · obligation naît (sans rétroactivité depuis 2016) si réalisée</li>
+    <li>CR : tout existe pendant · anéantissement rétroactif si réalisée</li>
+    <li>Condition réputée accomplie si l'une des parties en empêche frauduleusement la réalisation</li>
+    <li>Terme : présumé en faveur du débiteur · déchéance inopposable aux cautions et co-obligés</li>
+  </ul></div>
+  <div class="fiche-nav"><span></span><label for="r-f2">Fiche #2 : Pluralité objective →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 2 ===== -->
+<div id="page-f2" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #2 · Partie 1 · Titre 2</div>
+    <h2>Les obligations à objets multiples — Pluralité objective</h2>
+    <div class="fiche-intro">Une même obligation peut porter sur plusieurs objets ou prestations. Trois formes sont possibles selon le lien entre les prestations et le pouvoir de choix des parties.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> L'obligation cumulative (conjonctive)</div>
+    <p class="f-text">Art. 1306 C. civ. Le débiteur est tenu d'exécuter <strong>toutes</strong> les prestations prévues. Il n'est libéré qu'une fois l'ensemble accompli.</p>
+    <div class="f-exemple"><strong>Exemple</strong>Un artiste s'engage à peindre un tableau ET à livrer 5 lithographies. Il doit tout faire. S'il ne livre que le tableau, le créancier peut soulever l'exception d'inexécution pour l'ensemble.</div>
+    <div class="f-key">Si une seule prestation n'est pas effectuée, le créancier peut refuser d'exécuter sa propre obligation pour la totalité. En cas de doute, la nature du contrat guide l'interprétation (dans un contrat d'adhésion, le doute profite à celui qui n'a pas rédigé).</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> L'obligation alternative</div>
+    <p class="f-text">Art. 1307 C. civ. Le débiteur est tenu de plusieurs prestations, mais <strong>l'exécution d'une seule le libère entièrement</strong>.</p>
+    <div class="f-exemple"><strong>Exemple</strong>Un transporteur peut acheminer la marchandise par train ou par avion. Dès qu'il choisit l'un et exécute, il est libéré.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Le choix</div>
+      <ul class="f-list">
+        <li>En principe au <strong>débiteur</strong> (art. 1307-1). Une fois le choix effectué, il est <strong>irrévocable</strong> : l'obligation perd son caractère alternatif</li>
+        <li>Si le débiteur tarde à choisir dans un délai raisonnable, le créancier peut, après mise en demeure, <strong>choisir à sa place</strong> ou résoudre le contrat</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Impossibilité d'une branche (force majeure)</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Situation</th><th>Conséquence</th></tr></thead><tbody>
+        <tr><td>Le choix avait déjà été fait et la prestation choisie devient impossible</td><td>Le débiteur est totalement libéré</td></tr>
+        <tr><td>Le choix n'avait pas encore été fait</td><td>Le débiteur doit choisir parmi les branches restantes encore possibles</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 3</span> L'obligation facultative</div>
+    <p class="f-text">Art. 1308 C. civ. Le débiteur doit en principe une <strong>prestation unique</strong>, mais il a la <strong>faculté</strong> de s'en libérer en fournissant une autre prestation à la place.</p>
+    <div class="f-exemple"><strong>Exemple</strong>Le contrat prévoit le paiement d'une somme d'argent, mais le débiteur a la faculté de remettre un tableau de valeur équivalente.</div>
+    <div class="f-alerte"><strong>Différence capitale avec l'obligation alternative</strong>Dans l'alternative, les deux prestations sont contractuellement prévues dès le départ, et le choix appartient au débiteur. Dans la facultative, seule une prestation est due : l'autre n'est qu'une option. Conséquence : si la prestation principale disparaît par force majeure, le débiteur est définitivement libéré — il n'est pas obligé de fournir la prestation de substitution (c'était sa faculté, pas son obligation).</div>
+  </div>
+
+  <div class="f-retenir"><strong>Tableau récapitulatif</strong><ul>
+    <li><strong>Cumulative</strong> : toutes les prestations dues · libération seulement après tout · non-exécution partielle → exception d'inexécution totale</li>
+    <li><strong>Alternative</strong> : plusieurs prestations prévues · une seule exécutée libère · choix en principe au débiteur · irrévocable une fois exercé</li>
+    <li><strong>Facultative</strong> : une seule prestation due · option de substitution pour le débiteur · force majeure sur la principale = libération totale</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f1">← Fiche #1</label><label for="r-f3">Fiche #3 : Pluralité subjective →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 3 ===== -->
+<div id="page-f3" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #3 · Partie 1 · Titre 3</div>
+    <h2>Les obligations à sujets multiples — Pluralité subjective</h2>
+    <div class="fiche-intro">Une même obligation peut impliquer plusieurs créanciers et/ou plusieurs débiteurs. Le principe de base est l'obligation conjointe : divisée entre les créanciers et les débiteurs à parts égales. Mais ce régime est défavorable au créancier — il supporte le risque d'insolvabilité. Pour y remédier : la solidarité ou l'indivisibilité.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Principe</span> L'obligation conjointe (art. 1309)</div>
+    <p class="f-text">Sauf disposition contraire, l'obligation se divise entre les créanciers et les débiteurs à parts égales. Chaque créancier ne peut réclamer que sa part, chaque débiteur n'est tenu que de sa part. Si un débiteur est insolvable, c'est le créancier qui supporte la perte.</p>
+    <div class="f-exemple"><strong>Exemple</strong>Trois étudiants achètent une voiture 9 000 € à un vendeur. Si conjointe, le vendeur doit assigner chacun pour 3 000 € séparément. Si l'un est insolvable, il perd sa part.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> L'obligation solidaire</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — La solidarité active</div>
+      <p class="f-text">Plusieurs co-créanciers d'une même dette. Chacun peut réclamer au débiteur le <strong>paiement total</strong>. Le débiteur qui paie l'un est libéré à l'égard de tous.</p>
+      <ul class="f-list">
+        <li><strong>Sources</strong> : ne se présume pas. Résulte exclusivement d'une clause contractuelle. Aucune solidarité active légale</li>
+        <li><strong>Effets</strong> : tout acte interruptif ou suspensif de prescription accompli par l'un profite aux autres · la mise en demeure faite par l'un vaut pour tous</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — La solidarité passive (le mécanisme le plus important)</div>
+      <p class="f-text">Plusieurs co-débiteurs d'une même dette. Chacun est tenu de la <strong>totalité</strong> (art. 1313). Le créancier peut réclamer les 9 000 € à A seul. A devra payer, puis se retourner contre B et C pour leur part respective.</p>
+      <div class="f-sous2">
+        <div class="f-sous2-title">Deux phases distinctes</div>
+        <ul class="f-list">
+          <li><strong>Obligation à la dette</strong> : le créancier choisit librement lequel des codébiteurs il poursuit (le plus solvable), pour le tout</li>
+          <li><strong>Contribution à la dette</strong> : entre codébiteurs, on revient au principe de division — chacun ne supporte que sa part. C'est entre co-débiteurs que le risque d'insolvabilité est partagé</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — Sources</div>
+        <ul class="f-list">
+          <li><strong>Légale</strong> (art. 1310) : co-emprunteurs (art. 1887) · époux pour dettes ménagères (art. 220) · co-auteurs d'un crime/délit en pénal · parents pour fautes de l'enfant mineur (art. 1242 al. 4)</li>
+          <li><strong>Conventionnelle</strong> : en droit civil, doit être <em>expresse</em> (ne se présume pas). En droit commercial, elle se présume par l'usage entre co-débiteurs — c'est l'inverse du droit commun</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — Effets</div>
+        <div class="f-sous2">
+          <div class="f-sous2-title">A. Rapports créancier / débiteurs solidaires</div>
+          <ul class="f-list">
+            <li>Le créancier peut réclamer le tout à n'importe lequel des co-débiteurs</li>
+            <li>La mise en demeure de l'un vaut pour tous · les intérêts moratoires courent à l'égard de tous</li>
+            <li>Le débiteur poursuivi ne peut pas invoquer le bénéfice de division</li>
+            <li>Il peut opposer les <strong>exceptions communes</strong> (nullité, résolution…) et ses <strong>exceptions personnelles</strong>, mais <strong>pas les exceptions personnelles à un autre co-débiteur</strong> — sauf si cette exception éteint la part de ce co-débiteur</li>
+          </ul>
+        </div>
+        <div class="f-sous2">
+          <div class="f-sous2-title">B. Rapports entre co-débiteurs (contribution à la dette — art. 1317)</div>
+          <p class="f-text">Entre eux, les co-débiteurs ne contribuent que pour leur part. Celui qui a payé au-delà de sa part dispose d'un recours contre les autres à proportion de leurs parts. Si l'un est insolvable, sa part est répartie entre les autres co-débiteurs solvables — le créancier est à l'abri.</p>
+          <div class="f-alerte"><strong>Décès d'un co-débiteur solidaire</strong>La solidarité subsiste à l'égard de la succession dans son ensemble, mais se <em>divise</em> entre les héritiers à proportion de leurs droits successoraux respectifs.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> L'obligation in solidum</div>
+    <p class="f-text">Mécanisme créé par la jurisprudence (Cass. 11 juillet 1892), sans texte légal, pour éviter l'injustice de l'obligation conjointe quand plusieurs personnes sont co-responsables d'un dommage sans lien contractuel entre elles.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">Domaine</div>
+      <p class="f-text">Principalement la <strong>responsabilité civile extracontractuelle</strong> : les co-auteurs d'un fait illicite ne sont pas liés par contrat et n'ont pas pu stipuler la solidarité. Sans l'obligation in solidum, la victime devrait diviser ses recours et supporter le risque d'insolvabilité.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Régime — différence avec la solidarité classique</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Solidarité passive</th><th>Obligation in solidum</th></tr></thead><tbody>
+        <tr><td>Le créancier peut exiger le tout de l'un</td><td>Oui</td><td>Oui</td></tr>
+        <tr><td>Le paiement de l'un libère les autres</td><td>Oui</td><td>Oui</td></tr>
+        <tr><td>Représentation mutuelle entre co-débiteurs</td><td>Oui — les actes d'un co-débiteur (mise en demeure, interruption de prescription) sont opposables aux autres</td><td><strong>Non</strong> — pas de représentation mutuelle</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 3</span> L'obligation à prestation indivisible</div>
+    <p class="f-text">Une prestation est indivisible lorsqu'elle ne peut pas être fractionnée par nature ou par la volonté des parties.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — Sources</div>
+      <ul class="f-list">
+        <li><strong>Indivisibilité naturelle</strong> : matérielle/absolue (livraison d'un animal vivant) · rationnelle (construire seulement la moitié d'une maison) · les obligations de ne pas faire sont considérées comme indivisibles</li>
+        <li><strong>Indivisibilité conventionnelle</strong> : les parties décident de traiter une prestation naturellement divisible comme indivisible</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — Effets</div>
+      <ul class="f-list">
+        <li><strong>Côté actif (plusieurs créanciers)</strong> : chaque co-créancier peut exiger et recevoir le paiement intégral. Le débiteur qui paie l'un se libère à l'égard de tous. Mais le co-créancier payé doit rendre compte aux autres. Il ne peut pas seul consentir une remise de dette</li>
+        <li><strong>Côté passif (plusieurs débiteurs)</strong> : chaque co-débiteur est tenu envers le créancier pour le tout. Le créancier peut exiger la prestation complète de n'importe lequel. <strong>Les héritiers d'un co-débiteur sont eux aussi tenus pour le tout</strong></li>
+      </ul>
+      <div class="f-alerte"><strong>Différence clé avec la solidarité passive</strong>L'obligation indivisible se transmet aux héritiers SANS division. La dette solidaire, elle, SE DIVISE entre les héritiers selon leurs droits successoraux.</div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Obligation conjointe = principe (division · chaque débiteur ne doit que sa part · créancier supporte l'insolvabilité)</li>
+    <li>Solidarité passive = créancier peut réclamer tout à n'importe qui · contribution = division entre co-débiteurs</li>
+    <li>In solidum = même régime que solidarité mais sans représentation mutuelle entre co-débiteurs</li>
+    <li>Indivisibilité = chaque débiteur tenu pour le tout · héritiers aussi (différence avec solidarité où la dette se divise entre héritiers)</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f2">← Fiche #2</label><label for="r-f4">Fiche #4 : Circulation par cession →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 4 ===== -->
+<div id="page-f4" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #4 · Partie 2 — La circulation de l'obligation · Titre 1</div>
+    <h2>La circulation par voie de cession</h2>
+    <div class="fiche-intro">La cession permet de transférer tout ou partie d'un lien d'obligation à un tiers. Trois mécanismes distincts : la cession de créance (le créancier cède son droit de recevoir), la cession de dette (le débiteur transfère son obligation de payer — avec accord du créancier), et la cession de contrat (transmission complète de la qualité de partie).</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> La cession de créance (art. 1321)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">A (créancier) a une créance de 100 € sur B. A vend cette créance à C pour 90 €. Désormais, B doit 100 € à C et non plus à A. A a encaissé 90 € immédiatement au lieu d'attendre. Le consentement de B n'est pas requis.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — Conditions</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — Conditions de validité</div>
+        <div class="f-sous2">
+          <div class="f-sous2-title">A. L'objet de la cession</div>
+          <p class="f-text">Peut être cédée toute créance civile ou commerciale, monétaire ou en nature, présente (même non exigible) ou <strong>future</strong> (si suffisamment déterminable), totale ou partielle. Certaines créances sont incessibles :</p>
+          <ul class="f-list">
+            <li>Par <strong>clause contractuelle</strong> (incessibilité conventionnelle) — sauf consentement du débiteur. Exception : cette clause est prohibée en matière commerciale (art. L442-3 C. com.)</li>
+            <li>Par la <strong>loi</strong> : créances alimentaires · créances de salaire jusqu'à certains plafonds</li>
+          </ul>
+        </div>
+        <div class="f-sous2">
+          <div class="f-sous2-title">B. La forme</div>
+          <p class="f-text">Art. 1322 : la cession de créance doit être <strong>constatée par écrit à peine de nullité</strong>. C'est un contrat solennel.</p>
+        </div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — Conditions d'opposabilité</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>À l'égard de qui ?</th><th>Règle</th><th>Notes</th></tr></thead><tbody>
+          <tr><td>Aux tiers</td><td>Opposable dès la date de l'acte (art. 1323) · prouvée par tout moyen</td><td>Cessions successives : le premier en date l'emporte (art. 1325)</td></tr>
+          <tr><td>Au débiteur cédé (B)</td><td>3 modes : consentement de B · notification de la cession · prise d'acte (ex. paiement direct à C)</td><td>Tant que non opposable à B, il peut valablement payer A et sera libéré. Dès opposabilité, tout paiement à A ne le libère plus</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — Effets</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — Règles générales</div>
+        <ul class="f-list">
+          <li><strong>Transmission de la créance et de ses accessoires</strong> : modification subjective (le créancier change) mais pas objective (B doit toujours 100 € même si la cession s'est faite pour 90 €). La créance est transmise avec sûretés, privilèges, actions en justice — le cessionnaire hérite de tout</li>
+          <li><strong>Opposabilité des exceptions</strong> : B peut opposer à C les mêmes moyens de défense qu'il aurait pu opposer à A — exceptions inhérentes à la dette (toujours opposables) · exceptions nées des rapports A/B (opposables seulement si antérieures à l'opposabilité de la cession à B)</li>
+          <li><strong>Frais de cession</strong> (art. 1324 dernier al.) : cédant et cessionnaire solidairement tenus des frais supplémentaires envers B · le cessionnaire supporte en définitive la charge</li>
+        </ul>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — Règles spéciales aux cessions à titre onéreux</div>
+        <ul class="f-list">
+          <li><strong>Garantie légale (art. 1326)</strong> : le cédant garantit l'<em>existence</em> de la créance et de ses accessoires. Il ne garantit <em>pas</em> la solvabilité du débiteur (sauf engagement exprès)</li>
+          <li><strong>Garanties conventionnelles</strong> : peuvent être renforcées (garantie de solvabilité plafonnée au prix perçu) ou diminuées (cessionnaire acquiert à ses risques → prix réduit)</li>
+          <li><strong>Retrait litigieux (art. 1699)</strong> : quand la créance est litigieuse (son existence est contestée), le débiteur cédé peut éteindre sa dette en remboursant au cessionnaire le prix réel payé (et non la valeur nominale) + frais et intérêts</li>
+        </ul>
+        <div class="f-exemple"><strong>Retrait litigieux — Exemple</strong>Créance litigieuse de 100 € vendue à C pour 30 €. B peut se libérer en payant 30 € à C plutôt que de se lancer dans un procès pour 100 €.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> La cession de dette (art. 1327)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">Un débiteur (le cédant) transfère sa dette à un tiers (le cessionnaire) avec l'accord du créancier (le cédé). Contrairement à la cession de créance, le consentement du créancier est indispensable : changer de débiteur, c'est changer le gage général sur lequel il pourra se payer. Forme : écrit obligatoire à peine de nullité.</div>
+    <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Type</th><th>Débiteur initial</th><th>Régime</th><th>Principe ?</th></tr></thead><tbody>
+      <tr><td>Libératoire (parfaite)</td><td>Définitivement déchargé</td><td>Créancier libère expressément le débiteur initial. Le cessionnaire est le seul débiteur. Exceptions inhérentes à la dette opposables ; pas les exceptions personnelles au débiteur initial. Sûretés : subsistent seulement avec accord exprès des garants</td><td>Exception — exige consentement exprès</td></tr>
+      <tr><td>Cumulative (imparfaite)</td><td>Reste tenu solidairement avec le nouveau débiteur</td><td>Pas de libération expresse du débiteur initial. Le créancier a deux débiteurs au lieu d'un</td><td><strong>Principe par défaut</strong></td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 3</span> La cession de contrat (art. 1216)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">Un contractant (le cédant) cède sa qualité de partie à un contrat à un tiers (le cessionnaire), avec l'accord de son co-contractant (le cédé). Contrairement à la cession de créance, la cession de contrat fait entrer le cessionnaire dans toutes les obligations du contrat — actives ET passives. Forme : écrit obligatoire à peine de nullité.</div>
+    <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Cession « parfaite »</th><th>Cession « imparfaite »</th></tr></thead><tbody>
+      <tr><td>Le cédé libère expressément le cédant pour l'avenir. Le cessionnaire est le seul co-contractant. Sûretés consenties par des tiers : ne subsistent qu'avec leur accord. Exceptions personnelles au cédant non opposables</td><td>Pas de libération expresse du cédant → il reste tenu solidairement avec le cessionnaire (principe par défaut). Sûretés maintenues. Même régime des exceptions</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir — La matrice des cessions</strong><ul>
+    <li><strong>Cession de créance</strong> : accord du débiteur non requis · écrit ad validitatem · opposable aux tiers dès la date · opposable au débiteur par notification/consentement/prise d'acte</li>
+    <li><strong>Cession de dette</strong> : accord du créancier indispensable · libératoire = exception (exprès) · cumulative = principe (débiteur initial solidairement tenu)</li>
+    <li><strong>Cession de contrat</strong> : accord du cédé indispensable · parfaite = libération cédant (exprès) · imparfaite = solidarité (principe)</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f3">← Fiche #3</label><label for="r-f5">Fiche #5 : Subrogation →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 5 ===== -->
+<div id="page-f5" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #5 · Partie 2 · Titre 2</div>
+    <h2>La circulation par voie de subrogation</h2>
+    <div class="fiche-intro">La subrogation personnelle permet à celui qui paie la dette d'un autre (sans intention libérale) de prendre la place du créancier désintéressé dans ses droits contre le débiteur. Un assureur indemnise la victime d'un accident causé par B. L'assureur est subrogé dans les droits de la victime contre B — il peut maintenant poursuivre B pour récupérer ce qu'il a payé.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Note</span> Subrogation vs Cession de créance</div>
+    <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Subrogation</th><th>Cession de créance</th></tr></thead><tbody>
+      <tr><td>But</td><td>Récupérer ce qu'on a payé (pas spéculatif)</td><td>Peut être spéculative (achat à prix inférieur au nominal)</td></tr>
+      <tr><td>Limites</td><td>Le subrogé ne peut récupérer que ce qu'il a payé, pas plus</td><td>Le cessionnaire peut réaliser un profit sur la différence prix/nominal</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> Les sources de la subrogation personnelle</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — La subrogation légale (art. 1346)</div>
+      <p class="f-text">Opère de plein droit au profit de celui qui a un intérêt légitime à payer la dette ET dont le paiement libère définitivement, à l'égard du créancier, celui sur qui doit peser la charge définitive de la dette.</p>
+      <div class="f-exemple"><strong>Exemple</strong>Un co-débiteur solidaire paie la totalité de la dette (100 €) alors qu'il n'en doit que 25 € personnellement. Il est subrogé dans les droits du créancier contre ses trois autres co-débiteurs à hauteur de 75 €.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — La subrogation conventionnelle</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — Subrogation consentie par le créancier (art. 1346-1)</div>
+        <p class="f-text">Un tiers paie la dette du débiteur. Le créancier, en recevant ce paiement, subroge expressément le tiers dans ses droits contre le débiteur. Exemple : l'<strong>affacturage (factoring)</strong>. Conditions : paiement par un tiers · subrogation expresse · concomitante au paiement.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — Subrogation consentie par le débiteur (art. 1346-2)</div>
+        <p class="f-text">Le débiteur emprunte une somme pour payer son créancier et subroge le prêteur dans les droits du créancier, avec le concours de ce dernier. Exemple : refinancement d'une dette par un nouveau prêt bancaire. Conditions très formelles : subrogation expresse · quittance du créancier mentionnant l'origine des fonds.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> Les effets de la subrogation personnelle</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — L'effet translatif</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — Le principe</div>
+        <p class="f-text">Double effet :</p>
+        <ul class="f-list">
+          <li><strong>Extinctif</strong> entre le créancier subrogeant et le subrogé : le créancier est désintéressé et n'a plus de créance</li>
+          <li><strong>Translatif</strong> : la créance est transmise au subrogé avec tous ses accessoires (sûretés, garanties, actions en justice — art. 1346-4). Le débiteur n'est pas libéré : il doit toujours la même somme, mais maintenant au subrogé</li>
+        </ul>
+        <div class="f-key">Contrairement à la novation, il n'y a pas de création d'une nouvelle obligation : le fil existant est transféré tel quel au subrogé.</div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — Limites de l'effet translatif</div>
+        <ul class="f-list">
+          <li>Les droits exclusivement attachés à la personne du créancier ne se transmettent pas</li>
+          <li><strong>Transmission à concurrence du paiement</strong> : si le subrogé n'a payé que 80 sur 100, il ne peut poursuivre qu'à hauteur de 80 (règle d'ordre public)</li>
+          <li><strong>Paiement partiel</strong> (art. 1346-3) : conflit entre créancier subrogeant (encore partiellement impayé) et subrogé → <strong>priorité au créancier subrogeant</strong> (règle supplétive)</li>
+          <li>Taux d'intérêt : sauf accord, le subrogé ne peut prétendre qu'au taux légal (et non au taux conventionnel de la dette originaire)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — L'opposabilité</div>
+      <ul class="f-list">
+        <li><strong>Au débiteur</strong> : opposable une fois qu'il en a connaissance (notification ou prise d'acte). Tant que non opposable, il peut valablement payer le créancier subrogeant et sera libéré</li>
+        <li><strong>Aux tiers</strong> : l'effet translatif est opposable dès la date du paiement du créancier par le subrogé</li>
+        <li><strong>Opposabilité des exceptions</strong> : le débiteur peut opposer au subrogé toutes les exceptions qu'il aurait pu opposer au créancier subrogeant — exceptions inhérentes à la dette · exceptions nées des rapports avec le subrogeant avant que la subrogation lui soit opposable</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Subrogation légale : de plein droit si intérêt légitime à payer</li>
+    <li>Subrogation conventionnelle : par le créancier (affacturage) ou par le débiteur (refinancement) — toujours expresse et concomitante</li>
+    <li>Effet translatif : extinctif pour le subrogeant · translatif vers le subrogé avec tous les accessoires</li>
+    <li>Limite fondamentale : le subrogé ne peut récupérer que ce qu'il a payé (règle d'ordre public)</li>
+    <li>En cas de paiement partiel : priorité au créancier subrogeant encore impayé</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f4">← Fiche #4</label><label for="r-f6">Fiche #6 : Novation et délégation →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 6 ===== -->
+<div id="page-f6" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #6 · Partie 2 · Titre 3</div>
+    <h2>La circulation par novation et par délégation</h2>
+    <div class="fiche-intro">La novation détruit le fil et en crée un autre à la place. La délégation fait s'obliger un tiers (le délégué) envers le créancier (le délégataire), à la demande du débiteur (le déléguant). Ce sont deux techniques de modification substantielle des liens d'obligation.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> La novation (art. 1329)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">Contrat qui substitue une obligation nouvelle à une obligation ancienne qu'elle éteint. On ne transmet pas le fil — on le détruit pour en créer un autre à la place. C'est la grande différence avec la cession et la subrogation. Trois formes : changement d'objet ou de nature · changement de débiteur · changement de créancier.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — Conditions de la novation</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — L'intention de nover (animus novandi)</div>
+        <p class="f-text">La novation <strong>ne se présume jamais</strong> (art. 1330) : la volonté de nover doit ressortir clairement de l'acte. Le terme « novation » n'est pas obligatoire, mais le juge doit pouvoir déceler la double volonté d'éteindre l'ancienne ET de créer une nouvelle obligation. Ajouter ou retirer un simple terme accessoire ne constitue pas une novation — il faut une modification suffisamment importante.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — Le changement d'obligation</div>
+        <ul class="f-list">
+          <li><strong>Extinction de l'obligation ancienne</strong> : elle doit être valable. Si nulle, elle n'a jamais existé et ne peut pas être éteinte. Exception : les parties peuvent substituer une obligation valable à une obligation atteinte d'un vice de nullité relative (art. 1331) — ce qui s'apparente à une confirmation</li>
+          <li><strong>Création d'une obligation nouvelle</strong> : elle doit être valable. Si nulle, l'obligation ancienne renaît (pas d'effet novatoire)</li>
+        </ul>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Type de novation</th><th>Consentement requis</th><th>Particularité</th></tr></thead><tbody>
+          <tr><td>Par changement de débiteur</td><td>Accord du nouveau débiteur + du créancier. Peut se faire sans accord du débiteur originel (expromission — art. 1332)</td><td>Différence avec cession de dette (qui nécessite accord du créancier) et délégation parfaite</td></tr>
+          <tr><td>Par changement de créancier</td><td>Accord du débiteur requis (art. 1333)</td><td>Peu utilisée : la cession de créance n'en a pas besoin</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — Effets de la novation</div>
+      <ul class="f-list">
+        <li><strong>Effet extinctif</strong> : l'obligation ancienne disparaît avec <em>tous ses accessoires</em> (sûretés, garanties, cautions) — art. 1334 al. 1. Les parties peuvent maintenir certaines sûretés par accord exprès avec les tiers garants</li>
+        <li><strong>Solidarité passive</strong> : la novation consentie par un seul co-débiteur libère tous les autres co-débiteurs solidaires (art. 1335)</li>
+        <li><strong>Purge des vices</strong> : les exceptions liées à l'obligation éteinte ne peuvent plus être invoquées (sauf nullité absolue)</li>
+        <li><strong>Effet créateur</strong> : naissance d'une obligation nouvelle, distincte et indépendante de l'ancienne. Pas d'effet translatif</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> La délégation (art. 1336)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">Le déléguant obtient du délégué qu'il s'oblige envers un délégataire, qui l'accepte comme débiteur. Exemple quotidien : payer au restaurant avec sa carte bancaire. Le client (déléguant) demande à sa banque (délégué) de payer le restaurateur (délégataire). ⚠️ À ne pas confondre avec la simple indication de paiement (art. 1340) : désigner quelqu'un pour payer n'emporte ni novation ni délégation.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — Conditions</div>
+      <p class="f-text">Consentement des <strong>trois parties</strong> : déléguant, délégué, délégataire. Le délégataire doit accepter le délégué comme débiteur. Cette acceptation détermine la nature de la délégation :</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Délégation parfaite</th><th>Délégation imparfaite</th></tr></thead><tbody>
+        <tr><td>Acceptation par le délégataire</td><td>Délégué = seul et unique débiteur → libération définitive du déléguant. Consentement <strong>exprès obligatoire</strong></td><td>Délégué = débiteur supplémentaire, sans libération du déléguant → deux débiteurs</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — Effets</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Rapports</th><th>Délégation parfaite</th><th>Délégation imparfaite</th></tr></thead><tbody>
+        <tr><td>Délégataire / Délégué</td><td colspan="2">Inopposabilité absolue des exceptions (art. 1336 al. 2) : le délégué ne peut opposer au délégataire AUCUNE exception tirée de ses rapports avec le déléguant, ni des rapports déléguant/délégataire. Le fil créé est neuf et sans vices. (Disposition supplétive.)</td></tr>
+        <tr><td>Délégataire / Déléguant</td><td>Même effet qu'une novation par changement de débiteur : déléguant définitivement déchargé. Exceptions : si le déléguant a garanti la solvabilité du délégué · ou si le délégué était déjà insolvable lors de la délégation</td><td>Adjonction de débiteurs (pas substitution) : le fil initial est maintenu. Le délégataire a deux débiteurs. Le paiement par l'un libère l'autre à due concurrence. En pratique, priorité au délégué (dette du déléguant subsidiaire)</td></tr>
+        <tr><td>Délégué / Déléguant</td><td colspan="2">La créance du déléguant contre le délégué ne s'éteint que par le paiement effectif du délégué au délégataire (art. 1339) — la simple conclusion du contrat ne suffit pas</td></tr>
+      </tbody></table></div>
+      <div class="f-key">Résumé : la seule différence entre délégation parfaite et imparfaite réside dans les rapports délégataire / déléguant — dans la parfaite, le fil initial est éteint ; dans l'imparfaite, il est maintenu.</div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Novation : animus novandi ne se présume jamais · éteint l'obligation ancienne avec TOUS ses accessoires · pas d'effet translatif</li>
+    <li>Délégation : 3 parties · inopposabilité absolue des exceptions dans les rapports délégué/délégataire</li>
+    <li>Délégation parfaite : libère le déléguant (exprès) · même effet qu'une novation par changement de débiteur</li>
+    <li>Délégation imparfaite : 2 débiteurs · fil initial maintenu · dette du déléguant subsidiaire</li>
+    <li>La créance du déléguant sur le délégué ne s'éteint que par le paiement effectif</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f5">← Fiche #5</label><label for="r-f7">Fiche #7 : Actions contre le débiteur →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 7 ===== -->
+<div id="page-f7" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #7 · Partie 3 — Les actions ouvertes au créancier · Titre 1</div>
+    <h2>Les actions contre le débiteur</h2>
+    <div class="fiche-intro">Le créancier a le droit d'exiger l'exécution forcée de son obligation (art. 1341). Ce droit se concrétise par le droit de gage général : le patrimoine du débiteur constitue la garantie de tous ses créanciers. Le créancier sans autre garantie s'appelle créancier chirographaire. Trois types de mesures sont à sa disposition.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> Les mesures conservatoires</div>
+    <p class="f-text">But : prévenir l'insolvabilité à venir du débiteur en rendant certains biens indisponibles, <strong>avant même tout jugement définitif</strong>.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">Les deux outils</div>
+      <ul class="f-list">
+        <li><strong>Saisie conservatoire</strong> (art. L521-1 CPCE) : porte sur tous les biens mobiliers (corporels et incorporels). Rend ces biens indisponibles — le débiteur peut les utiliser mais ne peut plus les aliéner</li>
+        <li><strong>Sûretés judiciaires</strong> : sur des immeubles, fonds de commerce, actions ou parts sociales. Opposables aux tiers dès publication. Le bien peut être vendu, mais le prix est affecté au paiement du créancier</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Quatre conditions cumulatives</div>
+      <ul class="f-list">
+        <li>La créance doit être fondée en son principe (pas nécessairement exigible)</li>
+        <li>Le créancier doit justifier de circonstances menaçant le recouvrement</li>
+        <li>Une décision de justice est requise</li>
+        <li>Une instance au fond doit avoir été introduite</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> L'astreinte</div>
+    <p class="f-text">But : inciter économiquement le débiteur à s'exécuter en lui imposant une condamnation pécuniaire <strong>croissante par période de retard</strong>.</p>
+    <div class="f-key">Plus tu tardes, plus ça coûte cher.</div>
+    <ul class="f-list">
+      <li><strong>Indépendante</strong> des dommages et intérêts et des intérêts de retard</li>
+      <li><strong>Caractère arbitraire</strong> : fixé librement par le juge dans un but incitatif, sans lien direct avec le préjudice</li>
+    </ul>
+    <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Phase</th><th>Contenu</th></tr></thead><tbody>
+      <tr><td>Provisoire (principe)</td><td>Prononcée par le juge · peut être révisée</td></tr>
+      <tr><td>Définitive</td><td>Ne peut devenir définitive qu'après avoir d'abord été provisoire</td></tr>
+      <tr><td>Liquidation</td><td>Calcul du montant final dû · intervient après l'exécution ou quand l'exécution n'aura certainement jamais lieu · le juge peut réviser à la baisse si l'astreinte était disproportionnée</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 3</span> L'exécution forcée de l'obligation</div>
+    <p class="f-text">Permet au créancier d'obtenir coercitivement ce qui lui est dû grâce à la force exécutoire d'une décision de justice. La contrainte physique (ancienne « contrainte par corps ») a été abolie en 1867 en matière civile. Aujourd'hui, c'est la force juridique qui contraint le débiteur à honorer ses obligations sur ses biens.</p>
+    <p class="f-text">Ce sujet relève principalement des procédures civiles d'exécution (voies d'exécution) et de la responsabilité contractuelle — traité de manière incidente dans le RGO.</p>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Droit de gage général : le patrimoine du débiteur garantit tous ses créanciers chirographaires</li>
+    <li>Mesures conservatoires : prévention avant jugement · créance fondée en son principe suffit · saisie conservatoire (biens meubles) · sûretés judiciaires (immeubles, fonds, parts)</li>
+    <li>Astreinte : sanction pécuniaire croissante · indépendante des DI · provisoire → définitive → liquidation (révision possible)</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f6">← Fiche #6</label><label for="r-f8">Fiche #8 : Actions contre les tiers →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 8 ===== -->
+<div id="page-f8" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #8 · Partie 3 · Titre 2</div>
+    <h2>Les actions contre les tiers</h2>
+    <div class="fiche-intro">Pour protéger le patrimoine de son débiteur (et donc son gage général), le créancier peut agir contre des tiers — débiteurs de son débiteur ou complices d'actes frauduleux. Trois actions distinctes : oblique, directe, paulienne.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> L'action oblique (art. 1341-1)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">A est créancier de B. B est lui-même créancier de C mais ne fait rien pour récupérer cet argent. Si B était payé par C, son patrimoine grossirait et A pourrait se payer dessus. A agit donc à la place de B contre C, en passant « en oblique » au-dessus de la tête de B.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Conditions</div>
+      <ul class="f-list">
+        <li>La créance de A sur B doit être <strong>certaine</strong> (plus besoin qu'elle soit liquide et exigible depuis la réforme de 2016)</li>
+        <li>B doit être <strong>négligent</strong> (carence dans l'exercice de ses droits) — appréciée souplement</li>
+        <li>La <strong>solvabilité de B doit être douteuse</strong> (la carence le compromet)</li>
+        <li>Les droits exercés doivent être à <strong>caractère patrimonial</strong> et non exclusivement rattachés à la personne de B</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Effets</div>
+      <ul class="f-list">
+        <li>A agit en lieu et place de B, avec les mêmes pouvoirs et les mêmes limites. C peut opposer à A toutes les exceptions qu'il aurait opposées à B</li>
+        <li>Le résultat entre dans le <strong>patrimoine de B</strong>, pas directement dans celui de A. A doit ensuite agir contre B pour se faire payer</li>
+        <li>Pas de priorité pour A : d'autres créanciers de B peuvent venir concourir sur le même actif</li>
+      </ul>
+      <div class="f-alerte"><strong>Différence avec l'action directe</strong>Dans l'action oblique, les sommes transitent par le patrimoine du débiteur. Dans l'action directe, elles vont directement dans le patrimoine du créancier.</div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> L'action directe (art. 1341-3)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">A est créancier de B. B est créancier de C. A peut, dans les cas prévus par la loi, agir directement contre C pour se faire payer — sans passer par le patrimoine de B.</div>
+    <div class="f-key">Caractère exceptionnel et limitatif : l'action directe n'existe que dans les cas expressément prévus par la loi. Il n'existe pas d'action directe générale.</div>
+    <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Fondement</th><th>Exemple</th></tr></thead><tbody>
+      <tr><td>Art. 1753</td><td>Le bailleur a une action directe contre le sous-locataire si le locataire principal ne paie pas ses loyers</td></tr>
+      <tr><td>Art. 1798</td><td>En matière de construction, le sous-traitant a une action directe contre le maître de l'ouvrage si l'entrepreneur principal ne le paie pas. Le plombier non payé par l'entreprise générale peut directement poursuivre le propriétaire de la maison</td></tr>
+    </tbody></table></div>
+    <div class="f-key">Avantage majeur : les sommes vont directement dans le patrimoine du créancier agissant, sans transiter par le patrimoine du débiteur intermédiaire.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 3</span> L'action paulienne (art. 1341-2)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">Le débiteur, sachant qu'il va être poursuivi, « vide » son patrimoine en faisant des donations ou des ventes déguisées pour mettre ses biens hors de portée. L'action paulienne permet au créancier de « percer » ces actes frauduleux.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Trois conditions cumulatives</div>
+      <ul class="f-list">
+        <li><strong>Un acte d'appauvrissement</strong> : donation, vente à prix dérisoire, renonciation à une succession créditrice, substitution d'un actif identifiable par une somme d'argent si c'est fait pour frauder</li>
+        <li><strong>L'intention frauduleuse du débiteur</strong> : organiser son insolvabilité. Le créancier doit prouver que le patrimoine était suffisant au moment de l'acte litigieux mais ne l'est plus au moment de l'action</li>
+        <li><strong>Le préjudice du créancier</strong> : l'acte compromet significativement le recouvrement de la créance</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Le tiers co-contractant</div>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Nature de l'acte</th><th>Exigence supplémentaire</th></tr></thead><tbody>
+        <tr><td>Acte à titre onéreux</td><td>Le créancier doit prouver que le tiers avait connaissance de la fraude (complicité)</td></tr>
+        <tr><td>Acte à titre gratuit</td><td>Pas besoin de prouver la complicité — la connaissance de la fraude par le tiers est irréfragablement présumée</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Effets</div>
+      <ul class="f-list">
+        <li>L'acte est <strong>inopposable au créancier</strong> (pas nul entre les parties). Le créancier peut saisir le bien comme s'il était encore dans le patrimoine du débiteur</li>
+        <li>Le tiers évincé peut agir en garantie d'éviction contre le débiteur — mais souvent illusoire car ce dernier est insolvable</li>
+        <li>L'inopposabilité ne profite qu'au créancier demandeur (effet relatif)</li>
+        <li>En cas de sous-acquisition : il faudra prouver la fraude pour chaque opération successive</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>Tableau comparatif des 3 actions</strong><ul>
+    <li><strong>Oblique</strong> : carence du débiteur · A agit à la place de B · sommes dans le patrimoine de B · pas de priorité pour A</li>
+    <li><strong>Directe</strong> : cas limitatifs légaux · sommes directement dans le patrimoine de A · avantage majeur</li>
+    <li><strong>Paulienne</strong> : fraude du débiteur · inopposabilité de l'acte au créancier · effet relatif · acte gratuit : complicité du tiers présumée irréfragablement</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f7">← Fiche #7</label><label for="r-f9">Fiche #9 : Le paiement →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 9 ===== -->
+<div id="page-f9" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #9 · Partie 4 — L'extinction des obligations · Titre 1</div>
+    <h2>Le paiement</h2>
+    <div class="fiche-intro">Le paiement est l'exécution volontaire de la prestation due (art. 1342) — pas seulement le versement d'une somme d'argent mais toute exécution d'une obligation (remettre une chose, accomplir un service, s'abstenir). Double effet : extinctif (éteint la dette) ET libératoire (libère le débiteur) — généralement simultanés, sauf paiement par chèque (effet à l'encaissement).</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> Les parties au paiement</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — Le solvens (celui qui paie)</div>
+      <p class="f-text">En principe le débiteur. Le paiement peut aussi être fait par un tiers (art. 1342-1) — ce qui peut déclencher la subrogation. Cas : représentant du débiteur · co-débiteur solidaire · caution · tiers animé d'une intention libérale. Exception : prestation <em>intuitu personae</em> → le tiers ne peut pas l'exécuter à la place du débiteur.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — L'accipiens (celui qui reçoit)</div>
+      <p class="f-text">En principe le créancier, ou son mandataire. « Qui mal paie, paie deux fois » : payer à une mauvaise personne ne libère pas le débiteur.</p>
+      <ul class="f-list">
+        <li>Le créancier peut <strong>ratifier a posteriori</strong> le paiement fait à un tiers (art. 1342-2)</li>
+        <li>Le paiement fait de bonne foi à un <strong>créancier apparent</strong> est valable (art. 1342-3 — théorie de l'apparence)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> La réalisation du paiement</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — L'objet du paiement</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — Règles générales : identité et intégralité</div>
+        <p class="f-text">Le paiement doit porter sur la prestation exacte prévue, dans sa totalité. Art. 1342-4 : le créancier peut refuser un paiement partiel même si la prestation est divisible · il peut aussi refuser une prestation différente. Exception légale : le délai de grâce (art. 1343-5) permet au juge d'autoriser un paiement fractionné.</p>
+        <p class="f-text"><strong>Corps certains (art. 1342-5)</strong> : le débiteur est libéré par la remise de la chose en l'état — sauf si la détérioration lui est imputable.</p>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — Règles spéciales aux obligations de sommes d'argent</div>
+        <ul class="f-list">
+          <li><strong>Nominalisme monétaire (art. 1343)</strong> : on doit la somme nominale prévue, sans ajustement pour l'inflation ou la déflation. Exception : clause d'indexation</li>
+          <li><strong>Modes de paiement</strong> : monnaie fiduciaire (espèces en euros) ou scripturale (virement bancaire). Les paiements supérieurs à 1 000 € ne peuvent pas être faits en liquide</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — Date et lieu de paiement</div>
+      <ul class="f-list">
+        <li><strong>Date</strong> (art. 1342) : le paiement doit être fait dès que la dette devient exigible. Le créancier n'est pas obligé d'accepter un paiement anticipé sauf si le terme est stipulé dans le seul intérêt du débiteur</li>
+        <li><strong>Délai de grâce (art. 1343-5)</strong> : le juge peut échelonner ou reporter les paiements sur 2 ans max. Peut réduire le taux d'intérêt ou imputer sur le capital. Faculté d'ordre public : on ne peut pas y renoncer par avance</li>
+        <li><strong>Lieu (art. 1342-6)</strong> : à défaut de stipulation, paiement au domicile du débiteur (<em>paiement quérable</em> : c'est le créancier qui « vient chercher »). Exception : les sommes d'argent sont portables</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 3 — Les incidents de paiement</div>
+      <ul class="f-list">
+        <li><strong>Refus du créancier (art. 1345)</strong> : si le créancier refuse sans motif légitime, le débiteur peut le mettre en demeure d'accepter → arrête le cours des intérêts dus par le débiteur · transfère les risques de la chose au créancier. Si le refus persiste : consignation à la Caisse des Dépôts, aux frais du créancier</li>
+        <li><strong>Opposition au paiement</strong> : un tiers créancier du créancier peut bloquer le paiement pour saisir la créance à son profit (saisie conservatoire)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 3</span> La preuve du paiement</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Charge et moyens</div>
+      <ul class="f-list">
+        <li><strong>Charge de la preuve (art. 1353)</strong> : c'est le <em>débiteur</em> qui doit prouver qu'il a payé</li>
+        <li><strong>Présomptions légales (art. 1342-9)</strong> : si le créancier restitue l'original d'un acte sous seing privé au débiteur → présomption que la dette est éteinte. Même chose si la copie exécutoire d'un acte authentique est remise. Présomptions simples (renversables)</li>
+        <li><strong>Moyens de preuve (art. 1342-8)</strong> : le paiement se prouve par <em>tous moyens</em> — qualifié de fait juridique depuis la réforme de 2016</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 4</span> L'imputation du paiement</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — Dette unique (art. 1343-1)</div>
+      <p class="f-text">Paiement partiel d'une dette d'argent : s'impute d'abord sur les intérêts, puis sur le capital.</p>
+      <div class="f-exemple"><strong>Exemple</strong>On doit 1 000 € capital + 200 € intérêts et on verse 600 €. Les 600 € couvrent d'abord les 200 € d'intérêts, puis 400 € viennent réduire le capital → il reste encore 600 € de capital. Cette règle est favorable au créancier (le capital, base de calcul des intérêts futurs, diminue moins vite).</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — Pluralité de dettes</div>
+      <p class="f-text">Un même débiteur a plusieurs dettes distinctes envers le même créancier et verse une somme insuffisante pour tout couvrir.</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Ordre</th><th>Règle</th></tr></thead><tbody>
+        <tr><td>1 — Imputation volontaire</td><td>Le débiteur choisit quelle dette il entend acquitter, parmi les dettes exigibles (art. 1342-10)</td></tr>
+        <tr><td>2 — Ordre légal subsidiaire (à défaut de choix)</td><td>Dettes échues avant les non-échues · parmi celles-ci : celle où le débiteur avait le plus d'intérêt (sûretés, taux élevé…) · à égalité d'intérêt : la plus ancienne · toutes choses égales : imputation proportionnelle</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li>Paiement = toute exécution d'une obligation · double effet extinctif et libératoire</li>
+    <li>Solvens = débiteur ou tiers (sauf intuitu personae) · accipiens = créancier ou créancier apparent</li>
+    <li>Identité et intégralité de la prestation · nominalisme monétaire · quérable par défaut</li>
+    <li>Preuve : charge sur le débiteur · fait juridique (tous moyens)</li>
+    <li>Imputation partielle : intérêts d'abord puis capital (favorable au créancier)</li>
+    <li>Pluralité de dettes : choix du débiteur en premier · ordre légal subsidiaire ensuite</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f8">← Fiche #8</label><label for="r-f10">Fiche #10 : Extinction indirecte →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 10 ===== -->
+<div id="page-f10" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #10 · Partie 4 · Titre 2</div>
+    <h2>L'extinction de l'obligation avec satisfaction indirecte du créancier</h2>
+    <div class="fiche-intro">Dans ces mécanismes, l'obligation s'éteint sans que le créancier reçoive exactement ce qui lui était dû — mais il est quand même indirectement satisfait. Trois mécanismes : la compensation, la confusion et la dation en paiement.</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> La compensation (art. 1347)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">A doit 100 € à B, et B doit 80 € à A. Au lieu de deux paiements, on fait une soustraction : A doit désormais 20 € à B. Tout le monde est quasiment payé sans échange de fonds. C'est aussi une garantie : chaque créancier est assuré d'être payé avant de s'acquitter de sa propre dette.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — La compensation légale</div>
+      <p class="f-text">Opère <strong>automatiquement</strong> dès que ses 6 conditions sont réunies, sous réserve d'être invoquée.</p>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — Les 6 conditions cumulatives</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Condition</th><th>Contenu</th></tr></thead><tbody>
+          <tr><td>Réciprocité</td><td>Les deux personnes sont mutuellement créancières et débitrices l'une de l'autre</td></tr>
+          <tr><td>Fongibilité</td><td>Les dettes sont de même nature (deux sommes d'argent, ou deux quantités de choses de même espèce)</td></tr>
+          <tr><td>Certitude</td><td>Pas de doute sur l'existence des dettes</td></tr>
+          <tr><td>Liquidité</td><td>Le montant est déterminé ou déterminable</td></tr>
+          <tr><td>Exigibilité</td><td>Le terme est échu pour les deux dettes. Exception : le délai de grâce ne fait pas obstacle à la compensation (art. 1347-3)</td></tr>
+          <tr><td>Disponibilité</td><td>Les créances ne sont pas insaisissables (créances alimentaires, rente indemnitaire, part insaisissable du salaire, créances dans le cadre d'une procédure collective)</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — Effets de la compensation légale</div>
+        <ul class="f-list">
+          <li><strong>Effet automatique et rétroactif</strong> : produit ses effets à la date où les 6 conditions sont réunies (même si elle est invoquée plus tard)</li>
+          <li>Extinction des dettes à due concurrence et de leurs accessoires</li>
+          <li><strong>Co-débiteurs solidaires</strong> (art. 1347-6 al. 2) : un co-débiteur peut invoquer la compensation entre le créancier et un autre co-débiteur, mais seulement à hauteur de la part divise de ce dernier</li>
+          <li><strong>Caution</strong> (art. 1347-6 al. 1) : elle peut opposer la compensation de ce que le créancier doit au débiteur principal</li>
+          <li><strong>Tiers</strong> (art. 1347-7) : la compensation ne préjudicie pas aux droits acquis par des tiers (ex. saisie conservatoire)</li>
+          <li>Les parties peuvent renoncer à la compensation (expresse ou tacite)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — La compensation judiciaire (art. 1348)</div>
+      <p class="f-text">Le juge peut prononcer la compensation même si toutes les conditions ne sont pas réunies, à condition d'être saisi par une partie. Il peut pallier l'absence de liquidité ou d'exigibilité (pour une seule des deux dettes). Il ne peut jamais pallier l'absence de réciprocité, de fongibilité ou de disponibilité.</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 3 — La compensation pour connexité (art. 1348-1)</div>
+      <p class="f-text">Quand les dettes sont connexes (issues du même contrat ou d'une même opération économique), le juge ne peut pas refuser la compensation, même si les conditions d'exigibilité ou de liquidité ne sont pas réunies. Effet rétroactif renforcé : réputée s'être produite au jour de l'exigibilité de la première des deux dettes. Dérogation : opposable aux tiers (art. 1348-1 al. 3).</p>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 4 — La compensation conventionnelle (art. 1348-2)</div>
+      <p class="f-text">Les parties peuvent librement convenir d'éteindre toutes obligations réciproques par compensation, même si les conditions légales ne sont pas réunies — sauf l'exigence de réciprocité. Produit ses effets à la date de l'accord.</p>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> La confusion (art. 1349)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">Réunion sur la même tête des qualités de créancier et de débiteur d'une même obligation. Si le créancier hérite du débiteur, il devient son propre débiteur — ce qui est impossible. L'obligation s'éteint par confusion. Cas typiques : héritage · fusion-absorption.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Effets</div>
+      <ul class="f-list">
+        <li>L'obligation est éteinte (avec tous ses accessoires) car son exécution est devenue impossible</li>
+        <li><strong>Solidarité (art. 1349-1 al. 1)</strong> : si la confusion ne concerne qu'un co-débiteur solidaire, l'extinction n'a lieu qu'à hauteur de sa part — les autres restent tenus du reste</li>
+        <li><strong>Cautions (art. 1349-1 al. 2)</strong> : confusion sur la dette principale → la caution est libérée (accessoire suit le principal) · confusion sur l'obligation d'une caution → le débiteur principal n'est pas libéré</li>
+        <li><strong>Caractère réversible</strong> : si les conditions qui avaient justifié la confusion disparaissent avec effet rétroactif (ex. nullité de la succession), l'obligation renaît</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 3</span> La dation en paiement</div>
+    <p class="f-text">Extinction d'une obligation par la remise d'une chose <strong>différente</strong> de celle qui était due. On doit une somme d'argent, mais on remet un tableau à la place — avec l'accord du créancier.</p>
+    <ul class="f-list">
+      <li><strong>Condition essentielle</strong> : accord du créancier (il ne peut jamais être contraint d'accepter autre chose — art. 1342-4)</li>
+      <li>Si la dation implique un transfert de propriété, le débiteur doit avoir la capacité de disposer du bien remis</li>
+      <li>Éteint la dette et tous ses accessoires, comme un paiement ordinaire</li>
+      <li><strong>Risque</strong> : si utilisée pour frauder les droits d'un tiers → action paulienne possible</li>
+    </ul>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li><strong>Compensation légale</strong> : 6 conditions · automatique et rétroactive · inopposable aux tiers qui ont acquis des droits</li>
+    <li>Judiciaire : pallier liquidité ou exigibilité d'UNE dette seulement</li>
+    <li>Connexité : juge ne peut pas refuser · opposable aux tiers · rétroactivité renforcée</li>
+    <li>Conventionnelle : liberté totale sauf réciprocité · effets à la date de l'accord</li>
+    <li><strong>Confusion</strong> : réunion créancier/débiteur · éteint l'obligation · réversible · en solidarité : extinction seulement pour la part du co-débiteur concerné</li>
+    <li><strong>Dation</strong> : accord du créancier indispensable · éteint la dette et ses accessoires</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f9">← Fiche #9</label><label for="r-f11">Fiche #11 : Extinction sans satisfaction →</label></div>
+</div></main></div>
+
+<!-- ===== FICHE 11 ===== -->
+<div id="page-f11" class="page-content"><main><div class="fiche-page">
+  <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.5rem"><label class="btn-home" for="r-home">← Accueil</label><label class="btn-home" for="r-plan">Plan du cours</label></div>
+  <div class="fiche-header">
+    <div class="fiche-meta">Fiche #11 · Partie 4 · Titre 3</div>
+    <h2>L'extinction de l'obligation sans satisfaction du créancier</h2>
+    <div class="fiche-intro">Dans ces hypothèses, l'obligation s'éteint alors que le créancier n'a obtenu ni satisfaction directe ni satisfaction indirecte. Trois mécanismes : la remise de dette (le créancier renonce volontairement), l'impossibilité d'exécuter (force majeure), et la prescription extinctive (inaction du créancier).</div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 1</span> La remise de dette (art. 1350)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">Contrat par lequel le créancier libère le débiteur de son obligation. Il ne reçoit rien, mais le débiteur est libéré. Souvent un contrat unilatéral à titre gratuit (masquant une libéralité), parfois à titre onéreux (contrepartie → contrat synallagmatique).</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — Conditions et preuve</div>
+      <p class="f-text">Contrat consensuel (art. 1350). Pas de forme particulière exigée.</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Présomption (simple — renversable)</th><th>Source</th></tr></thead><tbody>
+        <tr><td>Le créancier restitue l'original de l'acte sous seing privé au débiteur</td><td>Art. 1342-9 — présomption de remise de dette</td></tr>
+        <tr><td>La copie exécutoire de l'acte authentique est remise au débiteur</td><td>Art. 1342-9 — même présomption</td></tr>
+      </tbody></table></div>
+      <div class="f-alerte"><strong>Remise de dette ≠ paiement</strong>Si la libération résulte d'une remise de dette (et non d'un paiement), elle peut être qualifiée de donation indirecte dans le cadre d'une succession, déclenchant les règles de réduction successorale.</div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — Effets</div>
+      <ul class="f-list">
+        <li>Effet libératoire : éteint la dette et tous ses accessoires (sûretés, cautions)</li>
+        <li><strong>Co-débiteurs solidaires (art. 1350-1 al. 1)</strong> : la remise consentie à l'un ne libère les autres qu'à concurrence de sa part. Le créancier garde un recours pour le reste. (Différence avec le paiement : un paiement total par un co-débiteur libère tous.)</li>
+        <li><strong>Solidarité active (art. 1350-1 al. 2)</strong> : la remise faite par l'un des créanciers solidaires ne libère le débiteur que pour la part de ce créancier</li>
+        <li><strong>Cautions (art. 1350-2)</strong> : remise au débiteur principal → la caution est libérée · remise à une caution → le débiteur principal n'est pas libéré · les autres cautions solidaires sont libérées à concurrence de la part de la caution libérée</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 2</span> L'impossibilité d'exécuter</div>
+    <p class="f-text">Hypothèse de la force majeure survenant en cours d'exécution. Différence avec l'imprévision : la force majeure rend l'exécution <em>impossible</em> ; l'imprévision la rend seulement beaucoup plus onéreuse.</p>
+    <div class="f-sous">
+      <div class="f-sous-title">Effets (art. 1351)</div>
+      <p class="f-text">L'impossibilité définitive résultant d'un cas de force majeure libère le débiteur de son obligation. C'est un motif d'exonération de responsabilité contractuelle. Dans un contrat synallagmatique : question des risques.</p>
+      <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Situation</th><th>Règle</th></tr></thead><tbody>
+        <tr><td>Principe (<em>res perit debitori</em>)</td><td>Le débiteur libéré ne reçoit rien en échange. Restitutions réciproques si le contrat avait reçu un début d'exécution</td></tr>
+        <tr><td>Exception 1 : mise en demeure préalable</td><td>Si le débiteur avait été mis en demeure d'exécuter, la force majeure postérieure ne le libère pas totalement — le créancier peut réclamer des dommages et intérêts</td></tr>
+        <tr><td>Exception 2 (art. 1351-1) : contrats translatifs de propriété</td><td>Les risques pèsent sur le créancier-propriétaire (<em>res perit creditori/domino</em>) — car le transfert solo consensu avait déjà opéré</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="f-bloc">
+    <div class="f-bloc-title"><span class="f-num">Chap. 3</span> La prescription extinctive (art. 2219)</div>
+    <div class="fiche-intro" style="margin-bottom:1rem">Mode d'extinction d'un droit résultant de l'inaction de son titulaire pendant un certain laps de temps. Si tu ne réclames pas ce qu'on te doit pendant suffisamment longtemps, tu perds le droit de l'exiger en justice. La dette existe toujours moralement (obligation naturelle), mais tu ne peux plus forcer son exécution devant un juge.</div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 1 — Les prescriptions légales</div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§1 — Les différents délais</div>
+        <div class="f-table-wrap"><table class="f-table"><thead><tr><th>Délai</th><th>Domaine</th><th>Point de départ</th></tr></thead><tbody>
+          <tr><td><strong>5 ans</strong> (droit commun)</td><td>Toutes les actions personnelles ou mobilières en l'absence de texte spécial (art. 2224) · matière commerciale (art. L110-4)</td><td>Jour où le titulaire a connu ou aurait dû connaître les faits</td></tr>
+          <tr><td><strong>30 ans</strong></td><td>Actions réelles immobilières (art. 2227) · nullité absolue du mariage · dommages environnementaux</td><td></td></tr>
+          <tr><td><strong>20 ans</strong></td><td>Délai butoir absolu (art. 2232)</td><td>Naissance du droit</td></tr>
+          <tr><td><strong>20 ans</strong></td><td>Actions civiles pour tortures, actes de barbarie, violences ou agressions sexuelles sur mineur (art. 2226 al. 2)</td><td></td></tr>
+          <tr><td><strong>10 ans</strong></td><td>Responsabilité ayant causé un dommage corporel (art. 2226) · professionnels de santé · responsabilité fondateurs de sociétés · préjudice écologique</td><td></td></tr>
+          <tr><td><strong>5 ans</strong> (spéciales)</td><td>Répétition des salaires (art. 3245-1 C. trav.) · responsabilité des produits défectueux (3 ans)</td><td></td></tr>
+          <tr><td><strong>2 ans</strong></td><td>Contrats d'assurance · actions des professionnels contre les consommateurs (art. L218-1 C. conso.)</td><td></td></tr>
+          <tr><td><strong>3 mois</strong></td><td>Diffamation et injure (loi de 1881)</td><td></td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="f-sous2">
+        <div class="f-sous2-title">§2 — La computation des délais</div>
+        <div class="f-sous2">
+          <div class="f-sous2-title">A. Point de départ et délai butoir</div>
+          <ul class="f-list">
+            <li><strong>Point de départ subjectif (art. 2224)</strong> : le jour où le titulaire a connu ou aurait dû connaître les faits. La prescription ne court pas contre les mineurs non émancipés · les majeurs sous tutelle · les époux entre eux (art. 2234-2236)</li>
+            <li><strong>Délai butoir (art. 2232)</strong> : quelles que soient les causes de suspension ou d'interruption, l'action est prescrite <strong>20 ans après la naissance du droit</strong>. Plafond absolu (sauf prescriptions trentenaires)</li>
+          </ul>
+          <div class="f-exemple"><strong>Exemple délai butoir</strong>Vice caché découvert 19 ans après l'achat. Le délai de 2 ans pour agir est plafonné à 1 an par le butoir de 20 ans à compter de la vente.</div>
+        </div>
+        <div class="f-sous2">
+          <div class="f-sous2-title">B. Suspension et interruption</div>
+          <div class="f-table-wrap"><table class="f-table"><thead><tr><th></th><th>Suspension (art. 2230)</th><th>Interruption (art. 2231)</th></tr></thead><tbody>
+            <tr><td>Effet sur le délai</td><td>Arrête temporairement le cours SANS effacer le temps déjà couru · quand la cause cesse, le délai reprend où il s'était arrêté</td><td>Efface le délai déjà couru · fait repartir un nouveau délai de même durée</td></tr>
+            <tr><td>Analogie</td><td>Appuyer sur « pause » sur Netflix — on reprend exactement où on s'était arrêté</td><td>Arrêter et éteindre Netflix — on repart du début</td></tr>
+            <tr><td>Causes</td><td>Empêchement légal, conventionnel ou de force majeure · médiation en cours (art. 2238)</td><td>Reconnaissance de la dette par le débiteur · tout acte de poursuite du créancier (assignation, saisie…)</td></tr>
+          </tbody></table></div>
+        </div>
+      </div>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 2 — Les prescriptions conventionnelles (art. 2254)</div>
+      <ul class="f-list">
+        <li>Réduction possible jusqu'à <strong>1 an minimum</strong></li>
+        <li>Extension possible jusqu'à <strong>10 ans maximum</strong></li>
+        <li>Écartées pour certaines créances dont le délai légal est impératif (salaires, loyers, intérêts…)</li>
+        <li>Une partie peut renoncer à la prescription déjà acquise (art. 2250)</li>
+      </ul>
+    </div>
+    <div class="f-sous">
+      <div class="f-sous-title">Section 3 — Effets et mise en œuvre</div>
+      <ul class="f-list">
+        <li><strong>Effets</strong> : la prescription extinctive n'éteint pas l'obligation morale (elle subsiste comme obligation naturelle). Elle éteint le <em>droit d'agir en justice</em>. Si le débiteur paie spontanément une dette prescrite, il ne peut pas en réclamer le remboursement : il payait une obligation naturelle</li>
+        <li><strong>Mise en œuvre (art. 2247)</strong> : le juge ne peut pas suppléer d'office le moyen de la prescription — c'est au défendeur de l'invoquer. Peut être soulevé devant les juges du fond, mais pas pour la première fois devant la Cour de cassation. La charge de la preuve de la prescription incombe à celui qui s'en prévaut</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="f-retenir"><strong>À retenir</strong><ul>
+    <li><strong>Remise de dette</strong> : contrat consensuel · éteint la dette et ses accessoires · pour un co-débiteur solidaire : libère les autres seulement à hauteur de sa part</li>
+    <li><strong>Impossibilité d'exécuter</strong> : force majeure définitive libère le débiteur · mais pas si mise en demeure préalable · contrats translatifs : risques sur le propriétaire (res perit domino)</li>
+    <li><strong>Prescription de droit commun</strong> : 5 ans · point de départ subjectif · délai butoir de 20 ans absolu</li>
+    <li>Suspension = pause (temps conservé) · interruption = recommencer à zéro</li>
+    <li>Prescription conventionnelle : entre 1 et 10 ans · juge ne peut pas la soulever d'office</li>
+  </ul></div>
+  <div class="fiche-nav"><label for="r-f10">← Fiche #10</label><span></span></div>
+</div></main></div>
+
+<footer>
+  <p>Régime Général <span>des Obligations</span> — Fiches de révision 2025-2026 · 4 parties · 11 fiches</p>
+</footer>
+
+</div><!-- end .wrap -->
+</body>
+</html>
