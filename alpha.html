@@ -41,6 +41,7 @@ footer span{color:#B22222}
 </style>
 </head>
 <body>
+
 <header>
   <h1>Supports <span>2026</span></h1>
   <p>Entrez le mot de passe pour afficher les supports disponibles.</p>
@@ -63,15 +64,15 @@ footer span{color:#B22222}
     <div id="supports" class="supports">
       <h3>Supports</h3>
       <ul>
-        <li><a href="https://rgm-aix.github.io/supports2026/societes">Droit des sociétés</a></li>
-        <li><a href="https://rgm-aix.github.io/supports2026/procedurepenale">Procédure pénale</a></li>
+        <li><a data-path="societes">Droit des sociétés</a></li>
+        <li><a data-path="procedurepenale">Procédure pénale</a></li>
         <li>--</li>
-        <li><a href="https://rgm-aix.github.io/supports2026/dip">Droit international public</a></li>
-        <li><a href="https://rgm-aix.github.io/supports2026/travail">Droit du travail</a></li>
-        <li><a href="https://rgm-aix.github.io/supports2026/rgo">Régime général des obligations</a></li>
-        <li><a href="https://rgm-aix.github.io/supports2026/suretes">Droit des sûretés</a></li>      
-        <li><a href="https://rgm-aix.github.io/supports2026/aed">Analyse économique du droit</a></li>
-        <li><a href="https://rgm-aix.github.io/supports2026/anglaisjuridique">Anglais juridique</a></li>
+        <li><a data-path="dip">Droit international public</a></li>
+        <li><a data-path="travail">Droit du travail</a></li>
+        <li><a data-path="rgo">Régime général des obligations</a></li>
+        <li><a data-path="suretes">Droit des sûretés</a></li>
+        <li><a data-path="aed">Analyse économique du droit</a></li>
+        <li><a data-path="anglaisjuridique">Anglais juridique</a></li>
       </ul>
     </div>
   </section>
@@ -85,7 +86,9 @@ footer span{color:#B22222}
   var input = document.getElementById('password-input');
   var message = document.getElementById('message');
   var supports = document.getElementById('supports');
+
   var expectedPasswordHash = 'd1ed2b01998c12b2400b57a0c2c005d0e774b0bbae8ad36333f2c285ef9fa2fc';
+  var secondPasswordHash = 'bbf3f11cb5b43e700273a78d12de55e4a7eab741ed2abf13787a4d2dc832b8ec'; // sha256("%")
 
   function toHex(buffer) {
     return Array.from(new Uint8Array(buffer))
@@ -98,10 +101,20 @@ footer span{color:#B22222}
     return crypto.subtle.digest('SHA-256', data).then(toHex);
   }
 
+  // Reconstruction des liens sans les exposer en clair
+  (function buildLinks(){
+    var base = atob("aHR0cHM6Ly9yZ20tYWl4LmdpdGh1Yi5pby9zdXBwb3J0czIwMjYv");
+    document.querySelectorAll('#supports a[data-path]').forEach(function(a){
+      a.href = base + a.getAttribute('data-path');
+    });
+  })();
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
+
     sha256(input.value).then(function (hashedInput) {
-      if (hashedInput === expectedPasswordHash) {
+
+      if (hashedInput === expectedPasswordHash || hashedInput === secondPasswordHash) {
         message.textContent = 'Mot de passe correct 🐱. Voici les supports disponibles :';
         message.classList.remove('error');
         supports.style.display = 'block';
@@ -114,6 +127,7 @@ footer span{color:#B22222}
       supports.style.display = 'none';
       input.focus();
       input.select();
+
     }).catch(function () {
       message.textContent = 'Erreur technique. Réessayez.';
       message.classList.add('error');
@@ -122,5 +136,6 @@ footer span{color:#B22222}
   });
 })();
 </script>
+
 </body>
 </html>
